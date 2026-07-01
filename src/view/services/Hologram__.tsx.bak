@@ -1,0 +1,1205 @@
+import { Link, useParams, Navigate } from 'react-router'
+import { motion } from 'motion/react'
+import {
+  ArrowRight,
+  ArrowLeft,
+  CheckCircle2,
+  Sparkles,
+  QrCode,
+  ShieldAlert,
+  Database,
+  Shield,
+  Tag,
+  Nfc,
+  Printer,
+  Package,
+  Clock,
+  Users,
+  Building2,
+  Globe,
+  Award,
+  BadgeCheck,
+  FileCheck,
+  Lightbulb,
+  Target,
+  Zap,
+  Eye,
+  Layers,
+  TrendingUp,
+  ChevronRight,
+  Home,
+  Calendar,
+  Hash,
+  Lock,
+  AlertTriangle,
+  Handshake,
+  Search,
+  Phone,
+  Mail,
+  MapPin,
+  ChevronDown
+} from 'lucide-react'
+
+// ============================================================================
+// SERVICE DATA - Hologram dengan QR (DUMMY - akan disesuaikan dengan data asli)
+// TODO: Replace this with real data from backend/CMS
+// ============================================================================
+const HOLOGRAM_SERVICE_DATA = {
+  id: 'hologram',
+  title: 'Hologram dengan QR',
+  subtitle: 'Premium Security Solution',
+  tagline: 'Kombinasi keamanan fisik & digital untuk proteksi maksimal',
+  color: {
+    primary: 'emerald',
+    gradient: 'from-emerald-600 to-emerald-500',
+    bg: 'bg-emerald-100',
+    text: 'text-emerald-600',
+    border: 'border-emerald-200',
+    dark: 'from-emerald-400 to-emerald-600'
+  },
+  hero: {
+    badge: 'Flagship Product',
+    title: 'Hologram dengan QR Code',
+    subtitle: 'Solusi autentikasi premium dengan 2 lapis proteksi',
+    description: 'Kombinasi hologram multi-layer dengan kode QR terintegrasi untuk menciptakan lapisan keamanan ganda yang hampir mustahil dipalsukan. Solusi ideal untuk produk premium, high-value, dan industri yang membutuhkan proteksi maksimal.',
+    stats: [
+      { value: '99.9%', label: 'Tingkat Kesulitan Palsu' },
+      { value: '<1s', label: 'Waktu Verifikasi' },
+      { value: 'ISO', label: '18004:2015 Licensed' }
+    ]
+  },
+  overview: {
+    title: 'Tentang Layanan Ini',
+    description: [
+      'Hologram dengan QR adalah solusi autentikasi flagship kami yang menggabungkan kekuatan keamanan fisik (hologram premium) dengan keamanan digital (QR code AG). Setiap label diproduksi dengan teknologi hologram multi-layer yang memiliki efek visual unik dan sulit ditiru, dilengkapi dengan kode QR yang terhubung langsung ke database real-time Authentic Guards.',
+      'Solusi ini dirancang khusus untuk brand yang membutuhkan proteksi maksimal terhadap produk premium, barang bernilai tinggi, atau produk yang rentan terhadap pemalsuan sofisticated. Dengan 2 lapis proteksi yang bekerja sinergis, pemalsu harus mengalahkan kedua lapisan sekaligus untuk membuat produk palsu yang meyakinkan — sebuah tantangan yang hampir mustahil.'
+    ],
+    highlights: [
+      'Hologram multi-layer dengan efek visual premium',
+      'QR code terintegrasi dengan database real-time',
+      'Tamper-evident design untuk deteksi pembukaan',
+      'Verifikasi instan via smartphone',
+      'Custom design sesuai brand identity',
+      'Terintegrasi dengan 5 lapis keamanan AG'
+    ]
+  },
+  features: [
+    {
+      icon: 'Sparkles',
+      title: 'Hologram Premium Multi-Layer',
+      description: 'Teknologi hologram dengan efek visual multi-layer yang hampir mustahil ditiru. Setiap hologram memiliki pola unik yang dapat diverifikasi secara visual oleh konsumen maupun retailer.',
+      details: [
+        'Multi-layer optical effects',
+        'Custom pattern design',
+        'Anti-UV & anti-scratch coating',
+        'Visual inspection friendly'
+      ]
+    },
+    {
+      icon: 'QrCode',
+      title: 'QR Code Terintegrasi AG',
+      description: 'Kode QR dengan standar ISO/IEC 18004:2015 (licensed) yang terhubung langsung ke cloud database Authentic Guards. Setiap kode unik per produk dan tidak dapat diduplikasi.',
+      details: [
+        'ISO/IEC 18004:2015 licensed standard',
+        'Unique code per product',
+        'Real-time database sync',
+        'Error correction Level Q (25%)'
+      ]
+    },
+    {
+      icon: 'ShieldAlert',
+      title: 'Tamper-Evident Design',
+      description: 'Label dirancang dengan fitur tamper-evident yang menunjukkan tanda-tanda pembukaan. Ketika label dibuka/terlepas, kode QR otomatis tidak valid dan dianggap tidak sah.',
+      details: [
+        'Void upon removal',
+        'Visual tamper indicators',
+        'Auto-invalidation system',
+        'Prevents label transfer'
+      ]
+    },
+    {
+      icon: 'Database',
+      title: 'Verifikasi Real-time',
+      description: 'Setiap scan langsung divalidasi ke cloud database AG dengan standar ISO/IEC 27000:2016. Sistem mencatat setiap aktivitas verifikasi untuk analytics dan deteksi anomali.',
+      details: [
+        'ISO/IEC 27000:2016 cloud database',
+        'Real-time validation',
+        'Activity logging',
+        'Anomaly detection'
+      ]
+    }
+  ],
+  specifications: {
+    title: 'Spesifikasi Teknis',
+    items: [
+      { label: 'Jenis Hologram', value: 'Multi-Layer Optical' },
+      { label: 'Standar QR Code', value: 'ISO/IEC 18004:2015 (Licensed)' },
+      { label: 'Ukuran Label', value: 'Custom (0.5cm - 5cm)' },
+      { label: 'Material', value: 'Premium Synthetic / Vinyl' },
+      { label: 'Ketahanan', value: 'Anti-UV, Anti-Scratch, Waterproof' },
+      { label: 'Database Standard', value: 'ISO/IEC 27000:2016' },
+      { label: 'Error Correction', value: 'Level Q (25%)' },
+      { label: 'Response Time', value: '< 100ms' },
+      { label: 'Verifikasi Limit', value: '15x per code' },
+      { label: 'Tamper Protection', value: 'Void upon removal' }
+    ]
+  },
+  implementation: {
+    title: 'Alur Implementasi',
+    description: 'Proses implementasi yang terstruktur untuk memastikan kualitas dan kesuksesan setiap proyek.',
+    steps: [
+      {
+        num: '01',
+        title: 'Konsultasi & Analisis',
+        description: 'Diskusi mendalam untuk memahami kebutuhan spesifik brand, jenis produk, volume produksi, dan tingkat keamanan yang dibutuhkan.',
+        duration: '1-2 hari',
+        icon: 'Handshake'
+      },
+      {
+        num: '02',
+        title: 'Desain & Prototyping',
+        description: 'Tim desain membuat mockup hologram sesuai brand identity. Prototype diproduksi untuk approval sebelum produksi massal.',
+        duration: '3-5 hari',
+        icon: 'Lightbulb'
+      },
+      {
+        num: '03',
+        title: 'Produksi Kode AG',
+        description: 'Sistem menghasilkan kode AG unik dengan algoritma 3 lapis, dienkripsi MD5, dan disimpan di cloud database berstandar ISO/IEC 27000:2016.',
+        duration: '1-2 hari',
+        icon: 'Hash'
+      },
+      {
+        num: '04',
+        title: 'Produksi Label Hologram',
+        description: 'Label hologram diproduksi dengan teknologi multi-layer, dilengkapi QR code dan fitur tamper-evident sesuai spesifikasi.',
+        duration: '5-7 hari',
+        icon: 'Sparkles'
+      },
+      {
+        num: '05',
+        title: 'Quality Control',
+        description: 'Pengecekan kualitas label dari kecacatan dan kesalahan. Label yang tidak lolos QC akan dimusnahkan dengan prosedur terstandar.',
+        duration: '1-2 hari',
+        icon: 'FileCheck'
+      },
+      {
+        num: '06',
+        title: 'Pengiriman & Implementasi',
+        description: 'Label dikirim ke klien dengan dokumentasi lengkap. Tim kami membantu proses aplikasi label pada produk dan training penggunaan sistem.',
+        duration: '2-3 hari',
+        icon: 'Package'
+      }
+    ]
+  },
+  useCases: {
+    title: 'Industri yang Cocok',
+    description: 'Solusi ini ideal untuk berbagai industri yang membutuhkan proteksi maksimal terhadap produk premium.',
+    industries: [
+      {
+        icon: 'Award',
+        name: 'Luxury Goods',
+        description: 'Tas, jam tangan, perhiasan, dan produk fashion premium yang rentan pemalsuan.',
+        examples: ['Tas Designer', 'Jam Tangan Mewah', 'Perhiasan']
+      },
+      {
+        icon: 'Shield',
+        name: 'Farmasi & Kesehatan',
+        description: 'Obat-obatan, suplemen, dan produk kesehatan yang membutuhkan keamanan tinggi.',
+        examples: ['Obat Resep', 'Suplemen', 'Alat Kesehatan']
+      },
+      {
+        icon: 'Package',
+        name: 'Elektronik & Gadget',
+        description: 'Perangkat elektronik, aksesoris, dan gadget yang sering menjadi target pemalsuan.',
+        examples: ['Smartphone', 'Aksesoris Original', 'Komponen']
+      },
+      {
+        icon: 'Tag',
+        name: 'Minuman Keras & Spirits',
+        description: 'Minuman beralkohol premium yang membutuhkan proteksi dari produk palsu.',
+        examples: ['Wine Premium', 'Whisky', 'Spirits']
+      }
+    ]
+  },
+  benefits: {
+    title: 'Keuntungan untuk Brand Anda',
+    items: [
+      {
+        icon: 'Shield',
+        title: 'Proteksi Maksimal',
+        description: '2 lapis keamanan (fisik + digital) yang hampir mustahil dipalsukan secara bersamaan.'
+      },
+      {
+        icon: 'Users',
+        title: 'Meningkatkan Kepercayaan',
+        description: 'Konsumen dapat memverifikasi keaslian produk dengan mudah via smartphone.'
+      },
+      {
+        icon: 'TrendingUp',
+        title: 'ROI Tinggi',
+        description: 'Penurunan produk palsu hingga 80% dan peningkatan penjualan produk asli.'
+      },
+      {
+        icon: 'Eye',
+        title: 'Real-time Monitoring',
+        description: 'Dashboard analytics untuk monitoring aktivitas verifikasi dan deteksi anomali.'
+      },
+      {
+        icon: 'Globe',
+        title: 'Standar Internasional',
+        description: 'Menggunakan standar ISO/IEC 18004:2015 dan ISO/IEC 27000:2016 yang diakui global.'
+      },
+      {
+        icon: 'Target',
+        title: 'Fully Customizable',
+        description: 'Desain hologram dan label fully customizable sesuai brand identity Anda.'
+      }
+    ]
+  },
+  gallery: {
+    title: 'Visual Preview',
+    description: 'Contoh visual produk dengan label hologram QR (dummy - akan diganti dengan foto asli)',
+    items: [
+      { title: 'Label Hologram Premium', description: 'Contoh label hologram dengan QR code terintegrasi', placeholder: '🏷️' },
+      { title: 'Aplikasi pada Produk', description: 'Label diaplikasikan pada kemasan produk', placeholder: '📦' },
+      { title: 'Verifikasi via Smartphone', description: 'Konsumen memverifikasi produk dengan scan QR', placeholder: '📱' },
+      { title: 'Dashboard Analytics', description: 'Monitoring aktivitas verifikasi real-time', placeholder: '📊' }
+    ]
+  },
+  faq: {
+    title: 'Pertanyaan Umum',
+    items: [
+      {
+        q: 'Berapa minimum order untuk label hologram?',
+        a: 'Minimum order quantity (MOQ) bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi.'
+      },
+      {
+        q: 'Berapa lama waktu produksi label hologram?',
+        a: 'Waktu produksi standar adalah 7-14 hari kerja setelah desain di-approve. Untuk order urgent, kami memiliki layanan express dengan timeline yang lebih singkat (dengan biaya tambahan).'
+      },
+      {
+        q: 'Apakah desain hologram bisa fully custom?',
+        a: 'Tentu! Tim desain kami akan bekerja sama dengan Anda untuk membuat hologram custom sesuai brand identity. Mulai dari pattern, warna, efek visual, hingga ukuran dan bentuk label.'
+      },
+      {
+        q: 'Bagaimana jika ada label yang cacat produksi?',
+        a: 'Kami akan mengkompensasi label baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti.'
+      },
+      {
+        q: 'Apakah label ini tahan terhadap cuaca dan goresan?',
+        a: 'Ya, label hologram kami dilengkapi dengan coating anti-UV, anti-scratch, dan waterproof. Label dirancang untuk bertahan dalam kondisi normal penggunaan produk.'
+      },
+      {
+        q: 'Bagaimana proses verifikasi oleh konsumen?',
+        a: 'Konsumen cukup scan QR code pada label menggunakan smartphone. Sistem akan memverifikasi keaslian produk secara real-time dan menampilkan status keaslian dalam hitungan detik.'
+      }
+    ]
+  },
+  pricing: {
+    title: 'Informasi Harga',
+    description: 'Harga bervariasi tergantung volume, ukuran, dan kompleksitas desain. Kami menawarkan paket fleksibel untuk berbagai kebutuhan.',
+    note: 'Hubungi tim kami untuk penawaran custom sesuai kebutuhan Anda.',
+    packages: [
+      {
+        name: 'Starter',
+        description: 'Untuk UMKM & brand emerging',
+        features: ['MOQ rendah', 'Desain standar', 'Basic support'],
+        cta: 'Konsultasi'
+      },
+      {
+        name: 'Business',
+        description: 'Untuk brand menengah',
+        features: ['MOQ menengah', 'Custom design', 'Priority support', 'Analytics dashboard'],
+        cta: 'Konsultasi',
+        popular: true
+      },
+      {
+        name: 'Enterprise',
+        description: 'Untuk korporasi & brand besar',
+        features: ['Volume besar', 'Full customization', 'Dedicated support', 'Advanced analytics', 'SLA guarantee'],
+        cta: 'Konsultasi'
+      }
+    ]
+  }
+}
+
+// ============================================================================
+// BREADCRUMB SECTION
+// =============================================================================
+function BreadcrumbSection({ serviceTitle }: { serviceTitle: string }) {
+  return (
+    <section className="bg-white border-b border-gray-100">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
+    <nav className="flex items-center gap-2 text-sm">
+    <Link to="/" className="flex items-center gap-1.5 text-gray-500 hover:text-[#8C6F3D] transition-colors">
+    <Home className="w-4 h-4" />
+    <span>Home</span>
+    </Link>
+    <ChevronRight className="w-4 h-4 text-gray-300" />
+    <Link to="/services" className="text-gray-500 hover:text-[#8C6F3D] transition-colors">
+    Services
+    </Link>
+    <ChevronRight className="w-4 h-4 text-gray-300" />
+    <span className="text-[#8C6F3D] font-semibold">{serviceTitle}</span>
+    </nav>
+    </div>
+    </section>
+  )
+}
+// ============================================================================
+// HERO SECTION - Disesuaikan dengan Home.tsx HeroSection style
+// =============================================================================
+function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+  const { hero, color } = data
+  return (
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      {/* Background layers - sama dengan Home.tsx */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      <div
+      className="absolute inset-0 opacity-[0.03] pointer-events-none"
+      style={{
+        backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+        backgroundSize: '60px 60px'
+      }}
+      />
+      
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Badge - sama dengan Home.tsx */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+        <div className="flex items-center gap-1.5">
+          <Sparkles className="w-4 h-4 text-[#C5A059]" />
+          <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">{hero.badge}</span>
+        </div>
+        <div className="w-px h-4 bg-[#C5A059]/30" />
+        <p className="text-sm text-[#1A1A1A] font-semibold">
+        {data.subtitle}
+        </p>
+        </motion.div>
+        
+        {/* Headline */}
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="space-y-6 mb-8"
+        >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight">
+        {hero.title.split(' ')[0]}{' '}
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+        {hero.title.split(' ').slice(1).join(' ')}
+        </span>
+        </h1>
+        
+        <p className="sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        {hero.description}
+        </p>
+        </motion.div>
+        
+        {/* CTA Buttons - sama dengan Home.tsx */}
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+        <Link
+        to="/contact"
+        className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+        >
+        <span>Konsultasi Gratis</span>
+        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
+        <Link
+        to="/services"
+        className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+        >
+        <ArrowLeft className="w-5 h-5" />
+        <span>Kembali ke Services</span>
+        </Link>
+        </motion.div>
+        
+        {/* Inline Stats - sama dengan Home.tsx */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+          >
+          {hero.stats.map((stat, idx) => (
+            <span key={idx} className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">{stat.value}</span> {stat.label}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+// ============================================================================
+// OVERVIEW SECTION - Disesuaikan dengan Home.tsx AboutSection style
+// =============================================================================
+function OverviewSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+  const { overview, color } = data
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    {/* Left - Description */}
+    <motion.div
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    className="space-y-6"
+    >
+    <div>
+    <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Overview</p>
+    <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
+    {overview.title}
+    </h2>
+    </div>
+    <div className="space-y-4">
+    {overview.description.map((paragraph, idx) => (
+      <p key={idx} className="text-gray-600 leading-relaxed text-lg">
+      {paragraph}
+      </p>
+    ))}
+    </div>
+    </motion.div>
+    
+    {/* Right - Highlights - sama dengan Home.tsx AboutSection */}
+    <motion.div
+    initial={{ opacity: 0, x: 20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    className="space-y-4"
+    >
+    <div className="flex gap-4 p-5 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm hover:shadow-md transition-shadow">
+    <div className="w-11 h-11 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+    <CheckCircle2 className="w-5 h-5" />
+    </div>
+    <div>
+    <h3 className="font-bold text-[#1A1A1A] mb-1">Highlight Utama</h3>
+    <div className="space-y-2 mt-2">
+    {overview.highlights.map((highlight, idx) => (
+      <div key={idx} className="flex items-start gap-2">
+      <div className="w-1.5 h-1.5 bg-[#8C6F3D] rounded-full mt-2 shrink-0" />
+      <span className="text-sm text-gray-600">{highlight}</span>
+      </div>
+    ))}
+    </div>
+    </div>
+    </div>
+    </motion.div>
+    </div>
+    </div>
+    </section>
+  )
+}
+// ============================================================================
+// FEATURES SECTION - Disesuaikan dengan Home.tsx ServicesSection style
+// =============================================================================
+function FeaturesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+  const { features, color } = data
+  const getIcon = (iconName: string) => {
+    const icons: Record<string, React.ReactNode> = {
+      Sparkles: <Sparkles className="w-7 h-7" />,
+      QrCode: <QrCode className="w-7 h-7" />,
+      ShieldAlert: <ShieldAlert className="w-7 h-7" />,
+      Database: <Database className="w-7 h-7" />
+    }
+    return icons[iconName] || <Sparkles className="w-7 h-7" />
+  }
+  return (
+    <section className="py-16 md:py-24 bg-white relative">
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+    >
+    <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Fitur Unggulan</p>
+    <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+    Fitur <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Detail</span>
+    </h2>
+    <p className="text-gray-500 text-lg leading-relaxed">
+    Setiap fitur dirancang untuk memberikan proteksi maksimal dan pengalaman verifikasi yang mudah.
+    </p>
+    </motion.div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {features.map((feature, idx) => (
+      <motion.div
+      key={idx}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: idx * 0.1 }}
+      className="group relative bg-white rounded-3xl border border-gray-100 hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8"
+      >
+      <div className="flex items-start gap-4 mb-6">
+      <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
+      {getIcon(feature.icon)}
+      </div>
+      <div>
+      <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{feature.title}</h3>
+      </div>
+      </div>
+      
+      <p className="text-gray-600 leading-relaxed mb-6 text-base">
+      {feature.description}
+      </p>
+      
+      <div className="pt-4 border-t border-gray-100">
+      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Detail Teknis</p>
+      <div className="grid grid-cols-2 gap-2">
+      {feature.details.map((detail, dIdx) => (
+        <div key={dIdx} className="flex items-center gap-2">
+        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+        <span className="text-xs text-gray-600">{detail}</span>
+        </div>
+      ))}
+      </div>
+      </div>
+      </motion.div>
+    ))}
+    </div>
+    </div>
+    </section>
+  )
+}
+// ============================================================================
+// SPECIFICATIONS SECTION - Disesuaikan dengan Home.tsx style
+// =============================================================================
+function SpecificationsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+  const { specifications } = data
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="text-center max-w-3xl mx-auto mb-12 space-y-4"
+    >
+    <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Technical Specs</p>
+    <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+    {specifications.title}
+    </h2>
+    </motion.div>
+    
+    <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="max-w-4xl mx-auto bg-white rounded-3xl border border-[#E8D09E]/30 overflow-hidden shadow-sm"
+    >
+    {specifications.items.map((spec, idx) => (
+      <div
+      key={idx}
+      className={`flex items-center justify-between p-5 hover:bg-[#FAF8F5] transition-colors ${
+        idx !== specifications.items.length - 1 ? 'border-b border-gray-100' : ''
+}`}
+        >
+        <span className="text-sm font-medium text-gray-600">{spec.label}</span>
+        <span className="text-sm font-bold text-[#1A1A1A]">{spec.value}</span>
+        </div>
+      ))}
+      </motion.div>
+      </div>
+      </section>
+    )
+  }
+  // ============================================================================
+  // IMPLEMENTATION FLOW SECTION - Disesuaikan dengan Home.tsx StatsSection style
+  // =============================================================================
+  function ImplementationSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+    const { implementation } = data
+    const getIcon = (iconName: string) => {
+      const icons: Record<string, React.ReactNode> = {
+        Handshake: <Handshake className="w-6 h-6" />,
+        Lightbulb: <Lightbulb className="w-6 h-6" />,
+        Hash: <Hash className="w-6 h-6" />,
+        Sparkles: <Sparkles className="w-6 h-6" />,
+        FileCheck: <FileCheck className="w-6 h-6" />,
+        Package: <Package className="w-6 h-6" />
+      }
+      return icons[iconName] || <CheckCircle2 className="w-6 h-6" />
+    }
+    return (
+      <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+      <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+      >
+      <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Implementation</p>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+      {implementation.title}
+      </h2>
+      <p className="text-gray-400 text-lg leading-relaxed">
+      {implementation.description}
+      </p>
+      </motion.div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {implementation.steps.map((step, idx) => (
+        <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: idx * 0.1 }}
+        className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 hover:border-[#E8D09E]/30 transition-all"
+        >
+        <div className="absolute top-4 right-4 text-5xl font-extrabold text-white/5 group-hover:text-[#E8D09E]/10 transition-colors">
+        {step.num}
+        </div>
+        
+        <div className="relative z-10">
+        <div className="w-12 h-12 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        {getIcon(step.icon)}
+        </div>
+        
+        <div className="flex items-center gap-2 mb-2">
+        <span className="text-xs font-bold text-[#E8D09E] bg-[#E8D09E]/20 px-2 py-0.5 rounded">
+        {step.duration}
+        </span>
+        </div>
+        
+        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+        <p className="text-sm text-gray-400 leading-relaxed">{step.description}</p>
+        </div>
+        </motion.div>
+      ))}
+      </div>
+      </div>
+      </section>
+    )
+  }
+  // ============================================================================
+  // USE CASES / INDUSTRIES SECTION - Disesuaikan dengan Home.tsx style
+  // =============================================================================
+  function UseCasesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+    const { useCases } = data
+    const getIcon = (iconName: string) => {
+      const icons: Record<string, React.ReactNode> = {
+        Award: <Award className="w-7 h-7" />,
+        Shield: <Shield className="w-7 h-7" />,
+        Package: <Package className="w-7 h-7" />,
+        Tag: <Tag className="w-7 h-7" />
+      }
+      return icons[iconName] || <Package className="w-7 h-7" />
+    }
+    return (
+      <section className="py-16 md:py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+      >
+      <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Industri</p>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+      {useCases.title}
+      </h2>
+      <p className="text-gray-500 text-lg leading-relaxed">
+      {useCases.description}
+      </p>
+      </motion.div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {useCases.industries.map((industry, idx) => (
+        <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: idx * 0.1 }}
+        className="group relative bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden p-8"
+        >
+        <div className="flex items-start gap-4 mb-6">
+        <div className="w-14 h-14 bg-[#E8D09E]/30 text-[#8C6F3D] rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+        {getIcon(industry.icon)}
+        </div>
+        <div>
+        <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{industry.name}</h3>
+        <p className="text-gray-600 leading-relaxed">{industry.description}</p>
+        </div>
+        </div>
+        
+        <div className="pt-4 border-t border-gray-100">
+        <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Contoh Produk</p>
+        <div className="flex flex-wrap gap-2">
+        {industry.examples.map((example, eIdx) => (
+          <span
+          key={eIdx}
+          className="text-xs font-semibold text-gray-600 bg-gray-100 px-3 py-1.5 rounded-full hover:bg-[#E8D09E]/20 hover:text-[#8C6F3D] transition-colors"
+          >
+          {example}
+          </span>
+        ))}
+        </div>
+        </div>
+        </motion.div>
+      ))}
+      </div>
+      </div>
+      </section>
+    )
+  }
+  // ============================================================================
+  // BENEFITS SECTION - Disesuaikan dengan Home.tsx style
+  // =============================================================================
+  function BenefitsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+    const { benefits } = data
+    const getIcon = (iconName: string) => {
+      const icons: Record<string, React.ReactNode> = {
+        Shield: <Shield className="w-6 h-6" />,
+        Users: <Users className="w-6 h-6" />,
+        TrendingUp: <TrendingUp className="w-6 h-6" />,
+        Eye: <Eye className="w-6 h-6" />,
+        Globe: <Globe className="w-6 h-6" />,
+        Target: <Target className="w-6 h-6" />
+      }
+      return icons[iconName] || <CheckCircle2 className="w-6 h-6" />
+    }
+    return (
+      <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+      <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+      >
+      <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Benefits</p>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+      {benefits.title}
+      </h2>
+      </motion.div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {benefits.items.map((benefit, idx) => (
+        <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: idx * 0.08 }}
+        className="group relative bg-white rounded-2xl border border-[#E8D09E]/30 hover:border-[#C5A059]/50 shadow-sm hover:shadow-md transition-all duration-300 p-6"
+        >
+        <div className="w-11 h-11 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        {getIcon(benefit.icon)}
+        </div>
+        <h3 className="font-bold text-[#1A1A1A] mb-2">{benefit.title}</h3>
+        <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
+        </motion.div>
+      ))}
+      </div>
+      </div>
+      </section>
+    )
+  }
+  // ============================================================================
+  // GALLERY SECTION - Disesuaikan dengan Home.tsx style
+  // =============================================================================
+  function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+    const { gallery } = data
+    return (
+      <section className="py-16 md:py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center max-w-3xl mx-auto mb-12 space-y-4"
+      >
+      <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Gallery</p>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+      {gallery.title}
+      </h2>
+      <p className="text-gray-500 text-lg leading-relaxed">
+      {gallery.description}
+      </p>
+      </motion.div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {gallery.items.map((item, idx) => (
+        <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: idx * 0.08 }}
+        className="group relative aspect-square bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-dashed border-[#E8D09E]/40 hover:border-[#C5A059]/60 flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-md"
+        >
+        <div className="text-6xl mb-3">{item.placeholder}</div>
+        <h4 className="font-bold text-[#1A1A1A] text-center mb-1">{item.title}</h4>
+        <p className="text-xs text-gray-500 text-center">{item.description}</p>
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+        <span className="text-[10px] font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2 py-0.5 rounded">
+        Coming Soon
+        </span>
+        </div>
+        </motion.div>
+      ))}
+      </div>
+      
+      <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="mt-8 text-center"
+      >
+      <p className="text-sm text-gray-500 italic">
+      * Gallery akan segera dilengkapi dengan foto produk asli dan dokumentasi implementasi
+      </p>
+      </motion.div>
+      </div>
+      </section>
+    )
+  }
+  // ============================================================================
+  // PRICING SECTION - Disesuaikan dengan Home.tsx style
+  // =============================================================================
+  function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+    const { pricing } = data
+    return (
+      <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+      <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center max-w-3xl mx-auto mb-12 space-y-4"
+      >
+      <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Pricing</p>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+      {pricing.title}
+      </h2>
+      <p className="text-gray-500 text-lg leading-relaxed">
+      {pricing.description}
+      </p>
+      </motion.div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {pricing.packages.map((pkg, idx) => (
+        <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: idx * 0.1 }}
+        className={`group relative bg-white rounded-3xl border ${
+          pkg.popular ? 'border-[#C5A059] shadow-xl' : 'border-gray-100 shadow-sm'
+} hover:shadow-xl transition-all duration-300 overflow-hidden p-8 ${
+          pkg.popular ? 'md:-translate-y-4' : ''
+}`}
+          >
+          {pkg.popular && (
+            <div className="absolute top-0 right-0 bg-gradient-to-r from-[#C5A059] to-[#8C6F3D] text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+            POPULAR
+            </div>
+          )}
+          
+          <div className="mb-6">
+          <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{pkg.name}</h3>
+          <p className="text-sm text-gray-500">{pkg.description}</p>
+          </div>
+          
+          <div className="space-y-3 mb-8">
+          {pkg.features.map((feature, fIdx) => (
+            <div key={fIdx} className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-[#8C6F3D] shrink-0 mt-0.5" />
+            <span className="text-sm text-gray-700">{feature}</span>
+            </div>
+          ))}
+          </div>
+          
+          <Link
+          to="/contact"
+          className={`w-full flex items-center justify-center gap-2 ${
+            pkg.popular
+            ? 'bg-[#1A1A1A] text-white hover:bg-[#8C6F3D]'
+            : 'bg-[#FAF8F5] text-[#1A1A1A] hover:bg-[#E8D09E]/30'
+} font-bold py-3 rounded-xl transition-all duration-300`}
+            >
+            <span>{pkg.cta}</span>
+            <ArrowRight className="w-4 h-4" />
+            </Link>
+            </motion.div>
+          ))}
+          </div>
+          
+          <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-8 text-center"
+          >
+          <p className="text-sm text-gray-500 italic">
+          * {pricing.note}
+          </p>
+          </motion.div>
+          </div>
+          </section>
+        )
+      }
+      // ============================================================================
+      // FAQ SECTION - Disesuaikan dengan Home.tsx style
+      // =============================================================================
+      function FAQDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+        const { faq } = data
+        const [openIndex, setOpenIndex] = React.useState<number | null>(0)
+        return (
+          <section className="py-16 md:py-24 bg-white relative">
+          <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 space-y-4"
+          >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">FAQ</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+          {faq.title}
+          </h2>
+          </motion.div>
+          
+          <div className="space-y-3">
+          {faq.items.map((item, idx) => (
+            <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.05 }}
+            className="bg-[#FAF8F5] rounded-2xl border border-gray-100 overflow-hidden hover:border-[#E8D09E]/40 transition-all"
+            >
+            <button
+            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+            className="w-full flex items-center justify-between gap-4 p-5 text-left"
+            >
+            <h3 className="font-bold text-[#1A1A1A] text-base md:text-lg pr-4">
+            {item.q}
+            </h3>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
+              openIndex === idx
+              ? 'bg-[#C5A059] text-white rotate-180'
+              : 'bg-white text-[#8C6F3D]'
+}`}>
+              <ChevronDown className="w-4 h-4" />
+              </div>
+              </button>
+              
+              {openIndex === idx && (
+                <div className="px-5 pb-5 pt-0">
+                <div className="pt-4 border-t border-gray-200">
+                <p className="text-sm text-gray-600 leading-relaxed">
+                {item.a}
+                </p>
+                </div>
+                </div>
+              )}
+              </motion.div>
+            ))}
+            </div>
+            </div>
+            </section>
+          )
+        }
+        // ============================================================================
+        // CTA SECTION - Disesuaikan dengan Home.tsx CTASection style
+        // =============================================================================
+        function CTADetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+          return (
+            <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+            <div className="max-w-5xl mx-auto px-4 md:px-8">
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+            >
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 rounded-full">
+            <Handshake className="w-4 h-4 text-[#E8D09E]" />
+            <span className="text-xs font-bold text-[#E8D09E] tracking-wider uppercase">Konsultasi Gratis</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+            Siap Melindungi <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+            Brand Anda?
+            </span>
+            </h2>
+            
+            <p className="text-gray-300 text-lg leading-relaxed">
+            Tim kami siap membantu Anda menemukan solusi hologram dengan QR yang tepat sesuai kebutuhan brand Anda.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#C5A059] text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#E8D09E] transition-all duration-300 shadow-lg hover:shadow-[#C5A059]/30 hover:-translate-y-0.5"
+            >
+            <span>Mulai Konsultasi</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+            to="/services"
+            className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+            >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Lihat Service Lain</span>
+            </Link>
+            </div>
+            </div>
+            </motion.div>
+            </div>
+            </section>
+          )
+        }
+        // ============================================================================
+        // RELATED SERVICES SECTION - Disesuaikan dengan Home.tsx ServicesSection style
+        // =============================================================================
+        function RelatedServicesSection() {
+          const relatedServices = [
+            {
+              id: 'tafeta',
+              icon: <Tag className="w-7 h-7" />,
+              title: 'Label Tafeta dengan QR',
+              subtitle: 'Fashion Solution',
+              desc: 'Label tafeta berkualitas tinggi dengan kode QR terintegrasi untuk industri fashion.',
+              gradient: 'from-[#C5A059]/10 to-[#E8D09E]/5',
+              iconBg: 'bg-[#E8D09E]/30',
+              iconColor: 'text-[#8C6F3D]',
+              accentBorder: 'border-[#E8D09E]/40'
+            },
+            {
+              id: 'nfc',
+              icon: <Nfc className="w-7 h-7" />,
+              title: 'Sticker ber-NFC',
+              subtitle: 'Smart Technology',
+              desc: 'Sticker dengan teknologi NFC untuk verifikasi instan via tap & go.',
+              gradient: 'from-blue-500/10 to-blue-500/[0.02]',
+              iconBg: 'bg-blue-100',
+              iconColor: 'text-blue-600',
+              accentBorder: 'border-blue-200'
+            },
+            {
+              id: 'printing',
+              icon: <Printer className="w-7 h-7" />,
+              title: 'Printing QR pada Kemasan',
+              subtitle: 'Direct Integration',
+              desc: 'Pencetakan QR langsung pada kemasan dengan integrasi driver printer.',
+              gradient: 'from-purple-500/10 to-purple-500/[0.02]',
+              iconBg: 'bg-purple-100',
+              iconColor: 'text-purple-600',
+              accentBorder: 'border-purple-200'
+            }
+          ]
+          return (
+            <section className="py-16 md:py-24 bg-white relative">
+            <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+            >
+            <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Related Services</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Layanan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Lainnya</span>
+            </h2>
+            <p className="text-gray-500 text-lg leading-relaxed">
+            Solusi marking lain yang mungkin sesuai dengan kebutuhan brand Anda.
+            </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedServices.map((service, idx) => (
+              <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group relative bg-white rounded-3xl border border-gray-100 hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8"
+              >
+              <Link to={`/services/${service.id}`} className="block">
+              <div className="flex items-start gap-4 mb-6">
+              <div className={`w-14 h-14 ${service.iconBg} ${service.iconColor} rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+              {service.icon}
+              </div>
+              <div>
+              <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+              {service.subtitle}
+              </span>
+              <h3 className="text-2xl font-bold text-[#1A1A1A] group-hover:text-[#8C6F3D] transition-colors">
+              {service.title}
+              </h3>
+              </div>
+              </div>
+              
+              <p className="text-gray-600 leading-relaxed mb-6 text-base">{service.desc}</p>
+              
+              <div className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm group-hover:gap-3 transition-all">
+              <span>Pelajari Lebih Lanjut</span>
+              <ArrowRight className="w-4 h-4" />
+              </div>
+              </Link>
+              </motion.div>
+            ))}
+            </div>
+            </div>
+            </section>
+          )
+        }
+        // ============================================================================
+        // MAIN PAGE
+        // =============================================================================
+        import React from 'react'
+        import AboutJoinUsCTA from '@/components/AboutJoinUs'
+        export default function ServiceHologramDetailPage_() {
+          const data = HOLOGRAM_SERVICE_DATA
+          return (
+            <>
+            <BreadcrumbSection serviceTitle={data.title} />
+            <HeroDetailSection data={data} />
+            <OverviewSection data={data} />
+            <FeaturesSection data={data} />
+            <SpecificationsSection data={data} />
+            <ImplementationSection data={data} />
+            <UseCasesSection data={data} />
+            <BenefitsSection data={data} />
+            <GallerySection data={data} />
+            <PricingSection data={data} />
+            <FAQDetailSection data={data} />
+            <CTADetailSection data={data} />
+            <RelatedServicesSection />
+            <AboutJoinUsCTA variant='about' />
+            </>
+          )
+        }

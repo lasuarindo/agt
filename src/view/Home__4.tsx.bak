@@ -1,0 +1,2043 @@
+'use client'
+import { useState, useMemo } from 'react'
+import { Link } from 'react-router'
+import { motion, useInView, AnimatePresence } from 'motion/react'
+import {
+  Shield, ShieldCheck, QrCode, Fingerprint, Zap, CheckCircle2,
+  ArrowRight, Globe, Users, Building2, Package, Tag, Sparkles,
+  Lock, Eye, Smartphone, MapPin, Mail, Phone, ChevronDown,
+  Star, TrendingUp, Clock, BadgeCheck, Layers, ScanLine,
+  Calendar, Target, Lightbulb, Rocket, ArrowUpRight, Menu,
+  X, Handshake, Award, Quote, Trophy
+} from 'lucide-react'
+import { logodev } from '@/utils/image'
+import CountUp from '@/vendor/react-countup'
+import appLogo from "/favicon.ico"
+import { compactParts } from '@/utils/number'
+import AboutJoinUsCTA from '@/components/AboutJoinUs'
+import AwardsCertificationsSection from '@/components/AwardsCertification'
+import { SupportersSimpleSection } from '@/components/SupportersSection'
+import InvestorsSection from '@/components/InvestorSection'
+import MediaCoverageSection, { MediaCoverageListSection, MediaCoverageSimpleSection } from '@/components/MediaCoverageSection'
+import ClientsSection from '@/components/ClientsSection'
+
+
+// ============================================================================
+// BRAND LOGO
+// ============================================================================
+const BrandLogo = ({ variant = 'dark' }: { variant?: 'dark' | 'light' }) => (
+  <Link to='/' className='inline-flex items-center gap-3 group'>
+    <div className="size-10 transition-transform duration-300 group-hover:scale-105">
+      <img src={appLogo} alt="AuthenticGuards Logo" className='size-full object-contain' />
+    </div>
+    <div className="flex flex-col">
+      <h2 className={`text-lg font-bold leading-tight tracking-tight transition-colors duration-300 ${
+        variant === 'light' ? 'text-white group-hover:text-[#E8D09E]' : 'text-[#1A1A1A] group-hover:text-[#8C6F3D]'
+      }`}>
+        AuthenticGuards
+      </h2>
+      <p className='text-xs font-medium text-[#8C6F3D] leading-tight'>
+        Technology
+      </p>
+    </div>
+  </Link>
+)
+
+// ============================================================================
+// HERO SECTION - V1
+// ============================================================================
+function HeroSection() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-5 mb-8"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-sm">
+            Sistem Anti-Counterfeit Pertama
+          </p>
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-[#1A1A1A] leading-[1.05] tracking-tight">
+            Melindungi Produk
+            {' '} <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Sejak 2017
+            </span>
+            {' '} <br className="hidden md:block" />
+            di Asia Pasifik
+          </h1>
+          <p className="sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            PT. Autentikasi Garda Teknologi hadir sebagai <strong className="text-[#1A1A1A]">solusi autentikasi pertama</strong> di kawasan Asia Pasifik. Dengan teknologi scratch PIN, QR code unik, dan database real-time, kami telah dipercaya oleh ratusan brand untuk melindungi produk dan konsumen.
+          </p>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Hubungi Tim Kami</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/about"
+            className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+          >
+            <span>Kenali Kami</span>
+            <ChevronDown className="w-5 h-5" />
+          </Link>
+        </motion.div>
+
+        {/* Inline Stats - Minimal, tidak dalam card */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Berkiprah
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Partner
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// HERO SECTION
+// ============================================================================
+function HeroSectionNew() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-6 mb-8"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-sm">
+            Standar Baru Autentikasi & Perlindungan Merek
+          </p>
+          
+          {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.05] tracking-tight">
+            Menghadirkan
+            {' '} <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Standar Baru
+            </span> 
+            {' '}
+            <br className="hidden md:block" />
+            dalam Autentikasi Produk
+          </h1> */}
+          
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-[#1A1A1A] leading-[1.05] tracking-tight">
+            Melindungi Produk
+            {' '} <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Sejak 2017
+            </span>
+            {' '} <br className="hidden md:block" />
+            di Asia Pasifik
+          </h1>
+          
+          <p className="sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Pionir teknologi autentikasi di Asia Pasifik yang telah membantu <strong className="text-[#1A1A1A]">ratusan brand</strong> memastikan keaslian produk dan membangun ekosistem perdagangan yang <strong className="text-[#1A1A1A]">aman, transparan, dan berkelanjutan</strong>.
+          </p>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Konsultasi Sekarang</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/about"
+            className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+          >
+            <span>Kenali Kami</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
+
+        {/* Inline Stats - Minimal, tidak dalam card */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Berkiprah
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Partner
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// HERO SECTION
+// ============================================================================
+function HeroSectionNew_() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      {/* Background layers */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline - Gabungan: Punchy + Visioner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-6 mb-8"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-sm">
+            Standar Baru Autentikasi & Perlindungan Merek
+          </p>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight">
+            Lindungi Merek Anda dari
+            {' '}<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Pemalsuan Produk
+            </span>
+          </h1>
+          
+          {/* Subheadline - Compact tapi informatif (50 kata) */}
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Teknologi autentikasi <strong className="text-[#1A1A1A]">terpercaya di Asia Pasifik</strong> yang telah membantu <strong className="text-[#1A1A1A]">500+ brand</strong> dari korporasi hingga UMKM memastikan keaslian produk, meningkatkan visibilitas rantai pasok, dan membangun <strong className="text-[#1A1A1A]">kepercayaan konsumen</strong> yang lebih kuat.
+          </p>
+        </motion.div>
+
+        {/* CTA Buttons - Dual purpose: B2B + B2C */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Konsultasi Gratis</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+          >
+            <span>Lihat Solusi Kami</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
+
+        {/* Inline Stats - Professional labels */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Pengalaman
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Terpercaya
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// HERO SECTION
+// ============================================================================
+function HeroSectionNew__() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline - Punchy & Direct (from HeroSectionNew) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-6 mb-8"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-sm">
+            Standar Baru Autentikasi & Perlindungan Merek
+          </p>
+          
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-[#1A1A1A] leading-[1.05] tracking-tight">
+            Melindungi Produk
+            {' '} <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Sejak 2017
+            </span>
+            {' '} <br className="hidden md:block" />
+            di Asia Pasifik
+          </h1>
+          
+          {/* Subheadline - Hybrid: Compact tapi komprehensif */}
+          <p className="sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Sebagai pionir teknologi autentikasi di Asia Pasifik, kami membantu <strong className="text-[#1A1A1A]">korporasi hingga UMKM</strong> memastikan keaslian produk, meningkatkan visibilitas rantai pasok, serta membangun ekosistem perdagangan yang <strong className="text-[#1A1A1A]">aman, transparan, dan berkelanjutan</strong>.
+          </p>
+        </motion.div>
+
+        {/* CTA Buttons - Kombinasi terbaik */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Konsultasi Sekarang</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+          >
+            <span>Lihat Solusi Kami</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
+
+        {/* Inline Stats - Korporat-friendly labels */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Pengalaman
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Terpercaya
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// HERO SECTION - Corporate Compact (Balanced Version)
+// ============================================================================
+function HeroSectionNewFinal() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline & Subheadline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-6 mb-8"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-sm">
+            Standar Baru Autentikasi & Perlindungan Merek
+          </p>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight">
+            Lindungi Merek Anda dari
+            {' '}<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Pemalsuan Produk
+            </span>
+          </h1>
+          
+          {/* Subheadline - Compact Corporate (~55 kata, 1 paragraf padat) */}
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Pionir teknologi autentikasi di Asia Pasifik yang telah membantu <strong className="text-[#1A1A1A]">korporasi, distributor, dan UMKM</strong> memastikan keaslian produk serta meningkatkan visibilitas rantai pasok. Kami menggabungkan teknologi keamanan produk, keterlacakan digital, dan analitik data untuk menciptakan ekosistem perdagangan yang <strong className="text-[#1A1A1A]">aman, transparan, dan berkelanjutan</strong>.
+          </p>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Konsultasi Gratis</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+          >
+            <span>Lihat Solusi Kami</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
+
+        {/* Inline Stats */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Pengalaman
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Terpercaya
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// HERO SECTION - Updated dengan narasi korporat baru
+// ============================================================================
+function HeroSectionCorporate() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline - Updated dengan narasi baru */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-6 mb-8"
+        >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight">
+            Sejak 2017, Menghadirkan
+            {' '}<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Standar Baru
+            </span>
+            {' '}dalam Autentikasi
+            <br className="hidden md:block" />
+            dan Perlindungan Merek
+          </h1>
+          
+          {/* Subheadline - 2 paragraf ringkas dari 3 paragraf asli */}
+          <div className="space-y-4 max-w-4xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              AuthenticGuards Technology merupakan salah satu <strong className="text-[#1A1A1A]">pionir pengembangan teknologi autentikasi dan anti-counterfeit di Asia Pasifik</strong>. Selama lebih dari delapan tahun, kami telah membantu korporasi, pemilik merek, distributor, dan UMKM memastikan keaslian produk, meningkatkan visibilitas rantai pasok, serta membangun kepercayaan yang lebih kuat dengan konsumen.
+            </p>
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              Dengan menggabungkan teknologi keamanan produk, keterlacakan digital, dan analitik data, kami terus mendorong terciptanya ekosistem perdagangan yang lebih <strong className="text-[#1A1A1A]">aman, transparan, dan berkelanjutan</strong> bagi seluruh pelaku usaha.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* CTA Buttons - Adjusted untuk tone korporat */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Konsultasi Sekarang</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
+          >
+            <span>Lihat Solusi Kami</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
+
+        {/* Inline Stats - Tetap relevan dengan narasi baru */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Pengalaman
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Terpercaya
+          </span>
+          <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-1.5">
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// HERO SECTION - Versi Ringkas & Impactful
+// ============================================================================
+function HeroSectionSimple() {
+  return (
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 w-full text-center">
+        {/* Pioneer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-[#C5A059]/40 px-5 py-2.5 rounded-full shadow-sm mb-8"
+        >
+          <div className="flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-[#C5A059]" />
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+          </div>
+          <div className="w-px h-4 bg-[#C5A059]/30" />
+          <p className="text-sm text-[#1A1A1A] font-semibold">
+            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+          </p>
+        </motion.div>
+
+        {/* Headline - Lebih Punchy & Direct */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-6 mb-10"
+        >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.15] tracking-tight">
+            Lindungi Merek Anda dari{' '}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+              Pemalsuan Produk
+            </span>
+          </h1>
+          
+          {/* Subheadline - 1 Kalimat Ringkas */}
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Teknologi autentikasi <strong className="text-[#1A1A1A]">terpercaya di Asia Pasifik</strong> yang telah membantu <strong className="text-[#1A1A1A]">500+ brand</strong> memastikan keaslian produk dan membangun kepercayaan konsumen.
+          </p>
+        </motion.div>
+
+        {/* CTA Button - Single Primary Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+          >
+            <span>Konsultasi Gratis</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
+
+        {/* Trust Indicators - Minimal */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-600"
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+            <span>ISO 27001 Certified</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+            <span>99.9% Akurasi</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+            <span>8+ Tahun Pengalaman</span>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+
+// ============================================================================
+// SUPPORTED BY SECTION
+// ============================================================================
+function SupportedBySection() {
+  const supporters = [
+    {
+      name: 'Telkom Indonesia',
+      tagline: 'Technology Partner',
+      initial: 'T',
+      gradient: 'from-blue-500 to-blue-700',
+      logo: logodev('telkom.co.id')
+    },
+    {
+      name: 'Indigo',
+      tagline: 'Innovation Partner',
+      initial: 'I',
+      gradient: 'from-purple-500 to-pink-500'
+    },
+    {
+      name: 'Viisa',
+      tagline: '',
+      initial: 'V',
+      gradient: 'from-[#1A1F71] to-[#F7B600]',
+      logo: logodev('viisa.vn')
+    }
+  ]
+
+  return (
+    <section className="py-16 md:py-20 bg-white relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="relative max-w-6xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest mb-2">
+            Didukung Oleh
+          </p>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Mitra Strategis Kami
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {supporters.map((supporter, idx) => (
+            <motion.div
+              key={supporter.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group relative bg-gradient-to-br from-white to-[#FAF8F5] rounded-2xl p-6 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex items-center gap-4">
+                {supporter.logo ? (
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0 bg-white border border-gray-100 overflow-hidden">
+                    <img 
+                      src={supporter.logo} 
+                      alt={`${supporter.name} logo`}
+                      className="w-full h-full object-contain p-2"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none'
+                        const parent = e.currentTarget.parentElement
+                        if (parent) {
+                          parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${supporter.initial}</span>`
+                          parent.className = `w-16 h-16 bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
+                        }
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-16 h-16 bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0`}>
+                    <span className="text-white font-extrabold text-2xl">{supporter.initial}</span>
+                  </div>
+                )}
+
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-bold text-[#1A1A1A] mb-0.5 truncate">
+                    {supporter.name}
+                  </h3>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                    {supporter.tagline}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-8 text-center"
+        >
+          <p className="text-xs text-gray-400 flex items-center justify-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+            <span>Standar Keamanan Global</span>
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// ABOUT SECTION + TIMELINE
+// ============================================================================
+function AboutSection() {
+  const timeline = [
+    { year: '2017', title: 'Berdiri', desc: 'PT. Autentikasi Garda Teknologi didirikan di Bandung dengan visi menjadi pelopor sistem anti-counterfeit di Asia Pasifik.', icon: <Rocket className="w-5 h-5" /> },
+    { year: '2019', title: 'Ekspansi Produk', desc: 'Meluncurkan teknologi scratch PIN dan sticker hologram pertama yang terintegrasi dengan database real-time.', icon: <Lightbulb className="w-5 h-5" /> },
+    { year: '2021', title: '100+ Brand Partner', desc: 'Mencapai milestone 100 brand partner dari berbagai industri, dari fashion hingga farmasi.', icon: <Users className="w-5 h-5" /> },
+    { year: '2023', title: 'Mobile Platform', desc: 'Meluncurkan aplikasi mobile untuk verifikasi produk yang dapat diakses oleh konsumen secara langsung.', icon: <Smartphone className="w-5 h-5" /> },
+    { year: '2025', title: '500+ Brand & Regional', desc: 'Memperluas jangkauan ke seluruh Asia Pasifik dengan lebih dari 500 brand partner aktif.', icon: <Globe className="w-5 h-5" /> }
+  ]
+
+  return (
+    <section id="about" className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6 lg:sticky lg:top-32"
+          >
+            <div>
+              <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Tentang Kami</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
+                Delapan Tahun <br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
+                  Melindungi Keaslian
+                </span>
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                Sejak 2017, AuthenticGuards Technology berkomitmen untuk memberantas produk palsu dan membangun ekosistem perdagangan yang aman di Asia Pasifik.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  icon: <Target className="w-5 h-5" />,
+                  title: "Misi Kami",
+                  desc: "Menyediakan teknologi autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh brand di seluruh Asia Pasifik."
+                },
+                {
+                  icon: <Eye className="w-5 h-5" />,
+                  title: "Visi Kami",
+                  desc: "Menjadi standar global dalam sistem anti-counterfeit yang melindungi produk dan konsumen di seluruh dunia."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4 p-5 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-11 h-11 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#1A1A1A] mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
+            
+            <div className="space-y-6">
+              {timeline.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative pl-16"
+                >
+                  <div className="absolute left-0 top-0 w-12 h-12 bg-white border-2 border-[#C5A059] rounded-xl flex items-center justify-center text-[#8C6F3D] shadow-md z-10">
+                    {item.icon}
+                  </div>
+                  
+                  <div className="bg-white rounded-2xl p-5 border border-[#E8D09E]/30 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xs font-extrabold text-[#C5A059] bg-[#E8D09E]/20 px-2.5 py-1 rounded-md tracking-wider">
+                        {item.year}
+                      </span>
+                      <h3 className="font-bold text-[#1A1A1A]">{item.title}</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// CLIENTS SECTION - Stats dihilangkan
+// ============================================================================
+// function ClientsSection() {
+//   const [activeFilter, setActiveFilter] = useState<string>('all')
+  
+//   const clients = [
+//     { name: 'JuiceNation', industry: 'F&B & Vaping', since: '2019', category: 'fb' },
+//     { name: 'VaporIndo', industry: 'Lifestyle', since: '2019', category: 'lifestyle' },
+//     { name: 'FashionID', industry: 'Fashion & Apparel', since: '2020', category: 'fashion' },
+//     { name: 'BeautyLab', industry: 'Kosmetik & Perawatan', since: '2020', category: 'beauty' },
+//     { name: 'SportMax', industry: 'Sportswear & Sneakers', since: '2021', category: 'fashion' },
+//     { name: 'TechGuard', industry: 'Elektronik & Gadget', since: '2022', category: 'tech' },
+//     { name: 'PharmaCare', industry: 'Farmasi & Kesehatan', since: '2022', category: 'health' },
+//     { name: 'LuxBrand', industry: 'Luxury Goods', since: '2023', category: 'lifestyle' },
+//   ]
+  
+//   const filters = [
+//     { id: 'all', label: 'Semua Industri' },
+//     { id: 'fb', label: 'F&B' },
+//     { id: 'fashion', label: 'Fashion' },
+//     { id: 'beauty', label: 'Kecantikan' },
+//     { id: 'tech', label: 'Teknologi' },
+//     { id: 'health', label: 'Kesehatan' },
+//     { id: 'lifestyle', label: 'Lifestyle' },
+//   ]
+  
+//   const filteredClients = activeFilter === 'all' 
+//     ? clients 
+//     : clients.filter(c => c.category === activeFilter)
+  
+//   return (
+//     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      
+//       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center mb-12 space-y-4"
+//         >
+//           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+//             <ShieldCheck className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Mitra Implementasi</span>
+//           </div>
+          
+//           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+//             Brand yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span> pada Kami
+//           </h2>
+//           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+//             Lebih dari 500 brand telah mengimplementasikan teknologi autentikasi AuthenticGuards untuk melindungi produk dan membangun kepercayaan konsumen.
+//           </p>
+//         </motion.div>
+
+//         {/* Filter Pills */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="flex flex-wrap justify-center gap-2 mb-10"
+//         >
+//           {filters.map((filter) => (
+//             <button
+//               key={filter.id}
+//               onClick={() => setActiveFilter(filter.id)}
+//               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+//                 activeFilter === filter.id
+//                   ? 'bg-[#1A1A1A] text-white shadow-md'
+//                   : 'bg-[#FAF8F5] text-gray-600 hover:bg-[#E8D09E]/20 hover:text-[#8C6F3D]'
+//               }`}
+//             >
+//               {filter.label}
+//             </button>
+//           ))}
+//         </motion.div>
+
+//         {/* Clients Grid */}
+//         <motion.div 
+//           layout
+//           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+//         >
+//           <AnimatePresence mode="popLayout">
+//             {filteredClients.map((client, idx) => (
+//               <motion.div
+//                 key={client.name}
+//                 layout
+//                 initial={{ opacity: 0, scale: 0.9 }}
+//                 animate={{ opacity: 1, scale: 1 }}
+//                 exit={{ opacity: 0, scale: 0.9 }}
+//                 transition={{ duration: 0.3, delay: idx * 0.05 }}
+//                 className="group relative bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
+//               >
+//                 <div className="flex items-start gap-3">
+//                   <div className="w-12 h-12 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+//                     <span className="text-[#E8D09E] font-extrabold text-lg">{client.name.charAt(0)}</span>
+//                   </div>
+                  
+//                   <div className="flex-1 min-w-0">
+//                     <h3 className="font-bold text-[#1A1A1A] text-base mb-1 truncate group-hover:text-[#8C6F3D] transition-colors">
+//                       {client.name}
+//                     </h3>
+//                     <p className="text-xs text-gray-500 mb-2">{client.industry}</p>
+//                     <div className="flex items-center gap-1.5 text-[10px] text-gray-400">
+//                       <Calendar className="w-3 h-3" />
+//                       <span className="font-semibold">Sejak {client.since}</span>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+//                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </AnimatePresence>
+//         </motion.div>
+
+//         {/* CTA */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: 0.3 }}
+//           className="mt-12 text-center"
+//         >
+//           <p className="text-sm text-gray-500 mb-4">
+//             Bergabunglah dengan ratusan brand yang telah melindungi produknya
+//           </p>
+//           <Link 
+//             to="/contact" 
+//             className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+//           >
+//             <span>Mulai Kerjasama</span>
+//             <ArrowRight className="w-4 h-4" />
+//           </Link>
+//         </motion.div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ============================================================================
+// SERVICES SECTION - Bento Grid dengan Featured Services
+// ============================================================================
+function ServicesSection() {
+  const services = [
+    {
+      id: 'hologram',
+      icon: <Tag className="w-7 h-7" />,
+      title: "Sticker Hologram",
+      subtitle: "Flagship Product",
+      desc: "Solusi autentikasi paling populer kami. Sticker hologram premium dengan QR code unik dan scratch PIN 6 digit yang terintegrasi dengan database real-time.",
+      highlights: [
+        { label: "Produk Terverifikasi", value: "10M+" },
+        { label: "Tingkat Akurasi", value: "99.9%" }
+      ],
+      industries: ["Semua Industri", "FMCG", "Elektronik", "Farmasi"],
+      gradient: "from-emerald-500/10 to-emerald-500/[0.02]",
+      iconBg: "bg-emerald-100",
+      iconColor: "text-emerald-600",
+      accentBorder: "border-emerald-200",
+      size: "large"
+    },
+    {
+      id: 'garment',
+      icon: <Layers className="w-6 h-6" />,
+      title: "Garment Label",
+      desc: "Label tekstil khusus untuk industri fashion dengan integrasi QR code dan scratch PIN yang tahan cuci dan estetis.",
+      industries: ["Fashion", "Apparel", "Footwear"],
+      gradient: "from-[#C5A059]/10 to-[#E8D09E]/5",
+      iconBg: "bg-[#E8D09E]/30",
+      iconColor: "text-[#8C6F3D]",
+      accentBorder: "border-[#E8D09E]/40",
+      size: "small"
+    },
+    {
+      id: 'supply',
+      icon: <Lock className="w-6 h-6" />,
+      title: "Supply Chain Security",
+      desc: "Amankan rantai pasok dari hulu ke hilir dengan sistem tracking dan verifikasi di setiap titik distribusi.",
+      industries: ["Distributor", "Manufacturer", "Logistics"],
+      gradient: "from-purple-500/10 to-purple-500/[0.02]",
+      iconBg: "bg-purple-100",
+      iconColor: "text-purple-600",
+      accentBorder: "border-purple-200",
+      size: "small"
+    },
+    {
+      id: 'protection',
+      icon: <Shield className="w-7 h-7" />,
+      title: "Brand Protection",
+      subtitle: "Enterprise Solution",
+      desc: "Solusi komprehensif untuk melindungi reputasi brand dari produk palsu. Dilengkapi dashboard analytics real-time dan sistem alert otomatis.",
+      highlights: [
+        { label: "Brand Dilindungi", value: "500+" },
+        { label: "Response Time", value: "<1s" }
+      ],
+      industries: ["Enterprise", "Premium Brand", "Luxury Goods"],
+      gradient: "from-blue-500/10 to-blue-500/[0.02]",
+      iconBg: "bg-blue-100",
+      iconColor: "text-blue-600",
+      accentBorder: "border-blue-200",
+      size: "large"
+    }
+  ]
+
+  return (
+    <section id="services" className="py-16 md:py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Layanan Kami</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Solusi Anti-Counterfeit <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Terlengkap</span>
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Berbagai layanan autentikasi yang dirancang khusus untuk melindungi brand dan kepuasan konsumen di Asia Pasifik.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((service, idx) => {
+            const isLarge = service.size === 'large'
+            
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className={`group relative bg-white rounded-3xl border ${service.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${
+                  isLarge ? 'p-8 md:p-10' : 'p-6 md:p-8'
+                }`}
+              >
+                <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-14 h-14 ${service.iconBg} ${service.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                        {service.icon}
+                      </div>
+                      <div>
+                        {service.subtitle && (
+                          <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+                            {service.subtitle}
+                          </span>
+                        )}
+                        <h3 className={`${isLarge ? 'text-2xl' : 'text-xl'} font-bold text-[#1A1A1A] mb-2`}>
+                          {service.title}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    {isLarge && (
+                      <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Popular</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <p className={`text-gray-600 leading-relaxed mb-6 ${isLarge ? 'text-base' : 'text-sm'}`}>
+                    {service.desc}
+                  </p>
+
+                  {service.highlights && isLarge && (
+                    <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100">
+                      {service.highlights.map((stat, sIdx) => (
+                        <div key={sIdx} className="text-center">
+                          <p className="text-2xl font-extrabold text-[#1A1A1A] mb-1">{stat.value}</p>
+                          <p className="text-xs text-gray-500 font-medium">{stat.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {service.industries && (
+                    <div className="mb-6">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+                        Cocok untuk:
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {service.industries.map((industry, iIdx) => (
+                          <span 
+                            key={iIdx}
+                            className="text-xs font-semibold text-gray-600 bg-gray-100 px-3 py-1.5 rounded-full hover:bg-[#E8D09E]/20 hover:text-[#8C6F3D] transition-colors"
+                          >
+                            {industry}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm hover:text-[#6b5530] transition-colors group/link"
+                  >
+                    <span>Pelajari Lebih Lanjut</span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// TECHNOLOGY BENTO GRID
+// ============================================================================
+function TechnologySection() {
+  const features = [
+    {
+      id: 'triple-layer',
+      icon: <Shield className="w-7 h-7" />,
+      title: "Keamanan Triple-Layer",
+      subtitle: "Core Technology",
+      desc: "Sistem keamanan berlapis yang menggabungkan tiga teknologi autentikasi dalam satu label. Setiap lapisan bekerja sinergis untuk menciptakan proteksi yang hampir mustahil dipalsukan.",
+      highlights: [
+        { label: "Tingkat Keamanan", value: "99.9%" },
+        { label: "Waktu Verifikasi", value: "<1s" }
+      ],
+      gradient: "from-emerald-500/10 to-emerald-500/[0.02]",
+      iconBg: "bg-emerald-100",
+      iconColor: "text-emerald-600",
+      accentBorder: "border-emerald-200",
+      size: "large"
+    },
+    {
+      id: 'instant',
+      icon: <Zap className="w-6 h-6" />,
+      title: "Verifikasi Instan",
+      desc: "Scan sekali untuk verifikasi instan dalam hitungan milidetik tanpa perlu koneksi internet stabil.",
+      gradient: "from-amber-500/10 to-amber-500/[0.02]",
+      iconBg: "bg-amber-100",
+      iconColor: "text-amber-600",
+      accentBorder: "border-amber-200",
+      size: "small"
+    },
+    {
+      id: 'mobile',
+      icon: <Smartphone className="w-6 h-6" />,
+      title: "Mobile Friendly",
+      desc: "Akses verifikasi dari smartphone kapan saja dan di mana saja dengan UI yang intuitif.",
+      gradient: "from-blue-500/10 to-blue-500/[0.02]",
+      iconBg: "bg-blue-100",
+      iconColor: "text-blue-600",
+      accentBorder: "border-blue-200",
+      size: "small"
+    },
+    {
+      id: 'anti-duplicate',
+      icon: <Eye className="w-6 h-6" />,
+      title: "Anti-Duplikasi",
+      desc: "Sistem validasi yang memastikan setiap kode hanya bisa diverifikasi satu kali untuk mencegah penyalahgunaan.",
+      gradient: "from-purple-500/10 to-purple-500/[0.02]",
+      iconBg: "bg-purple-100",
+      iconColor: "text-purple-600",
+      accentBorder: "border-purple-200",
+      size: "small"
+    },
+    {
+      id: 'hologram',
+      icon: <Sparkles className="w-6 h-6" />,
+      title: "Hologram Premium",
+      desc: "Teknologi hologram yang tidak dapat dipalsukan dengan visual effect yang menarik dan sulit ditiru.",
+      gradient: "from-pink-500/10 to-pink-500/[0.02]",
+      iconBg: "bg-pink-100",
+      iconColor: "text-pink-600",
+      accentBorder: "border-pink-200",
+      size: "small"
+    },
+    {
+      id: 'analytics',
+      icon: <TrendingUp className="w-7 h-7" />,
+      title: "Analytics Dashboard",
+      subtitle: "Enterprise Feature",
+      desc: "Dashboard analitik real-time yang komprehensif untuk monitoring semua produk, klaim, dan aktivitas verifikasi. Dilengkapi dengan alert system dan reporting otomatis.",
+      highlights: [
+        { label: "Real-time Sync", value: "100%" },
+        { label: "Data Retention", value: "5+ Tahun" }
+      ],
+      gradient: "from-[#C5A059]/10 to-[#E8D09E]/5",
+      iconBg: "bg-[#E8D09E]/30",
+      iconColor: "text-[#8C6F3D]",
+      accentBorder: "border-[#E8D09E]/40",
+      size: "large"
+    }
+  ]
+
+  return (
+    <section id="technology" className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Teknologi Kami</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Dibangun dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Teknologi Terdepan</span>
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Setiap fitur dirancang untuk memberikan jaminan keaslian produk yang tak tertandingi.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {features.map((feature, idx) => {
+            const isLarge = feature.size === 'large'
+            
+            return (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className={`group relative bg-white rounded-3xl border ${feature.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${
+                  isLarge ? 'md:col-span-2 p-8 md:p-10' : 'p-6 md:p-8'
+                }`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-14 h-14 ${feature.iconBg} ${feature.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                        {feature.icon}
+                      </div>
+                      <div>
+                        {'subtitle' in feature && feature.subtitle && (
+                          <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+                            {feature.subtitle}
+                          </span>
+                        )}
+                        <h3 className={`${isLarge ? 'text-2xl' : 'text-xl'} font-bold text-[#1A1A1A] mb-2`}>
+                          {feature.title}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    {isLarge && (
+                      <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Featured</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <p className={`text-gray-600 leading-relaxed mb-6 ${isLarge ? 'text-base' : 'text-sm'}`}>
+                    {feature.desc}
+                  </p>
+
+                  {'highlights' in feature && feature.highlights && isLarge && (
+                    <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100">
+                      {feature.highlights.map((stat, sIdx) => (
+                        <div key={sIdx} className="text-center">
+                          <p className="text-2xl font-extrabold text-[#1A1A1A] mb-1">{stat.value}</p>
+                          <p className="text-xs text-gray-500 font-medium">{stat.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm hover:text-[#6b5530] transition-colors group/link"
+                  >
+                    <span>Pelajari Lebih Lanjut</span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// STATS SECTION - Satu-satunya section stats yang komprehensif
+// ============================================================================
+function StatsSection() {
+  const stats = useMemo(() => {
+    const rawStats = [
+      { value: 8, suffix: '+', label: 'Tahun Berkiprah', icon: <Calendar className="w-6 h-6" />, desc: 'Sejak 2017 hingga sekarang' },
+      { value: 500, suffix: '+', label: 'Brand Partner', icon: <Building2 className="w-6 h-6" />, desc: 'Dari berbagai industri' },
+      { value: 10000000, suffix: '+', label: 'Produk Terverifikasi', icon: <Package className="w-6 h-6" />, desc: 'Hingga hari ini' },
+      { value: 99.9, suffix: '%', label: 'Akurasi Sistem', icon: <BadgeCheck className="w-6 h-6" />, desc: 'Verifikasi real-time' }
+    ];
+    
+    return rawStats.map(v => {
+      if (v.value > 999) {
+        const part = compactParts(v.value);
+        return {
+          ...v,
+          value: part.value,
+          suffix: `${part.compact}${v.suffix}`,
+          decimal: +!Number.isInteger(v.value)
+        }
+      }
+      return { ...v, decimal: +!Number.isInteger(v.value) }
+    })
+  }, []);
+
+  return (
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Dampak Kami</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            Angka yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+          </h2>
+          <p className="text-gray-400 text-lg leading-relaxed">
+            Delapan tahun dedikasi dalam melindungi brand dan konsumen di Asia Pasifik.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {stats.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 hover:border-[#E8D09E]/30 transition-all group"
+            >
+              <div className="w-12 h-12 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                {stat.icon}
+              </div>
+              <p className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
+                <CountUp start={0} end={stat.value} suffix={stat.suffix} decimals={stat.decimal} />
+              </p>
+              <p className="text-sm font-bold text-[#E8D09E] mb-1">{stat.label}</p>
+              <p className="text-xs text-gray-400">{stat.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// INVESTORS SECTION
+// ============================================================================
+// function InvestorsSection() {
+//   const investorSlots = [1, 2, 3, 4, 5, 6]
+
+//   return (
+//     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+      
+//       <div className="relative max-w-6xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center mb-12 space-y-3"
+//         >
+//           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+//             <TrendingUp className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Investor & Backer</span>
+//           </div>
+          
+//           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
+//             Didukung oleh Investor Terpercaya
+//           </h2>
+//           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+//             Kami bangga didukung oleh para investor dan backer yang percaya pada visi kami untuk merevolusi industri anti-counterfeit di Asia Pasifik.
+//           </p>
+//         </motion.div>
+
+//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+//           {investorSlots.map((slot, idx) => (
+//             <motion.div
+//               key={slot}
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true, margin: "-50px" }}
+//               transition={{ duration: 0.5, delay: idx * 0.08 }}
+//               className="group relative aspect-square bg-[#FAF8F5] rounded-2xl border-2 border-dashed border-[#E8D09E]/40 hover:border-[#C5A059]/60 flex flex-col items-center justify-center p-4 transition-all duration-300 hover:shadow-md hover:bg-white"
+//             >
+//               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-3 group-hover:bg-[#E8D09E]/20 transition-colors shadow-sm">
+//                 <TrendingUp className="w-6 h-6 text-[#E8D09E] group-hover:text-[#C5A059] transition-colors" />
+//               </div>
+              
+//               <p className="text-xs font-semibold text-gray-400 text-center group-hover:text-[#8C6F3D] transition-colors">
+//                 Coming Soon
+//               </p>
+//             </motion.div>
+//           ))}
+//         </div>
+
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: 0.4 }}
+//           className="mt-10 text-center"
+//         >
+//           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-[#FAF8F5] rounded-2xl p-5 border border-[#E8D09E]/30 shadow-sm">
+//             <div className="flex items-center gap-3">
+//               <div className="w-10 h-10 bg-[#E8D09E]/20 rounded-xl flex items-center justify-center">
+//                 <Award className="w-5 h-5 text-[#8C6F3D]" />
+//               </div>
+//               <div className="text-left">
+//                 <p className="text-sm font-bold text-[#1A1A1A]">Tertarik Berinvestasi?</p>
+//                 <p className="text-xs text-gray-500">Bergabunglah dalam perjalanan kami merevolusi industri anti-counterfeit</p>
+//               </div>
+//             </div>
+//             <Link
+//               to="/contact"
+//               className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+//             >
+//               <span>Hubungi Tim Kami</span>
+//               <ArrowRight className="w-4 h-4" />
+//             </Link>
+//           </div>
+//         </motion.div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ============================================================================
+// TESTIMONIALS SECTION - Stats dihilangkan
+// ============================================================================
+function TestimonialsSection() {
+  const testimonials = [
+    {
+      id: 'featured',
+      quote: "Sebelum menggunakan AuthenticGuards, kami kehilangan hampir 15% pendapatan akibat produk palsu yang beredar di pasaran. Setelah implementasi sistem verifikasi mereka selama 6 bulan, keluhan konsumen turun 80% dan kepercayaan retailer terhadap brand kami meningkat signifikan. ROI-nya luar biasa.",
+      name: "Rizky Pratama",
+      role: "Chief Operating Officer",
+      industry: "F&B & Vaping",
+      company: "Brand Rokok Elektrik Terkemuka",
+      rating: 5,
+      size: 'large'
+    },
+    {
+      id: 'compact-1',
+      quote: "Integrasi API-nya sangat mudah. Tim teknis kami bisa mengimplementasikan dalam 2 hari tanpa hambatan berarti.",
+      name: "Diana Kusuma",
+      role: "Head of Digital",
+      industry: "Fashion & Apparel",
+      rating: 5,
+      size: 'small'
+    },
+    {
+      id: 'compact-2',
+      quote: "Dashboard analytics-nya membantu kami memetakan titik-titik rawan pemalsuan di rantai distribusi. Game changer.",
+      name: "Hendra Wijaya",
+      role: "Supply Chain Manager",
+      industry: "Elektronik & Gadget",
+      rating: 5,
+      size: 'small'
+    }
+  ]
+
+  const featured = testimonials.find(t => t.size === 'large')
+  const compact = testimonials.filter(t => t.size === 'small')
+
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#E8D09E]/10 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-12 space-y-4"
+        >
+          <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+            <Quote className="w-4 h-4 text-[#8C6F3D]" />
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Testimoni Klien</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Dipercaya oleh <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Ratusan Brand</span>
+          </h2>
+          <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Dengarkan langsung dari para pemimpin industri yang telah merasakan dampak nyata dari solusi autentikasi kami.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {featured && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="md:col-span-2 group relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-10 text-white shadow-xl overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
+              
+              <div className="relative z-10 h-full flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full">
+                    <Sparkles className="w-3.5 h-3.5 text-[#E8D09E]" />
+                    <span className="text-[10px] font-bold text-[#E8D09E] uppercase tracking-wider">Featured Story</span>
+                  </div>
+                  <Quote className="w-10 h-10 text-[#E8D09E]/30" />
+                </div>
+
+                <div className="flex gap-1 mb-5">
+                  {[...Array(featured.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+
+                <blockquote className="text-base md:text-lg text-gray-200 leading-relaxed mb-8 flex-1">
+                  "{featured.quote}"
+                </blockquote>
+
+                <div className="flex items-center justify-between pt-6 border-t border-white/10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-full flex items-center justify-center text-[#1A1A1A] font-extrabold text-lg shadow-lg">
+                      {featured.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-white">{featured.name}</p>
+                      <p className="text-xs text-gray-400">{featured.role}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="hidden sm:block text-right">
+                    <p className="text-xs font-bold text-[#E8D09E] uppercase tracking-wider">{featured.industry}</p>
+                    <p className="text-[11px] text-gray-500 mt-0.5">{featured.company}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          <div className="flex flex-col gap-4 md:gap-6">
+            {compact.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: (idx + 1) * 0.1 }}
+                className="group relative bg-white rounded-3xl p-6 border border-[#E8D09E]/30 hover:border-[#C5A059]/50 hover:shadow-lg transition-all duration-300 flex-1 flex flex-col"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <Quote className="w-6 h-6 text-[#E8D09E]" />
+                  <div className="flex gap-0.5">
+                    {[...Array(item.rating)].map((_, i) => (
+                      <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                </div>
+
+                <blockquote className="text-sm text-gray-700 leading-relaxed mb-5 flex-1">
+                  "{item.quote}"
+                </blockquote>
+
+                <div className="pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 bg-gradient-to-br from-[#E8D09E]/50 to-[#C5A059]/50 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      {item.name.charAt(0)}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-[#1A1A1A] text-sm truncate">{item.name}</p>
+                      <p className="text-[11px] text-gray-500 truncate">{item.role}</p>
+                    </div>
+                  </div>
+                  <div className="mt-2">
+                    <span className="inline-block text-[10px] font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2 py-0.5 rounded uppercase tracking-wider">
+                      {item.industry}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// CTA SECTION - Fokus B2B Partnership
+// ============================================================================
+function CTASection() {
+  return (
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 rounded-full">
+              <Sparkles className="w-4 h-4 text-[#E8D09E]" />
+              <span className="text-xs font-bold text-[#E8D09E] tracking-wider uppercase">Mulai Hari Ini</span>
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+              Lindungi Brand Anda <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+                Mulai Sekarang
+              </span>
+            </h2>
+
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Bergabunglah dengan ratusan brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Link
+                to="/contact"
+                className="group inline-flex items-center justify-center gap-3 bg-[#C5A059] text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#E8D09E] transition-all duration-300 shadow-lg hover:shadow-[#C5A059]/30 hover:-translate-y-0.5"
+              >
+                <span>Hubungi Tim Kami</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+              >
+                <ShieldCheck className="w-5 h-5" />
+                <span>Lihat Solusi Kami</span>
+              </a>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-6 text-xs text-gray-400">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                Konsultasi Gratis
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                Implementasi Cepat
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                Dukungan 24/7
+              </span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// CONTACT SECTION
+// ============================================================================
+function ContactSection() {
+  return (
+    <section id="contact" className="py-16 md:py-24 bg-[#FAF8F5] relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div>
+              <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Hubungi Kami</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight mb-4">
+                Siap Berdiskusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Solusi Anda?</span>
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                Tim kami siap membantu Anda menemukan solusi anti-counterfeit yang tepat untuk brand Anda.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                { icon: <MapPin className="w-5 h-5" />, title: "Alamat", value: "Jl. Kh Wahid Hasyim No.316, Kopo, Bojongloa Kaler, Kota Bandung, Jawa Barat 40233" },
+                { icon: <Phone className="w-5 h-5" />, title: "Telepon", value: "+62 812-2220-1649", href: "tel:+6281222201649" },
+                { icon: <Mail className="w-5 h-5" />, title: "Email", value: "info@authenticguards.com", href: "mailto:info@authenticguards.com" }
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">{item.title}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-sm font-semibold text-[#1A1A1A] hover:text-[#8C6F3D] transition-colors">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-sm font-semibold text-[#1A1A1A]">{item.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white border border-[#E8D09E]/30 rounded-3xl p-6 md:p-8 shadow-sm"
+          >
+            <h3 className="text-xl font-bold text-[#1A1A1A] mb-6">Kirim Pesan</h3>
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Nama</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-gray-50 focus:bg-white"
+                    placeholder="Nama lengkap"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Email</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-gray-50 focus:bg-white"
+                    placeholder="email@contoh.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Perusahaan</label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-gray-50 focus:bg-white"
+                  placeholder="Nama perusahaan"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Pesan</label>
+                <textarea
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-gray-50 focus:bg-white resize-none"
+                  placeholder="Ceritakan kebutuhan Anda..."
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center gap-2 bg-[#1A1A1A] text-white font-bold py-3.5 rounded-xl hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Kirim Pesan</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// MAIN APP - Urutan yang Disesuaikan
+// ============================================================================
+export default function HomePage() {
+  return (
+    <>
+      {/* <HeroSection /> */}
+      {/* <HeroSectionNew /> */}
+      {/* <HeroSectionNew_ /> */}
+      <HeroSectionCorporate />
+      {/* <HeroSectionNew__ /> */}
+      {/* <HeroSectionNewFinal /> */}
+      {/* <HeroSectionSimple /> */}
+      
+      {/* <SupportedBySection /> */}
+      <SupportersSimpleSection />
+      <AboutSection />
+      <ClientsSection />
+      <ServicesSection />
+      <TechnologySection />
+      <StatsSection />
+      <AwardsCertificationsSection />
+      <InvestorsSection />
+      <TestimonialsSection />
+      <MediaCoverageSimpleSection />
+      {/* <CTASection /> */}
+      {/* <ContactSection /> */}
+      <AboutJoinUsCTA variant='about' />
+    </>
+  )
+}

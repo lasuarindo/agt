@@ -1,0 +1,2062 @@
+import { Link } from 'react-router'
+import { motion } from 'motion/react'
+import {
+  Shield,
+  ShieldCheck,
+  Target,
+  Eye,
+  Heart,
+  Lightbulb,
+  Users,
+  Globe,
+  Award,
+  Trophy,
+  BadgeCheck,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Rocket,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  Star,
+  TrendingUp,
+  Building2,
+  Zap,
+  Lock,
+  Quote,
+  Calendar,
+  Handshake,
+  Server,
+  Database,
+  Hash,
+  AlertTriangle,
+  ShieldAlert,
+  Nfc,
+  Printer,
+  Tag,
+  Boxes,
+  FileCheck,
+  Activity,
+  Key
+} from 'lucide-react'
+import AboutJoinUsCTA from '@/components/AboutJoinUs'
+import { AwardsData } from '@/data/award'
+import AwardsCertificationsOverviewSection from '@/components/OverviewAwardsCertification'
+import { MediaCoverageSimpleOverviewSection } from '@/components/OverviewMediaCoverageSection'
+import { TeamOverviewSection } from '@/components/OverviewTeamSection'
+import { timelineData } from '@/data/timeline'
+import { getHQOffice } from '@/data/offices'
+
+// ============================================================================
+// HERO ABOUT SECTION
+// ============================================================================
+// function HeroAbout() {
+//   return (
+//     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+//       <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+//       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+//       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      
+//       <div 
+//         className="absolute inset-0 opacity-[0.03] pointer-events-none"
+//         style={{
+//           backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+//           backgroundSize: '60px 60px'
+//         }}
+//       />
+
+//       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6 }}
+//           className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/40 px-4 py-2 rounded-full mb-6"
+//         >
+//           <Sparkles className="w-4 h-4 text-[#C5A059]" />
+//           <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Tentang Kami</span>
+//         </motion.div>
+
+//         <motion.h1
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6, delay: 0.1 }}
+//           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
+//         >
+//           Delapan Tahun <br className="hidden md:block" />
+//           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+//             Melindungi Keaslian
+//           </span>
+//           <br className="hidden md:block" />
+//           di Asia Pasifik
+//         </motion.h1>
+
+//         <motion.p
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6, delay: 0.2 }}
+//           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
+//         >
+//           Kami adalah pelopor sistem anti-counterfeit pertama di Asia Pasifik yang berkomitmen untuk memberantas produk palsu dan membangun ekosistem perdagangan yang aman, terpercaya, dan berkelanjutan.
+//         </motion.p>
+
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6, delay: 0.3 }}
+//           className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-600"
+//         >
+//           <span className="flex items-center gap-2">
+//             <Calendar className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="font-semibold">Berdiri Sejak 2017</span>
+//           </span>
+//           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
+//           <span className="flex items-center gap-2">
+//             <MapPin className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="font-semibold">Bandung, Indonesia</span>
+//           </span>
+//           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
+//           <span className="flex items-center gap-2">
+//             <Globe className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="font-semibold">Melayani Asia Pasifik</span>
+//           </span>
+//         </motion.div>
+//       </div>
+//     </section>
+//   )
+// }
+
+
+// ============================================================================
+// HERO ABOUT SECTION (disesuaikan dengan proposal)
+// ============================================================================
+function HeroAbout() {
+  return (
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/40 px-4 py-2 rounded-full mb-6"
+        >
+          <Sparkles className="w-4 h-4 text-[#C5A059]" />
+          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Tentang Kami</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
+        >
+          Delapan Tahun <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+            Melindungi Keaslian
+          </span>
+          <br className="hidden md:block" />
+          di Asia Pasifik
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
+        >
+          Kami adalah pelopor sistem anti-counterfeit pertama di Asia Pasifik yang berkomitmen untuk memberantas produk palsu dan membangun ekosistem perdagangan yang aman, terpercaya, dan berkelanjutan dengan teknologi <strong className="text-[#1A1A1A]">5 lapis keamanan</strong>.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-2">
+            <Calendar className="w-4 h-4 text-[#8C6F3D]" />
+            <span className="font-semibold">Berdiri Sejak 2017</span>
+          </span>
+          <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#8C6F3D]" />
+            {/* Disesuaikan: ISO/IEC 27000:2016 sesuai proposal */}
+            <span className="font-semibold">ISO/IEC 27000:2016</span>
+          </span>
+          <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-2">
+            <BadgeCheck className="w-4 h-4 text-[#8C6F3D]" />
+            {/* Disesuaikan: Licensed ISO 18004:2015 */}
+            <span className="font-semibold">ISO 18004:2015</span>
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// OUR STORY SECTION
+// ============================================================================
+// function OurStorySection() {
+//   return (
+//     <section className="py-16 md:py-24 bg-white relative">
+//       <div className="max-w-7xl mx-auto px-4 md:px-8">
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+//           {/* Left Content */}
+//           <motion.div
+//             initial={{ opacity: 0, x: -20 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             viewport={{ once: true }}
+//             className="space-y-6"
+//           >
+//             <div>
+//               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Cerita Kami</p>
+//               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
+//                 Bermula dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Keprihatinan</span>
+//               </h2>
+//             </div>
+
+//             <div className="space-y-4 text-gray-600 leading-relaxed">
+//               <p>
+//                 Pada tahun 2017, kami menyaksikan bagaimana produk palsu semakin merajalela di pasar Asia Pasifik. Brand-brand lokal dan internasional kehilangan miliaran rupiah setiap tahunnya, sementara konsumen dirugikan dengan produk yang tidak aman dan tidak berkualitas.
+//               </p>
+//               <p>
+//                 <strong className="text-[#1A1A1A]">PT. Autentikasi Garda Teknologi</strong> didirikan dengan satu misi sederhana namun ambisius: <em>menciptakan sistem autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh semua brand</em>.
+//               </p>
+//               <p>
+//                 Kami memulai perjalanan dengan teknologi scratch PIN dan QR code yang terintegrasi dengan database real-time. Inovasi ini menjadi game-changer bagi industri anti-counterfeit di Indonesia, dan perlahan meluas ke seluruh Asia Pasifik.
+//               </p>
+//             </div>
+
+//             <div className="pt-4">
+//               <div className="inline-flex items-center gap-3 bg-[#FAF8F5] border border-[#E8D09E]/40 rounded-2xl p-4">
+//                 <Quote className="w-8 h-8 text-[#C5A059] shrink-0" />
+//                 <p className="text-sm italic text-gray-700">
+//                   "Kami percaya bahwa setiap konsumen berhak mendapatkan produk asli, dan setiap brand berhak melindungi reputasinya."
+//                 </p>
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Right Visual */}
+//           <motion.div
+//             initial={{ opacity: 0, x: 20 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             viewport={{ once: true }}
+//             className="relative"
+//           >
+//             <div className="grid grid-cols-2 gap-4">
+//               <div className="space-y-4">
+//                 <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-xl">
+//                   <Rocket className="w-8 h-8 text-[#E8D09E] mb-3" />
+//                   <p className="text-3xl font-extrabold mb-1">2017</p>
+//                   <p className="text-xs text-gray-400 uppercase tracking-wider">Tahun Berdiri</p>
+//                 </div>
+//                 <div className="bg-white border border-[#E8D09E]/30 rounded-3xl p-6 shadow-sm">
+//                   <Users className="w-8 h-8 text-[#8C6F3D] mb-3" />
+//                   <p className="text-3xl font-extrabold text-[#1A1A1A] mb-1">50+</p>
+//                   <p className="text-xs text-gray-500 uppercase tracking-wider">Tim Profesional</p>
+//                 </div>
+//               </div>
+//               <div className="space-y-4 pt-8">
+//                 <div className="bg-white border border-[#E8D09E]/30 rounded-3xl p-6 shadow-sm">
+//                   <Globe className="w-8 h-8 text-[#8C6F3D] mb-3" />
+//                   <p className="text-3xl font-extrabold text-[#1A1A1A] mb-1">5+</p>
+//                   <p className="text-xs text-gray-500 uppercase tracking-wider">Negara Dilayani</p>
+//                 </div>
+//                 <div className="bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl p-6 text-white shadow-xl">
+//                   <Award className="w-8 h-8 text-white mb-3" />
+//                   <p className="text-3xl font-extrabold mb-1">15+</p>
+//                   <p className="text-xs text-white/80 uppercase tracking-wider">Penghargaan</p>
+//                 </div>
+//               </div>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+
+// ============================================================================
+// OUR STORY SECTION (disesuaikan dengan proposal)
+// ==============================================================================
+function OurStorySection() {
+  return (
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div>
+              <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Cerita Kami</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
+                Bermula dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Keprihatinan</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Pada tahun 2017, kami menyaksikan bagaimana produk palsu semakin merajalela di pasar Asia Pasifik. Menurut PBB, pasar pemalsuan berharga 250 Milyar Dollar per tahun dan terus bertumbuh, membentur pendapatan perusahaan dan merusak reputasi merek.
+              </p>
+              <p>
+                <strong className="text-[#1A1A1A]">PT. Autentikasi Garda Teknologi</strong> didirikan dengan satu misi sederhana namun ambisius: <em>menciptakan sistem autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh semua brand</em>.
+              </p>
+              <p>
+                {/* Disesuaikan: fokus pada 5 lapis keamanan & algoritma AG, bukan scratch PIN */}
+                Kami memulai perjalanan dengan teknologi <strong className="text-[#1A1A1A]">algoritma AG 3 lapis</strong> yang dienkripsi MD5 dan terintegrasi dengan database real-time berstandar <strong className="text-[#1A1A1A]">ISO/IEC 27000:2016</strong>. Inovasi ini menjadi game-changer bagi industri anti-counterfeit di Indonesia, dan perlahan meluas ke seluruh Asia Pasifik.
+              </p>
+            </div>
+
+            <div className="pt-4">
+              {/* Disesuaikan: kutipan dari Managing Director di proposal */}
+              <div className="inline-flex items-center gap-3 bg-[#FAF8F5] border border-[#E8D09E]/40 rounded-2xl p-4">
+                <Quote className="w-8 h-8 text-[#C5A059] shrink-0" />
+                <p className="text-sm italic text-gray-700">
+                  "Authentic Guards adalah cara paling sederhana untuk memvalidasi keaslian produk anda."
+                </p>
+              </div>
+              <p className="text-xs text-gray-500 mt-2 ml-12">
+                — <strong>Ryan Othink</strong>, Managing Director
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-xl">
+                  <Rocket className="w-8 h-8 text-[#E8D09E] mb-3" />
+                  <p className="text-3xl font-extrabold mb-1">2017</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider">Tahun Berdiri</p>
+                </div>
+                <div className="bg-white border border-[#E8D09E]/30 rounded-3xl p-6 shadow-sm">
+                  <Database className="w-8 h-8 text-[#8C6F3D] mb-3" />
+                  {/* Disesuaikan: 100M kode/hari sesuai proposal */}
+                  <p className="text-3xl font-extrabold text-[#1A1A1A] mb-1">100M</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">Kode / Hari</p>
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="bg-white border border-[#E8D09E]/30 rounded-3xl p-6 shadow-sm">
+                  <Shield className="w-8 h-8 text-[#8C6F3D] mb-3" />
+                  {/* Disesuaikan: 5 lapis keamanan sesuai proposal */}
+                  <p className="text-3xl font-extrabold text-[#1A1A1A] mb-1">5</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">Lapis Keamanan</p>
+                </div>
+                <div className="bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl p-6 text-white shadow-xl">
+                  <Award className="w-8 h-8 text-white mb-3" />
+                  <p className="text-3xl font-extrabold mb-1">Top 100</p>
+                  <p className="text-xs text-white/80 uppercase tracking-wider">Startup Asia Pacific</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// MISSION & VISION SECTION - Enhanced dengan Featured Badge
+// ============================================================================
+// function MissionVisionSection() {
+//   const items = [
+//     {
+//       icon: <Target className="w-7 h-7" />,
+//       title: "Misi Kami",
+//       subtitle: "Our Mission",
+//       content: "Menyediakan teknologi autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh brand di seluruh Asia Pasifik. Kami berkomitmen untuk terus berinovasi dalam memerangi produk palsu dan melindungi konsumen.",
+//       points: [
+//         "Mengembangkan teknologi autentikasi terdepan",
+//         "Memberikan layanan customer support 24/7",
+//         "Membangun ekosistem perdagangan yang aman",
+//         "Memberdayakan brand lokal dan internasional"
+//       ],
+//       gradient: "from-emerald-500/10 to-emerald-500/[0.02]",
+//       iconBg: "bg-emerald-100",
+//       iconColor: "text-emerald-600",
+//       accentBorder: "border-emerald-200"
+//     },
+//     {
+//       icon: <Eye className="w-7 h-7" />,
+//       title: "Visi Kami",
+//       subtitle: "Our Vision",
+//       content: "Menjadi standar global dalam sistem anti-counterfeit yang melindungi produk dan konsumen di seluruh dunia. Kami bercita-cita untuk menciptakan dunia di mana setiap produk dapat diverifikasi keasliannya dengan mudah.",
+//       points: [
+//         "Menjadi pemimpin pasar anti-counterfeit di Asia",
+//         "Ekspansi ke pasar global dalam 5 tahun ke depan",
+//         "Mengembangkan standar autentikasi internasional",
+//         "Menciptakan dampak positif bagi masyarakat"
+//       ],
+//       gradient: "from-blue-500/10 to-blue-500/[0.02]",
+//       iconBg: "bg-blue-100",
+//       iconColor: "text-blue-600",
+//       accentBorder: "border-blue-200"
+//     }
+//   ]
+
+//   return (
+//     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+//       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+
+//       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+//         >
+//           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+//             <Target className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Arah & Tujuan</span>
+//           </div>
+          
+//           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+//             Misi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
+//           </h2>
+//           <p className="text-gray-500 text-lg leading-relaxed">
+//             Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.
+//           </p>
+//         </motion.div>
+
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+//           {items.map((item, idx) => (
+//             <motion.div
+//               key={idx}
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true, margin: "-50px" }}
+//               transition={{ duration: 0.5, delay: idx * 0.1 }}
+//               className={`group relative bg-white rounded-3xl border ${item.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
+//             >
+//               <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              
+//               <div className="relative z-10">
+//                 {/* Header dengan Badge */}
+//                 <div className="flex items-start justify-between mb-6">
+//                   <div className="flex items-start gap-4">
+//                     <div className={`w-16 h-16 ${item.iconBg} ${item.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+//                       {item.icon}
+//                     </div>
+//                     <div>
+//                       <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+//                         {item.subtitle}
+//                       </span>
+//                       <h3 className="text-2xl font-bold text-[#1A1A1A]">{item.title}</h3>
+//                     </div>
+//                   </div>
+                  
+//                   <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+//                     <Sparkles className="w-3.5 h-3.5" />
+//                     <span>Core</span>
+//                   </div>
+//                 </div>
+
+//                 <p className="text-gray-600 leading-relaxed mb-6">{item.content}</p>
+
+//                 <div className="space-y-3">
+//                   {item.points.map((point, pIdx) => (
+//                     <div key={pIdx} className="flex items-start gap-3">
+//                       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+//                       <span className="text-sm text-gray-700">{point}</span>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ============================================================================
+// MISSION & VISION SECTION (disesuaikan dengan proposal)
+// ==============================================================================
+// function MissionVisionSection() {
+//   const items = [
+//     {
+//       icon: <Target className="w-7 h-7" />,
+//       title: "Misi Kami",
+//       subtitle: "Our Mission",
+//       // Disesuaikan dengan proposal: fokus pada ISO/IEC 27000:2016
+//       content: "Menyediakan teknologi autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh brand di seluruh Asia Pasifik dengan standar ISO/IEC 27000:2016. Kami berkomitmen untuk terus berinovasi dalam memerangi produk palsu dan melindungi konsumen.",
+//       points: [
+//         "Mengembangkan teknologi 5 lapis keamanan terdepan",
+//         "Memberikan layanan customer support 24/7",
+//         "Membangun ekosistem perdagangan yang aman",
+//         "Memberdayakan brand lokal dan internasional"
+//       ],
+//       gradient: "from-emerald-500/10 to-emerald-500/[0.02]",
+//       iconBg: "bg-emerald-100",
+//       iconColor: "text-emerald-600",
+//       accentBorder: "border-emerald-200"
+//     },
+//     {
+//       icon: <Eye className="w-7 h-7" />,
+//       title: "Visi Kami",
+//       subtitle: "Our Vision",
+//       content: "Menjadi standar global dalam sistem anti-counterfeit yang melindungi produk dan konsumen di seluruh dunia. Kami bercita-cita untuk menciptakan dunia di mana setiap produk dapat diverifikasi keasliannya dengan mudah.",
+//       points: [
+//         "Menjadi pemimpin pasar anti-counterfeit di Asia",
+//         "Ekspansi ke pasar global dalam 5 tahun ke depan",
+//         "Mengembangkan standar autentikasi internasional",
+//         "Menciptakan dampak positif bagi masyarakat"
+//       ],
+//       gradient: "from-blue-500/10 to-blue-500/[0.02]",
+//       iconBg: "bg-blue-100",
+//       iconColor: "text-blue-600",
+//       accentBorder: "border-blue-200"
+//     }
+//   ]
+
+//   return (
+//     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+//       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+//       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+//         >
+//           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+//             <Target className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Arah & Tujuan</span>
+//           </div>
+          
+//           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+//             Misi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
+//           </h2>
+//           <p className="text-gray-500 text-lg leading-relaxed">
+//             Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.
+//           </p>
+//         </motion.div>
+
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+//           {items.map((item, idx) => (
+//             <motion.div
+//               key={idx}
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true, margin: "-50px" }}
+//               transition={{ duration: 0.5, delay: idx * 0.1 }}
+//               className={`group relative bg-white rounded-3xl border ${item.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
+//             >
+//               <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              
+//               <div className="relative z-10">
+//                 {/* Header dengan Badge */}
+//                 <div className="flex items-start justify-between mb-6">
+//                   <div className="flex items-start gap-4">
+//                     <div className={`w-16 h-16 ${item.iconBg} ${item.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+//                       {item.icon}
+//                     </div>
+//                     <div>
+//                       <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+//                         {item.subtitle}
+//                       </span>
+//                       <h3 className="text-2xl font-bold text-[#1A1A1A]">{item.title}</h3>
+//                     </div>
+//                   </div>
+                  
+//                   <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+//                     <Sparkles className="w-3.5 h-3.5" />
+//                     <span>Core</span>
+//                   </div>
+//                 </div>
+
+//                 <p className="text-gray-600 leading-relaxed mb-6">{item.content}</p>
+
+//                 <div className="space-y-3">
+//                   {item.points.map((point, pIdx) => (
+//                     <div key={pIdx} className="flex items-start gap-3">
+//                       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+//                       <span className="text-sm text-gray-700">{point}</span>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+
+function MissionVisionSection() {
+  // PERUBAHAN: Semua warna disesuaikan ke brand color (gold/brown) dengan variasi shade
+  const items = [
+    {
+      icon: <Target className="w-7 h-7" />,
+      title: "Misi Kami",
+      subtitle: "Our Mission",
+      content: "Menyediakan teknologi autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh brand di seluruh Asia Pasifik dengan standar ISO/IEC 27000:2016. Kami berkomitmen untuk terus berinovasi dalam memerangi produk palsu dan melindungi konsumen.",
+      points: [
+        "Mengembangkan teknologi 5 lapis keamanan terdepan",
+        "Memberikan layanan customer support 24/7",
+        "Membangun ekosistem perdagangan yang aman",
+        "Memberdayakan brand lokal dan internasional"
+      ],
+      // Brand color: primary dark
+      gradient: "from-[#8C6F3D]/10 to-[#C5A059]/5",
+      iconBg: "bg-[#E8D09E]/40",
+      iconColor: "text-[#8C6F3D]",
+      accentBorder: "border-[#E8D09E]/40"
+    },
+    {
+      icon: <Eye className="w-7 h-7" />,
+      title: "Visi Kami",
+      subtitle: "Our Vision",
+      content: "Menjadi standar global dalam sistem anti-counterfeit yang melindungi produk dan konsumen di seluruh dunia. Kami bercita-cita untuk menciptakan dunia di mana setiap produk dapat diverifikasi keasliannya dengan mudah.",
+      points: [
+        "Menjadi pemimpin pasar anti-counterfeit di Asia",
+        "Ekspansi ke pasar global dalam 5 tahun ke depan",
+        "Mengembangkan standar autentikasi internasional",
+        "Menciptakan dampak positif bagi masyarakat"
+      ],
+      // Brand color: medium gold
+      gradient: "from-[#C5A059]/15 to-[#E8D09E]/5",
+      iconBg: "bg-[#C5A059]/20",
+      iconColor: "text-[#6b5530]",
+      accentBorder: "border-[#C5A059]/30"
+    }
+  ]
+  
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+            <Target className="w-4 h-4 text-[#8C6F3D]" />
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Arah & Tujuan</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Misi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {items.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className={`group relative bg-white rounded-3xl border ${item.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              
+              <div className="relative z-10">
+                {/* Header dengan Badge */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-start gap-4">
+                    <div className={`w-16 h-16 ${item.iconBg} ${item.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+                        {item.subtitle}
+                      </span>
+                      <h3 className="text-2xl font-bold text-[#1A1A1A]">{item.title}</h3>
+                    </div>
+                  </div>
+                  
+                  <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Core</span>
+                  </div>
+                </div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">{item.content}</p>
+                
+                <div className="space-y-3">
+                  {item.points.map((point, pIdx) => (
+                    <div key={pIdx} className="flex items-start gap-3">
+                      {/* PERUBAHAN: CheckCircle2 dari emerald-500 ke brand color */}
+                      <CheckCircle2 className="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700">{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// CORE VALUES SECTION - Bento Grid dengan Featured Values
+// ============================================================================
+// function CoreValuesSection() {
+//   const values = [
+//     {
+//       id: 'integrity',
+//       icon: <Shield className="w-7 h-7" />,
+//       title: "Integritas",
+//       subtitle: "Foundation",
+//       desc: "Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis kami. Setiap keputusan yang kami ambil didasarkan pada prinsip-prinsip etika yang kuat, memastikan kepercayaan dari para mitra dan konsumen.",
+//       points: [
+//         "Transparansi dalam setiap transaksi",
+//         "Komitmen terhadap etika bisnis",
+//         "Akuntabilitas penuh atas tindakan"
+//       ],
+//       gradient: "from-emerald-500/10 to-emerald-500/[0.02]",
+//       iconBg: "bg-emerald-100",
+//       iconColor: "text-emerald-600",
+//       accentBorder: "border-emerald-200",
+//       // size: "large"
+//       size: "full"
+//     },
+//     {
+//       id: 'innovation',
+//       icon: <Lightbulb className="w-7 h-7" />,
+//       title: "Inovasi",
+//       subtitle: "Driving Force",
+//       desc: "Terus berinovasi dengan teknologi terdepan untuk melawan pemalsuan produk. Kami percaya bahwa inovasi adalah kunci untuk tetap relevan dan memberikan solusi terbaik bagi tantangan yang terus berkembang.",
+//       points: [
+//         "R&D berkelanjutan",
+//         "Adopsi teknologi terkini",
+//         "Solusi kreatif untuk masalah kompleks"
+//       ],
+//       gradient: "from-amber-500/10 to-amber-500/[0.02]",
+//       iconBg: "bg-amber-100",
+//       iconColor: "text-amber-600",
+//       accentBorder: "border-amber-200",
+//       size: "large"
+//     },
+//     {
+//       id: 'care',
+//       icon: <Heart className="w-6 h-6" />,
+//       title: "Kepedulian",
+//       desc: "Kami peduli pada konsumen, brand partner, dan masyarakat luas.",
+//       gradient: "from-rose-500/10 to-rose-500/[0.02]",
+//       iconBg: "bg-rose-100",
+//       iconColor: "text-rose-600",
+//       accentBorder: "border-rose-200",
+//       size: "small"
+//     },
+//     {
+//       id: 'collaboration',
+//       icon: <Users className="w-6 h-6" />,
+//       title: "Kolaborasi",
+//       desc: "Bekerja sama dengan berbagai pihak untuk menciptakan ekosistem yang lebih aman.",
+//       gradient: "from-blue-500/10 to-blue-500/[0.02]",
+//       iconBg: "bg-blue-100",
+//       iconColor: "text-blue-600",
+//       accentBorder: "border-blue-200",
+//       size: "small"
+//     },
+//     {
+//       id: 'excellence',
+//       icon: <TrendingUp className="w-6 h-6" />,
+//       title: "Keunggulan",
+//       desc: "Berusaha memberikan layanan terbaik dengan standar kualitas tertinggi.",
+//       gradient: "from-purple-500/10 to-purple-500/[0.02]",
+//       iconBg: "bg-purple-100",
+//       iconColor: "text-purple-600",
+//       accentBorder: "border-purple-200",
+//       size: "small"
+//     },
+//     {
+//       id: 'impact',
+//       icon: <Globe className="w-6 h-6" />,
+//       title: "Dampak Global",
+//       desc: "Berkontribusi positif bagi masyarakat dan lingkungan di Asia Pasifik.",
+//       gradient: "from-teal-500/10 to-teal-500/[0.02]",
+//       iconBg: "bg-teal-100",
+//       iconColor: "text-teal-600",
+//       accentBorder: "border-teal-200",
+//       size: "small"
+//     }
+//   ]
+
+//   return (
+//     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+//       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+
+//       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+//         >
+//           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+//             <Sparkles className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Nilai-Nilai Kami</span>
+//           </div>
+          
+//           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+//             Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
+//           </h2>
+//           <p className="text-gray-500 text-lg leading-relaxed">
+//             Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.
+//           </p>
+//         </motion.div>
+
+//         {/* Bento Grid Layout */}
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+//           {values.map((value, idx) => {
+//             const isLarge = value.size === 'large'
+//             const isFull = value.size === 'full'
+            
+//             return (
+//               <motion.div
+//                 key={value.id}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true, margin: "-50px" }}
+//                 transition={{ duration: 0.5, delay: idx * 0.08 }}
+//                 className={`group relative bg-white rounded-3xl border ${value.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${
+//                   isLarge || isFull ? (isFull ? 'md:col-span-3 p-8 md:p-10' : 'md:col-span-2 p-8 md:p-10') : 'p-6 md:p-8'
+//                 }`}
+//               >
+//                 <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+//                 <div className="relative z-10">
+//                   {/* Header */}
+//                   <div className="flex items-start justify-between mb-6">
+//                     <div className="flex items-start gap-4">
+//                       <div className={`w-14 h-14 ${value.iconBg} ${value.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+//                         {value.icon}
+//                       </div>
+//                       <div>
+//                         {'subtitle' in value && value.subtitle && (
+//                           <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+//                             {value.subtitle}
+//                           </span>
+//                         )}
+//                         <h3 className={`${isLarge ? 'text-2xl' : 'text-xl'} font-bold text-[#1A1A1A]`}>
+//                           {value.title}
+//                         </h3>
+//                       </div>
+//                     </div>
+                    
+//                     {(isLarge || isFull) && (
+//                       <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+//                         <Sparkles className="w-3.5 h-3.5" />
+//                         <span>Featured</span>
+//                       </div>
+//                     )}
+//                   </div>
+
+//                   {/* Description */}
+//                   <p className={`text-gray-600 leading-relaxed mb-6 ${(isLarge || isFull) ? 'text-base' : 'text-sm'}`}>
+//                     {value.desc}
+//                   </p>
+
+//                   {/* Points (Only for Large Cards) */}
+//                   {'points' in value && value.points && (isLarge || isFull) && (
+//                     <div className="space-y-2.5">
+//                       {value.points.map((point, pIdx) => (
+//                         <div key={pIdx} className="flex items-start gap-3">
+//                           <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+//                           <span className="text-sm text-gray-700">{point}</span>
+//                         </div>
+//                       ))}
+//                     </div>
+//                   )}
+//                 </div>
+//               </motion.div>
+//             )
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ============================================================================
+// CORE VALUES SECTION - Tetap dipertahankan (konten generik yang relevan)
+// ==============================================================================
+// function CoreValuesSection() {
+//   const values = [
+//     {
+//       id: 'integrity',
+//       icon: <Shield className="w-7 h-7" />,
+//       title: "Integritas",
+//       subtitle: "Foundation",
+//       desc: "Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis kami. Setiap keputusan yang kami ambil didasarkan pada prinsip-prinsip etika yang kuat, memastikan kepercayaan dari para mitra dan konsumen.",
+//       points: [
+//         "Transparansi dalam setiap transaksi",
+//         "Komitmen terhadap etika bisnis",
+//         "Akuntabilitas penuh atas tindakan"
+//       ],
+//       gradient: "from-emerald-500/10 to-emerald-500/[0.02]",
+//       iconBg: "bg-emerald-100",
+//       iconColor: "text-emerald-600",
+//       accentBorder: "border-emerald-200",
+//       size: "full"
+//     },
+//     {
+//       id: 'innovation',
+//       icon: <Lightbulb className="w-7 h-7" />,
+//       title: "Inovasi",
+//       subtitle: "Driving Force",
+//       desc: "Terus berinovasi dengan teknologi terdepan untuk melawan pemalsuan produk. Kami percaya bahwa inovasi adalah kunci untuk tetap relevan dan memberikan solusi terbaik bagi tantangan yang terus berkembang.",
+//       points: [
+//         "R&D berkelanjutan",
+//         "Adopsi teknologi terkini",
+//         "Solusi kreatif untuk masalah kompleks"
+//       ],
+//       gradient: "from-amber-500/10 to-amber-500/[0.02]",
+//       iconBg: "bg-amber-100",
+//       iconColor: "text-amber-600",
+//       accentBorder: "border-amber-200",
+//       size: "large"
+//     },
+//     {
+//       id: 'care',
+//       icon: <Heart className="w-6 h-6" />,
+//       title: "Kepedulian",
+//       desc: "Kami peduli pada konsumen, brand partner, dan masyarakat luas.",
+//       gradient: "from-rose-500/10 to-rose-500/[0.02]",
+//       iconBg: "bg-rose-100",
+//       iconColor: "text-rose-600",
+//       accentBorder: "border-rose-200",
+//       size: "small"
+//     },
+//     {
+//       id: 'collaboration',
+//       icon: <Users className="w-6 h-6" />,
+//       title: "Kolaborasi",
+//       desc: "Bekerja sama dengan berbagai pihak untuk menciptakan ekosistem yang lebih aman.",
+//       gradient: "from-blue-500/10 to-blue-500/[0.02]",
+//       iconBg: "bg-blue-100",
+//       iconColor: "text-blue-600",
+//       accentBorder: "border-blue-200",
+//       size: "small"
+//     },
+//     {
+//       id: 'excellence',
+//       icon: <TrendingUp className="w-6 h-6" />,
+//       title: "Keunggulan",
+//       desc: "Berusaha memberikan layanan terbaik dengan standar kualitas tertinggi.",
+//       gradient: "from-purple-500/10 to-purple-500/[0.02]",
+//       iconBg: "bg-purple-100",
+//       iconColor: "text-purple-600",
+//       accentBorder: "border-purple-200",
+//       size: "small"
+//     },
+//     {
+//       id: 'impact',
+//       icon: <Globe className="w-6 h-6" />,
+//       title: "Dampak Global",
+//       desc: "Berkontribusi positif bagi masyarakat dan lingkungan di Asia Pasifik.",
+//       gradient: "from-teal-500/10 to-teal-500/[0.02]",
+//       iconBg: "bg-teal-100",
+//       iconColor: "text-teal-600",
+//       accentBorder: "border-teal-200",
+//       size: "small"
+//     }
+//   ]
+
+//   return (
+//     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+//       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+//       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+//         >
+//           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+//             <Sparkles className="w-4 h-4 text-[#8C6F3D]" />
+//             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Nilai-Nilai Kami</span>
+//           </div>
+          
+//           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+//             Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
+//           </h2>
+//           <p className="text-gray-500 text-lg leading-relaxed">
+//             Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.
+//           </p>
+//         </motion.div>
+
+//         {/* Bento Grid Layout */}
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+//           {values.map((value, idx) => {
+//             const isLarge = value.size === 'large'
+//             const isFull = value.size === 'full'
+            
+//             return (
+//               <motion.div
+//                 key={value.id}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true, margin: "-50px" }}
+//                 transition={{ duration: 0.5, delay: idx * 0.08 }}
+//                 className={`group relative bg-white rounded-3xl border ${value.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${
+//                   isLarge || isFull ? (isFull ? 'md:col-span-3 p-8 md:p-10' : 'md:col-span-2 p-8 md:p-10') : 'p-6 md:p-8'
+//                 }`}
+//               >
+//                 <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+//                 <div className="relative z-10">
+//                   {/* Header */}
+//                   <div className="flex items-start justify-between mb-6">
+//                     <div className="flex items-start gap-4">
+//                       <div className={`w-14 h-14 ${value.iconBg} ${value.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+//                         {value.icon}
+//                       </div>
+//                       <div>
+//                         {'subtitle' in value && value.subtitle && (
+//                           <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+//                             {value.subtitle}
+//                           </span>
+//                         )}
+//                         <h3 className={`${isLarge ? 'text-2xl' : 'text-xl'} font-bold text-[#1A1A1A]`}>
+//                           {value.title}
+//                         </h3>
+//                       </div>
+//                     </div>
+                    
+//                     {(isLarge || isFull) && (
+//                       <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+//                         <Sparkles className="w-3.5 h-3.5" />
+//                         <span>Featured</span>
+//                       </div>
+//                     )}
+//                   </div>
+
+//                   {/* Description */}
+//                   <p className={`text-gray-600 leading-relaxed mb-6 ${(isLarge || isFull) ? 'text-base' : 'text-sm'}`}>
+//                     {value.desc}
+//                   </p>
+
+//                   {/* Points (Only for Large Cards) */}
+//                   {'points' in value && value.points && (isLarge || isFull) && (
+//                     <div className="space-y-2.5">
+//                       {value.points.map((point, pIdx) => (
+//                         <div key={pIdx} className="flex items-start gap-3">
+//                           <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+//                           <span className="text-sm text-gray-700">{point}</span>
+//                         </div>
+//                       ))}
+//                     </div>
+//                   )}
+//                 </div>
+//               </motion.div>
+//             )
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+function CoreValuesSection() {
+  // PERUBAHAN: Semua warna disesuaikan ke brand color (gold/brown) dengan variasi shade
+  const values = [
+    {
+      id: 'integrity',
+      icon: <Shield className="w-7 h-7" />,
+      title: "Integritas",
+      subtitle: "Foundation",
+      desc: "Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis kami. Setiap keputusan yang kami ambil didasarkan pada prinsip-prinsip etika yang kuat, memastikan kepercayaan dari para mitra dan konsumen.",
+      points: [
+        "Transparansi dalam setiap transaksi",
+        "Komitmen terhadap etika bisnis",
+        "Akuntabilitas penuh atas tindakan"
+      ],
+      // Brand color: primary dark (featured)
+      gradient: "from-[#8C6F3D]/10 to-[#C5A059]/5",
+      iconBg: "bg-[#E8D09E]/40",
+      iconColor: "text-[#8C6F3D]",
+      accentBorder: "border-[#E8D09E]/40",
+      size: "full"
+    },
+    {
+      id: 'innovation',
+      icon: <Lightbulb className="w-7 h-7" />,
+      title: "Inovasi",
+      subtitle: "Driving Force",
+      desc: "Terus berinovasi dengan teknologi terdepan untuk melawan pemalsuan produk. Kami percaya bahwa inovasi adalah kunci untuk tetap relevan dan memberikan solusi terbaik bagi tantangan yang terus berkembang.",
+      points: [
+        "R&D berkelanjutan",
+        "Adopsi teknologi terkini",
+        "Solusi kreatif untuk masalah kompleks"
+      ],
+      // Brand color: medium gold (featured)
+      gradient: "from-[#C5A059]/15 to-[#E8D09E]/5",
+      iconBg: "bg-[#C5A059]/20",
+      iconColor: "text-[#6b5530]",
+      accentBorder: "border-[#C5A059]/30",
+      size: "large"
+    },
+    {
+      id: 'care',
+      icon: <Heart className="w-6 h-6" />,
+      title: "Kepedulian",
+      desc: "Kami peduli pada konsumen, brand partner, dan masyarakat luas.",
+      // Brand color: light gold
+      gradient: "from-[#E8D09E]/30 to-[#FAF8F5]",
+      iconBg: "bg-[#E8D09E]/50",
+      iconColor: "text-[#8C6F3D]",
+      accentBorder: "border-[#E8D09E]/60",
+      size: "small"
+    },
+    {
+      id: 'collaboration',
+      icon: <Users className="w-6 h-6" />,
+      title: "Kolaborasi",
+      desc: "Bekerja sama dengan berbagai pihak untuk menciptakan ekosistem yang lebih aman.",
+      // Brand color: darker brown
+      gradient: "from-[#6b5530]/10 to-[#8C6F3D]/5",
+      iconBg: "bg-[#6b5530]/20",
+      iconColor: "text-[#5a4a2a]",
+      accentBorder: "border-[#6b5530]/30",
+      size: "small"
+    },
+    {
+      id: 'excellence',
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Keunggulan",
+      desc: "Berusaha memberikan layanan terbaik dengan standar kualitas tertinggi.",
+      // Brand color: darkest brown
+      gradient: "from-[#5a4a2a]/10 to-[#6b5530]/5",
+      iconBg: "bg-[#5a4a2a]/15",
+      iconColor: "text-[#5a4a2a]",
+      accentBorder: "border-[#5a4a2a]/25",
+      size: "small"
+    },
+    {
+      id: 'impact',
+      icon: <Globe className="w-6 h-6" />,
+      title: "Dampak Global",
+      desc: "Berkontribusi positif bagi masyarakat dan lingkungan di Asia Pasifik.",
+      // Brand color: light variant
+      gradient: "from-[#E8D09E]/20 to-[#FAF8F5]",
+      iconBg: "bg-[#E8D09E]/30",
+      iconColor: "text-[#8C6F3D]",
+      accentBorder: "border-[#E8D09E]/40",
+      size: "small"
+    }
+  ]
+
+  return (
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
+            <Sparkles className="w-4 h-4 text-[#8C6F3D]" />
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Nilai-Nilai Kami</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.
+          </p>
+        </motion.div>
+
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {values.map((value, idx) => {
+            const isLarge = value.size === 'large'
+            const isFull = value.size === 'full'
+            
+            return (
+              <motion.div
+                key={value.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className={`group relative bg-white rounded-3xl border ${value.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${
+                  isLarge || isFull ? (isFull ? 'md:col-span-3 p-8 md:p-10' : 'md:col-span-2 p-8 md:p-10') : 'p-6 md:p-8'
+                }`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-14 h-14 ${value.iconBg} ${value.iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                        {value.icon}
+                      </div>
+                      <div>
+                        {'subtitle' in value && value.subtitle && (
+                          <span className="text-[10px] font-bold text-[#8C6F3D] uppercase tracking-widest mb-1 block">
+                            {value.subtitle}
+                          </span>
+                        )}
+                        <h3 className={`${isLarge ? 'text-2xl' : 'text-xl'} font-bold text-[#1A1A1A]`}>
+                          {value.title}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    {(isLarge || isFull) && (
+                      <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Featured</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Description */}
+                  <p className={`text-gray-600 leading-relaxed mb-6 ${(isLarge || isFull) ? 'text-base' : 'text-sm'}`}>
+                    {value.desc}
+                  </p>
+
+                  {/* Points (Only for Large Cards) */}
+                  {'points' in value && value.points && (isLarge || isFull) && (
+                    <div className="space-y-2.5">
+                      {value.points.map((point, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-3">
+                          {/* PERUBAHAN: CheckCircle2 dari emerald-500 ke brand color */}
+                          <CheckCircle2 className="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
+
+// ============================================================================
+// DETAILED TIMELINE SECTION
+// ============================================================================
+function DetailedTimelineSection() {
+  // const timeline = [
+  //   {
+  //     year: '2017',
+  //     quarter: 'Q2',
+  //     title: 'Pendirian Perusahaan',
+  //     desc: 'PT. Autentikasi Garda Teknologi resmi didirikan di Bandung oleh tim yang terdiri dari para ahli teknologi dan bisnis dengan visi menjadi pelopor sistem anti-counterfeit di Asia Pasifik.',
+  //     icon: <Rocket className="w-5 h-5" />,
+  //     highlight: true
+  //   },
+  //   {
+  //     year: '2018',
+  //     quarter: 'Q1',
+  //     title: 'Pengembangan Produk Pertama',
+  //     desc: 'Meluncurkan prototype sticker hologram dengan QR code dan scratch PIN pertama yang terintegrasi dengan database real-time.',
+  //     icon: <Lightbulb className="w-5 h-5" />
+  //   },
+  //   {
+  //     year: '2019',
+  //     quarter: 'Q2',
+  //     title: 'Klien Pertama & Ekspansi',
+  //     desc: 'Memperoleh klien pertama dari industri F&B dan mulai mengembangkan teknologi garment label untuk industri fashion.',
+  //     icon: <Users className="w-5 h-5" />
+  //   },
+  //   {
+  //     year: '2020',
+  //     quarter: 'Q1',
+  //     title: 'Mendukung Telkom Indonesia',
+  //     desc: 'Menjadi mitra strategis Telkom Indonesia untuk infrastruktur cloud dan konektivitas digital.',
+  //     icon: <Handshake className="w-5 h-5" />,
+  //     highlight: true
+  //   },
+  //   {
+  //     year: '2021',
+  //     quarter: 'Q3',
+  //     title: '100+ Brand Partner',
+  //     desc: 'Mencapai milestone 100 brand partner dari berbagai industri, dari fashion hingga farmasi. Mulai mengembangkan dashboard analytics.',
+  //     icon: <Award className="w-5 h-5" />
+  //   },
+  //   {
+  //     year: '2022',
+  //     quarter: 'Q2',
+  //     title: 'Sertifikasi ISO 27001',
+  //     desc: 'Mendapatkan sertifikasi ISO 27001 untuk Information Security Management, membuktikan komitmen kami terhadap keamanan data.',
+  //     icon: <BadgeCheck className="w-5 h-5" />,
+  //     highlight: true
+  //   },
+  //   {
+  //     year: '2023',
+  //     quarter: 'Q1',
+  //     title: 'Mobile Platform Launch',
+  //     desc: 'Meluncurkan aplikasi mobile untuk verifikasi produk yang dapat diakses oleh konsumen secara langsung, meningkatkan engagement dengan end-user.',
+  //     icon: <Zap className="w-5 h-5" />
+  //   },
+  //   {
+  //     year: '2024',
+  //     quarter: 'Q2',
+  //     title: 'Best Innovation Award',
+  //     desc: 'Menerima penghargaan "Best Anti-Counterfeit Innovation" dari Indonesia Digital Awards atas kontribusi inovatif dalam industri.',
+  //     icon: <Trophy className="w-5 h-5" />,
+  //     highlight: true
+  //   },
+  //   {
+  //     year: '2025',
+  //     quarter: 'Q1',
+  //     title: 'Ekspansi Regional',
+  //     desc: 'Memperluas jangkauan ke seluruh Asia Pasifik dengan lebih dari 500 brand partner aktif di 5 negara.',
+  //     icon: <Globe className="w-5 h-5" />
+  //   }
+  // ]
+  
+  const timeline = timelineData
+
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-5xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Perjalanan Kami</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Perjalanan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Delapan Tahun</span>
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Dari startup kecil hingga menjadi pemimpin pasar anti-counterfeit di Asia Pasifik.
+          </p>
+        </motion.div>
+
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
+
+          <div className="space-y-8">
+            {timeline.map((item, idx) => {
+              const isLeft = idx % 2 === 0
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className={`relative flex items-start gap-6 md:gap-0 ${
+                    isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
+                >
+                  {/* Timeline Dot */}
+                  <div className={`absolute left-6 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-white border-2 ${
+                    item.highlight ? 'border-[#C5A059]' : 'border-[#E8D09E]/50'
+                  } rounded-xl flex items-center justify-center ${
+                    item.highlight ? 'text-[#8C6F3D]' : 'text-gray-400'
+                  } shadow-md z-10 ${item.highlight ? 'scale-110' : ''}`}>
+                    {/* {item.icon} */}
+                    <item.icon className='w-5 h-5' />
+                  </div>
+
+                  {/* Content Card */}
+                  <div className={`pl-20 md:pl-0 md:w-1/2 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
+                    <div className={`bg-white rounded-2xl p-5 border ${
+                      item.highlight ? 'border-[#E8D09E]/50 shadow-md' : 'border-gray-100 shadow-sm'
+                    } hover:shadow-lg transition-shadow`}>
+                      <div className="flex items-center gap-2 mb-2 flex-wrap">
+                        <span className="text-xs font-extrabold text-[#C5A059] bg-[#E8D09E]/20 px-2.5 py-1 rounded-md tracking-wider">
+                          {item.year} {item.quarter}
+                        </span>
+                        {item.highlight && (
+                          <span className="text-[10px] font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                            Milestone
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-bold text-[#1A1A1A] text-lg mb-2">{item.title}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// IMPACT BY NUMBERS SECTION
+// ============================================================================
+// function ImpactSection() {
+//   const impacts = [
+//     {
+//       icon: <Building2 className="w-6 h-6" />,
+//       value: '500+',
+//       label: 'Brand Partner',
+//       desc: 'Dari berbagai industri di Asia Pasifik'
+//     },
+//     {
+//       icon: <ShieldCheck className="w-6 h-6" />,
+//       value: '10M+',
+//       label: 'Produk Terverifikasi',
+//       desc: 'Hingga hari ini dan terus bertambah'
+//     },
+//     {
+//       icon: <Globe className="w-6 h-6" />,
+//       value: '5',
+//       label: 'Negara Dilayani',
+//       desc: 'Indonesia, Malaysia, Singapura, Thailand, Vietnam'
+//     },
+//     {
+//       icon: <TrendingUp className="w-6 h-6" />,
+//       value: '99.9%',
+//       label: 'Tingkat Akurasi',
+//       desc: 'Sistem verifikasi real-time yang handal'
+//     },
+//     {
+//       icon: <Users className="w-6 h-6" />,
+//       value: '50+',
+//       label: 'Tim Profesional',
+//       desc: 'Ahli teknologi, bisnis, dan customer support'
+//     },
+//     {
+//       icon: <Clock className="w-6 h-6" />,
+//       value: '24/7',
+//       label: 'Dukungan Teknis',
+//       desc: 'Selalu siap membantu kapan saja'
+//     }
+//   ]
+
+//   return (
+//     <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+//       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+//       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+
+//       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+//         >
+//           <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Dampak Kami</p>
+//           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+//             Angka yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+//           </h2>
+//           <p className="text-gray-400 text-lg leading-relaxed">
+//             Dampak nyata yang kami berikan untuk industri dan konsumen di Asia Pasifik.
+//           </p>
+//         </motion.div>
+
+//         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+//           {impacts.map((impact, idx) => (
+//             <motion.div
+//               key={idx}
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true, margin: "-50px" }}
+//               transition={{ duration: 0.5, delay: idx * 0.08 }}
+//               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 hover:border-[#E8D09E]/30 transition-all group text-center"
+//             >
+//               <div className="w-12 h-12 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+//                 {impact.icon}
+//               </div>
+//               <p className="text-3xl md:text-4xl font-extrabold text-white mb-2 tracking-tight">
+//                 {impact.value}
+//               </p>
+//               <p className="text-sm font-bold text-[#E8D09E] mb-1">{impact.label}</p>
+//               <p className="text-xs text-gray-400">{impact.desc}</p>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ============================================================================
+// IMPACT SECTION (disesuaikan dengan proposal)
+// ==============================================================================
+function ImpactSection() {
+  // Disesuaikan dengan angka-angka dari proposal
+  const impacts = [
+    {
+      icon: <Database className="w-6 h-6" />,
+      value: '100M',
+      label: 'Kode / Hari',
+      desc: 'Kapasitas produksi maksimum kode AG'
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      value: '5',
+      label: 'Lapis Keamanan',
+      desc: 'Proteksi sinergis per produk'
+    },
+    {
+      icon: <AlertTriangle className="w-6 h-6" />,
+      value: '15x',
+      label: 'Limit Verifikasi',
+      desc: 'Batas pengecekan per kode'
+    },
+    {
+      icon: <Building2 className="w-6 h-6" />,
+      value: '500+',
+      label: 'Brand Partner',
+      desc: 'Dari berbagai industri di Asia Pasifik'
+    },
+    {
+      icon: <BadgeCheck className="w-6 h-6" />,
+      value: 'ISO',
+      label: '27000:2016',
+      desc: 'Standar pengamanan informasi cloud database'
+    },
+    {
+      icon: <Calendar className="w-6 h-6" />,
+      value: '8+',
+      label: 'Tahun Berkiprah',
+      desc: 'Sejak 2017 hingga sekarang'
+    }
+  ]
+
+  return (
+    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Dampak Kami</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            Angka yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+          </h2>
+          <p className="text-gray-400 text-lg leading-relaxed">
+            Dampak nyata yang kami berikan untuk industri dan konsumen di Asia Pasifik.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {impacts.map((impact, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 hover:border-[#E8D09E]/30 transition-all group text-center"
+            >
+              <div className="w-12 h-12 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                {impact.icon}
+              </div>
+              <p className="text-3xl md:text-4xl font-extrabold text-white mb-2 tracking-tight">
+                {impact.value}
+              </p>
+              <p className="text-sm font-bold text-[#E8D09E] mb-1">{impact.label}</p>
+              <p className="text-xs text-gray-400">{impact.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// OUR TEAM SECTION
+// ============================================================================
+function TeamSection() {
+  const team = [
+    {
+      name: 'Budi Santoso',
+      role: 'Chief Executive Officer',
+      desc: '15+ tahun pengalaman di industri teknologi dan autentikasi.',
+      initial: 'B'
+    },
+    {
+      name: 'Siti Rahayu',
+      role: 'Chief Technology Officer',
+      desc: 'Ahli dalam sistem terdistribusi dan keamanan data.',
+      initial: 'S'
+    },
+    {
+      name: 'Ahmad Fauzi',
+      role: 'Chief Operating Officer',
+      desc: 'Fokus pada operasional dan ekspansi bisnis regional.',
+      initial: 'A'
+    },
+    {
+      name: 'Diana Kusuma',
+      role: 'Head of Product',
+      desc: 'Mengembangkan roadmap produk dan inovasi teknologi.',
+      initial: 'D'
+    }
+  ]
+
+  return (
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+        >
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Tim Kami</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            Orang-Orang di Balik <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">AuthenticGuards</span>
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Tim profesional yang berdedikasi untuk memberikan solusi autentikasi terbaik.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {team.map((member, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group bg-[#FAF8F5] hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <span className="text-3xl font-extrabold text-white">{member.initial}</span>
+              </div>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mb-1">{member.name}</h3>
+              <p className="text-sm font-semibold text-[#8C6F3D] mb-3">{member.role}</p>
+              <p className="text-xs text-gray-500 leading-relaxed">{member.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-sm text-gray-500 mb-4">
+            Dan 46+ profesional lainnya yang berdedikasi untuk kesuksesan Anda
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold hover:text-[#6b5530] transition-colors group"
+          >
+            <span>Bergabung dengan Tim Kami</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// OFFICE & LOCATION SECTION
+// ============================================================================
+function OfficeSection() {
+  const office = getHQOffice()
+  
+  return (
+    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div>
+              <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Lokasi Kami</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
+                Kantor <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Pusat</span>
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                Berkantor pusat di {office.city}, {office.countryName}, dengan akses strategis ke seluruh Asia Pasifik.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+                <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Alamat</p>
+                  <p className="text-sm font-semibold text-[#1A1A1A]">
+                    {office.address}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+                <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Telepon</p>
+                  <a href={office.phoneLink} className="text-sm font-semibold text-[#1A1A1A] hover:text-[#8C6F3D] transition-colors">
+                    {office.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+                <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Email</p>
+                  <a href={`mailto:${office.email}`} className="text-sm font-semibold text-[#1A1A1A] hover:text-[#8C6F3D] transition-colors">
+                    {office.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+                <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Jam Operasional</p>
+                  <p className="text-sm font-semibold text-[#1A1A1A]">
+                    Senin - Jumat: 09:00 - 17:00 WIB
+                  </p>
+                </div>
+              </div> */}
+            </div>
+          </motion.div>
+
+          {/* Right - Map Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
+              
+              <div className="relative z-10">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 mb-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-xl flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400 font-medium">Kantor Pusat</p>
+                      <p className="text-white font-bold">{office.city}, {office.countryName}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-white/5 rounded-xl p-3">
+                      <div className='h-4'></div>
+                      {/* <p className="text-[10px] text-gray-400 uppercase tracking-wider">Latitude</p>
+                      <p className="text-sm font-mono font-bold text-[#E8D09E]">-6.9193°</p> */}
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-3">
+                      <div className='h-4'></div>
+                      {/* <p className="text-[10px] text-gray-400 uppercase tracking-wider">Longitude</p>
+                      <p className="text-sm font-mono font-bold text-[#E8D09E]">107.6123°</p> */}
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href={office.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-[#C5A059] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:bg-[#E8D09E] transition-all duration-300"
+                >
+                  <MapPin className="w-4 h-4" />
+                  <span>Lihat di Google Maps</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
+// ============================================================================
+// OFFICE & LOCATION SECTION (dipertahankan - data sudah akurat)
+// ==============================================================================
+// function OfficeSection() {
+//   return (
+//     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
+//       <div className="max-w-7xl mx-auto px-4 md:px-8">
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+//           {/* Left Content */}
+//           <motion.div
+//             initial={{ opacity: 0, x: -20 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             viewport={{ once: true }}
+//             className="space-y-6"
+//           >
+//             <div>
+//               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Lokasi Kami</p>
+//               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
+//                 Kantor <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Pusat</span>
+//               </h2>
+//               <p className="text-gray-600 leading-relaxed">
+//                 Berkantor pusat di Bandung, Jawa Barat, dengan akses strategis ke seluruh Asia Pasifik.
+//               </p>
+//             </div>
+
+//             <div className="space-y-4">
+//               <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+//                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+//                   <MapPin className="w-5 h-5" />
+//                 </div>
+//                 <div>
+//                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Alamat</p>
+//                   <p className="text-sm font-semibold text-[#1A1A1A]">
+//                     Jl. Kh Wahid Hasyim No.316, Kopo, Bojongloa Kaler, Kota Bandung, Jawa Barat 40233
+//                   </p>
+//                 </div>
+//               </div>
+
+//               <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+//                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+//                   <Phone className="w-5 h-5" />
+//                 </div>
+//                 <div>
+//                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Telepon</p>
+//                   <a href="tel:+6281222201649" className="text-sm font-semibold text-[#1A1A1A] hover:text-[#8C6F3D] transition-colors">
+//                     +62 812-2220-1649
+//                   </a>
+//                 </div>
+//               </div>
+
+//               <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+//                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+//                   <Mail className="w-5 h-5" />
+//                 </div>
+//                 <div>
+//                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Email</p>
+//                   <a href="mailto:info@authenticguards.com" className="text-sm font-semibold text-[#1A1A1A] hover:text-[#8C6F3D] transition-colors">
+//                     info@authenticguards.com
+//                   </a>
+//                 </div>
+//               </div>
+
+//               <div className="flex gap-4 p-4 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm">
+//                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+//                   <Clock className="w-5 h-5" />
+//                 </div>
+//                 <div>
+//                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Jam Operasional</p>
+//                   <p className="text-sm font-semibold text-[#1A1A1A]">
+//                     Senin - Jumat: 09:00 - 17:00 WIB
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Right - Map Placeholder */}
+//           <motion.div
+//             initial={{ opacity: 0, x: 20 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             viewport={{ once: true }}
+//             className="relative"
+//           >
+//             <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+//               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
+              
+//               <div className="relative z-10">
+//                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 mb-4">
+//                   <div className="flex items-center gap-3 mb-4">
+//                     <div className="w-12 h-12 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-xl flex items-center justify-center">
+//                       <MapPin className="w-6 h-6 text-white" />
+//                     </div>
+//                     <div>
+//                       <p className="text-xs text-gray-400 font-medium">Kantor Pusat</p>
+//                       <p className="text-white font-bold">Bandung, Indonesia</p>
+//                     </div>
+//                   </div>
+                  
+//                   <div className="grid grid-cols-2 gap-3">
+//                     <div className="bg-white/5 rounded-xl p-3">
+//                       <p className="text-[10px] text-gray-400 uppercase tracking-wider">Latitude</p>
+//                       <p className="text-sm font-mono font-bold text-[#E8D09E]">-6.9193°</p>
+//                     </div>
+//                     <div className="bg-white/5 rounded-xl p-3">
+//                       <p className="text-[10px] text-gray-400 uppercase tracking-wider">Longitude</p>
+//                       <p className="text-sm font-mono font-bold text-[#E8D09E]">107.6123°</p>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 <a
+//                   href="https://maps.google.com/?q=Jl.+Kh+Wahid+Hasyim+No.316+Bandung"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="w-full flex items-center justify-center gap-2 bg-[#C5A059] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:bg-[#E8D09E] transition-all duration-300"
+//                 >
+//                   <MapPin className="w-4 h-4" />
+//                   <span>Lihat di Google Maps</span>
+//                   <ArrowRight className="w-4 h-4" />
+//                 </a>
+//               </div>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ============================================================================
+// CTA ABOUT SECTION - Fokus B2B Partnership (Tanpa Scan)
+// ============================================================================
+function CTAAboutSection() {
+  return (
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 rounded-full">
+              <Handshake className="w-4 h-4 text-[#E8D09E]" />
+              <span className="text-xs font-bold text-[#E8D09E] tracking-wider uppercase">Mari Berkolaborasi</span>
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+              Siap Melindungi <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+                Brand Anda?
+              </span>
+            </h2>
+
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Bergabunglah dengan 500+ brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Link
+                to="/contact"
+                className="group inline-flex items-center justify-center gap-3 bg-[#C5A059] text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#E8D09E] transition-all duration-300 shadow-lg hover:shadow-[#C5A059]/30 hover:-translate-y-0.5"
+              >
+                <span>Hubungi Tim Kami</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/services"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+              >
+                <ShieldCheck className="w-5 h-5" />
+                <span>Lihat Layanan Kami</span>
+              </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-6 text-xs text-gray-400">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                Konsultasi Gratis
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                Implementasi Cepat
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                Dukungan 24/7
+              </span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// MAIN PAGE
+// ============================================================================
+export default function AboutPage() {
+  return (
+    <>
+      <HeroAbout />
+      <OurStorySection />
+      <MissionVisionSection />
+      <CoreValuesSection />
+      <DetailedTimelineSection />
+      <ImpactSection />
+      {/* <TeamSection /> */}
+      <TeamOverviewSection />
+      <OfficeSection />
+      <AwardsCertificationsOverviewSection navigateDetail={true} />
+      <MediaCoverageSimpleOverviewSection />
+      {/* <CTAAboutSection /> */}
+      <AboutJoinUsCTA variant='home' />
+    </>
+  )
+}

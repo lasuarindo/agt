@@ -1,0 +1,358 @@
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { motion, useScroll, useTransform } from 'motion/react'
+
+import appLogo from "/favicon.ico";
+
+const BrandLogo = () => (
+  <Link to='/' className='inline-flex items-center gap-3 group'>
+    {/* <div className="size-10 p-1.5 bg-[#E8D09E]/20 rounded-xl border border-[#C5A059]/30 group-hover:bg-[#E8D09E]/40 transition-colors duration-300">
+      <img src={appLogo} alt="AuthenticGuards Logo" className='size-full object-contain' />
+    </div> */}
+    <div className="size-10 transition-colors duration-300">
+      <img src={appLogo} alt="AuthenticGuards Logo" className='size-full object-contain' />
+    </div>
+    <div className="flex flex-col">
+      <h2 className='text-lg font-bold text-[#1A1A1A] leading-tight tracking-tight group-hover:text-[#8C6F3D] transition-colors duration-300'>
+        AuthenticGuards
+      </h2>
+      <p className='text-xs font-medium text-[#8C6F3D] leading-tight'>
+        Technology
+      </p>
+    </div>
+  </Link>
+);
+
+interface NavLinkProps {
+  label: string,
+  href: string
+}
+
+
+export default function HeaderMain() {
+  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  
+  const navLinks: NavLinkProps[] = [
+    { label: 'Beranda', href: '' },
+    { label: 'Tentang', href: '#about' },
+    { label: 'Layanan', href: '#services' },
+    { label: 'Teknologi', href: '#technology' },
+    { label: 'Partner', href: '#partners' },
+    { label: 'Kontak', href: '#contact' }
+  ];
+  
+  function toggleMobileNav(show: boolean) {
+    setIsMobileOpen(show);
+    if (show) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      // document.body.removeAttribute('style');
+      document.body.style.overflow = '';
+    }
+  }
+  
+  useEffect(() => {
+    const handleResize = () => {
+      toggleMobileNav(false);
+    }
+    
+    window.addEventListener('resize', handleResize)
+    
+    return ()=> window.removeEventListener('resize', handleResize)
+  }, [])
+  
+  return (
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className='sticky top-0 bg-white/80 backdrop-blur-md border-b border-[#E8D09E]/30 z-50 transition-all '
+      >
+        <div className="header-content max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+          <BrandLogo />
+          
+          <nav className="hidden lg:block">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.href} 
+                to={link.href}
+                className='px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#8C6F3D] rounded-lg hover:bg-[#FAF8F5] transition-all'
+                >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          
+          <div className={`fixed inset-0 z-50 bg-white flex flex-col transition-all duration-300 ease-in-out h-screen w-screen lg:hidden ${isMobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+            <div className="flex items-center justify-between p-6 border-b border-[#E8D09E]/30">
+              <BrandLogo />
+              <button
+                onClick={() => toggleMobileNav(false)}
+                className='p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer'
+                aria-label='Close Menu'
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <nav className='flex-1 py-8 px-6 flex flex-col space-y-2 overflow-auto'>
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.href} 
+                  to={link.href}
+                  // onClick={() => toggleMobileNav(false)}
+                  className='px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#8C6F3D] rounded-lg hover:bg-[#FAF8F5] transition-all'
+                  >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            
+            <div className="text-center text-xs text-gray-400 font-medium tracking-wide space-y-1 border-t border-[#E8D09E]/20 p-6 bg-[#FAF8F5]">
+              <p>All Rights Reserved</p>
+              <p>© {new Date().getFullYear()} PT. Autentikasi Garda Teknologi</p>
+            </div>
+          </div>
+          
+          <button
+            onClick={() => toggleMobileNav(true)}
+            className="lg:hidden p-2 text-[#1A1A1A] hover:bg-[#FAF8F5] rounded-lg"
+          >
+            {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+        
+        
+        
+      </motion.header>
+    </>
+  )
+}
+
+
+// import { useState, useEffect } from "react";
+// import { Link, useLocation } from "react-router";
+// import { ArrowRight, Menu, X, ScanLine } from "lucide-react";
+// import { motion } from 'motion/react'
+
+// import appLogo from "/favicon.ico";
+
+// const BrandLogo = () => (
+//   <Link to='/' className='inline-flex items-center gap-3 group'>
+//     <div className="size-10 transition-colors duration-300">
+//       <img src={appLogo} alt="AuthenticGuards Logo" className='size-full object-contain' />
+//     </div>
+//     <div className="flex flex-col">
+//       <h2 className='text-lg font-bold text-[#1A1A1A] leading-tight tracking-tight group-hover:text-[#8C6F3D] transition-colors duration-300'>
+//         AuthenticGuards
+//       </h2>
+//       <p className='text-xs font-medium text-[#8C6F3D] leading-tight'>
+//         Technology
+//       </p>
+//     </div>
+//   </Link>
+// );
+
+// interface NavLinkProps {
+//   label: string,
+//   href: string,
+//   isAnchor?: boolean
+// }
+
+// export default function HeaderMain() {
+//   const [isMobileOpen, setIsMobileOpen] = useState(false)
+//   const [isScrolled, setIsScrolled] = useState(false)
+//   const [activeSection, setActiveSection] = useState('')
+//   const location = useLocation()
+  
+//   const navLinks: NavLinkProps[] = [
+//     { label: 'Beranda', href: '/', isAnchor: false },
+//     { label: 'Tentang', href: '#about', isAnchor: true },
+//     { label: 'Layanan', href: '#services', isAnchor: true },
+//     { label: 'Teknologi', href: '#technology', isAnchor: true },
+//     { label: 'Partner', href: '#partners', isAnchor: true },
+//     { label: 'Kontak', href: '#contact', isAnchor: true }
+//   ];
+  
+//   // Smooth scroll untuk anchor links
+//   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+//     e.preventDefault()
+//     const targetId = href.slice(1)
+//     const element = document.getElementById(targetId)
+    
+//     if (element) {
+//       const headerOffset = 80
+//       const elementPosition = element.getBoundingClientRect().top
+//       const offsetPosition = elementPosition + window.scrollY - headerOffset
+      
+//       window.scrollTo({
+//         top: offsetPosition,
+//         behavior: 'smooth'
+//       })
+//     }
+    
+//     toggleMobileNav(false)
+//   }
+  
+//   function toggleMobileNav(show: boolean) {
+//     setIsMobileOpen(show);
+//     if (show) {
+//       document.body.style.overflow = 'hidden';
+//     } else {
+//       document.body.style.overflow = '';
+//     }
+//   }
+  
+//   // Scroll effect untuk header
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setIsScrolled(window.scrollY > 20)
+//     }
+//     window.addEventListener('scroll', handleScroll)
+//     return () => window.removeEventListener('scroll', handleScroll)
+//   }, [])
+  
+//   // Track active section berdasarkan scroll position
+//   useEffect(() => {
+//     const handleScrollSpy = () => {
+//       const sections = navLinks.filter(l => l.isAnchor).map(l => l.href.slice(1))
+      
+//       for (const section of sections) {
+//         const element = document.getElementById(section)
+//         if (element) {
+//           const rect = element.getBoundingClientRect()
+//           if (rect.top <= 120 && rect.bottom >= 120) {
+//             setActiveSection(`#${section}`)
+//             return
+//           }
+//         }
+//       }
+//       setActiveSection('')
+//     }
+    
+//     window.addEventListener('scroll', handleScrollSpy)
+//     return () => window.removeEventListener('scroll', handleScrollSpy)
+//   }, [])
+  
+//   useEffect(() => {
+//     const handleResize = () => {
+//       toggleMobileNav(false);
+//     }
+    
+//     window.addEventListener('resize', handleResize)
+    
+//     return () => window.removeEventListener('resize', handleResize)
+//   }, [])
+  
+//   // Helper untuk render nav link
+//   const renderNavLink = (link: NavLinkProps, extraClassName: string = '') => {
+//     const isActive = link.isAnchor 
+//       ? activeSection === link.href 
+//       : (location.pathname === '/' && link.href === '/')
+    
+//     const baseClass = `px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+//       isActive 
+//         ? 'text-[#8C6F3D] bg-[#E8D09E]/20' 
+//         : 'text-gray-700 hover:text-[#8C6F3D] hover:bg-[#FAF8F5]'
+//     } ${extraClassName}`
+    
+//     if (link.isAnchor) {
+//       return (
+//         <a
+//           key={link.href}
+//           href={link.href}
+//           onClick={(e) => handleAnchorClick(e, link.href)}
+//           className={baseClass}
+//         >
+//           {link.label}
+//         </a>
+//       )
+//     }
+    
+//     return (
+//       <Link 
+//         key={link.href}
+//         to={link.href}
+//         className={baseClass}
+//       >
+//         {link.label}
+//       </Link>
+//     )
+//   }
+  
+//   return (
+//     <motion.header
+//       initial={{ y: -100 }}
+//       animate={{ y: 0 }}
+//       transition={{ duration: 0.5 }}
+//       className={`sticky top-0 z-50 transition-all duration-300 ${
+//         isScrolled 
+//           ? 'bg-white/95 backdrop-blur-md border-b border-[#E8D09E]/30 shadow-sm' 
+//           : 'bg-white/80 backdrop-blur-md border-b border-transparent'
+//       }`}
+//     >
+//       <div className="header-content max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+//         <BrandLogo />
+        
+//         {/* Desktop Navigation */}
+//         <nav className="hidden lg:flex items-center gap-1">
+//           {navLinks.map((link) => renderNavLink(link))}
+//         </nav>
+        
+//         {/* CTA Button - Desktop */}
+//         <Link
+//           to="/scan"
+//           className="hidden lg:inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
+//         >
+//           <ScanLine className="w-4 h-4" />
+//           <span>Verifikasi Produk</span>
+//         </Link>
+        
+//         {/* Mobile Fullscreen Menu */}
+//         <div className={`fixed inset-0 z-50 bg-white flex flex-col transition-all duration-300 ease-in-out h-screen w-screen lg:hidden ${isMobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+//           <div className="flex items-center justify-between p-6 border-b border-[#E8D09E]/30">
+//             <BrandLogo />
+//             <button
+//               onClick={() => toggleMobileNav(false)}
+//               className='p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer'
+//               aria-label='Close Menu'
+//             >
+//               <X className="w-6 h-6" />
+//             </button>
+//           </div>
+          
+//           <nav className='flex-1 py-8 px-6 flex flex-col space-y-2 overflow-auto'>
+//             {navLinks.map((link) => renderNavLink(link, 'py-3 text-base'))}
+//           </nav>
+          
+//           {/* Mobile CTA */}
+//           <div className="p-6 border-t border-[#E8D09E]/20 bg-[#FAF8F5] space-y-4">
+//             <Link
+//               to="/scan"
+//               onClick={() => toggleMobileNav(false)}
+//               className="w-full inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white px-5 py-3.5 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-md"
+//             >
+//               <ScanLine className="w-4 h-4" />
+//               <span>Verifikasi Produk</span>
+//             </Link>
+            
+//             <div className="text-center text-xs text-gray-400 font-medium tracking-wide space-y-1">
+//               <p>All Rights Reserved</p>
+//               <p>© {new Date().getFullYear()} PT. Autentikasi Garda Teknologi</p>
+//             </div>
+//           </div>
+//         </div>
+        
+//         {/* Mobile Menu Toggle */}
+//         <button
+//           onClick={() => toggleMobileNav(true)}
+//           className="lg:hidden p-2 text-[#1A1A1A] hover:bg-[#FAF8F5] rounded-lg"
+//           aria-label="Open Menu"
+//         >
+//           <Menu className="w-6 h-6" />
+//         </button>
+//       </div>
+//     </motion.header>
+//   )
+// }

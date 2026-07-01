@@ -1,0 +1,905 @@
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router'
+import { motion } from 'motion/react'
+import {
+  Shield,
+  ShieldCheck,
+  Lock,
+  Eye,
+  Database,
+  Users,
+  Globe,
+  Mail,
+  Phone,
+  MapPin,
+  FileText,
+  CheckCircle2,
+  AlertCircle,
+  ArrowRight,
+  Clock,
+  Server,
+  UserCheck,
+  Cookie,
+  Baby,
+  RefreshCw,
+  MessageCircle,
+  ChevronRight,
+  Sparkles,
+  BookOpen,
+  HelpCircle,
+  X
+} from 'lucide-react'
+
+// ============================================================================
+// HERO PRIVACY POLICY
+// ============================================================================
+function HeroPrivacyPolicy() {
+  return (
+    <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 26, 1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/40 px-4 py-2 rounded-full mb-6"
+        >
+          <Lock className="w-4 h-4 text-[#C5A059]" />
+          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Kebijakan Privasi</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
+        >
+          Kebijakan <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+            Privasi
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
+        >
+          Kami menghargai privasi Anda. Kebijakan ini menjelaskan bagaimana PT. Autentikasi Garda Teknologi mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-gray-600"
+        >
+          <span className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-[#8C6F3D]" />
+            <span className="font-semibold">Terakhir Diperbarui: 22 Juni 2026</span>
+          </span>
+          <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-2">
+            <FileText className="w-4 h-4 text-[#8C6F3D]" />
+            <span className="font-semibold">Versi 2.0</span>
+          </span>
+          <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <span className="font-semibold">ISO 27001 Compliant</span>
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ============================================================================
+// TABLE OF CONTENTS
+// ============================================================================
+function TableOfContents() {
+  const sections = [
+    { id: 'pendahuluan', label: 'Pendahuluan', icon: <BookOpen className="w-4 h-4" /> },
+    { id: 'informasi-yang-dikumpulkan', label: 'Informasi yang Kami Kumpulkan', icon: <Database className="w-4 h-4" /> },
+    { id: 'penggunaan-informasi', label: 'Bagaimana Kami Menggunakan Informasi', icon: <Eye className="w-4 h-4" /> },
+    { id: 'berbagi-informasi', label: 'Berbagi Informasi dengan Pihak Ketiga', icon: <Users className="w-4 h-4" /> },
+    { id: 'keamanan-data', label: 'Keamanan Data', icon: <Lock className="w-4 h-4" /> },
+    { id: 'retensi-data', label: 'Retensi Data', icon: <Server className="w-4 h-4" /> },
+    { id: 'hak-anda', label: 'Hak Anda', icon: <UserCheck className="w-4 h-4" /> },
+    { id: 'cookies', label: 'Cookies & Teknologi Serupa', icon: <Cookie className="w-4 h-4" /> },
+    { id: 'anak-di-bawah-umur', label: 'Anak di Bawah Umur', icon: <Baby className="w-4 h-4" /> },
+    { id: 'perubahan-kebijakan', label: 'Perubahan Kebijakan', icon: <RefreshCw className="w-4 h-4" /> },
+    { id: 'kontak-kami', label: 'Hubungi Kami', icon: <MessageCircle className="w-4 h-4" /> }
+  ]
+
+  return (
+    <motion.aside
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className="lg:col-span-3"
+    >
+      <div className="sticky top-28 bg-white border border-[#E8D09E]/30 rounded-2xl p-6 shadow-sm">
+        <div className="flex items-center gap-2 mb-4">
+          <FileText className="w-5 h-5 text-[#8C6F3D]" />
+          <h3 className="font-bold text-[#1A1A1A]">Daftar Isi</h3>
+        </div>
+        <nav className="space-y-1">
+          {sections.map((section) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-[#8C6F3D] hover:bg-[#FAF8F5] rounded-lg transition-all group"
+            >
+              <span className="text-[#8C6F3D]/60 group-hover:text-[#8C6F3D] transition-colors">
+                {section.icon}
+              </span>
+              <span className="flex-1">{section.label}</span>
+              <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          ))}
+        </nav>
+      </div>
+    </motion.aside>
+  )
+}
+
+// ============================================================================
+// SECTION WRAPPER COMPONENT
+// ============================================================================
+function PolicySection({ id, title, icon, children }: {
+  id: string
+  title: string
+  icon: React.ReactNode
+  children: React.ReactNode
+}) {
+  return (
+    <motion.section
+      id={id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5 }}
+      className="scroll-mt-28"
+    >
+      <div className="flex items-center gap-3 mb-5">
+        <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+          {icon}
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] tracking-tight">
+          {title}
+        </h2>
+      </div>
+      <div className="prose prose-gray max-w-none">
+        {children}
+      </div>
+    </motion.section>
+  )
+}
+
+// ============================================================================
+// CALLOUT BOX COMPONENT
+// ============================================================================
+function CalloutBox({ type = 'info', title, children }: {
+  type?: 'info' | 'warning' | 'success'
+  title?: string
+  children: React.ReactNode
+}) {
+  const styles = {
+    info: {
+      bg: 'bg-blue-50',
+      border: 'border-blue-200',
+      icon: <AlertCircle className="w-5 h-5 text-blue-600" />,
+      titleColor: 'text-blue-900',
+      textColor: 'text-blue-800'
+    },
+    warning: {
+      bg: 'bg-amber-50',
+      border: 'border-amber-200',
+      icon: <AlertCircle className="w-5 h-5 text-amber-600" />,
+      titleColor: 'text-amber-900',
+      textColor: 'text-amber-800'
+    },
+    success: {
+      bg: 'bg-emerald-50',
+      border: 'border-emerald-200',
+      icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />,
+      titleColor: 'text-emerald-900',
+      textColor: 'text-emerald-800'
+    }
+  }
+
+  const style = styles[type]
+
+  return (
+    <div className={`${style.bg} ${style.border} border rounded-2xl p-5 my-6`}>
+      <div className="flex items-start gap-3">
+        <div className="shrink-0 mt-0.5">{style.icon}</div>
+        <div className="flex-1">
+          {title && (
+            <h4 className={`font-bold ${style.titleColor} mb-2`}>{title}</h4>
+          )}
+          <div className={`text-sm ${style.textColor} leading-relaxed`}>
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ============================================================================
+// DATA LIST COMPONENT
+// ============================================================================
+function DataList({ items }: { items: { icon: React.ReactNode; title: string; desc: string }[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
+      {items.map((item, idx) => (
+        <div key={idx} className="flex items-start gap-3 p-4 bg-[#FAF8F5] rounded-xl border border-gray-100">
+          <div className="w-8 h-8 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-lg flex items-center justify-center shrink-0">
+            {item.icon}
+          </div>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{item.title}</h4>
+            <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+// ============================================================================
+// MAIN CONTENT
+// ============================================================================
+function PrivacyPolicyContent() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      className="lg:col-span-9 space-y-16"
+    >
+      {/* 1. PENDAHULUAN */}
+      <PolicySection id="pendahuluan" title="Pendahuluan" icon={<BookOpen className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Selamat datang di <strong className="text-[#1A1A1A]">AuthenticGuards</strong>, sebuah layanan yang dioperasikan oleh <strong className="text-[#1A1A1A]">PT. Autentikasi Garda Teknologi</strong> ("kami", "milik kami", atau "perusahaan"). Kami berkomitmen untuk melindungi privasi dan keamanan informasi pribadi Anda.
+          </p>
+          <p>
+            Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda ketika Anda menggunakan layanan autentikasi produk kami, termasuk tetapi tidak terbatas pada:
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-4">
+            <li>Website dan aplikasi mobile AuthenticGuards</li>
+            <li>Layanan verifikasi produk melalui QR code dan scratch PIN</li>
+            <li>Sistem klaim kepemilikan produk</li>
+            <li>Dashboard analytics untuk brand partner</li>
+            <li>API dan integrasi sistem</li>
+          </ul>
+          <p>
+            Dengan menggunakan layanan kami, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini. Kebijakan ini berlaku untuk seluruh wilayah operasional kami di Asia Pasifik.
+          </p>
+        </div>
+
+        <CalloutBox type="info" title="Catatan Penting">
+          <p>
+            Kebijakan ini merupakan bagian integral dari <Link to="/term-condition" className="text-[#8C6F3D] font-semibold hover:underline">Syarat & Ketentuan</Link> kami. Jika ada konflik antara kedua dokumen, Kebijakan Privasi ini yang akan berlaku untuk hal-hal yang berkaitan dengan privasi dan data pribadi.
+          </p>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 2. INFORMASI YANG DIKUMPULKAN */}
+      <PolicySection id="informasi-yang-dikumpulkan" title="Informasi yang Kami Kumpulkan" icon={<Database className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Kami mengumpulkan berbagai jenis informasi untuk menyediakan dan meningkatkan layanan kami. Informasi ini dikategorikan sebagai berikut:
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4 flex items-center gap-2">
+          <Users className="w-5 h-5 text-[#8C6F3D]" />
+          A. Informasi Pribadi
+        </h3>
+        <DataList items={[
+          {
+            icon: <Users className="w-4 h-4" />,
+            title: 'Data Identitas',
+            desc: 'Nama lengkap, username, alamat email, nomor telepon, tanggal lahir'
+          },
+          {
+            icon: <MapPin className="w-4 h-4" />,
+            title: 'Data Alamat',
+            desc: 'Alamat rumah/kantor untuk pengiriman dan verifikasi'
+          },
+          {
+            icon: <FileText className="w-4 h-4" />,
+            title: 'Data Perusahaan',
+            desc: 'Nama perusahaan, jabatan, dan informasi bisnis untuk klien B2B'
+          },
+          {
+            icon: <Lock className="w-4 h-4" />,
+            title: 'Data Autentikasi',
+            desc: 'Password (terenkripsi), PIN verifikasi, dan data keamanan akun'
+          }
+        ]} />
+
+        <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4 flex items-center gap-2">
+          <Globe className="w-5 h-5 text-[#8C6F3D]" />
+          B. Informasi Teknis
+        </h3>
+        <DataList items={[
+          {
+            icon: <Globe className="w-4 h-4" />,
+            title: 'Data Perangkat',
+            desc: 'Tipe perangkat, sistem operasi, browser, dan identifier unik'
+          },
+          {
+            icon: <MapPin className="w-4 h-4" />,
+            title: 'Data Lokasi (GPS)',
+            desc: 'Koordinat geografis saat verifikasi produk (dengan izin)'
+          },
+          {
+            icon: <Server className="w-4 h-4" />,
+            title: 'Data Log',
+            desc: 'IP address, waktu akses, halaman yang dikunjungi, dan aktivitas'
+          },
+          {
+            icon: <Cookie className="w-4 h-4" />,
+            title: 'Cookies',
+            desc: 'Data cookies dan teknologi pelacakan serupa (lihat bagian Cookies)'
+          }
+        ]} />
+
+        <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4 flex items-center gap-2">
+          <Shield className="w-5 h-5 text-[#8C6F3D]" />
+          C. Data Verifikasi Produk
+        </h3>
+        <DataList items={[
+          {
+            icon: <ShieldCheck className="w-4 h-4" />,
+            title: 'Kode Produk',
+            desc: 'Kode unik produk yang diverifikasi (QR code, scratch PIN)'
+          },
+          {
+            icon: <Clock className="w-4 h-4" />,
+            title: 'Waktu Verifikasi',
+            desc: 'Timestamp kapan produk diverifikasi'
+          },
+          {
+            icon: <MapPin className="w-4 h-4" />,
+            title: 'Lokasi Verifikasi',
+            desc: 'Lokasi geografis saat verifikasi dilakukan'
+          },
+          {
+            icon: <CheckCircle2 className="w-4 h-4" />,
+            title: 'Status Verifikasi',
+            desc: 'Hasil verifikasi (original, sudah diklaim, dll)'
+          }
+        ]} />
+
+        <CalloutBox type="warning" title="Data yang TIDAK Kami Kumpulkan">
+          <p>
+            Kami <strong>tidak</strong> mengumpulkan informasi sensitif seperti data kartu kredit, informasi kesehatan, data biometrik, atau informasi lain yang diatur secara khusus oleh undang-undang perlindungan data.
+          </p>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 3. PENGGUNAAN INFORMASI */}
+      <PolicySection id="penggunaan-informasi" title="Bagaimana Kami Menggunakan Informasi" icon={<Eye className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Kami menggunakan informasi yang dikumpulkan untuk tujuan-tujuan berikut:
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          {[
+            {
+              icon: <ShieldCheck className="w-5 h-5" />,
+              title: 'Verifikasi Produk',
+              desc: 'Memverifikasi keaslian produk dan mencegah pemalsuan'
+            },
+            {
+              icon: <Users className="w-5 h-5" />,
+              title: 'Manajemen Akun',
+              desc: 'Membuat, mengelola, dan mengamankan akun pengguna'
+            },
+            {
+              icon: <MessageCircle className="w-5 h-5" />,
+              title: 'Komunikasi',
+              desc: 'Mengirim notifikasi, update, dan respon terhadap pertanyaan'
+            },
+            {
+              icon: <Database className="w-5 h-5" />,
+              title: 'Analisis Data',
+              desc: 'Menganalisis pola verifikasi untuk meningkatkan layanan'
+            },
+            {
+              icon: <Lock className="w-5 h-5" />,
+              title: 'Keamanan',
+              desc: 'Mendeteksi dan mencegah aktivitas penipuan atau penyalahgunaan'
+            },
+            {
+              icon: <Globe className="w-5 h-5" />,
+              title: 'Kepatuhan Hukum',
+              desc: 'Memenuhi kewajiban regulasi dan hukum yang berlaku'
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:border-[#E8D09E]/40 hover:shadow-sm transition-all">
+              <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                {item.icon}
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{item.title}</h4>
+                <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <CalloutBox type="success" title="Komitmen Kami">
+          <p>
+            Kami <strong>tidak</strong> akan menggunakan informasi pribadi Anda untuk tujuan yang tidak berkaitan dengan layanan kami tanpa persetujuan eksplisit dari Anda.
+          </p>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 4. BERBAGI INFORMASI */}
+      <PolicySection id="berbagi-informasi" title="Berbagi Informasi dengan Pihak Ketiga" icon={<Users className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Kami hanya berbagi informasi pribadi Anda dalam situasi terbatas berikut:
+          </p>
+        </div>
+
+        <div className="space-y-4 my-6">
+          {[
+            {
+              title: 'Brand Partner',
+              desc: 'Informasi klaim produk (nama, email) dibagikan kepada brand pemilik produk yang Anda klaim untuk aktivasi garansi dan dukungan purna jual.',
+              icon: <ShieldCheck className="w-5 h-5" />
+            },
+            {
+              title: 'Penyedia Layanan',
+              desc: 'Pihak ketiga yang membantu operasional kami (cloud hosting, payment gateway, email service) dengan perjanjian kerahasiaan yang ketat.',
+              icon: <Server className="w-5 h-5" />
+            },
+            {
+              title: 'Kewajiban Hukum',
+              desc: 'Jika diwajibkan oleh hukum, peraturan, atau perintah pengadilan yang sah.',
+              icon: <FileText className="w-5 h-5" />
+            },
+            {
+              title: 'Perlindungan Hak',
+              desc: 'Untuk melindungi hak, properti, atau keamanan AuthenticGuards, pengguna kami, atau publik.',
+              icon: <Lock className="w-5 h-5" />
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-4 p-5 bg-[#FAF8F5] rounded-2xl border border-gray-100">
+              <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                {item.icon}
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-[#1A1A1A] mb-1">{item.title}</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <CalloutBox type="warning" title="Penting untuk Diketahui">
+          <p>
+            Kami <strong>tidak</strong> menjual, menyewakan, atau memperdagangkan informasi pribadi Anda kepada pihak ketiga untuk tujuan pemasaran.
+          </p>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 5. KEAMANAN DATA */}
+      <PolicySection id="keamanan-data" title="Keamanan Data" icon={<Lock className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Keamanan data Anda adalah prioritas utama kami. Kami menerapkan langkah-langkah keamanan berlapis untuk melindungi informasi pribadi Anda:
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-2xl p-6 md:p-8 text-white my-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-2 mb-5">
+              <ShieldCheck className="w-6 h-6 text-[#E8D09E]" />
+              <h3 className="text-xl font-bold">Standar Keamanan Kami</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { label: 'Enkripsi Data', value: 'AES-256 bit' },
+                { label: 'Protokol Transfer', value: 'TLS 1.3' },
+                { label: 'Sertifikasi', value: 'ISO 27001:2022' },
+                { label: 'Uptime SLA', value: '99.99%' },
+                { label: 'Backup', value: 'Multi-region' },
+                { label: 'Audit', value: 'Independen berkala' }
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/10">
+                  <span className="text-sm text-gray-300">{item.label}</span>
+                  <span className="text-sm font-bold text-[#E8D09E]">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>Selain itu, kami juga menerapkan:</p>
+          <ul className="list-disc list-inside space-y-2 ml-4">
+            <li>Password di-hash dengan algoritma bcrypt</li>
+            <li>Two-Factor Authentication (2FA) opsional</li>
+            <li>Monitoring 24/7 untuk aktivitas mencurigakan</li>
+            <li>Pembatasan akses data berbasis peran (RBAC)</li>
+            <li>Penetration testing berkala oleh pihak ketiga</li>
+            <li>Pelatihan keamanan rutin untuk seluruh tim</li>
+          </ul>
+        </div>
+
+        <CalloutBox type="info" title="Tanggung Jawab Bersama">
+          <p>
+            Meskipun kami menerapkan langkah-langkah keamanan terbaik, tidak ada sistem yang 100% aman. Kami mendorong Anda untuk:
+          </p>
+          <ul className="list-disc list-inside mt-2 space-y-1">
+            <li>Menggunakan password yang kuat dan unik</li>
+            <li>Mengaktifkan Two-Factor Authentication</li>
+            <li>Tidak membagikan kredensial akun Anda</li>
+            <li>Segera melaporkan aktivitas mencurigakan</li>
+          </ul>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 6. RETENSI DATA */}
+      <PolicySection id="retensi-data" title="Retensi Data" icon={<Server className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Kami menyimpan informasi pribadi Anda selama diperlukan untuk memenuhi tujuan pengumpulan, kecuali jika periode retensi yang lebih panjang diperlukan atau diizinkan oleh hukum.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto my-6">
+          <table className="w-full border border-gray-200 rounded-xl overflow-hidden">
+            <thead className="bg-[#FAF8F5]">
+              <tr>
+                <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Jenis Data</th>
+                <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Periode Retensi</th>
+                <th className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Dasar</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {[
+                { type: 'Data Akun Aktif', period: 'Selama akun aktif', basis: 'Kontrak' },
+                { type: 'Data Verifikasi Produk', period: '5 tahun', basis: 'Regulasi & Audit' },
+                { type: 'Data Klaim Garansi', period: 'Masa garansi + 2 tahun', basis: 'Kontrak' },
+                { type: 'Data Log Sistem', period: '1 tahun', basis: 'Keamanan' },
+                { type: 'Data Akun Terhapus', period: '30 hari (soft delete)', basis: 'Recovery' },
+                { type: 'Data Keuangan', period: '7 tahun', basis: 'Pajak & Regulasi' }
+              ].map((row, idx) => (
+                <tr key={idx} className="hover:bg-[#FAF8F5] transition-colors">
+                  <td className="px-4 py-3 text-sm font-semibold text-[#1A1A1A]">{row.type}</td>
+                  <td className="px-4 py-3 text-sm text-gray-600">{row.period}</td>
+                  <td className="px-4 py-3 text-sm text-gray-600">{row.basis}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Setelah periode retensi berakhir, data akan dihapus secara permanen atau dianonimkan sehingga tidak dapat dikaitkan kembali dengan Anda.
+          </p>
+        </div>
+      </PolicySection>
+
+      {/* 7. HAK ANDA */}
+      <PolicySection id="hak-anda" title="Hak Anda" icon={<UserCheck className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Sesuai dengan <strong className="text-[#1A1A1A]">Undang-Undang Pelindungan Data Pribadi (UU PDP) No. 27 Tahun 2022</strong> dan regulasi terkait, Anda memiliki hak-hak berikut:
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          {[
+            {
+              icon: <Eye className="w-5 h-5" />,
+              title: 'Hak Akses',
+              desc: 'Memperoleh salinan data pribadi yang kami simpan tentang Anda'
+            },
+            {
+              icon: <RefreshCw className="w-5 h-5" />,
+              title: 'Hak Koreksi',
+              desc: 'Memperbarui atau mengoreksi data yang tidak akurat atau tidak lengkap'
+            },
+            {
+              icon: <FileText className="w-5 h-5" />,
+              title: 'Hak Portabilitas',
+              desc: 'Menerima data Anda dalam format yang dapat dibaca mesin'
+            },
+            {
+              icon: <AlertCircle className="w-5 h-5" />,
+              title: 'Hak Penghapusan',
+              desc: 'Meminta penghapusan data pribadi Anda (right to be forgotten)'
+            },
+            {
+              icon: <Lock className="w-5 h-5" />,
+              title: 'Hak Pembatasan',
+              desc: 'Meminta pembatasan pemrosesan data dalam situasi tertentu'
+            },
+            {
+              icon: <X className="w-5 h-5" />,
+              title: 'Hak Penolakan',
+              desc: 'Menolak pemrosesan data untuk tujuan tertentu (misal: pemasaran)'
+            },
+            {
+              icon: <Users className="w-5 h-5" />,
+              title: 'Hak Menarik Persetujuan',
+              desc: 'Menarik persetujuan yang telah diberikan kapan saja'
+            },
+            {
+              icon: <MessageCircle className="w-5 h-5" />,
+              title: 'Hak Mengajukan Keluhan',
+              desc: 'Mengajukan keluhan ke otoritas perlindungan data yang berwenang'
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:border-[#E8D09E]/40 hover:shadow-sm transition-all">
+              <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
+                {item.icon}
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{item.title}</h4>
+                <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <CalloutBox type="info" title="Cara Menggunakan Hak Anda">
+          <p>
+            Untuk menggunakan hak-hak di atas, silakan hubungi kami melalui:
+          </p>
+          <ul className="list-none mt-3 space-y-2">
+            <li className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-[#8C6F3D]" />
+              <a href="mailto:privacy@authenticguards.com" className="text-[#8C6F3D] font-semibold hover:underline">privacy@authenticguards.com</a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-[#8C6F3D]" />
+              <a href="tel:+6281222201649" className="text-[#8C6F3D] font-semibold hover:underline">+62 812-2220-1649</a>
+            </li>
+          </ul>
+          <p className="mt-3">
+            Kami akan merespon permintaan Anda dalam waktu <strong>maksimal 30 hari kerja</strong>.
+          </p>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 8. COOKIES */}
+      <PolicySection id="cookies" title="Cookies & Teknologi Serupa" icon={<Cookie className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Kami menggunakan cookies dan teknologi serupa untuk meningkatkan pengalaman Anda, menganalisis penggunaan layanan, dan menyediakan fitur tertentu.
+          </p>
+        </div>
+
+        <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4">Jenis Cookies yang Kami Gunakan:</h3>
+
+        <div className="space-y-4 my-6">
+          {[
+            {
+              type: 'Cookies Esensial',
+              desc: 'Diperlukan untuk fungsi dasar website (login, keamanan, session). Tidak dapat dinonaktifkan.',
+              required: true
+            },
+            {
+              type: 'Cookies Fungsional',
+              desc: 'Mengingat preferensi Anda (bahasa, region) untuk pengalaman yang dipersonalisasi.',
+              required: false
+            },
+            {
+              type: 'Cookies Analitik',
+              desc: 'Membantu kami memahami bagaimana pengunjung berinteraksi dengan website kami.',
+              required: false
+            },
+            {
+              type: 'Cookies Performa',
+              desc: 'Memantau performa website dan mengidentifikasi area yang perlu ditingkatkan.',
+              required: false
+            }
+          ].map((cookie, idx) => (
+            <div key={idx} className="flex items-start gap-4 p-5 bg-[#FAF8F5] rounded-2xl border border-gray-100">
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                cookie.required 
+                  ? 'bg-emerald-100 text-emerald-600' 
+                  : 'bg-[#E8D09E]/20 text-[#8C6F3D]'
+              }`}>
+                <Cookie className="w-5 h-5" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="font-bold text-[#1A1A1A]">{cookie.type}</h4>
+                  {cookie.required && (
+                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded uppercase">
+                      Wajib
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{cookie.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Anda dapat mengelola preferensi cookies melalui pengaturan browser Anda atau melalui panel pengaturan cookies di website kami. Namun, menonaktifkan cookies esensial dapat memengaruhi fungsionalitas website.
+          </p>
+        </div>
+      </PolicySection>
+
+      {/* 9. ANAK DI BAWAH UMUR */}
+      <PolicySection id="anak-di-bawah-umur" title="Anak di Bawah Umur" icon={<Baby className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Layanan kami ditujukan untuk pengguna berusia <strong className="text-[#1A1A1A]">17 tahun ke atas</strong> atau usia dewasa menurut hukum yang berlaku di yurisdiksi masing-masing.
+          </p>
+          <p>
+            Kami <strong>tidak dengan sengaja</strong> mengumpulkan informasi pribadi dari anak di bawah usia tersebut. Jika Anda mengetahui atau mencurigai bahwa anak di bawah umur telah memberikan informasi pribadi kepada kami, silakan hubungi kami segera melalui informasi kontak di bawah.
+          </p>
+          <p>
+            Jika kami mengetahui bahwa kami telah mengumpulkan data pribadi dari anak di bawah umur tanpa verifikasi persetujuan orang tua, kami akan mengambil langkah-langkah untuk menghapus informasi tersebut secepatnya.
+          </p>
+        </div>
+
+        <CalloutBox type="warning" title="Tanggung Jawab Orang Tua">
+          <p>
+            Orang tua atau wali disarankan untuk mengawasi aktivitas online anak-anak mereka dan membantu menegakkan kebijakan ini dengan mencegah anak di bawah umur untuk menggunakan layanan kami tanpa izin.
+          </p>
+        </CalloutBox>
+      </PolicySection>
+
+      {/* 10. PERUBAHAN KEBIJAKAN */}
+      <PolicySection id="perubahan-kebijakan" title="Perubahan Kebijakan" icon={<RefreshCw className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu untuk mencerminkan perubahan dalam praktik kami atau untuk alasan operasional, hukum, atau regulasi lainnya.
+          </p>
+          <p>
+            Ketika kami melakukan perubahan material, kami akan:
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-4">
+            <li>Memperbarui tanggal "Terakhir Diperbarui" di bagian atas halaman ini</li>
+            <li>Memberitahu Anda melalui email atau notifikasi dalam aplikasi</li>
+            <li>Menyediakan ringkasan perubahan yang signifikan</li>
+            <li>Meminta persetujuan ulang jika diperlukan oleh hukum</li>
+          </ul>
+          <p>
+            Kami mendorong Anda untuk meninjau Kebijakan Privasi ini secara berkala untuk tetap terinformasi tentang bagaimana kami melindungi informasi Anda.
+          </p>
+        </div>
+      </PolicySection>
+
+      {/* 11. KONTAK KAMI */}
+      <PolicySection id="kontak-kami" title="Hubungi Kami" icon={<MessageCircle className="w-5 h-5" />}>
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Jika Anda memiliki pertanyaan, kekhawatiran, atau permintaan terkait Kebijakan Privasi ini atau praktik privasi kami, jangan ragu untuk menghubungi kami melalui:
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-2xl p-6 md:p-8 text-white my-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-2 mb-5">
+              <Sparkles className="w-6 h-6 text-[#E8D09E]" />
+              <h3 className="text-xl font-bold">Tim Perlindungan Data</h3>
+            </div>
+
+            <div className="space-y-3">
+              <a href="mailto:privacy@authenticguards.com" className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                <Mail className="w-5 h-5 text-[#E8D09E] shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400">Email (Respon &lt; 24 jam)</p>
+                  <p className="text-sm font-bold text-white">privacy@authenticguards.com</p>
+                </div>
+              </a>
+
+              <a href="tel:+6281222201649" className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                <Phone className="w-5 h-5 text-[#E8D09E] shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400">Telepon (Senin - Jumat, 09:00 - 17:00)</p>
+                  <p className="text-sm font-bold text-white">+62 812-2220-1649</p>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10">
+                <MapPin className="w-5 h-5 text-[#E8D09E] shrink-0" />
+                <div>
+                  <p className="text-xs text-gray-400">Alamat Kantor</p>
+                  <p className="text-sm font-bold text-white">Jl. Kh Wahid Hasyim No.316, Bandung 40233</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-gray-600 leading-relaxed space-y-4">
+          <p>
+            Untuk permintaan terkait hak privasi (akses, koreksi, penghapusan data), silakan gunakan subjek email <strong className="text-[#1A1A1A]">"Permintaan Hak Privasi"</strong> agar dapat diproses dengan cepat oleh tim kami.
+          </p>
+        </div>
+      </PolicySection>
+
+      {/* LAST UPDATED */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-[#FAF8F5] border border-[#E8D09E]/30 rounded-2xl p-6 text-center"
+      >
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <Clock className="w-5 h-5 text-[#8C6F3D]" />
+          <p className="text-sm font-bold text-[#1A1A1A]">Dokumen Terakhir Diperbarui</p>
+        </div>
+        <p className="text-lg font-extrabold text-[#1A1A1A] mb-1">22 Juni 2026</p>
+        <p className="text-xs text-gray-500">Versi 2.0 • PT. Autentikasi Garda Teknologi</p>
+      </motion.div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <p className="text-gray-500 mb-4">
+          Masih ada pertanyaan tentang privasi Anda?
+        </p>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+        >
+          <span>Hubungi Tim Kami</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// ============================================================================
+// MAIN PAGE
+// ============================================================================
+export default function PrivacyPolicyPage() {
+  return (
+    <>
+      <HeroPrivacyPolicy />
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <TableOfContents />
+          <PrivacyPolicyContent />
+        </div>
+      </div>
+    </>
+  )
+}
