@@ -1148,37 +1148,21 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const faqs = [
     {
-      q: "Bagaimana cara kerja kode AG?",
-      a: "Kode AG dihasilkan dari kombinasi 3 lapis algoritma: kata kunci personalisasi, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik. Kode kemudian di-hash menggunakan fungsi MD5 menjadi digest 32-karakter hex, lalu dikonversi menjadi QR code dengan standar ISO/IEC 18004:2015."
+      q: "Apa itu sistem 5 lapis keamanan AuthenticGuards?",
+      a: "Sistem keamanan berlapis kami terdiri dari: (1) Keamanan Server — proteksi multi-layer berstandar ISO/IEC 27000:2016, (2) Kode Algoritma AG — 3 lapis (kata kunci personalisasi, digit alfanumerik, timestamp unix), (3) MD5 Hash Integrity — verifikasi integritas 32-char hex, (4) Kepekaan Verifikasi QR — batas 15 kali pengecekan per kode, (5) Pelepasan Label — tamper-evident, kode void saat label terbuka."
     },
     {
-      q: "Apa itu batas verifikasi 15 kali?",
-      a: "Untuk mengurangi penipuan dan duplikasi kode, setiap kode AG memiliki batasan pengecekan maksimal 15 kali. Jika limit tercapai tanpa adanya validasi yang sah, sistem akan otomatis memberhentikan kode tersebut untuk penyelidikan lebih lanjut."
+      q: "Apa itu kode AG dan bagaimana cara kerjanya?",
+      a: "Kode AG (Authentic Guards) adalah kode keamanan 13 digit yang diproduksi dengan algoritma 3 lapis: kata kunci personalisasi brand, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik. Setiap kode di-hash MD5 menjadi identifier 32-karakter hex yang tidak dapat di-reverse, lalu diintegrasikan ke QR code berstandar ISO/IEC 18004:2015."
     },
     {
-      q: "Bagaimana sistem mendeteksi kode palsu?",
+      q: "Berapa lama waktu respons verifikasi produk?",
       a: "Sistem menggunakan 5 lapis keamanan: keamanan server multi-lapisan, algoritma AG 3 lapis, hash MD5 untuk integritas data, kepekaan verifikasi QR (limit 15x), dan pelepasan label. Ketika label terbuka/terlepas, kode QR otomatis tidak valid. Setiap upaya duplikasi akan terdeteksi oleh sistem."
     },
     {
-      q: "Apa saja opsi marking yang tersedia?",
-      a: "Saat ini Authentic Guards menyediakan 2 solusi marking aktif: Hologram dengan QR dan Label Tafeta dengan QR. Solusi Sticker ber-NFC dan Printing QR pada Kemasan sedang dalam tahap penelitian dan pengembangan."
+      q: "Bagaimana sistem mencegah duplikasi dan penyalahgunaan kode?",
+      a: "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai tanpa validasi, sistem otomatis men-suspend kode untuk investigasi. Selain itu, label tamper-evident membuat kode void saat label dilepas — mencegah transfer kode ke produk palsu."
     },
-    {
-      q: "Berapa kapasitas produksi kode?",
-      a: "Sistem kami memiliki kapasitas produksi maksimum 100 juta kode AG per hari, disimpan di cloud database dengan standar pengamanan informasi ISO/IEC 27000:2016."
-    },
-    {
-      q: "Bagaimana prosedur jika ada kode cacat?",
-      a: "Kami akan mengkompensasi kode baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti, lalu tim QC akan men-stempel pita kustom dengan catatan afkir."
-    },
-    {
-      q: "Standar apa yang digunakan untuk QR Code Authentic Guards?",
-      a: "Kami menggunakan ISO/IEC 18004:2015 sebagai rujukan spesifikasi teknis dalam pengembangan QR code. Standar ini menjamin interoperabilitas dengan pembaca QR standar, sementara fitur autentikasi multi-layer (seperti algoritma AG dan database real-time) merupakan pengembangan proprietary kami."
-    },
-    {
-      q: "Mengapa menggunakan MD5? Bukankah algoritma itu sudah tidak aman?",
-      a: "Pertanyaan bagus. MD5 memang bukan enkripsi, melainkan fungsi hash. Dalam konteks Authentic Guards, MD5 tidak digunakan untuk keamanan kriptografis, tetapi sebagai checksum untuk menghasilkan unique identifier produk yang tidak dapat di-reverse. Keamanan sebenarnya terletak pada kombinasi 5 lapis: algoritma AG 3-lapis, batas verifikasi 15x, label tamper-evident, dan proteksi server. Untuk use case ini, MD5 masih valid, efisien, dan cepat untuk memproses 100 juta kode per hari."
-    }
   ]
 
   return (

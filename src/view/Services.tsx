@@ -1468,33 +1468,21 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const faqs = [
     {
-      q: "Apa saja opsi marking yang tersedia dari Authentic Guards?",
-      a: "Authentic Guards menyediakan 4 solusi marking untuk berbagai industri: Label Tafeta dengan QR (untuk fashion & tekstil), Sticker ber-NFC (untuk verifikasi tap & go), Hologram dengan QR (keamanan ganda), dan Printing QR pada Kemasan (integrasi driver printer klien)."
+      q: "'Apa saja layanan marking yang ditawarkan AuthenticGuards?'",
+      a: "Saat ini kami menyediakan 2 layanan marking aktif: (1) Hologram dengan QR — solusi flagship dengan lapisan keamanan ganda untuk produk premium, dan (2) Label Tafeta dengan QR — label tekstil untuk industri fashion & apparel. Solusi NFC Sticker dan Printing QR pada kemasan masih dalam tahap penelitian & pengembangan."
     },
     {
-      q: "Berapa kapasitas produksi kode AG?",
-      a: "Sistem kami memiliki kapasitas produksi maksimum 100 juta kode AG per hari, disimpan di cloud database dengan standar pengamanan informasi ISO/IEC 27000:2016."
+      q: "Bagaimana cara kerja Hologram dengan QR?",
+      a: "Setiap label hologram premium dilengkapi QR code unik yang terhubung ke database real-time. Konsumen scan QR via smartphone untuk memverifikasi keaslian produk dalam hitungan detik. Label juga memiliki fitur tamper-evident — kode menjadi tidak sah setelah label dilepas. Setiap kode AG memiliki batas verifikasi hingga 15 kali."
     },
     {
-      q: "Standar apa yang digunakan untuk QR Code Authentic Guards?",
-      a: "Kami menggunakan ISO/IEC 18004:2015 sebagai rujukan spesifikasi teknis dalam pengembangan QR code. Standar ini menjamin interoperabilitas dengan pembaca QR standar, sementara fitur autentikasi multi-layer (seperti algoritma AG dan database real-time) merupakan pengembangan proprietary kami."
+      q: "Apakah Label Tafeta tahan terhadap pencucian?",
+      a: "Ya, Label Tafeta kami dirancang tahan hingga 50+ kali pencucian tanpa degradasi kualitas. Material premium dan teknologi high-resolution printing memastikan QR code tetap terbaca jelas. Desain label fully customizable sesuai brand identity produk fashion Anda.'"
     },
     {
-      q: "Bagaimana prosedur jika ada kode cacat?",
-      a: "Kami akan mengkompensasi kode baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti, lalu tim QC akan men-stempel pita kustom dengan catatan afkir."
+      q: "Apakah tersedia solusi NFC atau printing QR pada kemasan?",
+      a: "Sticker ber-NFC dan Printing QR langsung pada kemasan saat ini belum tersedia untuk publik — masih dalam tahap perencanaan dan penelitian internal. Untuk kebutuhan marking saat ini, kami merekomendasikan Hologram dengan QR atau Label Tafeta dengan QR. Hubungi tim kami untuk konsultasi solusi terbaik."
     },
-    {
-      q: "Berapa jangka waktu untuk setiap pengembangan dan instalasi?",
-      a: "Jangka waktu untuk tiap pengembangan, instalasi, proses, dan konfigurasi adalah 14 hari kerja. Koordinasi produksi label dilakukan 5 hari sebelum produksi/pencetakan label."
-    },
-    {
-      q: "Bagaimana sistem komunikasi dengan printer klien?",
-      a: "Authentic Guards mendirikan platform komunikasi dengan klien untuk mengirim Kode QR percetakan label dengan menghubungkan sistem AG dengan driver printer klien. Kami juga melindungi data dengan enkripsi untuk menghindari kehilangan data selama distribusi."
-    },
-    {
-      q: "Apakah layanan ini bisa di-custom sesuai kebutuhan brand saya?",
-      a: "Tentu! Semua layanan marking kami fully customizable. Mulai dari desain visual, ukuran, material, hingga integrasi sistem yang sesuai dengan kebutuhan industri dan brand Anda."
-    }
   ]
 
   return (

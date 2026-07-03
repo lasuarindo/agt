@@ -13,12 +13,8 @@ export default defineConfig([
       "prefer-const": "warn",
       "no-empty": "off",
       "no-unused-vars": "off",
-      "no-useless-assignment": "off",
       
-      "@typescript-eslint/prefer-const": "warn",
-      "@typescript-eslint/no-empty": "off",
       "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/no-useless-assignment": "off",
     },
     extends: [
       js.configs.recommended,
