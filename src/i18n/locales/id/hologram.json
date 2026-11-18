@@ -1,0 +1,263 @@
+{
+  "ui": {
+    "overviewLabel": "Overview",
+    "highlightsTitle": "Highlight Utama",
+    "featuresEyebrow": "Fitur Unggulan",
+    "featuresTitlePre": "Fitur",
+    "featuresTitleHighlight": "Detail",
+    "featuresSubtitle": "Setiap fitur dirancang untuk memberikan proteksi maksimal dan pengalaman verifikasi yang mudah.",
+    "detailTech": "Detail Teknis",
+    "specsEyebrow": "Technical Specs",
+    "implementationEyebrow": "Implementation",
+    "industriesEyebrow": "Industri",
+    "benefitsEyebrow": "Benefits",
+    "galleryEyebrow": "Gallery",
+    "comingSoon": "Coming Soon",
+    "galleryNote": "* Gallery akan segera dilengkapi dengan foto produk asli dan dokumentasi implementasi",
+    "pricingBadge": "Pricing Plans",
+    "whatYouGet": "Yang Anda Dapatkan:",
+    "addonsTitle": "Layanan Tambahan (Add-ons)",
+    "addonsSubtitle": "Tingkatkan paket Anda dengan fitur tambahan sesuai kebutuhan",
+    "notePrefix": "*",
+    "customBadge": "Custom Solution",
+    "customQuote": "Request Custom Quote",
+    "processCustom": "Proses Custom",
+    "howWeWork": "Bagaimana Kami Bekerja",
+    "proposalDays": "Hari Kerja untuk Proposal",
+    "dedicatedSupport": "Dukungan Dedicated",
+    "consultFree": "Konsultasi Gratis",
+    "backToServices": "Kembali ke Services",
+    "relatedEyebrow": "Related Services",
+    "relatedTitlePre": "Layanan",
+    "relatedTitleHighlight": "Lainnya",
+    "relatedSubtitle": "Solusi marking lain yang tersedia atau sedang kami kembangkan untuk memenuhi berbagai kebutuhan brand Anda.",
+    "comingSoonNote": "Akan segera tersedia",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "relatedNotePrefix": "* Tertarik dengan solusi yang sedang dikembangkan?",
+    "relatedNoteContact": "Hubungi kami",
+    "relatedNoteSuffix": "untuk informasi lebih lanjut."
+  },
+  "data": {
+    "id": "hologram",
+    "title": "Hologram dengan QR",
+    "subtitle": "Premium Security Solution",
+    "color": {
+      "primary": "gold",
+      "gradient": "from-[#8C6F3D] to-[#C5A059]",
+      "bg": "bg-[#E8D09E]/30",
+      "text": "text-[#8C6F3D]",
+      "border": "border-[#E8D09E]/40",
+      "dark": "from-[#8C6F3D] to-[#C5A059]"
+    },
+    "hero": {
+      "badge": "Flagship Product",
+      "title": "Hologram dengan QR Code",
+      "subtitle": "Solusi autentikasi premium dengan 2 lapis proteksi",
+      "description": "Kombinasi hologram multi-layer dengan kode QR terintegrasi untuk menciptakan lapisan keamanan ganda yang hampir mustahil dipalsukan. Solusi ideal untuk produk premium, high-value, dan industri yang membutuhkan proteksi maksimal.",
+      "stats": [
+        { "value": "99.9%", "label": "Tingkat Kesulitan Palsu" },
+        { "value": "<1s", "label": "Waktu Verifikasi" },
+        { "value": "ISO", "label": "18004:2015" }
+      ]
+    },
+    "overview": {
+      "title": "Tentang Layanan Ini",
+      "description": [
+        "Hologram dengan QR adalah solusi autentikasi flagship kami yang menggabungkan kekuatan keamanan fisik (hologram premium) dengan keamanan digital (QR code AG). Setiap label diproduksi dengan teknologi hologram multi-layer yang memiliki efek visual unik dan sulit ditiru, dilengkapi dengan kode QR yang terhubung langsung ke database real-time Authentic Guards.",
+        "Solusi ini dirancang khusus untuk brand yang membutuhkan proteksi maksimal terhadap produk premium, barang bernilai tinggi, atau produk yang rentan terhadap pemalsuan sofisticated. Dengan 2 lapis proteksi yang bekerja sinergis, pemalsu harus mengalahkan kedua lapisan sekaligus untuk membuat produk palsu yang meyakinkan sebuah tantangan yang hampir mustahil."
+      ],
+      "highlights": [
+        "Hologram multi-layer dengan efek visual premium",
+        "QR code terintegrasi dengan database real-time",
+        "Tamper-evident design untuk deteksi pembukaan",
+        "Verifikasi instan via smartphone",
+        "Custom design sesuai brand identity",
+        "Terintegrasi dengan 5 lapis keamanan AG"
+      ]
+    },
+    "features": [
+      {
+        "icon": "Sparkles",
+        "title": "Hologram Premium Multi-Layer",
+        "description": "Teknologi hologram dengan efek visual multi-layer yang hampir mustahil ditiru. Setiap hologram memiliki pola unik yang dapat diverifikasi secara visual oleh konsumen maupun retailer.",
+        "details": ["Multi-layer optical effects", "Custom pattern design", "Anti-UV & anti-scratch coating", "Visual inspection friendly"]
+      },
+      {
+        "icon": "QrCode",
+        "title": "QR Code Terintegrasi AG",
+        "description": "Kode QR yang dikembangkan berdasarkan spesifikasi internasional ISO/IEC 18084:2015, terhubung langsung ke cloud database Authentic Guards. Setiap kode unik per produk, interoperable dengan semua pembaca QR standar, dan tidak dapat diduplikasi.",
+        "details": ["Mengacu pada ISO/IEC 18084:2015", "Unique code per product", "Real-time database sync", "Error correction Level Q (25%)"]
+      },
+      {
+        "icon": "ShieldAlert",
+        "title": "Tamper-Evident Design",
+        "description": "Label dirancang dengan fitur tamper-evident yang menunjukkan tanda-tanda pembukaan. Ketika label dibuka/terlepas, kode QR otomatis tidak valid dan dianggap tidak sah.",
+        "details": ["Void upon removal", "Visual tamper indicators", "Auto-invalidation system", "Prevents label transfer"]
+      },
+      {
+        "icon": "Database",
+        "title": "Verifikasi Real-time",
+        "description": "Setiap scan langsung divalidasi ke cloud database AG dengan standar ISO/IEC 27000:2016. Sistem mencatat setiap aktivitas verifikasi untuk analytics dan deteksi anomali.",
+        "details": ["ISO/IEC 27000:2016 cloud database", "Real-time validation", "Activity logging", "Anomaly detection"]
+      }
+    ],
+    "specifications": {
+      "title": "Spesifikasi Teknis",
+      "items": [
+        { "label": "Jenis Hologram", "value": "Multi-Layer Optical" },
+        { "label": "Standar QR Code", "value": "ISO/IEC 18004:2015" },
+        { "label": "Ukuran Label", "value": "Custom (0.5cm - 5cm)" },
+        { "label": "Material", "value": "Premium Synthetic / Vinyl" },
+        { "label": "Ketahanan", "value": "Anti-UV, Anti-Scratch, Waterproof" },
+        { "label": "Database Standard", "value": "ISO/IEC 27000:2016" },
+        { "label": "Error Correction", "value": "Level Q (25%)" },
+        { "label": "Response Time", "value": "< 100ms" },
+        { "label": "Verifikasi Limit", "value": "15x per code" },
+        { "label": "Tamper Protection", "value": "Void upon removal" }
+      ]
+    },
+    "implementation": {
+      "title": "Alur Implementasi",
+      "description": "Proses implementasi yang terstruktur untuk memastikan kualitas dan kesuksesan setiap proyek.",
+      "steps": [
+        { "num": "01", "title": "Konsultasi & Analisis", "description": "Diskusi mendalam untuk memahami kebutuhan spesifik brand, jenis produk, volume produksi, dan tingkat keamanan yang dibutuhkan.", "duration": "1-2 hari", "icon": "Handshake" },
+        { "num": "02", "title": "Desain & Prototyping", "description": "Tim desain membuat mockup hologram sesuai brand identity. Prototype diproduksi untuk approval sebelum produksi massal.", "duration": "3-5 hari", "icon": "Lightbulb" },
+        { "num": "03", "title": "Produksi Kode AG", "description": "Sistem menghasilkan kode AG unik dengan algoritma 3 lapis, di-hash MD5, dan disimpan di cloud database berstandar ISO/IEC 27000:2016.", "duration": "1-2 hari", "icon": "Hash" },
+        { "num": "04", "title": "Produksi Label Hologram", "description": "Label hologram diproduksi dengan teknologi multi-layer, dilengkapi QR code dan fitur tamper-evident sesuai spesifikasi.", "duration": "5-7 hari", "icon": "Sparkles" },
+        { "num": "05", "title": "Quality Control", "description": "Pengecekan kualitas label dari kecacatan dan kesalahan. Label yang tidak lolos QC akan dimusnahkan dengan prosedur terstandar.", "duration": "1-2 hari", "icon": "FileCheck" },
+        { "num": "06", "title": "Pengiriman & Implementasi", "description": "Label dikirim ke klien dengan dokumentasi lengkap. Tim kami membantu proses aplikasi label pada produk dan training penggunaan sistem.", "duration": "2-3 hari", "icon": "Package" }
+      ]
+    },
+    "useCases": {
+      "title": "Industri yang Cocok",
+      "description": "Solusi ini ideal untuk berbagai industri yang membutuhkan proteksi maksimal terhadap produk premium.",
+      "industries": [
+        { "icon": "Award", "name": "Luxury Goods", "description": "Tas, jam tangan, perhiasan, dan produk fashion premium yang rentan pemalsuan.", "examples": ["Tas Designer", "Jam Tangan Mewah", "Perhiasan"] },
+        { "icon": "Shield", "name": "Farmasi & Kesehatan", "description": "Obat-obatan, suplemen, dan produk kesehatan yang membutuhkan keamanan tinggi.", "examples": ["Obat Resep", "Suplemen", "Alat Kesehatan"] },
+        { "icon": "Package", "name": "Elektronik & Gadget", "description": "Perangkat elektronik, aksesoris, dan gadget yang sering menjadi target pemalsuan.", "examples": ["Smartphone", "Aksesoris Original", "Komponen"] },
+        { "icon": "Tag", "name": "Minuman Keras & Spirits", "description": "Minuman beralkohol premium yang membutuhkan proteksi dari produk palsu.", "examples": ["Wine Premium", "Whisky", "Spirits"] }
+      ]
+    },
+    "benefits": {
+      "title": "Keuntungan untuk Brand Anda",
+      "items": [
+        { "icon": "Shield", "title": "Proteksi Maksimal", "description": "2 lapis keamanan (fisik + digital) yang hampir mustahil dipalsukan secara bersamaan." },
+        { "icon": "Users", "title": "Meningkatkan Kepercayaan", "description": "Konsumen dapat memverifikasi keaslian produk dengan mudah via smartphone." },
+        { "icon": "TrendingUp", "title": "ROI Tinggi", "description": "Penurunan produk palsu dan peningkatan penjualan produk asli secara signifikan." },
+        { "icon": "Eye", "title": "Monitoring Aktivitas", "description": "Pencatatan aktivitas verifikasi untuk analisis dan deteksi anomali." },
+        { "icon": "Globe", "title": "Standar Internasional", "description": "Menggunakan standar ISO/IEC 18004:2015 dan ISO/IEC 27000:2016 yang diakui global." },
+        { "icon": "Target", "title": "Fully Customizable", "description": "Desain hologram dan label fully customizable sesuai brand identity Anda." }
+      ]
+    },
+    "gallery": {
+      "title": "Visual Preview",
+      "description": "Contoh visual produk dengan label hologram QR (dokumentasi akan segera dilengkapi)",
+      "items": [
+        { "title": "Label Hologram Premium", "description": "Contoh label hologram dengan QR code terintegrasi" },
+        { "title": "Aplikasi pada Produk", "description": "Label diaplikasikan pada kemasan produk" },
+        { "title": "Verifikasi via Smartphone", "description": "Konsumen memverifikasi produk dengan scan QR" },
+        { "title": "Monitoring Aktivitas", "description": "Pencatatan aktivitas verifikasi real-time" }
+      ]
+    },
+    "faq": {
+      "title": "Pertanyaan Umum",
+      "items": [
+        { "q": "Berapa minimum order untuk label hologram?", "a": "Minimum order quantity (MOQ) bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi langsung." },
+        { "q": "Berapa lama waktu produksi label hologram?", "a": "Waktu produksi standar adalah ±14 hari kerja setelah desain di-approve, sesuai dengan ketentuan layanan kami. Untuk kebutuhan khusus, timeline dapat didiskusikan lebih lanjut dengan tim kami." },
+        { "q": "Apakah desain hologram bisa fully custom?", "a": "Tentu! Tim desain kami akan bekerja sama dengan Anda untuk membuat hologram custom sesuai brand identity. Mulai dari pattern, warna, efek visual, hingga ukuran dan bentuk label." },
+        { "q": "Bagaimana jika ada label yang cacat produksi?", "a": "Kami akan mengkompensasi label baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti, lalu tim QC akan men-stempel pita kustom dengan catatan afkir." },
+        { "q": "Apakah label ini tahan terhadap cuaca dan goresan?", "a": "Ya, label hologram kami dilengkapi dengan coating anti-UV, anti-scratch, dan waterproof. Label dirancang untuk bertahan dalam kondisi normal penggunaan produk." },
+        { "q": "Bagaimana proses verifikasi oleh konsumen?", "a": "Konsumen cukup scan QR code pada label menggunakan smartphone. Sistem akan memverifikasi keaslian produk secara real-time dan menampilkan status keaslian dalam hitungan detik. Setiap kode memiliki batas verifikasi 15 kali untuk mencegah duplikasi." },
+        { "q": "Apakah ada solusi lain selain hologram?", "a": "Ya, kami juga menyediakan Label Tafeta dengan QR untuk industri fashion. Untuk solusi teknologi lainnya seperti NFC, saat ini masih dalam tahap penelitian dan pengembangan. Silakan hubungi tim kami untuk informasi lebih lanjut." }
+      ]
+    },
+    "pricing": {
+      "title": "Paket & Investasi",
+      "description": "Setiap proyek memiliki kebutuhan yang unik. Kami menawarkan solusi fleksibel yang disesuaikan dengan skala bisnis, volume produksi, dan tingkat keamanan yang Anda butuhkan.",
+      "note": "Harga final akan diberikan setelah konsultasi dan analisis kebutuhan. Semua penawaran belum termasuk PPN.",
+      "packages": [
+        {
+          "name": "Starter",
+          "description": "Untuk UMKM & brand emerging yang baru memulai proteksi produk",
+          "price": "Custom",
+          "priceNote": "Sesuai kebutuhan",
+          "popular": false,
+          "features": [
+            { "text": "Volume produksi disesuaikan", "included": true },
+            { "text": "Desain hologram standar", "included": true },
+            { "text": "QR code dengan database real-time", "included": true },
+            { "text": "Verifikasi via web browser", "included": true },
+            { "text": "Basic activity logging", "included": true },
+            { "text": "Email support (jam kerja)", "included": true },
+            { "text": "Custom design", "included": false },
+            { "text": "API integration", "included": false },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Mulai Konsultasi",
+          "highlight": "Cocok untuk UMKM"
+        },
+        {
+          "name": "Business",
+          "description": "Untuk brand menengah yang membutuhkan solusi lebih komprehensif",
+          "price": "Custom",
+          "priceNote": "Sesuai kebutuhan",
+          "popular": true,
+          "features": [
+            { "text": "Volume produksi menengah-besar", "included": true },
+            { "text": "Custom design hologram", "included": true },
+            { "text": "QR code + Tamper-evident label", "included": true },
+            { "text": "Verifikasi via web & mobile", "included": true },
+            { "text": "Advanced activity analytics", "included": true },
+            { "text": "Priority support", "included": true },
+            { "text": "Basic API integration", "included": true },
+            { "text": "Monthly performance report", "included": true },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Pilih Paket Ini",
+          "highlight": "Paling Populer"
+        },
+        {
+          "name": "Enterprise",
+          "description": "Untuk korporasi & brand besar dengan kebutuhan khusus",
+          "price": "Custom",
+          "priceNote": "Sesuai kebutuhan",
+          "popular": false,
+          "features": [
+            { "text": "Volume produksi besar", "included": true },
+            { "text": "Full customization hologram & label", "included": true },
+            { "text": "Multi-layer security (Hologram+QR)", "included": true },
+            { "text": "Enterprise analytics & reporting", "included": true },
+            { "text": "Dedicated support + SLA", "included": true },
+            { "text": "Custom MOQ sesuai kebutuhan", "included": true },
+            { "text": "Full API integration", "included": true },
+            { "text": "Dedicated account manager", "included": true },
+            { "text": "On-site training & implementation", "included": true }
+          ],
+          "cta": "Hubungi Sales",
+          "highlight": "Solusi Premium"
+        }
+      ],
+      "addons": [
+        { "title": "Desain Hologram Custom", "description": "Desain hologram eksklusif sesuai brand identity Anda", "price": "Harga bervariasi", "icon": "Sparkles" },
+        { "title": "White-Label Mobile App", "description": "Aplikasi verifikasi dengan branding perusahaan Anda", "price": "Harga bervariasi", "icon": "Smartphone" }
+      ]
+    },
+    "customSolution": {
+      "title": "Butuh Solusi yang Benar-Benar Custom?",
+      "description": "Kami memahami bahwa setiap brand memiliki kebutuhan unik. Tim kami siap merancang solusi autentikasi yang disesuaikan 100% dengan kebutuhan bisnis Anda.",
+      "features": [
+        { "icon": "Target", "title": "Custom Security Level", "desc": "Tentukan sendiri tingkat keamanan sesuai risiko produk Anda" },
+        { "icon": "Palette", "title": "Full Brand Integration", "desc": "Integrasi penuh dengan brand identity dan packaging Anda" },
+        { "icon": "Boxes", "title": "Volume Flexibility", "desc": "Penyesuaian volume produksi sesuai kebutuhan musiman" },
+        { "icon": "Globe", "title": "Multi-Region Support", "desc": "Dukungan untuk distribusi di berbagai wilayah" }
+      ],
+      "process": [
+        "Konsultasi mendalam dengan tim expert kami",
+        "Analisis kebutuhan & risk assessment",
+        "Proposal solusi custom dalam 3-5 hari kerja",
+        "Prototyping & testing",
+        "Implementasi & monitoring berkelanjutan"
+      ]
+    }
+  }
+}

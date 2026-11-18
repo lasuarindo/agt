@@ -1,0 +1,263 @@
+{
+  "ui": {
+    "overviewLabel": "Overview",
+    "highlightsTitle": "Key Highlights",
+    "featuresEyebrow": "Featured Capabilities",
+    "featuresTitlePre": "Feature",
+    "featuresTitleHighlight": "Details",
+    "featuresSubtitle": "Every feature is designed to provide maximum protection and an easy verification experience.",
+    "detailTech": "Technical Details",
+    "specsEyebrow": "Technical Specs",
+    "implementationEyebrow": "Implementation",
+    "industriesEyebrow": "Industries",
+    "benefitsEyebrow": "Benefits",
+    "galleryEyebrow": "Gallery",
+    "comingSoon": "Coming Soon",
+    "galleryNote": "* Gallery will be updated with real product photos and implementation documentation soon",
+    "pricingBadge": "Pricing Plans",
+    "whatYouGet": "What You Get:",
+    "addonsTitle": "Add-ons",
+    "addonsSubtitle": "Enhance your package with additional features tailored to your needs",
+    "notePrefix": "*",
+    "customBadge": "Custom Solution",
+    "customQuote": "Request Custom Quote",
+    "processCustom": "Custom Process",
+    "howWeWork": "How We Work",
+    "proposalDays": "Business Days for Proposal",
+    "dedicatedSupport": "Dedicated Support",
+    "consultFree": "Free Consultation",
+    "backToServices": "Back to Services",
+    "relatedEyebrow": "Related Services",
+    "relatedTitlePre": "Other",
+    "relatedTitleHighlight": "Services",
+    "relatedSubtitle": "Other marking solutions available or under development to meet your brand's various needs.",
+    "comingSoonNote": "Coming soon",
+    "learnMore": "Learn More",
+    "relatedNotePrefix": "* Interested in solutions under development?",
+    "relatedNoteContact": "Contact us",
+    "relatedNoteSuffix": "for more information."
+  },
+  "data": {
+    "id": "hologram",
+    "title": "Hologram with QR",
+    "subtitle": "Premium Security Solution",
+    "color": {
+      "primary": "gold",
+      "gradient": "from-[#8C6F3D] to-[#C5A059]",
+      "bg": "bg-[#E8D09E]/30",
+      "text": "text-[#8C6F3D]",
+      "border": "border-[#E8D09E]/40",
+      "dark": "from-[#8C6F3D] to-[#C5A059]"
+    },
+    "hero": {
+      "badge": "Flagship Product",
+      "title": "Hologram with QR Code",
+      "subtitle": "Premium authentication solution with 2 layers of protection",
+      "description": "A combination of multi-layer hologram with an integrated QR code to create a dual security layer that is almost impossible to counterfeit. Ideal solution for premium, high-value products, and industries requiring maximum protection.",
+      "stats": [
+        { "value": "99.9%", "label": "Counterfeit Difficulty" },
+        { "value": "<1s", "label": "Verification Time" },
+        { "value": "ISO", "label": "18004:2015" }
+      ]
+    },
+    "overview": {
+      "title": "About This Service",
+      "description": [
+        "Hologram with QR is our flagship authentication solution that combines the strength of physical security (premium hologram) with digital security (AG QR code). Each label is produced with multi-layer hologram technology that has a unique, hard-to-imitate visual effect, equipped with a QR code connected directly to the Authentic Guards real-time database.",
+        "This solution is designed specifically for brands requiring maximum protection for premium products, high-value goods, or products vulnerable to sophisticated counterfeiting. With 2 layers of protection working synergistically, counterfeiters must defeat both layers at once to create a convincing fake product — an almost impossible challenge."
+      ],
+      "highlights": [
+        "Multi-layer hologram with premium visual effects",
+        "QR code integrated with real-time database",
+        "Tamper-evident design for opening detection",
+        "Instant verification via smartphone",
+        "Custom design according to brand identity",
+        "Integrated with AG's 5 security layers"
+      ]
+    },
+    "features": [
+      {
+        "icon": "Sparkles",
+        "title": "Premium Multi-Layer Hologram",
+        "description": "Hologram technology with an almost impossible-to-imitate multi-layer visual effect. Each hologram has a unique pattern that can be visually verified by consumers and retailers.",
+        "details": ["Multi-layer optical effects", "Custom pattern design", "Anti-UV & anti-scratch coating", "Visual inspection friendly"]
+      },
+      {
+        "icon": "QrCode",
+        "title": "Integrated AG QR Code",
+        "description": "QR code developed based on the international ISO/IEC 18084:2015 specification, connected directly to the Authentic Guards cloud database. Each code is unique per product, interoperable with all standard QR readers, and cannot be duplicated.",
+        "details": ["Based on ISO/IEC 18084:2015", "Unique code per product", "Real-time database sync", "Error correction Level Q (25%)"]
+      },
+      {
+        "icon": "ShieldAlert",
+        "title": "Tamper-Evident Design",
+        "description": "Labels are designed with tamper-evident features that show signs of opening. When the label is opened/removed, the QR code automatically becomes invalid and is considered void.",
+        "details": ["Void upon removal", "Visual tamper indicators", "Auto-invalidation system", "Prevents label transfer"]
+      },
+      {
+        "icon": "Database",
+        "title": "Real-time Verification",
+        "description": "Every scan is directly validated against the AG cloud database to ISO/IEC 27000:2016 standards. The system logs every verification activity for analytics and anomaly detection.",
+        "details": ["ISO/IEC 27000:2016 cloud database", "Real-time validation", "Activity logging", "Anomaly detection"]
+      }
+    ],
+    "specifications": {
+      "title": "Technical Specifications",
+      "items": [
+        { "label": "Hologram Type", "value": "Multi-Layer Optical" },
+        { "label": "QR Code Standard", "value": "ISO/IEC 18004:2015" },
+        { "label": "Label Size", "value": "Custom (0.5cm - 5cm)" },
+        { "label": "Material", "value": "Premium Synthetic / Vinyl" },
+        { "label": "Resistance", "value": "Anti-UV, Anti-Scratch, Waterproof" },
+        { "label": "Database Standard", "value": "ISO/IEC 27000:2016" },
+        { "label": "Error Correction", "value": "Level Q (25%)" },
+        { "label": "Response Time", "value": "< 100ms" },
+        { "label": "Verification Limit", "value": "15x per code" },
+        { "label": "Tamper Protection", "value": "Void upon removal" }
+      ]
+    },
+    "implementation": {
+      "title": "Implementation Flow",
+      "description": "A structured implementation process to ensure the quality and success of every project.",
+      "steps": [
+        { "num": "01", "title": "Consultation & Analysis", "description": "In-depth discussion to understand the brand's specific needs, product type, production volume, and required security level.", "duration": "1-2 days", "icon": "Handshake" },
+        { "num": "02", "title": "Design & Prototyping", "description": "Our design team creates hologram mockups according to brand identity. A prototype is produced for approval before mass production.", "duration": "3-5 days", "icon": "Lightbulb" },
+        { "num": "03", "title": "AG Code Production", "description": "The system generates unique AG codes with a 3-layer algorithm, MD5-hashed, and stored in an ISO/IEC 27000:2016-compliant cloud database.", "duration": "1-2 days", "icon": "Hash" },
+        { "num": "04", "title": "Hologram Label Production", "description": "Hologram labels are produced with multi-layer technology, equipped with QR codes and tamper-evident features per specification.", "duration": "5-7 days", "icon": "Sparkles" },
+        { "num": "05", "title": "Quality Control", "description": "Quality checking of labels for defects and errors. Labels that fail QC are destroyed with standard procedures.", "duration": "1-2 days", "icon": "FileCheck" },
+        { "num": "06", "title": "Delivery & Implementation", "description": "Labels are shipped to clients with complete documentation. Our team assists with label application on products and system usage training.", "duration": "2-3 days", "icon": "Package" }
+      ]
+    },
+    "useCases": {
+      "title": "Suitable Industries",
+      "description": "This solution is ideal for various industries requiring maximum protection for premium products.",
+      "industries": [
+        { "icon": "Award", "name": "Luxury Goods", "description": "Bags, watches, jewelry, and premium fashion products prone to counterfeiting.", "examples": ["Designer Bags", "Luxury Watches", "Jewelry"] },
+        { "icon": "Shield", "name": "Pharmaceuticals & Healthcare", "description": "Medicines, supplements, and health products requiring high security.", "examples": ["Prescription Drugs", "Supplements", "Medical Devices"] },
+        { "icon": "Package", "name": "Electronics & Gadgets", "description": "Electronic devices, accessories, and gadgets that are often counterfeiting targets.", "examples": ["Smartphones", "Original Accessories", "Components"] },
+        { "icon": "Tag", "name": "Spirits & Beverages", "description": "Premium alcoholic beverages requiring protection from counterfeit products.", "examples": ["Premium Wine", "Whisky", "Spirits"] }
+      ]
+    },
+    "benefits": {
+      "title": "Benefits for Your Brand",
+      "items": [
+        { "icon": "Shield", "title": "Maximum Protection", "description": "2 security layers (physical + digital) that are almost impossible to counterfeit simultaneously." },
+        { "icon": "Users", "title": "Increased Trust", "description": "Consumers can easily verify product authenticity via smartphone." },
+        { "icon": "TrendingUp", "title": "High ROI", "description": "Significant reduction in counterfeit products and increase in genuine product sales." },
+        { "icon": "Eye", "title": "Activity Monitoring", "description": "Verification activity logging for analysis and anomaly detection." },
+        { "icon": "Globe", "title": "International Standards", "description": "Uses globally recognized ISO/IEC 18004:2015 and ISO/IEC 27000:2016 standards." },
+        { "icon": "Target", "title": "Fully Customizable", "description": "Hologram and label design is fully customizable to your brand identity." }
+      ]
+    },
+    "gallery": {
+      "title": "Visual Preview",
+      "description": "Product visual examples with hologram QR labels (documentation coming soon)",
+      "items": [
+        { "title": "Premium Hologram Label", "description": "Example hologram label with integrated QR code" },
+        { "title": "Product Application", "description": "Label applied to product packaging" },
+        { "title": "Verification via Smartphone", "description": "Consumers verify products by scanning the QR" },
+        { "title": "Activity Monitoring", "description": "Real-time verification activity logging" }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        { "q": "What is the minimum order for hologram labels?", "a": "Minimum order quantity (MOQ) varies depending on design complexity and label size. For detailed information and the best quote, please contact our sales team for a direct consultation." },
+        { "q": "How long is the hologram label production time?", "a": "Standard production time is ±14 business days after design approval, in accordance with our service terms. For special needs, the timeline can be discussed further with our team." },
+        { "q": "Can the hologram design be fully custom?", "a": "Absolutely! Our design team will work with you to create a custom hologram according to your brand identity. From pattern, color, visual effects, to label size and shape." },
+        { "q": "What if there are production-defective labels?", "a": "We will compensate with new labels for defects up to 2.5% of total production. Defective code reports are submitted monthly by the client with a notification letter and evidence, then the QC team stamps the custom tape with a rejection note." },
+        { "q": "Are these labels resistant to weather and scratches?", "a": "Yes, our hologram labels come with anti-UV, anti-scratch, and waterproof coating. Labels are designed to withstand normal product use conditions." },
+        { "q": "What is the consumer verification process?", "a": "Consumers simply scan the QR code on the label using a smartphone. The system verifies product authenticity in real-time and displays the authenticity status within seconds. Each code has a 15-time verification limit to prevent duplication." },
+        { "q": "Are there solutions other than hologram?", "a": "Yes, we also provide Tafeta Labels with QR for the fashion industry. For other technology solutions such as NFC, currently still in the research and development stage. Please contact our team for more information." }
+      ]
+    },
+    "pricing": {
+      "title": "Packages & Investment",
+      "description": "Every project has unique needs. We offer flexible solutions tailored to your business scale, production volume, and required security level.",
+      "note": "Final pricing will be provided after consultation and needs analysis. All quotes exclude VAT.",
+      "packages": [
+        {
+          "name": "Starter",
+          "description": "For SMEs & emerging brands starting product protection",
+          "price": "Custom",
+          "priceNote": "Tailored to needs",
+          "popular": false,
+          "features": [
+            { "text": "Adjustable production volume", "included": true },
+            { "text": "Standard hologram design", "included": true },
+            { "text": "QR code with real-time database", "included": true },
+            { "text": "Verification via web browser", "included": true },
+            { "text": "Basic activity logging", "included": true },
+            { "text": "Email support (business hours)", "included": true },
+            { "text": "Custom design", "included": false },
+            { "text": "API integration", "included": false },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Start Consultation",
+          "highlight": "Suitable for SMEs"
+        },
+        {
+          "name": "Business",
+          "description": "For mid-sized brands needing a more comprehensive solution",
+          "price": "Custom",
+          "priceNote": "Tailored to needs",
+          "popular": true,
+          "features": [
+            { "text": "Medium-large production volume", "included": true },
+            { "text": "Custom hologram design", "included": true },
+            { "text": "QR code + Tamper-evident label", "included": true },
+            { "text": "Verification via web & mobile", "included": true },
+            { "text": "Advanced activity analytics", "included": true },
+            { "text": "Priority support", "included": true },
+            { "text": "Basic API integration", "included": true },
+            { "text": "Monthly performance report", "included": true },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Choose This Package",
+          "highlight": "Most Popular"
+        },
+        {
+          "name": "Enterprise",
+          "description": "For corporations & large brands with special needs",
+          "price": "Custom",
+          "priceNote": "Tailored to needs",
+          "popular": false,
+          "features": [
+            { "text": "Large production volume", "included": true },
+            { "text": "Full hologram & label customization", "included": true },
+            { "text": "Multi-layer security (Hologram+QR)", "included": true },
+            { "text": "Enterprise analytics & reporting", "included": true },
+            { "text": "Dedicated support + SLA", "included": true },
+            { "text": "Custom MOQ per needs", "included": true },
+            { "text": "Full API integration", "included": true },
+            { "text": "Dedicated account manager", "included": true },
+            { "text": "On-site training & implementation", "included": true }
+          ],
+          "cta": "Contact Sales",
+          "highlight": "Premium Solution"
+        }
+      ],
+      "addons": [
+        { "title": "Custom Hologram Design", "description": "Exclusive hologram design according to your brand identity", "price": "Variable pricing", "icon": "Sparkles" },
+        { "title": "White-Label Mobile App", "description": "Verification app with your company branding", "price": "Variable pricing", "icon": "Smartphone" }
+      ]
+    },
+    "customSolution": {
+      "title": "Need a Truly Custom Solution?",
+      "description": "We understand that every brand has unique needs. Our team is ready to design an authentication solution 100% tailored to your business needs.",
+      "features": [
+        { "icon": "Target", "title": "Custom Security Level", "desc": "Define your own security level according to your product risk" },
+        { "icon": "Palette", "title": "Full Brand Integration", "desc": "Full integration with your brand identity and packaging" },
+        { "icon": "Boxes", "title": "Volume Flexibility", "desc": "Production volume adjustments for seasonal needs" },
+        { "icon": "Globe", "title": "Multi-Region Support", "desc": "Support for distribution across various regions" }
+      ],
+      "process": [
+        "In-depth consultation with our expert team",
+        "Needs analysis & risk assessment",
+        "Custom solution proposal within 3-5 business days",
+        "Prototyping & testing",
+        "Implementation & ongoing monitoring"
+      ]
+    }
+  }
+}

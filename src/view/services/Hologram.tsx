@@ -1,5 +1,7 @@
+import React, { useState } from 'react'
 import { Link, useParams, Navigate } from 'react-router'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import {
   ArrowRight,
   ArrowLeft,
@@ -45,406 +47,16 @@ import {
   Boxes,
   Compass
 } from 'lucide-react'
+import AboutJoinUsCTA from '@/components/AboutJoinUs'
 
-// ============================================================================
-// SERVICE DATA - Hologram dengan QR (DUMMY - akan disesuaikan dengan data asli)
-// TODO: Replace this with real data from backend/CMS
-// ============================================================================
-const HOLOGRAM_SERVICE_DATA = {
-  id: 'hologram',
-  title: 'Hologram dengan QR',
-  subtitle: 'Premium Security Solution',
-  tagline: 'Kombinasi keamanan fisik & digital untuk proteksi maksimal',
-  color: {
-    primary: 'gold',
-    gradient: 'from-[#8C6F3D] to-[#C5A059]',
-    bg: 'bg-[#E8D09E]/30',
-    text: 'text-[#8C6F3D]',
-    border: 'border-[#E8D09E]/40',
-    dark: 'from-[#8C6F3D] to-[#C5A059]'
-  },
-  hero: {
-    badge: 'Flagship Product',
-    title: 'Hologram dengan QR Code',
-    subtitle: 'Solusi autentikasi premium dengan 2 lapis proteksi',
-    description: 'Kombinasi hologram multi-layer dengan kode QR terintegrasi untuk menciptakan lapisan keamanan ganda yang hampir mustahil dipalsukan. Solusi ideal untuk produk premium, high-value, dan industri yang membutuhkan proteksi maksimal.',
-    stats: [
-      { value: '99.9%', label: 'Tingkat Kesulitan Palsu' },
-      { value: '<1s', label: 'Waktu Verifikasi' },
-      { value: 'ISO', label: '18004:2015' }
-    ]
-  },
-  overview: {
-    title: 'Tentang Layanan Ini',
-    description: [
-      'Hologram dengan QR adalah solusi autentikasi flagship kami yang menggabungkan kekuatan keamanan fisik (hologram premium) dengan keamanan digital (QR code AG). Setiap label diproduksi dengan teknologi hologram multi-layer yang memiliki efek visual unik dan sulit ditiru, dilengkapi dengan kode QR yang terhubung langsung ke database real-time Authentic Guards.',
-      'Solusi ini dirancang khusus untuk brand yang membutuhkan proteksi maksimal terhadap produk premium, barang bernilai tinggi, atau produk yang rentan terhadap pemalsuan sofisticated. Dengan 2 lapis proteksi yang bekerja sinergis, pemalsu harus mengalahkan kedua lapisan sekaligus untuk membuat produk palsu yang meyakinkan sebuah tantangan yang hampir mustahil.'
-    ],
-    highlights: [
-      'Hologram multi-layer dengan efek visual premium',
-      'QR code terintegrasi dengan database real-time',
-      'Tamper-evident design untuk deteksi pembukaan',
-      'Verifikasi instan via smartphone',
-      'Custom design sesuai brand identity',
-      'Terintegrasi dengan 5 lapis keamanan AG'
-    ]
-  },
-  features: [
-    {
-      icon: 'Sparkles',
-      title: 'Hologram Premium Multi-Layer',
-      description: 'Teknologi hologram dengan efek visual multi-layer yang hampir mustahil ditiru. Setiap hologram memiliki pola unik yang dapat diverifikasi secara visual oleh konsumen maupun retailer.',
-      details: [
-        'Multi-layer optical effects',
-        'Custom pattern design',
-        'Anti-UV & anti-scratch coating',
-        'Visual inspection friendly'
-      ]
-    },
-    {
-      icon: 'QrCode',
-      title: 'QR Code Terintegrasi AG',
-      description: 'Kode QR yang dikembangkan berdasarkan spesifikasi internasional ISO/IEC 18084:2015, terhubung langsung ke cloud database Authentic Guards. Setiap kode unik per produk, interoperable dengan semua pembaca QR standar, dan tidak dapat diduplikasi.',
-      details: [
-        'Mengacu pada ISO/IEC 18084:2015',
-        'Unique code per product',
-        'Real-time database sync',
-        'Error correction Level Q (25%)'
-      ]
-    },
-    {
-      icon: 'ShieldAlert',
-      title: 'Tamper-Evident Design',
-      description: 'Label dirancang dengan fitur tamper-evident yang menunjukkan tanda-tanda pembukaan. Ketika label dibuka/terlepas, kode QR otomatis tidak valid dan dianggap tidak sah.',
-      details: [
-        'Void upon removal',
-        'Visual tamper indicators',
-        'Auto-invalidation system',
-        'Prevents label transfer'
-      ]
-    },
-    {
-      icon: 'Database',
-      title: 'Verifikasi Real-time',
-      description: 'Setiap scan langsung divalidasi ke cloud database AG dengan standar ISO/IEC 27000:2016. Sistem mencatat setiap aktivitas verifikasi untuk analytics dan deteksi anomali.',
-      details: [
-        'ISO/IEC 27000:2016 cloud database',
-        'Real-time validation',
-        'Activity logging',
-        'Anomaly detection'
-      ]
-    }
-  ],
-  specifications: {
-    title: 'Spesifikasi Teknis',
-    items: [
-      { label: 'Jenis Hologram', value: 'Multi-Layer Optical' },
-      { label: 'Standar QR Code', value: 'ISO/IEC 18004:2015' },
-      { label: 'Ukuran Label', value: 'Custom (0.5cm - 5cm)' },
-      { label: 'Material', value: 'Premium Synthetic / Vinyl' },
-      { label: 'Ketahanan', value: 'Anti-UV, Anti-Scratch, Waterproof' },
-      { label: 'Database Standard', value: 'ISO/IEC 27000:2016' },
-      { label: 'Error Correction', value: 'Level Q (25%)' },
-      { label: 'Response Time', value: '< 100ms' },
-      { label: 'Verifikasi Limit', value: '15x per code' },
-      { label: 'Tamper Protection', value: 'Void upon removal' }
-    ]
-  },
-  implementation: {
-    title: 'Alur Implementasi',
-    description: 'Proses implementasi yang terstruktur untuk memastikan kualitas dan kesuksesan setiap proyek.',
-    steps: [
-      {
-        num: '01',
-        title: 'Konsultasi & Analisis',
-        description: 'Diskusi mendalam untuk memahami kebutuhan spesifik brand, jenis produk, volume produksi, dan tingkat keamanan yang dibutuhkan.',
-        duration: '1-2 hari',
-        icon: 'Handshake'
-      },
-      {
-        num: '02',
-        title: 'Desain & Prototyping',
-        description: 'Tim desain membuat mockup hologram sesuai brand identity. Prototype diproduksi untuk approval sebelum produksi massal.',
-        duration: '3-5 hari',
-        icon: 'Lightbulb'
-      },
-      {
-        num: '03',
-        title: 'Produksi Kode AG',
-        description: 'Sistem menghasilkan kode AG unik dengan algoritma 3 lapis, di-hash MD5, dan disimpan di cloud database berstandar ISO/IEC 27000:2016.',
-        duration: '1-2 hari',
-        icon: 'Hash'
-      },
-      {
-        num: '04',
-        title: 'Produksi Label Hologram',
-        description: 'Label hologram diproduksi dengan teknologi multi-layer, dilengkapi QR code dan fitur tamper-evident sesuai spesifikasi.',
-        duration: '5-7 hari',
-        icon: 'Sparkles'
-      },
-      {
-        num: '05',
-        title: 'Quality Control',
-        description: 'Pengecekan kualitas label dari kecacatan dan kesalahan. Label yang tidak lolos QC akan dimusnahkan dengan prosedur terstandar.',
-        duration: '1-2 hari',
-        icon: 'FileCheck'
-      },
-      {
-        num: '06',
-        title: 'Pengiriman & Implementasi',
-        description: 'Label dikirim ke klien dengan dokumentasi lengkap. Tim kami membantu proses aplikasi label pada produk dan training penggunaan sistem.',
-        duration: '2-3 hari',
-        icon: 'Package'
-      }
-    ]
-  },
-  useCases: {
-    title: 'Industri yang Cocok',
-    description: 'Solusi ini ideal untuk berbagai industri yang membutuhkan proteksi maksimal terhadap produk premium.',
-    industries: [
-      {
-        icon: 'Award',
-        name: 'Luxury Goods',
-        description: 'Tas, jam tangan, perhiasan, dan produk fashion premium yang rentan pemalsuan.',
-        examples: ['Tas Designer', 'Jam Tangan Mewah', 'Perhiasan']
-      },
-      {
-        icon: 'Shield',
-        name: 'Farmasi & Kesehatan',
-        description: 'Obat-obatan, suplemen, dan produk kesehatan yang membutuhkan keamanan tinggi.',
-        examples: ['Obat Resep', 'Suplemen', 'Alat Kesehatan']
-      },
-      {
-        icon: 'Package',
-        name: 'Elektronik & Gadget',
-        description: 'Perangkat elektronik, aksesoris, dan gadget yang sering menjadi target pemalsuan.',
-        examples: ['Smartphone', 'Aksesoris Original', 'Komponen']
-      },
-      {
-        icon: 'Tag',
-        name: 'Minuman Keras & Spirits',
-        description: 'Minuman beralkohol premium yang membutuhkan proteksi dari produk palsu.',
-        examples: ['Wine Premium', 'Whisky', 'Spirits']
-      }
-    ]
-  },
-  benefits: {
-    title: 'Keuntungan untuk Brand Anda',
-    items: [
-      {
-        icon: 'Shield',
-        title: 'Proteksi Maksimal',
-        description: '2 lapis keamanan (fisik + digital) yang hampir mustahil dipalsukan secara bersamaan.'
-      },
-      {
-        icon: 'Users',
-        title: 'Meningkatkan Kepercayaan',
-        description: 'Konsumen dapat memverifikasi keaslian produk dengan mudah via smartphone.'
-      },
-      {
-        icon: 'TrendingUp',
-        title: 'ROI Tinggi',
-        description: 'Penurunan produk palsu dan peningkatan penjualan produk asli secara signifikan.'
-      },
-      {
-        icon: 'Eye',
-        title: 'Monitoring Aktivitas',
-        description: 'Pencatatan aktivitas verifikasi untuk analisis dan deteksi anomali.'
-      },
-      {
-        icon: 'Globe',
-        title: 'Standar Internasional',
-        description: 'Menggunakan standar ISO/IEC 18004:2015 dan ISO/IEC 27000:2016 yang diakui global.'
-      },
-      {
-        icon: 'Target',
-        title: 'Fully Customizable',
-        description: 'Desain hologram dan label fully customizable sesuai brand identity Anda.'
-      }
-    ]
-  },
-  gallery: {
-    title: 'Visual Preview',
-    description: 'Contoh visual produk dengan label hologram QR (dokumentasi akan segera dilengkapi)',
-    items: [
-      { title: 'Label Hologram Premium', description: 'Contoh label hologram dengan QR code terintegrasi', placeholder: <Tags className='w-12 h-12 opacity-60' /> },
-      { title: 'Aplikasi pada Produk', description: 'Label diaplikasikan pada kemasan produk', placeholder: <Package className='w-12 h-12 opacity-60' /> },
-      { title: 'Verifikasi via Smartphone', description: 'Konsumen memverifikasi produk dengan scan QR', placeholder: <Smartphone className='w-12 h-12 opacity-60' /> },
-      { title: 'Monitoring Aktivitas', description: 'Pencatatan aktivitas verifikasi real-time', placeholder: <ChartColumn className='w-12 h-12 opacity-60' /> }
-    ]
-  },
-  faq: {
-    title: 'Pertanyaan Umum',
-    items: [
-      {
-        q: 'Berapa minimum order untuk label hologram?',
-        a: 'Minimum order quantity (MOQ) bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi langsung.'
-      },
-      {
-        q: 'Berapa lama waktu produksi label hologram?',
-        a: 'Waktu produksi standar adalah ±14 hari kerja setelah desain di-approve, sesuai dengan ketentuan layanan kami. Untuk kebutuhan khusus, timeline dapat didiskusikan lebih lanjut dengan tim kami.'
-      },
-      {
-        q: 'Apakah desain hologram bisa fully custom?',
-        a: 'Tentu! Tim desain kami akan bekerja sama dengan Anda untuk membuat hologram custom sesuai brand identity. Mulai dari pattern, warna, efek visual, hingga ukuran dan bentuk label.'
-      },
-      {
-        q: 'Bagaimana jika ada label yang cacat produksi?',
-        a: 'Kami akan mengkompensasi label baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti, lalu tim QC akan men-stempel pita kustom dengan catatan afkir.'
-      },
-      {
-        q: 'Apakah label ini tahan terhadap cuaca dan goresan?',
-        a: 'Ya, label hologram kami dilengkapi dengan coating anti-UV, anti-scratch, dan waterproof. Label dirancang untuk bertahan dalam kondisi normal penggunaan produk.'
-      },
-      {
-        q: 'Bagaimana proses verifikasi oleh konsumen?',
-        a: 'Konsumen cukup scan QR code pada label menggunakan smartphone. Sistem akan memverifikasi keaslian produk secara real-time dan menampilkan status keaslian dalam hitungan detik. Setiap kode memiliki batas verifikasi 15 kali untuk mencegah duplikasi.'
-      },
-      {
-        q: 'Apakah ada solusi lain selain hologram?',
-        a: 'Ya, kami juga menyediakan Label Tafeta dengan QR untuk industri fashion. Untuk solusi teknologi lainnya seperti NFC, saat ini masih dalam tahap penelitian dan pengembangan. Silakan hubungi tim kami untuk informasi lebih lanjut.'
-      }
-    ]
-  },
-  pricing: {
-    title: 'Paket & Investasi',
-    description: 'Setiap proyek memiliki kebutuhan yang unik. Kami menawarkan solusi fleksibel yang disesuaikan dengan skala bisnis, volume produksi, dan tingkat keamanan yang Anda butuhkan.',
-    note: 'Harga final akan diberikan setelah konsultasi dan analisis kebutuhan. Semua penawaran belum termasuk PPN.',
-    packages: [
-      {
-        name: 'Starter',
-        description: 'Untuk UMKM & brand emerging yang baru memulai proteksi produk',
-        price: 'Custom',
-        priceUnit: '',
-        pricePeriod: '',
-        priceNote: 'Sesuai kebutuhan',
-        popular: false,
-        features: [
-          { text: 'Volume produksi disesuaikan', included: true },
-          { text: 'Desain hologram standar', included: true },
-          { text: 'QR code dengan database real-time', included: true },
-          { text: 'Verifikasi via web browser', included: true },
-          { text: 'Basic activity logging', included: true },
-          { text: 'Email support (jam kerja)', included: true },
-          { text: 'Custom design', included: false },
-          { text: 'API integration', included: false },
-          { text: 'Dedicated account manager', included: false }
-        ],
-        cta: 'Mulai Konsultasi',
-        highlight: 'Cocok untuk UMKM'
-      },
-      {
-        name: 'Business',
-        description: 'Untuk brand menengah yang membutuhkan solusi lebih komprehensif',
-        price: 'Custom',
-        priceUnit: '',
-        pricePeriod: '',
-        priceNote: 'Sesuai kebutuhan',
-        popular: true,
-        features: [
-          { text: 'Volume produksi menengah-besar', included: true },
-          { text: 'Custom design hologram', included: true },
-          { text: 'QR code + Tamper-evident label', included: true },
-          { text: 'Verifikasi via web & mobile', included: true },
-          { text: 'Advanced activity analytics', included: true },
-          { text: 'Priority support', included: true },
-          { text: 'Basic API integration', included: true },
-          { text: 'Monthly performance report', included: true },
-          { text: 'Dedicated account manager', included: false }
-        ],
-        cta: 'Pilih Paket Ini',
-        highlight: 'Paling Populer'
-      },
-      {
-        name: 'Enterprise',
-        description: 'Untuk korporasi & brand besar dengan kebutuhan khusus',
-        price: 'Custom',
-        priceUnit: '',
-        pricePeriod: '',
-        priceNote: 'Sesuai kebutuhan',
-        popular: false,
-        features: [
-          { text: 'Volume produksi besar', included: true },
-          { text: 'Full customization hologram & label', included: true },
-          { text: 'Multi-layer security (Hologram+QR)', included: true },
-          { text: 'Enterprise analytics & reporting', included: true },
-          { text: 'Dedicated support + SLA', included: true },
-          { text: 'Custom MOQ sesuai kebutuhan', included: true },
-          { text: 'Full API integration', included: true },
-          { text: 'Dedicated account manager', included: true },
-          { text: 'On-site training & implementation', included: true }
-        ],
-        cta: 'Hubungi Sales',
-        highlight: 'Solusi Premium'
-      }
-    ],
-    addons: [
-      {
-        title: 'Desain Hologram Custom',
-        description: 'Desain hologram eksklusif sesuai brand identity Anda',
-        price: 'Harga bervariasi',
-        icon: 'Sparkles'
-      },
-      {
-        title: 'White-Label Mobile App',
-        description: 'Aplikasi verifikasi dengan branding perusahaan Anda',
-        price: 'Harga bervariasi',
-        icon: 'Smartphone'
-      },
-      // {
-      //   title: 'API Integration Package',
-      //   description: 'Integrasi penuh dengan sistem existing Anda',
-      //   price: 'Harga bervariasi',
-      //   icon: 'Code2'
-      // },
-      // {
-      //   title: 'Extended Support Package',
-      //   description: 'Dukungan teknis prioritas dengan SLA khusus',
-      //   price: 'Harga bervariasi',
-      //   icon: 'Bell'
-      // }
-    ]
-  },
-  customSolution: {
-    title: 'Butuh Solusi yang Benar-Benar Custom?',
-    description: 'Kami memahami bahwa setiap brand memiliki kebutuhan unik. Tim kami siap merancang solusi autentikasi yang disesuaikan 100% dengan kebutuhan bisnis Anda.',
-    features: [
-      {
-        icon: 'Target',
-        title: 'Custom Security Level',
-        desc: 'Tentukan sendiri tingkat keamanan sesuai risiko produk Anda'
-      },
-      {
-        icon: 'Palette',
-        title: 'Full Brand Integration',
-        desc: 'Integrasi penuh dengan brand identity dan packaging Anda'
-      },
-      {
-        icon: 'Boxes',
-        title: 'Volume Flexibility',
-        desc: 'Penyesuaian volume produksi sesuai kebutuhan musiman'
-      },
-      {
-        icon: 'Globe',
-        title: 'Multi-Region Support',
-        desc: 'Dukungan untuk distribusi di berbagai wilayah'
-      }
-    ],
-    process: [
-      'Konsultasi mendalam dengan tim expert kami',
-      'Analisis kebutuhan & risk assessment',
-      'Proposal solusi custom dalam 3-5 hari kerja',
-      'Prototyping & testing',
-      'Implementasi & monitoring berkelanjutan'
-    ]
-  }
-}
+type ServiceData = any
 
 // ============================================================================
 // HERO SECTION
 // ============================================================================
-function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
-  const { hero, color } = data
+function HeroDetailSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
+  const { hero } = data
 
   return (
     <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden">
@@ -460,7 +72,6 @@ function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 w-full text-center">
-        {/* Badge - sama dengan Home.tsx */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -514,7 +125,7 @@ function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
             to="/contact"
             className="group inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg"
           >
-            <span>Konsultasi Gratis</span>
+            <span>{t('ui.consultFree')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
@@ -522,18 +133,18 @@ function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
             className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:border-[#C5A059]/40 transition-all duration-300"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span>Kembali ke Services</span>
+            <span>{t('ui.backToServices')}</span>
           </Link>
         </motion.div>
 
-        {/* Inline Stats - sama dengan Home.tsx */}
+        {/* Inline Stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
         >
-          {hero.stats.map((stat, idx) => (
+          {hero.stats.map((stat: any, idx: number) => (
             <span key={idx} className="flex items-center gap-1.5">
               <span className="font-extrabold text-[#1A1A1A]">{stat.value}</span> {stat.label}
             </span>
@@ -547,14 +158,14 @@ function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 // ============================================================================
 // OVERVIEW SECTION
 // ============================================================================
-function OverviewSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function OverviewSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { overview, color } = data
 
   return (
     <section className="py-16 md:py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Left - Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -562,14 +173,14 @@ function OverviewSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
             className="lg:col-span-2 space-y-6"
           >
             <div>
-              <p className={`text-xs font-bold ${color.text} uppercase tracking-widest mb-3`}>Overview</p>
+              <p className={`text-xs font-bold ${color.text} uppercase tracking-widest mb-3`}>{t('ui.overviewLabel')}</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-6">
                 {overview.title}
               </h2>
             </div>
 
             <div className="space-y-4">
-              {overview.description.map((paragraph, idx) => (
+              {overview.description.map((paragraph: string, idx: number) => (
                 <p key={idx} className="text-gray-600 leading-relaxed text-lg">
                   {paragraph}
                 </p>
@@ -577,7 +188,6 @@ function OverviewSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
             </div>
           </motion.div>
 
-          {/* Right - Highlights */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -587,10 +197,10 @@ function OverviewSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
             <div className={`${color.bg} rounded-3xl p-6 border ${color.border} sticky top-24`}>
               <h4 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
                 <CheckCircle2 className={`w-5 h-5 ${color.text}`} />
-                Highlight Utama
+                {t('ui.highlightsTitle')}
               </h4>
               <div className="space-y-3">
-                {overview.highlights.map((highlight, idx) => (
+                {overview.highlights.map((highlight: string, idx: number) => (
                   <div key={idx} className="flex items-start gap-2">
                     <div className={`w-1.5 h-1.5 ${color.text.replace('text-', 'bg-')} rounded-full mt-2 shrink-0`} />
                     <span className="text-sm text-gray-700">{highlight}</span>
@@ -608,7 +218,8 @@ function OverviewSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 // ============================================================================
 // FEATURES SECTION
 // ============================================================================
-function FeaturesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function FeaturesSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { features, color } = data
 
   const getIcon = (iconName: string) => {
@@ -631,17 +242,17 @@ function FeaturesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Fitur Unggulan</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.featuresEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Fitur <span className={`text-transparent bg-clip-text bg-linear-to-r ${color.gradient}`}>Detail</span>
+            {t('ui.featuresTitlePre')} <span className={`text-transparent bg-clip-text bg-linear-to-r ${color.gradient}`}>{t('ui.featuresTitleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Setiap fitur dirancang untuk memberikan proteksi maksimal dan pengalaman verifikasi yang mudah.
+            {t('ui.featuresSubtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {features.map((feature, idx) => (
+          {features.map((feature: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -661,9 +272,9 @@ function FeaturesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Detail Teknis</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">{t('ui.detailTech')}</p>
                 <div className="grid grid-cols-2 gap-2">
-                  {feature.details.map((detail, dIdx) => (
+                  {feature.details.map((detail: string, dIdx: number) => (
                     <div key={dIdx} className="flex items-center gap-2">
                       <CheckCircle2 className={`w-4 h-4 ${color.text} shrink-0`} />
                       <span className="text-xs text-gray-600">{detail}</span>
@@ -682,7 +293,8 @@ function FeaturesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 // ============================================================================
 // SPECIFICATIONS SECTION
 // ============================================================================
-function SpecificationsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function SpecificationsSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { specifications, color } = data
 
   return (
@@ -694,7 +306,7 @@ function SpecificationsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Technical Specs</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.specsEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {specifications.title}
           </h2>
@@ -706,7 +318,7 @@ function SpecificationsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
           viewport={{ once: true }}
           className="max-w-4xl mx-auto bg-[#FAF8F5] rounded-3xl border border-[#E8D09E]/30 overflow-hidden"
         >
-          {specifications.items.map((spec, idx) => (
+          {specifications.items.map((spec: any, idx: number) => (
             <div
               key={idx}
               className={`flex items-center justify-between p-5 ${
@@ -726,7 +338,8 @@ function SpecificationsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
 // ============================================================================
 // IMPLEMENTATION FLOW SECTION
 // ============================================================================
-function ImplementationSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function ImplementationSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { implementation, color } = data
 
   const getIcon = (iconName: string) => {
@@ -753,7 +366,7 @@ function ImplementationSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Implementation</p>
+          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">{t('ui.implementationEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
             {implementation.title}
           </h2>
@@ -763,7 +376,7 @@ function ImplementationSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {implementation.steps.map((step, idx) => (
+          {implementation.steps.map((step: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -801,7 +414,8 @@ function ImplementationSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
 // ============================================================================
 // USE CASES / INDUSTRIES SECTION
 // ============================================================================
-function UseCasesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function UseCasesSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { useCases, color } = data
 
   const getIcon = (iconName: string) => {
@@ -823,7 +437,7 @@ function UseCasesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Industri</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.industriesEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {useCases.title}
           </h2>
@@ -833,7 +447,7 @@ function UseCasesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {useCases.industries.map((industry, idx) => (
+          {useCases.industries.map((industry: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -853,9 +467,8 @@ function UseCasesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                {/* <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Contoh Produk</p> */}
                 <div className="flex flex-wrap gap-2">
-                  {industry.examples.map((example, eIdx) => (
+                  {industry.examples.map((example: string, eIdx: number) => (
                     <span
                       key={eIdx}
                       className="text-xs font-semibold text-gray-600 bg-white px-3 py-1.5 rounded-full border border-gray-100"
@@ -876,7 +489,8 @@ function UseCasesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 // ============================================================================
 // BENEFITS SECTION
 // ============================================================================
-function BenefitsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function BenefitsSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { benefits, color } = data
 
   const getIcon = (iconName: string) => {
@@ -901,14 +515,14 @@ function BenefitsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Benefits</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.benefitsEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {benefits.title}
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.items.map((benefit, idx) => (
+          {benefits.items.map((benefit: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -931,10 +545,17 @@ function BenefitsSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 }
 
 // ============================================================================
-// GALLERY SECTION (DUMMY - placeholder untuk foto asli)
+// GALLERY SECTION
 // ============================================================================
-function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function GallerySection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { gallery, color } = data
+  const placeholders = [
+    <Tags className="w-12 h-12 opacity-60" />,
+    <Package className="w-12 h-12 opacity-60" />,
+    <Smartphone className="w-12 h-12 opacity-60" />,
+    <ChartColumn className="w-12 h-12 opacity-60" />
+  ]
 
   return (
     <section className="py-16 md:py-24 bg-white relative">
@@ -945,7 +566,7 @@ function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Gallery</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.galleryEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {gallery.title}
           </h2>
@@ -955,7 +576,7 @@ function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {gallery.items.map((item, idx) => (
+          {gallery.items.map((item: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -964,12 +585,12 @@ function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               className="group relative aspect-square bg-linear-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-dashed border-[#E8D09E]/40 hover:border-[#C5A059]/60 flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-md"
             >
-              <div className="text-6xl mb-3">{item.placeholder}</div>
+              <div className="text-6xl mb-3">{placeholders[idx % placeholders.length]}</div>
               <h4 className="font-bold text-[#1A1A1A] text-center mb-1">{item.title}</h4>
               <p className="text-xs text-gray-500 text-center">{item.description}</p>
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-[10px] font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2 py-0.5 rounded">
-                  Coming Soon
+                  {t('ui.comingSoon')}
                 </span>
               </div>
             </motion.div>
@@ -983,7 +604,7 @@ function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * Gallery akan segera dilengkapi dengan foto produk asli dan dokumentasi implementasi
+            {t('ui.galleryNote')}
           </p>
         </motion.div>
       </div>
@@ -992,9 +613,10 @@ function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 }
 
 // ============================================================================
-// PRICING SECTION - Updated dengan detail lebih lengkap
+// PRICING SECTION
 // ============================================================================
-function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function PricingSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { pricing, color } = data
 
   return (
@@ -1003,7 +625,6 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1011,7 +632,7 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
-            <span className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Pricing Plans</span>
+            <span className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.pricingBadge')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {pricing.title}
@@ -1021,9 +642,8 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           </p>
         </motion.div>
         
-        {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-          {pricing.packages.map((pkg, idx) => (
+          {pricing.packages.map((pkg: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -1036,14 +656,12 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
                 pkg.popular ? 'md:-translate-y-4' : ''
               }`}
             >
-              {/* Popular Badge */}
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-linear-to-r from-[#C5A059] to-[#8C6F3D] text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-md">
                   ⭐ {pkg.highlight}
                 </div>
               )}
               
-              {/* Header Card */}
               <div className={`p-8 pb-6 ${pkg.popular ? 'bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] text-white' : 'bg-white'}`}>
                 {!pkg.popular && pkg.highlight && (
                   <span className="inline-block text-xs font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-3 py-1 rounded-full mb-3">
@@ -1058,42 +676,17 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
                   {pkg.description}
                 </p>
                 
-                {/* Price Display */}
                 <div className="mb-6">
-                  {pkg.price === 'Custom' ? (
-                    <div>
-                      <p className={`text-4xl font-extrabold ${pkg.popular ? 'text-[#E8D09E]' : 'text-[#1A1A1A]'}`}>
-                        Custom
-                      </p>
-                      <p className={`text-xs mt-1 ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {pkg.priceNote}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="flex items-baseline gap-1">
-                      <span className={`text-xs ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {pkg.priceNote}
-                      </span>
-                    </div>
-                  )}
-                  
-                  {pkg.price !== 'Custom' && (
-                    <div className="flex items-baseline gap-1 mt-2">
-                      <span className={`text-sm ${pkg.popular ? 'text-gray-300' : 'text-gray-600'}`}>Rp</span>
-                      <span className={`text-5xl font-extrabold tracking-tight ${pkg.popular ? 'text-white' : 'text-[#1A1A1A]'}`}>
-                        {pkg.price}
-                      </span>
-                      <span className={`text-lg font-bold ${pkg.popular ? 'text-gray-300' : 'text-gray-600'}`}>
-                        {pkg.priceUnit}
-                      </span>
-                      <span className={`text-sm ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {pkg.pricePeriod}
-                      </span>
-                    </div>
-                  )}
+                  <div>
+                    <p className={`text-4xl font-extrabold ${pkg.popular ? 'text-[#E8D09E]' : 'text-[#1A1A1A]'}`}>
+                      {pkg.price}
+                    </p>
+                    <p className={`text-xs mt-1 ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
+                      {pkg.priceNote}
+                    </p>
+                  </div>
                 </div>
                 
-                {/* CTA Button */}
                 <Link
                   to="/contact"
                   className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold transition-all duration-300 ${
@@ -1107,13 +700,12 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
                 </Link>
               </div>
               
-              {/* Features List */}
               <div className="p-8 pt-6">
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
-                  Yang Anda Dapatkan:
+                  {t('ui.whatYouGet')}
                 </p>
                 <div className="space-y-3">
-                  {pkg.features.map((feature, fIdx) => (
+                  {pkg.features.map((feature: any, fIdx: number) => (
                     <div key={fIdx} className="flex items-start gap-2.5">
                       {feature.included ? (
                         <CheckCircle2 className={`w-5 h-5 ${color.text} shrink-0 mt-0.5`} />
@@ -1131,7 +723,6 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           ))}
         </div>
         
-        {/* Add-ons Section */}
         {pricing.addons && pricing.addons.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1141,19 +732,18 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           >
             <div className="bg-white rounded-3xl border border-[#E8D09E]/30 p-8 shadow-sm">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">Layanan Tambahan (Add-ons)</h3>
-                <p className="text-gray-500">Tingkatkan paket Anda dengan fitur tambahan sesuai kebutuhan</p>
+                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{t('ui.addonsTitle')}</h3>
+                <p className="text-gray-500">{t('ui.addonsSubtitle')}</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {pricing.addons.map((addon, idx) => (
+                {pricing.addons.map((addon: any, idx: number) => (
                   <div
                     key={idx}
                     className="flex items-start gap-4 p-4 bg-[#FAF8F5] rounded-2xl hover:bg-[#E8D09E]/10 transition-colors"
                   >
                     <div className={`w-12 h-12 ${color.bg} ${color.text} rounded-xl flex items-center justify-center shrink-0`}>
                       {addon.icon === 'Sparkles' && <Sparkles className="w-6 h-6" />}
-                      {addon.icon === 'Nfc' && <Nfc className="w-6 h-6" />}
                       {addon.icon === 'Smartphone' && <Smartphone className="w-6 h-6" />}
                       {addon.icon === 'Code2' && <Code2 className="w-6 h-6" />}
                     </div>
@@ -1169,7 +759,6 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           </motion.div>
         )}
         
-        {/* Note */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -1177,7 +766,7 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * {pricing.note}
+            {t('ui.notePrefix')} {pricing.note}
           </p>
         </motion.div>
       </div>
@@ -1186,9 +775,10 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 }
 
 // ============================================================================
-// CUSTOM SOLUTION SECTION - Komponen baru untuk solusi custom
+// CUSTOM SOLUTION SECTION
 // ============================================================================
-function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function CustomSolutionSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { customSolution, color } = data
 
   const getIcon = (iconName: string) => {
@@ -1208,7 +798,6 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
       
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -1217,7 +806,7 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
           >
             <div className="inline-flex items-center gap-2 bg-[#E8D09E]/20 border border-[#E8D09E]/40 px-4 py-2 rounded-full">
               <Sparkles className="w-4 h-4 text-[#8C6F3D]" />
-              <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Custom Solution</span>
+              <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('ui.customBadge')}</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight">
@@ -1229,11 +818,11 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {customSolution.features.map((feature, idx) => (
+              {customSolution.features.map((feature: any, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   className="flex gap-3 p-4 bg-[#FAF8F5] rounded-2xl border border-gray-100 hover:border-[#E8D09E]/40 transition-all"
@@ -1253,12 +842,11 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
               to="/contact"
               className="group inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg"
             >
-              <span>Request Custom Quote</span>
+              <span>{t('ui.customQuote')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
 
-          {/* Right - Process Timeline */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -1271,13 +859,13 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-2 h-2 bg-[#C5A059] rounded-full animate-pulse" />
-                  <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Proses Custom</span>
+                  <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">{t('ui.processCustom')}</span>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-6">Bagaimana Kami Bekerja</h3>
+                <h3 className="text-2xl font-bold mb-6">{t('ui.howWeWork')}</h3>
 
                 <div className="space-y-4">
-                  {customSolution.process.map((step, idx) => (
+                  {customSolution.process.map((step: string, idx: number) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: 20 }}
@@ -1305,11 +893,11 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-white/5 rounded-xl p-4">
                       <p className="text-2xl font-extrabold text-[#E8D09E] mb-1">3-5</p>
-                      <p className="text-xs text-gray-400">Hari Kerja untuk Proposal</p>
+                      <p className="text-xs text-gray-400">{t('ui.proposalDays')}</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-4">
                       <p className="text-2xl font-extrabold text-[#E8D09E] mb-1">24/7</p>
-                      <p className="text-xs text-gray-400">Dukungan Dedicated</p>
+                      <p className="text-xs text-gray-400">{t('ui.dedicatedSupport')}</p>
                     </div>
                   </div>
                 </div>
@@ -1325,7 +913,8 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
 // ============================================================================
 // FAQ SECTION
 // ============================================================================
-function FAQDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
+function FAQDetailSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('hologram')
   const { faq, color } = data
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
 
@@ -1345,7 +934,7 @@ function FAQDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
         </motion.div>
 
         <div className="space-y-3">
-          {faq.items.map((item, idx) => (
+          {faq.items.map((item: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 10 }}
@@ -1388,67 +977,10 @@ function FAQDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 }
 
 // ============================================================================
-// CTA SECTION
-// ============================================================================
-function CTADetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
-  const { color } = data
-
-  return (
-    <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 rounded-full">
-              <Handshake className="w-4 h-4 text-[#E8D09E]" />
-              <span className="text-xs font-bold text-[#E8D09E] tracking-wider uppercase">Konsultasi Gratis</span>
-            </div>
-
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
-              Siap Melindungi <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
-                Brand Anda?
-              </span>
-            </h2>
-
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Tim kami siap membantu Anda menemukan solusi hologram dengan QR yang tepat sesuai kebutuhan brand Anda.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center justify-center gap-3 bg-[#C5A059] text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#E8D09E] transition-all duration-300 shadow-lg hover:shadow-[#C5A059]/30 hover:-translate-y-0.5"
-              >
-                <span>Mulai Konsultasi</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span>Lihat Service Lain</span>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
-// ============================================================================
-// RELATED SERVICES SECTION - Warna disesuaikan dengan tema brand
+// RELATED SERVICES SECTION
 // ============================================================================
 function RelatedServicesSection() {
+  const { t } = useTranslation('hologram')
   const relatedServices = [
     {
       id: 'tafeta',
@@ -1497,15 +1029,15 @@ function RelatedServicesSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
-          <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Related Services</p>
+          <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('ui.relatedEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Layanan{' '}
+            {t('ui.relatedTitlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Lainnya
+              {t('ui.relatedTitleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Solusi marking lain yang tersedia atau sedang kami kembangkan untuk memenuhi berbagai kebutuhan brand Anda.
+            {t('ui.relatedSubtitle')}
           </p>
         </motion.div>
 
@@ -1526,16 +1058,14 @@ function RelatedServicesSection() {
                     : 'bg-white border border-gray-100 hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl'
                 }`}
               >
-                {/* Coming Soon Badge */}
                 {isComingSoon && (
                   <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
                     <Compass className="w-3 h-3" />
-                    <span>Coming Soon</span>
+                    <span>{t('ui.comingSoon')}</span>
                   </div>
                 )}
 
                 {isComingSoon ? (
-                  // Coming Soon - Non-clickable
                   <div className="block">
                     <div className="flex items-start gap-4 mb-4">
                       <div className={`w-12 h-12 ${service.iconBg} ${service.iconColor} rounded-xl flex items-center justify-center shrink-0`}>
@@ -1557,11 +1087,10 @@ function RelatedServicesSection() {
 
                     <div className="flex items-center gap-2 text-xs text-gray-400">
                       <Clock className="w-3.5 h-3.5" />
-                      <span>Akan segera tersedia</span>
+                      <span>{t('ui.comingSoonNote')}</span>
                     </div>
                   </div>
                 ) : (
-                  // Active Service - Clickable
                   <Link to={`/services/${service.id}`} className="block">
                     <div className="flex items-start gap-4 mb-4">
                       <div className={`w-12 h-12 ${service.iconBg} ${service.iconColor} rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
@@ -1580,7 +1109,7 @@ function RelatedServicesSection() {
                     <p className="text-sm text-gray-600 leading-relaxed mb-4">{service.desc}</p>
 
                     <div className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm group-hover:gap-3 transition-all">
-                      <span>Pelajari Lebih Lanjut</span>
+                      <span>{t('ui.learnMore')}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </Link>
@@ -1590,7 +1119,6 @@ function RelatedServicesSection() {
           })}
         </div>
 
-        {/* Note untuk Coming Soon */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -1598,11 +1126,11 @@ function RelatedServicesSection() {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * Tertarik dengan solusi yang sedang dikembangkan?{' '}
+            {t('ui.relatedNotePrefix')}{' '}
             <Link to="/contact" className="text-[#8C6F3D] font-semibold hover:text-[#C5A059] transition-colors">
-              Hubungi kami
+              {t('ui.relatedNoteContact')}
             </Link>{' '}
-            untuk informasi lebih lanjut.
+            {t('ui.relatedNoteSuffix')}
           </p>
         </motion.div>
       </div>
@@ -1613,17 +1141,12 @@ function RelatedServicesSection() {
 // ============================================================================
 // MAIN PAGE
 // ============================================================================
-import React from 'react'
-import AboutJoinUsCTA from '@/components/AboutJoinUs'
-
 export default function ServiceHologramDetailPage() {
-  // TODO: Use useParams() untuk dynamic routing jika nanti dibuat reusable
-  // const { serviceId } = useParams()
-  const data = HOLOGRAM_SERVICE_DATA
+  const { t } = useTranslation('hologram')
+  const data = t('data', { returnObjects: true })
 
   return (
     <>
-      {/* <BreadcrumbSection serviceTitle={data.title} /> */}
       <HeroDetailSection data={data} />
       <OverviewSection data={data} />
       <FeaturesSection data={data} />
@@ -1635,7 +1158,6 @@ export default function ServiceHologramDetailPage() {
       <PricingSection data={data} />
       <CustomSolutionSection data={data} />
       <FAQDetailSection data={data} />
-      {/* <CTADetailSection data={data} /> */}
       <RelatedServicesSection />
     </>
   )
