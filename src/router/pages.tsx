@@ -26,6 +26,7 @@ const OurClientsPage = lazy(() => import('@/view/partners/OurClients'));
 const AwardsPage = lazy(() => import('@/view/about/Awards'));
 const ServiceHologramDetailPage = lazy(() => import('@/view/services/Hologram'));
 const ServiceTafetaDetailPage = lazy(() => import('@/view/services/Tafeta'));
+const NotFoundPage = lazy(() => import('@/view/NotFound'));
 
 
 
@@ -57,5 +58,6 @@ export {
   OurClientsPage,
   AwardsPage,
   ServiceHologramDetailPage,
-  ServiceTafetaDetailPage
+  ServiceTafetaDetailPage,
+  NotFoundPage
 }

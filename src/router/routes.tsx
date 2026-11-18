@@ -1,10 +1,10 @@
-import { createBrowserRouter, redirect } from 'react-router'
+import { createBrowserRouter } from 'react-router'
 import LayoutMain from '@/layout/Layout'
 
 import { 
   HomePage, AboutPage, ServicesPage, TechnologyPage, PartnersPage, ContactPage,
   FAQPage, PrivacyPolicyPage, TermsPage, OurTeamPage, OurClientsPage, AwardsPage,
-  ServiceHologramDetailPage, ServiceTafetaDetailPage
+  ServiceHologramDetailPage, ServiceTafetaDetailPage, NotFoundPage
 } from '@/router/pages'
 
 export const router = createBrowserRouter([ 
@@ -91,9 +91,7 @@ export const router = createBrowserRouter([
       
       {
         path: '*',
-        loader: () => {
-          throw redirect('/');
-        }
+        element: <NotFoundPage />
       }
     ]
   }
