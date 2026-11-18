@@ -30,6 +30,7 @@ import {
   type TeamRole
 } from '@/data/team'
 import AboutJoinUsCTA from '@/components/AboutJoinUs'
+import { useTranslation } from 'react-i18next'
 
 const heroImageUrl = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
 
@@ -67,6 +68,7 @@ function TeamDetailModal({
   const gradient = member.gradient || getTeamGradient(member.category)
   const categoryLabel = getTeamCategoryLabel(member.category)
   const dummyImage = dummyImages[idx % dummyImages.length]
+  const { t } = useTranslation('ourteam')
 
   return (
     <motion.div
@@ -137,7 +139,7 @@ function TeamDetailModal({
             <div>
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
                 <Users className="w-5 h-5 text-[#8C6F3D]" />
-                Tentang
+                {t('modal.about')}
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 {member.bio}
@@ -155,7 +157,7 @@ function TeamDetailModal({
                     <Briefcase className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Pengalaman</h4>
+                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.experience')}</h4>
                     <p className="text-sm text-gray-600">{member.experience}</p>
                   </div>
                 </div>
@@ -170,7 +172,7 @@ function TeamDetailModal({
                     <GraduationCap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Pendidikan</h4>
+                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.education')}</h4>
                     <p className="text-sm text-gray-600">{member.education}</p>
                   </div>
                 </div>
@@ -185,7 +187,7 @@ function TeamDetailModal({
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Bergabung Sejak</h4>
+                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.since')}</h4>
                     <p className="text-sm text-gray-600">{member.joinYear}</p>
                   </div>
                 </div>
@@ -198,7 +200,7 @@ function TeamDetailModal({
             <div>
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-[#8C6F3D]" />
-                Keahlian
+                {t('modal.expertise')}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {member.expertise.map((skill, skillIdx) => (
@@ -218,7 +220,7 @@ function TeamDetailModal({
             <div>
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
                 <Globe className="w-5 h-5 text-[#8C6F3D]" />
-                Koneksi
+                {t('modal.connections')}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {member.social.map((social, socialIdx) => {
@@ -251,6 +253,7 @@ function TeamDetailModal({
 // HERO SECTION
 // ============================================================================
 function HeroTeam() {
+  const { t } = useTranslation('ourteam')
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -273,7 +276,7 @@ function HeroTeam() {
         >
           <Users className="w-4 h-4 text-[#C5A059]" />
           <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-            Tim Kami
+            {t('hero.badge')}
           </span>
         </motion.div>
 
@@ -283,10 +286,10 @@ function HeroTeam() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Orang-Orang Hebat di Balik{' '}
+          {t('hero.titlePre')}{' '}
           <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            AuthenticGuards
+            {t('hero.titleHighlight')}
           </span>
         </motion.h1>
 
@@ -296,7 +299,7 @@ function HeroTeam() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Tim profesional yang berdedikasi dengan beragam keahlian dan pengalaman, bersatu untuk memberikan solusi autentikasi terbaik dan melindungi brand Anda.
+          {t('hero.desc')}
         </motion.p>
 
         {/* Quick Stats */}
@@ -308,17 +311,17 @@ function HeroTeam() {
         >
           <span className="flex items-center gap-2">
             <Users className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">{TeamData.length}+ Anggota Tim</span>
+            <span className="font-semibold">{t('hero.statMembers', { n: TeamData.length })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">{getUniqueDepartments(TeamData).length} Departemen</span>
+            <span className="font-semibold">{t('hero.statDepartments', { n: getUniqueDepartments(TeamData).length })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">100+ Tahun Pengalaman Gabungan</span>
+            <span className="font-semibold">{t('hero.statExperience')}</span>
           </span>
         </motion.div>
       </div>
@@ -330,27 +333,28 @@ function HeroTeam() {
 // TEAM VALUES SECTION
 // ============================================================================
 function TeamValuesSection() {
+  const { t } = useTranslation('ourteam')
   const values = [
     {
       icon: <Heart className="w-6 h-6" />,
-      title: 'Passion',
-      desc: 'Kami mencintai apa yang kami lakukan dan berkomitmen pada kualitas.',
+      title: t('values.items.0.title'),
+      desc: t('values.items.0.desc'),
       gradient: 'from-rose-500/10 to-rose-500/[0.02]',
       iconBg: 'bg-rose-100',
       iconColor: 'text-rose-600'
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: 'Inovasi',
-      desc: 'Terus berkembang dan mencari solusi terbaik untuk setiap tantangan.',
+      title: t('values.items.1.title'),
+      desc: t('values.items.1.desc'),
       gradient: 'from-amber-500/10 to-amber-500/[0.02]',
       iconBg: 'bg-amber-100',
       iconColor: 'text-amber-600'
     },
     {
       icon: <Target className="w-6 h-6" />,
-      title: 'Kolaborasi',
-      desc: 'Bekerja sama sebagai satu tim untuk mencapai tujuan bersama.',
+      title: t('values.items.2.title'),
+      desc: t('values.items.2.desc'),
       gradient: 'from-emerald-500/10 to-emerald-500/[0.02]',
       iconBg: 'bg-emerald-100',
       iconColor: 'text-emerald-600'
@@ -369,13 +373,13 @@ function TeamValuesSection() {
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Sparkles className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Nilai-Nilai Kami
+              {t('values.eyebrow')}
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Apa yang{' '}
+            {t('values.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Menggerakkan Kami
+              {t('values.titleHighlight')}
             </span>
           </h2>
         </motion.div>
@@ -410,6 +414,7 @@ function TeamValuesSection() {
 // TEAM FILTER & GRID SECTION
 // ============================================================================
 function TeamGridSection() {
+  const { t } = useTranslation('ourteam')
   const [selectedDepartment, setSelectedDepartment] = useState<string>('all')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedMember, setSelectedMember] = useState<{ member: TeamMember; idx: number } | null>(null)
@@ -442,17 +447,17 @@ function TeamGridSection() {
                 <div className="inline-flex items-center gap-2 text-[#8C6F3D] mb-3">
                   <Users className="w-4 h-4" />
                   <span className="text-xs font-bold uppercase tracking-widest">
-                    Anggota Tim
+                    {t('grid.eyebrow')}
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">
-                  Kenali{' '}
+                  {t('grid.titlePre')}{' '}
                   <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-                    Tim Kami
+                    {t('grid.titleHighlight')}
                   </span>
                 </h2>
                 <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-                  Temukan orang-orang berbakat yang bekerja keras untuk kesuksesan Anda.
+                  {t('grid.subtitle')}
                 </p>
               </div>
 
@@ -463,7 +468,7 @@ function TeamGridSection() {
                   <div className="text-2xl font-extrabold text-[#8C6F3D]">
                     {filteredTeam.length}
                   </div>
-                  <div className="text-xs text-gray-500">Anggota</div>
+                  <div className="text-xs text-gray-500">{t('grid.resultsLabel')}</div>
                 </div>
               </div>
             </div>
@@ -480,7 +485,7 @@ function TeamGridSection() {
               {/* Filter Label */}
               <div className="flex items-center gap-2 text-sm font-semibold text-gray-700 shrink-0">
                 <Filter className="w-4 h-4 text-[#8C6F3D]" />
-                <span>Filter:</span>
+                <span>{t('grid.filterLabel')}</span>
               </div>
 
               {/* Filter Controls - Inline Pills */}
@@ -491,7 +496,7 @@ function TeamGridSection() {
                   onChange={(e) => setSelectedDepartment(e.target.value)}
                   className="px-4 py-2 rounded-full border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white text-sm font-medium hover:border-[#E8D09E]/50"
                 >
-                  <option value="all">Semua Departemen</option>
+                  <option value="all">{t('grid.deptAll')}</option>
                   {departments.map(dept => (
                     <option key={dept} value={dept}>{dept}</option>
                   ))}
@@ -503,7 +508,7 @@ function TeamGridSection() {
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="px-4 py-2 rounded-full border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white text-sm font-medium hover:border-[#E8D09E]/50"
                 >
-                  <option value="all">Semua Level</option>
+                  <option value="all">{t('grid.levelAll')}</option>
                   {categories.map(cat => (
                     <option key={cat} value={cat}>{getTeamCategoryLabel(cat)}</option>
                   ))}
@@ -518,7 +523,7 @@ function TeamGridSection() {
                     }}
                     className="px-4 py-2 rounded-full bg-[#E8D09E]/20 text-[#8C6F3D] text-sm font-bold hover:bg-[#E8D09E]/30 transition-colors"
                   >
-                    Reset Filter
+                    {t('grid.reset')}
                   </button>
                 )}
               </div>
@@ -527,7 +532,7 @@ function TeamGridSection() {
             {/* Active Filters Display */}
             {(selectedDepartment !== 'all' || selectedCategory !== 'all') && (
               <div className="mt-3 flex items-center gap-2 flex-wrap">
-                <span className="text-xs text-gray-500">Aktif:</span>
+                <span className="text-xs text-gray-500">{t('grid.activeLabel')}</span>
                 {selectedDepartment !== 'all' && (
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2.5 py-1 rounded-full">
                     {selectedDepartment}
@@ -586,10 +591,10 @@ function TeamGridSection() {
                 <Users className="w-10 h-10 text-[#8C6F3D]" />
               </div>
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">
-                Tidak ada anggota tim ditemukan
+                {t('grid.emptyTitle')}
               </h3>
               <p className="text-sm text-gray-500 mb-6">
-                Coba ubah filter untuk melihat anggota tim lainnya.
+                {t('grid.emptyDesc')}
               </p>
               <button
                 onClick={() => {
@@ -598,7 +603,7 @@ function TeamGridSection() {
                 }}
                 className="inline-flex items-center gap-2 bg-[#C5A059] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#E8D09E] transition-all duration-300"
               >
-                <span>Reset Filter</span>
+                <span>{t('grid.reset')}</span>
               </button>
             </motion.div>
           )}
@@ -633,6 +638,7 @@ function TeamCard({
 }) {
   const gradient = member.gradient || getTeamGradient(member.category)
   const dummyImage = dummyImages[idx % dummyImages.length]
+  const { t } = useTranslation('ourteam')
 
   return (
     <motion.div
@@ -676,7 +682,7 @@ function TeamCard({
         {/* View Detail Indicator */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-            <span className="text-xs font-bold text-[#1A1A1A]">Lihat Detail</span>
+            <span className="text-xs font-bold text-[#1A1A1A]">{t('grid.viewDetail')}</span>
           </div>
         </div>
       </div>

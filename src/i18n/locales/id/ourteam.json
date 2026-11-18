@@ -1,0 +1,44 @@
+{
+  "modal": {
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "education": "Pendidikan",
+    "since": "Bergabung Sejak",
+    "expertise": "Keahlian",
+    "connections": "Koneksi"
+  },
+  "hero": {
+    "badge": "Tim Kami",
+    "titlePre": "Orang-Orang Hebat di Balik",
+    "titleHighlight": "AuthenticGuards",
+    "desc": "Tim profesional yang berdedikasi dengan beragam keahlian dan pengalaman, bersatu untuk memberikan solusi autentikasi terbaik dan melindungi brand Anda.",
+    "statMembers": "{{n}}+ Anggota Tim",
+    "statDepartments": "{{n}} Departemen",
+    "statExperience": "100+ Tahun Pengalaman Gabungan"
+  },
+  "values": {
+    "eyebrow": "Nilai-Nilai Kami",
+    "titlePre": "Apa yang",
+    "titleHighlight": "Menggerakkan Kami",
+    "items": [
+      { "title": "Passion", "desc": "Kami mencintai apa yang kami lakukan dan berkomitmen pada kualitas." },
+      { "title": "Inovasi", "desc": "Terus berkembang dan mencari solusi terbaik untuk setiap tantangan." },
+      { "title": "Kolaborasi", "desc": "Bekerja sama sebagai satu tim untuk mencapai tujuan bersama." }
+    ]
+  },
+  "grid": {
+    "eyebrow": "Anggota Tim",
+    "titlePre": "Kenali",
+    "titleHighlight": "Tim Kami",
+    "subtitle": "Temukan orang-orang berbakat yang bekerja keras untuk kesuksesan Anda.",
+    "resultsLabel": "Anggota",
+    "filterLabel": "Filter:",
+    "deptAll": "Semua Departemen",
+    "levelAll": "Semua Level",
+    "reset": "Reset Filter",
+    "activeLabel": "Aktif:",
+    "emptyTitle": "Tidak ada anggota tim ditemukan",
+    "emptyDesc": "Coba ubah filter untuk melihat anggota tim lainnya.",
+    "viewDetail": "Lihat Detail"
+  }
+}

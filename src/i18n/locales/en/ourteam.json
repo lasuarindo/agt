@@ -1,0 +1,44 @@
+{
+  "modal": {
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "since": "Joined Since",
+    "expertise": "Expertise",
+    "connections": "Connections"
+  },
+  "hero": {
+    "badge": "Our Team",
+    "titlePre": "The Great People Behind",
+    "titleHighlight": "AuthenticGuards",
+    "desc": "A dedicated professional team with diverse expertise and experience, united to provide the best authentication solutions and protect your brand.",
+    "statMembers": "{{n}}+ Team Members",
+    "statDepartments": "{{n}} Departments",
+    "statExperience": "100+ Combined Years of Experience"
+  },
+  "values": {
+    "eyebrow": "Our Values",
+    "titlePre": "What",
+    "titleHighlight": "Drives Us",
+    "items": [
+      { "title": "Passion", "desc": "We love what we do and are committed to quality." },
+      { "title": "Innovation", "desc": "Continuously evolving and finding the best solutions for every challenge." },
+      { "title": "Collaboration", "desc": "Working together as one team to achieve shared goals." }
+    ]
+  },
+  "grid": {
+    "eyebrow": "Team Members",
+    "titlePre": "Meet",
+    "titleHighlight": "Our Team",
+    "subtitle": "Find the talented people working hard for your success.",
+    "resultsLabel": "Members",
+    "filterLabel": "Filter:",
+    "deptAll": "All Departments",
+    "levelAll": "All Levels",
+    "reset": "Reset Filter",
+    "activeLabel": "Active:",
+    "emptyTitle": "No team members found",
+    "emptyDesc": "Try changing the filter to see other team members.",
+    "viewDetail": "View Details"
+  }
+}
