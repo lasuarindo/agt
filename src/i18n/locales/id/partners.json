@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "eyebrow": "Ekosistem Partner",
+    "titleLine1": "Bersama Membangun",
+    "titleHighlight": "Ekosistem Aman",
+    "titleLine2": "di Asia Pasifik",
+    "desc": "Kami berkolaborasi dengan berbagai pihak strategis, brand terkemuka, dan investor visioner untuk menciptakan ekosistem autentikasi yang komprehensif dan berkelanjutan.",
+    "stat1": "3 Mitra Strategis",
+    "stat2": "Brand Terpercaya",
+    "stat3": "Berbagai Sektor Industri"
+  },
+  "clients": {
+    "badge": "Brand Partner",
+    "titlePre": "Berbagai Brand yang",
+    "titleHighlight": "Percaya",
+    "subtitle": "Berbagai brand terkemuka dari berbagai industri telah mengimplementasikan teknologi autentikasi AuthenticGuards.",
+    "since": "Sejak",
+    "stat1Value": "Terpercaya",
+    "stat1Label": "Brand Partner",
+    "stat2Value": "Lintas",
+    "stat2Label": "Industri",
+    "stat3Value": "8+",
+    "stat3Label": "Tahun Pengalaman",
+    "stat4Value": "Tinggi",
+    "stat4Label": "Tingkat Akurasi",
+    "ctaValue": "Beragam",
+    "ctaLabel": "Brand Partner",
+    "ctaTitle": "Jelajahi Lebih Banyak Brand Partner Kami",
+    "ctaDesc": "Temukan cerita sukses dari berbagai brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards. Lihat daftar lengkap klien kami dari berbagai industri.",
+    "ctaMobileBrand": "Berbagai",
+    "ctaMobileBrandLabel": "Brand",
+    "ctaMobileInd": "15+",
+    "ctaMobileIndLabel": "Industri",
+    "ctaMobileYear": "8+",
+    "ctaMobileYearLabel": "Tahun",
+    "modal": {
+      "verified": "Verified Partner",
+      "category": "Kategori",
+      "industry": "Industri",
+      "since": "Bergabung",
+      "location": "Lokasi",
+      "locationFallback": "Indonesia",
+      "aboutTitle": "TENTANG PARTNER",
+      "aboutDescription": "{{description}} {{name}} berkomitmen memberikan ketenangan pikiran bagi setiap konsumen melalui sistem verifikasi blockchain yang terintegrasi secara seamless pada setiap produknya.",
+      "contact": "Hubungi Partner",
+      "website": "Kunjungi Website"
+    }
+  },
+  "investors": {
+    "badge": "Investor & Backer",
+    "titlePre": "Didukung oleh",
+    "titleHighlight": "Investor",
+    "subtitle": "Kami bangga didukung oleh para investor dan backer yang percaya pada visi kami untuk merevolusi industri anti-counterfeit di Asia Pasifik.",
+    "comingSoon": "Coming Soon",
+    "ctaTitle": "Tertarik Berinvestasi?",
+    "ctaDesc": "Bergabunglah dalam perjalanan kami merevolusi industri anti-counterfeit",
+    "ctaButton": "Hubungi Tim Kami"
+  }
+}

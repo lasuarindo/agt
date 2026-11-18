@@ -45,6 +45,7 @@ import {
   X,
   LayoutGrid
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import { logodev } from '@/utils/image'
 import AboutJoinUsCTA from '@/components/AboutJoinUs'
@@ -70,6 +71,7 @@ import {
 // HERO PARTNER SECTION
 // ============================================================================
 function HeroPartner() {
+  const { t } = useTranslation('partners')
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -92,7 +94,7 @@ function HeroPartner() {
           className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/40 px-4 py-2 rounded-full mb-6"
         >
           <Handshake className="w-4 h-4 text-[#C5A059]" />
-          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Ekosistem Partner</span>
+          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('hero.eyebrow')}</span>
         </motion.div>
 
         <motion.h1
@@ -101,12 +103,12 @@ function HeroPartner() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Bersama Membangun <br className="hidden md:block" />
+          {t('hero.titleLine1')} <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            Ekosistem Aman
+            {t('hero.titleHighlight')}
           </span>
           <br className="hidden md:block" />
-          di Asia Pasifik
+          {t('hero.titleLine2')}
         </motion.h1>
 
         <motion.p
@@ -115,7 +117,7 @@ function HeroPartner() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Kami berkolaborasi dengan berbagai pihak strategis, brand terkemuka, dan investor visioner untuk menciptakan ekosistem autentikasi yang komprehensif dan berkelanjutan.
+          {t('hero.desc')}
         </motion.p>
 
         <motion.div
@@ -126,17 +128,17 @@ function HeroPartner() {
         >
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">3 Mitra Strategis</span>
+            <span className="font-semibold">{t('hero.stat1')}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">Brand Terpercaya</span>
+            <span className="font-semibold">{t('hero.stat2')}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">Berbagai Sektor Industri</span>
+            <span className="font-semibold">{t('hero.stat3')}</span>
           </span>
         </motion.div>
       </div>
@@ -280,6 +282,7 @@ function HeroPartner() {
 // }
 
 function ClientsSection() {
+  const { t } = useTranslation('partners')
   const [activeFilter, setActiveFilter] = useState<string>('all')
   const [selectedClient, setSelectedClient] = useState<Client | null>(null)
   
@@ -319,14 +322,14 @@ function ClientsSection() {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <ShieldCheck className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Brand Partner</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('clients.badge')}</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Berbagai Brand yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span>
+            {t('clients.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('clients.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-            Berbagai brand terkemuka dari berbagai industri telah mengimplementasikan teknologi autentikasi AuthenticGuards.
+            {t('clients.subtitle')}
           </p>
         </motion.div>
 
@@ -382,7 +385,7 @@ function ClientsSection() {
                     <div className="flex items-center gap-3 text-[10px] text-gray-400">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
-                        <span className="font-semibold">Sejak {client.since}</span>
+                        <span className="font-semibold">{t('clients.since')} {client.since}</span>
                       </div>
                     </div>
                   </div>
@@ -405,10 +408,10 @@ function ClientsSection() {
           className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { value: 'Terpercaya', label: 'Brand Partner' },
-            { value: 'Lintas', label: 'Industri' },
-            { value: '8+', label: 'Tahun Pengalaman' },
-            { value: 'Tinggi', label: 'Tingkat Akurasi' }
+            { value: t('clients.stat1Value'), label: t('clients.stat1Label') },
+            { value: t('clients.stat2Value'), label: t('clients.stat2Label') },
+            { value: t('clients.stat3Value'), label: t('clients.stat3Label') },
+            { value: t('clients.stat4Value'), label: t('clients.stat4Label') }
           ].map((stat, idx) => (
             <div key={idx} className="text-center p-4 bg-white rounded-xl border border-gray-100">
               <p className="text-2xl font-extrabold text-[#1A1A1A] mb-1">{stat.value}</p>
@@ -448,10 +451,10 @@ function ClientsSection() {
                 
                 <div className="hidden md:block">
                   <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
-                    Beragam
+                    {t('clients.ctaValue')}
                   </div>
                   <div className="text-xs text-gray-500 font-medium">
-                    Brand Partner
+                    {t('clients.ctaLabel')}
                   </div>
                 </div>
               </div>
@@ -459,10 +462,10 @@ function ClientsSection() {
               {/* Middle: Text Content */}
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-lg md:text-xl font-bold text-[#1A1A1A] mb-2 group-hover:text-[#8C6F3D] transition-colors">
-                  Jelajahi Lebih Banyak Brand Partner Kami
+                  {t('clients.ctaTitle')}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Temukan cerita sukses dari berbagai brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards. Lihat daftar lengkap klien kami dari berbagai industri.
+                  {t('clients.ctaDesc')}
                 </p>
               </div>
 
@@ -477,18 +480,18 @@ function ClientsSection() {
             {/* Bottom Stats (Mobile) */}
             <div className="md:hidden mt-6 pt-6 border-t border-[#E8D09E]/20 flex items-center justify-center gap-6">
               <div className="text-center">
-                <div className="text-2xl font-extrabold text-[#8C6F3D]">Berbagai</div>
-                <div className="text-xs text-gray-500">Brand</div>
+                <div className="text-2xl font-extrabold text-[#8C6F3D]">{t('clients.ctaMobileBrand')}</div>
+                <div className="text-xs text-gray-500">{t('clients.ctaMobileBrandLabel')}</div>
               </div>
               <div className="w-px h-8 bg-[#E8D09E]/30" />
               <div className="text-center">
-                <div className="text-2xl font-extrabold text-[#8C6F3D]">15+</div>
-                <div className="text-xs text-gray-500">Industri</div>
+                <div className="text-2xl font-extrabold text-[#8C6F3D]">{t('clients.ctaMobileInd')}</div>
+                <div className="text-xs text-gray-500">{t('clients.ctaMobileIndLabel')}</div>
               </div>
               <div className="w-px h-8 bg-[#E8D09E]/30" />
               <div className="text-center">
-                <div className="text-2xl font-extrabold text-[#8C6F3D]">8+</div>
-                <div className="text-xs text-gray-500">Tahun</div>
+                <div className="text-2xl font-extrabold text-[#8C6F3D]">{t('clients.ctaMobileYear')}</div>
+                <div className="text-xs text-gray-500">{t('clients.ctaMobileYearLabel')}</div>
               </div>
             </div>
           </Link>
@@ -538,7 +541,7 @@ function ClientsSection() {
                   <div className="absolute top-6 left-6 z-20">
                     <div className="flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30">
                       <CheckCircle2 className="w-4 h-4 text-white" />
-                      <span className="text-xs font-semibold text-white">Verified Partner</span>
+                      <span className="text-xs font-semibold text-white">{t('clients.modal.verified')}</span>
                     </div>
                   </div>
                   
@@ -568,7 +571,7 @@ function ClientsSection() {
                       <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center gap-2 mb-2">
                           <LayoutGrid className="w-4 h-4 text-amber-700" />
-                          <span className="text-[10px] font-bold text-amber-700 uppercase">Kategori</span>
+                          <span className="text-[10px] font-bold text-amber-700 uppercase">{t('clients.modal.category')}</span>
                         </div>
                         <p className="font-semibold text-sm md:text-base text-gray-900">
                           {getClientCategoryLabel(selectedClient.category)}
@@ -578,7 +581,7 @@ function ClientsSection() {
                       <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center gap-2 mb-2">
                           <Building2 className="w-4 h-4 text-amber-700" />
-                          <span className="text-[10px] font-bold text-amber-700 uppercase">Industri</span>
+                          <span className="text-[10px] font-bold text-amber-700 uppercase">{t('clients.modal.industry')}</span>
                         </div>
                         <p className="font-semibold text-sm md:text-base text-gray-900">
                           {selectedClient.industry}
@@ -588,7 +591,7 @@ function ClientsSection() {
                       <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center gap-2 mb-2">
                           <Calendar className="w-4 h-4 text-amber-700" />
-                          <span className="text-[10px] font-bold text-amber-700 uppercase">Bergabung</span>
+                          <span className="text-[10px] font-bold text-amber-700 uppercase">{t('clients.modal.since')}</span>
                         </div>
                         <p className="font-semibold text-sm md:text-base text-gray-900">
                           {selectedClient.since}
@@ -598,10 +601,10 @@ function ClientsSection() {
                       <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center gap-2 mb-2">
                           <MapPin className="w-4 h-4 text-amber-700" />
-                          <span className="text-[10px] font-bold text-amber-700 uppercase">Lokasi</span>
+                          <span className="text-[10px] font-bold text-amber-700 uppercase">{t('clients.modal.location')}</span>
                         </div>
                         <p className="font-semibold text-sm md:text-base text-gray-900 truncate">
-                          {selectedClient.location || 'Indonesia'}
+                          {selectedClient.location || t('clients.modal.locationFallback')}
                         </p>
                       </div>
                     </div>
@@ -609,10 +612,10 @@ function ClientsSection() {
                     {/* About Section */}
                     <div className="mb-8">
                       <h4 className="text-[11px] font-bold text-amber-700 uppercase tracking-widest mb-3">
-                        TENTANG PARTNER
+                        {t('clients.modal.aboutTitle')}
                       </h4>
                       <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                        {selectedClient.description} {selectedClient.name} berkomitmen memberikan ketenangan pikiran bagi setiap konsumen melalui sistem verifikasi blockchain yang terintegrasi secara seamless pada setiap produknya.
+                        {t('clients.modal.aboutDescription', { description: selectedClient.description, name: selectedClient.name })}
                       </p>
                     </div>
                   </div>
@@ -620,7 +623,7 @@ function ClientsSection() {
                   {/* Actions */}
                   <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-100">
                     <button className="flex-1 bg-black text-white px-6 py-3.5 rounded-xl font-semibold text-sm hover:bg-gray-800 transition-colors text-center">
-                      Hubungi Partner
+                      {t('clients.modal.contact')}
                     </button>
                     <a 
                       href={selectedClient.website || "#"} 
@@ -628,7 +631,7 @@ function ClientsSection() {
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#F5F5F7] text-gray-800 px-6 py-3.5 rounded-xl font-semibold text-sm hover:bg-gray-200 transition-colors text-center cursor-pointer"
                     >
-                      Kunjungi Website
+                      {t('clients.modal.website')}
                     </a>
                   </div>
                 </div>
@@ -645,6 +648,7 @@ function ClientsSection() {
 // INVESTORS SECTION
 // ============================================================================
 function InvestorsSection() {
+  const { t } = useTranslation('partners')
   const investorSlots = [1, 2, 3, 4, 5, 6]
 
   return (
@@ -660,14 +664,14 @@ function InvestorsSection() {
         >
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <TrendingUp className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Investor & Backer</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('investors.badge')}</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Didukung oleh <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Investor</span>
+            {t('investors.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('investors.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-            Kami bangga didukung oleh para investor dan backer yang percaya pada visi kami untuk merevolusi industri anti-counterfeit di Asia Pasifik.
+            {t('investors.subtitle')}
           </p>
         </motion.div>
 
@@ -686,7 +690,7 @@ function InvestorsSection() {
               </div>
               
               <p className="text-xs font-semibold text-gray-400 text-center group-hover:text-[#8C6F3D] transition-colors">
-                Coming Soon
+                {t('investors.comingSoon')}
               </p>
             </motion.div>
           ))}
@@ -705,15 +709,15 @@ function InvestorsSection() {
                 <Award className="w-5 h-5 text-[#8C6F3D]" />
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-[#1A1A1A]">Tertarik Berinvestasi?</p>
-                <p className="text-xs text-gray-500">Bergabunglah dalam perjalanan kami merevolusi industri anti-counterfeit</p>
+                <p className="text-sm font-bold text-[#1A1A1A]">{t('investors.ctaTitle')}</p>
+                <p className="text-xs text-gray-500">{t('investors.ctaDesc')}</p>
               </div>
             </div>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
-              <span>Hubungi Tim Kami</span>
+              <span>{t('investors.ctaButton')}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

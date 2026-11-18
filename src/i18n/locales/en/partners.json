@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "eyebrow": "Partner Ecosystem",
+    "titleLine1": "Building Together",
+    "titleHighlight": "A Secure Ecosystem",
+    "titleLine2": "in Asia Pacific",
+    "desc": "We collaborate with various strategic parties, leading brands, and visionary investors to create a comprehensive and sustainable authentication ecosystem.",
+    "stat1": "3 Strategic Partners",
+    "stat2": "Trusted Brands",
+    "stat3": "Various Industry Sectors"
+  },
+  "clients": {
+    "badge": "Brand Partner",
+    "titlePre": "Various Brands That",
+    "titleHighlight": "Trust",
+    "subtitle": "Various leading brands from different industries have implemented AuthenticGuards authentication technology.",
+    "since": "Since",
+    "stat1Value": "Trusted",
+    "stat1Label": "Brand Partner",
+    "stat2Value": "Across",
+    "stat2Label": "Industries",
+    "stat3Value": "8+",
+    "stat3Label": "Years of Experience",
+    "stat4Value": "High",
+    "stat4Label": "Accuracy Rate",
+    "ctaValue": "Various",
+    "ctaLabel": "Brand Partner",
+    "ctaTitle": "Explore More Brand Partners",
+    "ctaDesc": "Discover success stories from various brands that have entrusted their product protection to AuthenticGuards. See the complete list of our clients from various industries.",
+    "ctaMobileBrand": "Various",
+    "ctaMobileBrandLabel": "Brands",
+    "ctaMobileInd": "15+",
+    "ctaMobileIndLabel": "Industries",
+    "ctaMobileYear": "8+",
+    "ctaMobileYearLabel": "Years",
+    "modal": {
+      "verified": "Verified Partner",
+      "category": "Category",
+      "industry": "Industry",
+      "since": "Joined",
+      "location": "Location",
+      "locationFallback": "Indonesia",
+      "aboutTitle": "ABOUT PARTNER",
+      "aboutDescription": "{{description}} {{name}} is committed to providing peace of mind to every consumer through a blockchain verification system seamlessly integrated into every product.",
+      "contact": "Contact Partner",
+      "website": "Visit Website"
+    }
+  },
+  "investors": {
+    "badge": "Investor & Backer",
+    "titlePre": "Supported by",
+    "titleHighlight": "Investors",
+    "subtitle": "We are proud to be supported by investors and backers who believe in our vision to revolutionize the anti-counterfeit industry in Asia Pacific.",
+    "comingSoon": "Coming Soon",
+    "ctaTitle": "Interested in Investing?",
+    "ctaDesc": "Join us on our journey to revolutionize the anti-counterfeit industry",
+    "ctaButton": "Contact Our Team"
+  }
+}
