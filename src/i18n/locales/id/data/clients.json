@@ -1,0 +1,98 @@
+{
+  "categories": {
+    "all": {
+      "label": "Semua Industri",
+      "description": "Tampilkan semua klien dari berbagai industri"
+    },
+    "fnb": {
+      "label": "F&B",
+      "description": "Food & Beverage, vaping, minuman, dan kuliner"
+    },
+    "vaporize": {
+      "label": "Vaporize",
+      "description": "Produk vaping dan rokok elektronik"
+    },
+    "fashion": {
+      "label": "Fashion",
+      "description": "Pakaian, sepatu, aksesoris, dan sportswear"
+    },
+    "beauty": {
+      "label": "Kecantikan",
+      "description": "Kosmetik, skincare, dan produk perawatan diri"
+    },
+    "tech": {
+      "label": "Teknologi",
+      "description": "Gadget, elektronik, dan perangkat teknologi"
+    },
+    "health": {
+      "label": "Kesehatan",
+      "description": "Obat-obatan, suplemen, dan produk kesehatan"
+    },
+    "lifestyle": {
+      "label": "Lifestyle",
+      "description": "Barang mewah, gaya hidup, dan produk premium"
+    },
+    "automotive": {
+      "label": "Otomotif",
+      "description": "Kendaraan, spare parts, dan aksesoris otomotif"
+    },
+    "education": {
+      "label": "Pendidikan",
+      "description": "Institusi pendidikan, kursus, dan pelatihan"
+    },
+    "merchandise": {
+      "label": "Merchandise",
+      "description": "Produk merchandise dan promosi"
+    },
+    "custom": {
+      "label": "Industri Lainnya",
+      "description": "Klien dari industri yang tidak termasuk dalam kategori di atas"
+    }
+  },
+  "items": {
+    "moruka": {
+      "industry": "Fashion",
+      "description": "Brand fashion dan apparel"
+    },
+    "sabichi": {
+      "industry": "Fashion",
+      "description": "Brand fashion dan lifestyle"
+    },
+    "moneylaundry": {
+      "industry": "Fashion",
+      "description": "Brand fashion dan apparel"
+    },
+    "byhers": {
+      "industry": "Kecantikan",
+      "description": "Brand kosmetik dan perawatan diri"
+    },
+    "adeeva": {
+      "industry": "Kecantikan",
+      "description": "Brand skincare dan perawatan kulit"
+    },
+    "merz": {
+      "industry": "Teknologi",
+      "description": "Perusahaan teknologi dan perangkat medis"
+    },
+    "ultherapy": {
+      "industry": "Teknologi & Kesehatan",
+      "description": "Teknologi perawatan kulit berbasis ultrasound"
+    },
+    "ultherapy-health": {
+      "industry": "Kesehatan",
+      "description": "Perawatan kesehatan dan estetika"
+    },
+    "xtc": {
+      "industry": "Merchandise",
+      "description": "Produk merchandise dan promosi"
+    },
+    "234sc": {
+      "industry": "Merchandise",
+      "description": "Produk merchandise dan koleksi"
+    },
+    "juicenation": {
+      "industry": "Vaping",
+      "description": "Brand liquid vape dan aksesoris"
+    }
+  }
+}

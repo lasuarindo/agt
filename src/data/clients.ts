@@ -1,4 +1,5 @@
 import { logodev } from '@/utils/image';
+import type { TFunction } from 'i18next';
 import {
   ShieldCheck,
   Utensils,
@@ -54,7 +55,7 @@ export type Client = {
 // ============================================================================
 // HELPER - Category Label
 // ============================================================================
-export const getClientCategoryLabel = (category?: ClientCategory): string => {
+export const getClientCategoryLabel = (category?: ClientCategory, t?: TFunction): string => {
   const map: Record<ClientCategory, string> = {
     'fnb': 'F&B',
     'vaporize': 'Vaporize',
@@ -68,7 +69,9 @@ export const getClientCategoryLabel = (category?: ClientCategory): string => {
     'merchandise': 'Merchandise',
     'custom': 'Lainnya'
   }
-  return map[category || 'custom'] || 'Lainnya'
+  const fallback = map[category || 'custom'] || 'Lainnya'
+  if (!t) return fallback
+  return t(`data/clients:categories.${category || 'custom'}.label`, { defaultValue: fallback })
 }
 
 // ============================================================================
@@ -531,3 +534,33 @@ export const ClientsData: Client[] = [
     gradient: getClientGradient('vaporize')
   },
 ]
+
+// ============================================================================
+// I18N HELPERS - Translate display fields (keeps structure/icons/gradients)
+// ============================================================================
+
+/**
+ * Translate display fields of every client (industry, description).
+ * `name`, `since`, `location`, `logo`, `gradient` stay as-is.
+ */
+export const getClientsData = (t: TFunction): Client[] =>
+  ClientsData.map(c => {
+    const key = `data/clients:items.${c.id}`
+    return {
+      ...c,
+      industry: t(`${key}.industry`, { defaultValue: c.industry }),
+      description: c.description ? t(`${key}.description`, { defaultValue: c.description }) : c.description
+    }
+  })
+
+/**
+ * Translate category labels/descriptions for filter pills and selects.
+ */
+export const getClientCategories = (t: TFunction): ClientCategoryDetail[] =>
+  ClientCategoryData.map(cat => ({
+    ...cat,
+    label: t(`data/clients:categories.${cat.id}.label`, { defaultValue: cat.label }),
+    description: cat.description
+      ? t(`data/clients:categories.${cat.id}.description`, { defaultValue: cat.description })
+      : cat.description
+  }))

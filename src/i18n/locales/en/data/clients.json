@@ -1,0 +1,98 @@
+{
+  "categories": {
+    "all": {
+      "label": "All Industries",
+      "description": "Show all clients from various industries"
+    },
+    "fnb": {
+      "label": "F&B",
+      "description": "Food & Beverage, drinks, and culinary"
+    },
+    "vaporize": {
+      "label": "Vaporize",
+      "description": "Vaping products and e-cigarettes"
+    },
+    "fashion": {
+      "label": "Fashion",
+      "description": "Clothing, shoes, accessories, and sportswear"
+    },
+    "beauty": {
+      "label": "Beauty",
+      "description": "Cosmetics, skincare, and personal care products"
+    },
+    "tech": {
+      "label": "Technology",
+      "description": "Gadgets, electronics, and technology devices"
+    },
+    "health": {
+      "label": "Healthcare",
+      "description": "Medicines, supplements, and health products"
+    },
+    "lifestyle": {
+      "label": "Lifestyle",
+      "description": "Luxury goods, lifestyle, and premium products"
+    },
+    "automotive": {
+      "label": "Automotive",
+      "description": "Vehicles, spare parts, and automotive accessories"
+    },
+    "education": {
+      "label": "Education",
+      "description": "Educational institutions, courses, and training"
+    },
+    "merchandise": {
+      "label": "Merchandise",
+      "description": "Merchandise and promotional products"
+    },
+    "custom": {
+      "label": "Other Industries",
+      "description": "Clients from industries not listed above"
+    }
+  },
+  "items": {
+    "moruka": {
+      "industry": "Fashion",
+      "description": "Fashion and apparel brand"
+    },
+    "sabichi": {
+      "industry": "Fashion",
+      "description": "Fashion and lifestyle brand"
+    },
+    "moneylaundry": {
+      "industry": "Fashion",
+      "description": "Fashion and apparel brand"
+    },
+    "byhers": {
+      "industry": "Beauty",
+      "description": "Cosmetics and personal care brand"
+    },
+    "adeeva": {
+      "industry": "Beauty",
+      "description": "Skincare brand"
+    },
+    "merz": {
+      "industry": "Technology",
+      "description": "Technology and medical device company"
+    },
+    "ultherapy": {
+      "industry": "Technology & Healthcare",
+      "description": "Ultrasound-based skin treatment technology"
+    },
+    "ultherapy-health": {
+      "industry": "Healthcare",
+      "description": "Healthcare and aesthetics"
+    },
+    "xtc": {
+      "industry": "Merchandise",
+      "description": "Merchandise and promotional products"
+    },
+    "234sc": {
+      "industry": "Merchandise",
+      "description": "Merchandise and collectible products"
+    },
+    "juicenation": {
+      "industry": "Vaping",
+      "description": "Vape liquid and accessories brand"
+    }
+  }
+}

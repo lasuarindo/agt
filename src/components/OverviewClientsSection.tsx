@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router'
 import { 
-  ClientsData, 
+  getClientsData, 
   getClientIcon, 
   getClientGradient,
   getClientBadgeStyle,
@@ -16,7 +16,7 @@ import {
   filterClientsByCategory,
   sortClientsByYear,
   getUniqueClientCategories,
-  ClientCategoryData,
+  getClientCategories,
   getClientCategoryById,
   type Client,
   type ClientCategory,
@@ -31,13 +31,15 @@ export default function ClientsOverviewSection() {
   const { t } = useTranslation('overview')
   const [activeFilter, setActiveFilter] = useState<string>('all')
   
+  const clients = getClientsData(t)
+
   // Get unique categories untuk filter pills
-  const categories = new Set(getUniqueClientCategories(ClientsData));
-  const categoryData = ClientCategoryData.filter(v => v.id === 'all' || categories.has(v.id))
+  const categories = new Set(getUniqueClientCategories(clients));
+  const categoryData = getClientCategories(t).filter(v => v.id === 'all' || categories.has(v.id))
   
   // Filter clients
   const filteredClients = filterClientsByCategory(
-    ClientsData, 
+    clients, 
     activeFilter as ClientCategory | 'all'
   )
   

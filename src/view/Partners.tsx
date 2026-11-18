@@ -53,7 +53,7 @@ import { SupportersSimpleOverviewSection } from '@/components/OverviewSupporters
 import { MediaCoverageSimpleOverviewSection } from '@/components/OverviewMediaCoverageSection'
 
 import { 
-  ClientsData, 
+  getClientsData, 
   getClientIcon, 
   getClientGradient,
   getClientBadgeStyle,
@@ -61,7 +61,7 @@ import {
   filterClientsByCategory,
   sortClientsByYear,
   getUniqueClientCategories,
-  ClientCategoryData,
+  getClientCategories,
   getClientCategoryById,
   type Client,
   type ClientCategory
@@ -286,13 +286,15 @@ function ClientsSection() {
   const [activeFilter, setActiveFilter] = useState<string>('all')
   const [selectedClient, setSelectedClient] = useState<Client | null>(null)
   
+  const clients = getClientsData(t)
+
   // Get unique categories untuk filter pills
-  const categories = new Set(getUniqueClientCategories(ClientsData));
-  const categoryData = ClientCategoryData.filter(v => v.id === 'all' || categories.has(v.id))
+  const categories = new Set(getUniqueClientCategories(clients));
+  const categoryData = getClientCategories(t).filter(v => v.id === 'all' || categories.has(v.id))
   
   // Filter clients
   const filteredClients = filterClientsByCategory(
-    ClientsData, 
+    clients, 
     activeFilter as ClientCategory | 'all'
   )
 
@@ -574,7 +576,7 @@ function ClientsSection() {
                           <span className="text-[10px] font-bold text-amber-700 uppercase">{t('clients.modal.category')}</span>
                         </div>
                         <p className="font-semibold text-sm md:text-base text-gray-900">
-                          {getClientCategoryLabel(selectedClient.category)}
+                          {getClientCategoryLabel(selectedClient.category, t)}
                         </p>
                       </div>
                       

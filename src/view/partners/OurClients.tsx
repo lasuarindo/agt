@@ -16,8 +16,8 @@ import {
   Users
 } from 'lucide-react'
 import {
-  ClientsData,
-  ClientCategoryData,
+  getClientsData,
+  getClientCategories,
   getClientCategoryLabel,
   getClientGradient,
   getClientBadgeStyle,
@@ -49,8 +49,8 @@ function ClientDetailModal({
 }) {
   const gradient = client.gradient || getClientGradient(client.category)
   const badgeStyle = getClientBadgeStyle(client.category)
-  const categoryLabel = getClientCategoryLabel(client.category)
   const { t } = useTranslation('ourclients')
+  const categoryLabel = getClientCategoryLabel(client.category, t)
 
   return (
     <motion.div
@@ -207,8 +207,9 @@ function ClientDetailModal({
 // ============================================================================
 function HeroClients() {
   const { t } = useTranslation('ourclients')
-  const totalClients = ClientsData.length
-  const totalCategories = getUniqueClientCategories(ClientsData).length
+  const clients = getClientsData(t)
+  const totalClients = clients.length
+  const totalCategories = getUniqueClientCategories(clients).length
 
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
@@ -285,20 +286,21 @@ function HeroClients() {
 // ============================================================================
 function ClientsGridSection() {
   const { t } = useTranslation('ourclients')
+  const clients = useMemo(() => getClientsData(t), [t])
   const [activeFilter, setActiveFilter] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState<string>('')
   const [sortBy, setSortBy] = useState<'name' | 'year'>('year')
   const [selectedClient, setSelectedClient] = useState<Client | null>(null)
 
   // Get unique categories for filter pills
-  const categories = new Set(getUniqueClientCategories(ClientsData))
-  const categoryData = ClientCategoryData.filter(
+  const categories = new Set(getUniqueClientCategories(clients))
+  const categoryData = getClientCategories(t).filter(
     v => v.id === 'all' || categories.has(v.id as ClientCategory)
   )
 
   // Filter & Search clients
   const filteredClients = useMemo(() => {
-    let result = filterClientsByCategory(ClientsData, activeFilter as ClientCategory | 'all')
+    let result = filterClientsByCategory(clients, activeFilter as ClientCategory | 'all')
 
     // Search filter
     if (searchQuery) {
@@ -318,7 +320,7 @@ function ClientsGridSection() {
     }
 
     return result
-  }, [activeFilter, searchQuery, sortBy])
+  }, [clients, activeFilter, searchQuery, sortBy])
 
   return (
     <>
@@ -450,7 +452,7 @@ function ClientsGridSection() {
                 <span className="text-xs text-gray-500">{t('grid.activeLabel')}</span>
                 {activeFilter !== 'all' && (
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2.5 py-1 rounded-full">
-                    {getClientCategoryLabel(activeFilter as ClientCategory)}
+                    {getClientCategoryLabel(activeFilter as ClientCategory, t)}
                     <button
                       onClick={() => setActiveFilter('all')}
                       className="hover:text-[#6b5530] ml-0.5"
@@ -552,8 +554,8 @@ function ClientCard({
 }) {
   const gradient = client.gradient || getClientGradient(client.category)
   const badgeStyle = getClientBadgeStyle(client.category)
-  const categoryLabel = getClientCategoryLabel(client.category)
   const { t } = useTranslation('ourclients')
+  const categoryLabel = getClientCategoryLabel(client.category, t)
 
   return (
     <motion.div
