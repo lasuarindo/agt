@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Our Services",
+    "titleLine1": "Marking Solutions",
+    "titleHighlight": "Anti-Counterfeit",
+    "titleLine2": "for Various Industries",
+    "desc": "Authentic Guards provides marking solutions for a wide range of industries with 4 main media options: Tafeta Label, NFC Sticker, Hologram with QR, and QR Printing on Packaging — fully integrated with the AG system.",
+    "stat1": "2 Marking Options",
+    "stat2": "Customizable",
+    "stat3": "ISO 18004:2015"
+  },
+  "overview": {
+    "eyebrow": "Marking Development",
+    "titlePre": "Our",
+    "titleHighlight": "Marking",
+    "titlePost": "Solutions",
+    "subtitle": "Two main marking services fully integrated with the Authentic Guards system, designed for various industry needs.",
+    "detail": "Detail",
+    "suitableFor": "Suitable for:",
+    "hologramTitle": "Hologram with QR",
+    "hologramSubtitle": "Premium Security",
+    "hologramDesc": "A combination of premium hologram with QR code for dual security layers that are hard to counterfeit. Our flagship solution for maximum premium product protection.",
+    "tafetaTitle": "Tafeta Label with QR",
+    "tafetaSubtitle": "Fashion Solution",
+    "tafetaDesc": "High-quality tafeta label with an integrated QR code, designed specifically for the fashion and textile industry without compromising aesthetics."
+  },
+  "hologram": {
+    "badge": "Premium Security",
+    "titlePre": "Hologram",
+    "titleHighlight": "with QR",
+    "desc": "A combination of premium hologram with QR code for dual security layers. The hologram provides physical protection that is hard to counterfeit, while the QR code integrates with the Authentic Guards digital verification system.",
+    "exampleVerification": "Example Verification",
+    "verifiedProduct": "Verified Product",
+    "productName": "Hologram + QR Code",
+    "codeLabel": "AG Code",
+    "statusLabel": "Status",
+    "original": "Original",
+    "benefitsTitle": "Key Benefits",
+    "benefits": [
+      "Combination of physical (hologram) + digital (QR) security",
+      "Easy verification by consumers via smartphone",
+      "Integrated with AG's 5 security layers",
+      "Hard to counterfeit — 2 layers of protection",
+      "Custom design according to brand identity",
+      "Suitable for premium & high-value products"
+    ],
+    "features": [
+      { "title": "Premium Multi-Layer Hologram", "desc": "Hologram technology with visual effects that are hard to imitate, providing the first layer of physical security." },
+      { "title": "Integrated QR Code", "desc": "A unique QR code based on ISO/IEC 18004:2015 standard connected to the AG database, enabling real-time product authenticity verification." },
+      { "title": "Tamper-Evident", "desc": "The label is designed to show signs of opening, preventing code transfer to other products." },
+      { "title": "Real-time Verification", "desc": "Every scan is directly validated against the AG cloud database to ISO/IEC 27000:2016 standards." }
+    ],
+    "ctaTitle": "Learn More",
+    "ctaDesc": "See product examples, implementation guides, and technical specifications of our premium holograms."
+  },
+  "tafeta": {
+    "badge": "Fashion Solution",
+    "titlePre": "Tafeta",
+    "titleHighlight": "Label with QR",
+    "desc": "High-quality tafeta label with an integrated QR code, designed specifically for the fashion and textile industry. Provides product authentication without compromising aesthetics and comfort.",
+    "whyTitle": "Why Tafeta Label?",
+    "whyDesc": "Fashion products are often counterfeiting targets. Tafeta labels with QR provide a security layer integrated directly with the product, without compromising the aesthetics and comfort of the wearer.",
+    "specTitle": "Specifications",
+    "specName": "Premium Tafeta Label",
+    "specMaterial": "Material",
+    "specMaterialValue": "Premium Tafeta",
+    "specPrinting": "Printing",
+    "specPrintingValue": "High-Resolution",
+    "specSize": "Size",
+    "specSizeValue": "Custom",
+    "specIntegration": "Integration",
+    "specIntegrationValue": "AG QR Code",
+    "customDesign": "Custom Design",
+    "features": [
+      { "title": "Premium Tafeta Material", "desc": "High-quality, durable tafeta label that is comfortable to wear and suitable for fashion products." },
+      { "title": "Integrated QR Code", "desc": "QR code printed directly on the label with high-resolution printing technology, ISO 18004:2015 standard." },
+      { "title": "Integration with Label Design", "desc": "The QR code blends aesthetically with the label design, without disrupting the product's appearance." },
+      { "title": "Fully Customizable", "desc": "Label design is fully customizable according to brand identity, size, and product needs." }
+    ],
+    "ctaTitle": "View Full Details",
+    "ctaDesc": "Explore the label design gallery, premium materials, and solutions for your fashion industry."
+  },
+  "customerFeatures": {
+    "eyebrow": "Customer Features",
+    "titlePre": "Benefits",
+    "titleHighlight": "For You",
+    "subtitle": "By becoming our client, you will get many benefits that guarantee Return on Investment (ROI).",
+    "features": [
+      { "title": "Know Your Customers", "desc": "Get detailed demographics and analytics about the customers who buy your products." },
+      { "title": "Promoted", "desc": "Our new clients will often be featured on our social media seen by thousands of users." },
+      { "title": "Customer Satisfaction Guarantee", "desc": "Customers get higher satisfaction because they only buy your genuine products." },
+      { "title": "Easy Tracking", "desc": "The track & trace platform makes it easy for you to see detailed goods movement anytime." },
+      { "title": "Revenue Protection", "desc": "We protect your products from counterfeiting and prevent large financial losses." },
+      { "title": "Social Media Marketing", "desc": "Higher brand awareness as customers will share on their social media accounts." },
+      { "title": "Product Information Promotion Tool", "desc": "Your product details will be found by customers using our application." },
+      { "title": "Customer Notifications", "desc": "The notification feature makes it easy for you to bring customers back and buy your products." }
+    ],
+    "roiTitle": "Return on Investment Guarantee",
+    "roiDesc": "Increased genuine product sales, reduced counterfeit products, and high customer retention.",
+    "roiCta": "ROI Consultation"
+  },
+  "process": {
+    "eyebrow": "Implementation Flow",
+    "titlePre": "From Consultation to",
+    "titleHighlight": "Delivery",
+    "subtitle": "We handle the entire production process — you just focus on your business. Total estimated time ±14 working days from consultation to ready-to-use labels.",
+    "stagePrefix": "STAGE",
+    "milestone": "Milestone",
+    "steps": [
+      { "title": "Consultation & Registration", "desc": "The client contacts our team for a needs consultation. After an agreement, the client registers and completes brand data for the next process.", "duration": "1-2 days", "highlight": true },
+      { "title": "Design & Personalization", "desc": "Our design team creates label mockups according to the client's brand identity. Every detail from pattern, color, to size is tailored to product needs.", "duration": "3-5 days" },
+      { "title": "Code & Label Production", "desc": "The AG system generates unique codes with a 3-layer algorithm, then produces them into hologram/tafeta labels with multi-layer technology and tamper-evident features.", "duration": "5-7 days", "highlight": true },
+      { "title": "Quality Control", "desc": "Our QC team performs thorough checks on print quality, QR code function, and hologram integrity. Labels that fail QC are destroyed with standard procedures.", "duration": "1-2 days" },
+      { "title": "Batching & Packing", "desc": "Labels that pass QC are systematically packed into batches and boxes with complete documentation, including batch numbers and certificates of authenticity.", "duration": "1 day" },
+      { "title": "Delivery to Client", "desc": "Label batches are shipped directly to the client's location with safe packaging. Clients receive ready-to-use products along with implementation guides and access to the monitoring dashboard.", "duration": "1-2 days", "highlight": true }
+    ],
+    "supportTitle": "Continuous",
+    "supportHighlight": "Support",
+    "supportSubtitle": "Supporting services we provide to ensure the success of your implementation.",
+    "support": [
+      { "title": "Free Consultation", "desc": "Free discussion to understand your brand's authentication needs before starting cooperation." },
+      { "title": "Technical Support", "desc": "Our team is ready to help with verification system usage and the monitoring dashboard whenever needed." },
+      { "title": "Implementation Guide", "desc": "Complete documentation and a guide on how to properly apply labels to your products." }
+    ],
+    "totalTimeLabel": "Total Estimated Time",
+    "totalTimeValue": "±14 working days from consultation to delivery",
+    "startConsult": "Start Consultation"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "titlePre": "Frequently",
+    "titleHighlight": "Asked",
+    "subtitle": "Answers to frequently asked questions about our services.",
+    "items": [
+      { "q": "What marking services does AuthenticGuards offer?", "a": "We currently provide 2 active marking services: (1) Hologram with QR — a flagship solution with dual security layers for premium products, and (2) Tafeta Label with QR — textile labels for the fashion & apparel industry. NFC Sticker and Printing QR on packaging solutions are still in the research & development stage." },
+      { "q": "How does Hologram with QR work?", "a": "Each premium hologram label comes with a unique QR code connected to a real-time database. Consumers scan the QR via smartphone to verify product authenticity in seconds. The label also has a tamper-evident feature — the code becomes invalid after the label is removed. Each AG code has a verification limit of up to 15 times." },
+      { "q": "Is the Tafeta Label resistant to washing?", "a": "Yes, our Tafeta Labels are designed to withstand 50+ washes without quality degradation. Premium material and high-resolution printing technology ensure the QR code remains clearly readable. The label design is fully customizable to your fashion product's brand identity." },
+      { "q": "Are NFC or packaging QR printing solutions available?", "a": "NFC Stickers and direct QR printing on packaging are currently not available to the public — still in the internal planning and research stage. For current marking needs, we recommend Hologram with QR or Tafeta Label with QR. Contact our team for a consultation on the best solution." }
+    ]
+  }
+}

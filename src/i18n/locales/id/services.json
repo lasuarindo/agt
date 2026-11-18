@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Layanan Kami",
+    "titleLine1": "Solusi Marking",
+    "titleHighlight": "Anti-Pemalsuan",
+    "titleLine2": "untuk Berbagai Industri",
+    "desc": "Authentic Guards menyediakan solusi marking (penanda) untuk berbagai macam industri dengan 4 opsi media utama: Label Tafeta, Sticker ber-NFC, Hologram dengan QR, dan Printing QR pada Kemasan — terintegrasi penuh dengan sistem AG.",
+    "stat1": "2 Opsi Marking",
+    "stat2": "Customizable",
+    "stat3": "ISO 18004:2015"
+  },
+  "overview": {
+    "eyebrow": "Marking Development",
+    "titlePre": "Solusi",
+    "titleHighlight": "Penandaan",
+    "titlePost": "Kami",
+    "subtitle": "Dua layanan marking utama yang telah terintegrasi penuh dengan sistem Authentic Guards, dirancang untuk berbagai kebutuhan industri.",
+    "detail": "Detail",
+    "suitableFor": "Cocok untuk:",
+    "hologramTitle": "Hologram dengan QR",
+    "hologramSubtitle": "Premium Security",
+    "hologramDesc": "Kombinasi hologram premium dengan kode QR untuk lapisan keamanan ganda yang sulit dipalsukan. Solusi flagship kami untuk proteksi maksimal produk premium.",
+    "tafetaTitle": "Label Tafeta dengan QR",
+    "tafetaSubtitle": "Fashion Solution",
+    "tafetaDesc": "Label tafeta berkualitas tinggi dengan kode QR terintegrasi, dirancang khusus untuk industri fashion dan tekstil tanpa mengorbankan estetika."
+  },
+  "hologram": {
+    "badge": "Premium Security",
+    "titlePre": "Hologram",
+    "titleHighlight": "dengan QR",
+    "desc": "Kombinasi hologram premium dengan kode QR untuk lapisan keamanan ganda. Hologram memberikan proteksi fisik yang sulit dipalsukan, sementara QR code terintegrasi dengan sistem verifikasi digital Authentic Guards.",
+    "exampleVerification": "Example Verification",
+    "verifiedProduct": "Produk Terverifikasi",
+    "productName": "Hologram + QR Code",
+    "codeLabel": "Kode AG",
+    "statusLabel": "Status",
+    "original": "Original",
+    "benefitsTitle": "Keuntungan Utama",
+    "benefits": [
+      "Kombinasi keamanan fisik (hologram) + digital (QR)",
+      "Verifikasi mudah oleh konsumen via smartphone",
+      "Terintegrasi dengan 5 lapis keamanan AG",
+      "Sulit dipalsukan — 2 lapisan proteksi",
+      "Custom design sesuai brand identity",
+      "Cocok untuk produk premium & high-value"
+    ],
+    "features": [
+      { "title": "Hologram Premium Multi-Layer", "desc": "Teknologi hologram dengan efek visual yang sulit ditiru, memberikan lapisan keamanan fisik pertama." },
+      { "title": "QR Code Terintegrasi", "desc": "QR code unik berbasis standar ISO/IEC 18004:2015 yang terhubung ke database AG, memungkinkan verifikasi keaslian produk secara real-time." },
+      { "title": "Tamper-Evident", "desc": "Label dirancang untuk menunjukkan tanda-tanda pembukaan, mencegah transfer kode ke produk lain." },
+      { "title": "Verifikasi Real-time", "desc": "Setiap scan langsung divalidasi ke cloud database AG dengan standar ISO/IEC 27000:2016." }
+    ],
+    "ctaTitle": "Pelajari Lebih Lanjut",
+    "ctaDesc": "Lihat contoh produk, panduan implementasi, dan spesifikasi teknis hologram premium kami."
+  },
+  "tafeta": {
+    "badge": "Fashion Solution",
+    "titlePre": "Label",
+    "titleHighlight": "Tafeta dengan QR",
+    "desc": "Label tafeta berkualitas tinggi dengan kode QR terintegrasi, dirancang khusus untuk industri fashion dan tekstil. Memberikan autentikasi produk tanpa mengorbankan estetika dan kenyamanan.",
+    "whyTitle": "Kenapa Label Tafeta?",
+    "whyDesc": "Produk fashion sering menjadi target pemalsuan. Label tafeta dengan QR memberikan lapisan keamanan yang terintegrasi langsung dengan produk, tanpa mengorbankan estetika dan kenyamanan pemakai.",
+    "specTitle": "Spesifikasi",
+    "specName": "Label Tafeta Premium",
+    "specMaterial": "Material",
+    "specMaterialValue": "Tafeta Premium",
+    "specPrinting": "Printing",
+    "specPrintingValue": "High-Resolution",
+    "specSize": "Ukuran",
+    "specSizeValue": "Custom",
+    "specIntegration": "Integrasi",
+    "specIntegrationValue": "QR Code AG",
+    "customDesign": "Custom Design",
+    "features": [
+      { "title": "Material Tafeta Premium", "desc": "Label tafeta berkualitas tinggi yang tahan lama, nyaman dikenakan, dan cocok untuk produk fashion." },
+      { "title": "QR Code Terintegrasi", "desc": "QR code dicetak langsung pada label dengan teknologi high-resolution printing, standar ISO 18004:2015." },
+      { "title": "Integrasi dengan Desain Label", "desc": "QR code menyatu dengan desain label secara estetis, tidak mengganggu tampilan produk." },
+      { "title": "Fully Customizable", "desc": "Desain label fully customizable sesuai brand identity, ukuran, dan kebutuhan produk." }
+    ],
+    "ctaTitle": "Lihat Detail Lengkap",
+    "ctaDesc": "Jelajahi galeri desain label, material premium, dan solusi untuk industri fashion Anda."
+  },
+  "customerFeatures": {
+    "eyebrow": "Customer Features",
+    "titlePre": "Keuntungan",
+    "titleHighlight": "Bagi Anda",
+    "subtitle": "Dengan menjadi klien kami, Anda akan mendapatkan banyak keuntungan yang menjamin Return on Investment (ROI).",
+    "features": [
+      { "title": "Kenali Pelanggan", "desc": "Dapatkan demografi dan analitik terperincin tentang pelanggan yang membeli produk Anda." },
+      { "title": "Dipromosikan", "desc": "Klien baru kami akan sering ditampilkan pada media sosial kami yang dilihat ribuan pengguna." },
+      { "title": "Garansi Kepuasan Pelanggan", "desc": "Pelanggan mendapatkan kepuasan lebih tinggi karena hanya membeli produk asli Anda." },
+      { "title": "Mudah Melacak", "desc": "Platform track & trace memudahkan Anda melihat pergerakan barang secara terperinci kapanpun." },
+      { "title": "Perlindungan Pendapatan", "desc": "Kami melindungi produk Anda dari pemalsuan dan mencegah kerugian keuangan yang besar." },
+      { "title": "Marketing Media Social", "desc": "Kepedulian merek yang lebih tinggi karena pelanggan akan berbagi di akun media sosial mereka." },
+      { "title": "Alat Promosi Informasi Produk", "desc": "Rincian produk Anda akan ditemukan oleh pelanggan yang menggunakan aplikasi kami." },
+      { "title": "Notifikasi Pelanggan", "desc": "Fitur notification memudahkan Anda agar pelanggan kembali dan membeli produk Anda." }
+    ],
+    "roiTitle": "Jaminan Return on Investment",
+    "roiDesc": "Meningkatnya penjualan barang asli, penurunan produk palsu, dan retensi pelanggan yang tinggi.",
+    "roiCta": "Konsultasi ROI"
+  },
+  "process": {
+    "eyebrow": "Alur Implementasi",
+    "titlePre": "Dari Konsultasi hingga",
+    "titleHighlight": "Pengiriman",
+    "subtitle": "Kami menangani seluruh proses produksi — Anda cukup fokus pada bisnis. Total estimasi waktu ±14 hari kerja dari konsultasi hingga label siap digunakan.",
+    "stagePrefix": "TAHAP",
+    "milestone": "Milestone",
+    "steps": [
+      { "title": "Konsultasi & Pendaftaran", "desc": "Klien menghubungi tim kami untuk konsultasi kebutuhan. Setelah kesepakatan, klien mendaftar dan melengkapi data brand untuk proses selanjutnya.", "duration": "1-2 hari", "highlight": true },
+      { "title": "Desain & Personalisasi", "desc": "Tim desain kami membuat mockup label sesuai brand identity klien. Setiap detail mulai dari pattern, warna, hingga ukuran disesuaikan dengan kebutuhan produk.", "duration": "3-5 hari" },
+      { "title": "Produksi Kode & Label", "desc": "Sistem AG menghasilkan kode unik dengan algoritma 3 lapis, kemudian diproduksi menjadi label hologram/tafeta dengan teknologi multi-layer dan fitur tamper-evident.", "duration": "5-7 hari", "highlight": true },
+      { "title": "Quality Control", "desc": "Tim QC kami melakukan pengecekan menyeluruh terhadap kualitas cetak, fungsi QR code, dan integritas hologram. Label yang tidak lolos QC akan dimusnahkan dengan prosedur terstandar.", "duration": "1-2 hari" },
+      { "title": "Batching & Packing", "desc": "Label yang lolos QC dikemas secara sistematis ke dalam batch dan kotak dengan dokumentasi lengkap, termasuk nomor batch dan sertifikat keaslian.", "duration": "1 hari" },
+      { "title": "Pengiriman ke Klien", "desc": "Batch label dikirim langsung ke lokasi klien dengan pengemasan aman. Klien menerima produk siap pakai beserta panduan implementasi dan akses ke dashboard monitoring.", "duration": "1-2 hari", "highlight": true }
+    ],
+    "supportTitle": "Dukungan",
+    "supportHighlight": "Berkelanjutan",
+    "supportSubtitle": "Layanan pendukung yang kami sediakan untuk memastikan kesuksesan implementasi Anda.",
+    "support": [
+      { "title": "Konsultasi Gratis", "desc": "Diskusi tanpa biaya untuk memahami kebutuhan autentikasi brand Anda sebelum memulai kerjasama." },
+      { "title": "Dukungan Teknis", "desc": "Tim kami siap membantu penggunaan sistem verifikasi dan dashboard monitoring kapan pun dibutuhkan." },
+      { "title": "Panduan Implementasi", "desc": "Dokumentasi lengkap dan panduan cara mengaplikasikan label pada produk Anda dengan benar." }
+    ],
+    "totalTimeLabel": "Total Estimasi Waktu",
+    "totalTimeValue": "±14 hari kerja dari konsultasi hingga pengiriman",
+    "startConsult": "Mulai Konsultasi"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "titlePre": "Pertanyaan",
+    "titleHighlight": "Umum",
+    "subtitle": "Jawaban untuk pertanyaan yang sering ditanyakan tentang layanan kami.",
+    "items": [
+      { "q": "Apa saja layanan marking yang ditawarkan AuthenticGuards?", "a": "Saat ini kami menyediakan 2 layanan marking aktif: (1) Hologram dengan QR — solusi flagship dengan lapisan keamanan ganda untuk produk premium, dan (2) Label Tafeta dengan QR — label tekstil untuk industri fashion & apparel. Solusi NFC Sticker dan Printing QR pada kemasan masih dalam tahap penelitian & pengembangan." },
+      { "q": "Bagaimana cara kerja Hologram dengan QR?", "a": "Setiap label hologram premium dilengkapi QR code unik yang terhubung ke database real-time. Konsumen scan QR via smartphone untuk memverifikasi keaslian produk dalam hitungan detik. Label juga memiliki fitur tamper-evident — kode menjadi tidak sah setelah label dilepas. Setiap kode AG memiliki batas verifikasi hingga 15 kali." },
+      { "q": "Apakah Label Tafeta tahan terhadap pencucian?", "a": "Ya, Label Tafeta kami dirancang tahan hingga 50+ kali pencucian tanpa degradasi kualitas. Material premium dan teknologi high-resolution printing memastikan QR code tetap terbaca jelas. Desain label fully customizable sesuai brand identity produk fashion Anda." },
+      { "q": "Apakah tersedia solusi NFC atau printing QR pada kemasan?", "a": "Sticker ber-NFC dan Printing QR langsung pada kemasan saat ini belum tersedia untuk publik — masih dalam tahap perencanaan dan penelitian internal. Untuk kebutuhan marking saat ini, kami merekomendasikan Hologram dengan QR atau Label Tafeta dengan QR. Hubungi tim kami untuk konsultasi solusi terbaik." }
+    ]
+  }
+}
