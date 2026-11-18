@@ -18,6 +18,95 @@
     "stat3Value": "Proven",
     "stat3Label": "Accuracy"
   },
+  "heroVariants": {
+    "since": "Since 2017",
+    "pioneerPrefix": "Pioneer",
+    "pioneerRegion": "Asia Pacific",
+    "section": {
+      "eyebrow": "The First Anti-Counterfeit System",
+      "titlePre": "Protecting Products",
+      "titleHighlight": "Since 2017",
+      "titlePost": "in Asia Pacific",
+      "description": "PT. Autentikasi Garda Teknologi is here as the <strong>first authentication solution</strong> in the Asia Pacific region. With scratch PIN technology, unique QR codes, and a real-time database, we have been trusted by hundreds of brands to protect products and consumers.",
+      "ctaPrimary": "Contact Our Team",
+      "ctaSecondary": "Get to Know Us",
+      "stat1Label": "Years of Experience",
+      "stat2Label": "Brand Partners",
+      "stat3Label": "System Accuracy"
+    },
+    "new": {
+      "eyebrow": "A New Standard in Authentication & Brand Protection",
+      "titlePre": "Protecting Products",
+      "titleHighlight": "Since 2017",
+      "titlePost": "in Asia Pacific",
+      "description": "An authentication technology pioneer in Asia Pacific that has helped <strong>hundreds of brands</strong> ensure product authenticity and build a <strong>secure, transparent, and sustainable</strong> trading ecosystem.",
+      "ctaPrimary": "Free Consultation",
+      "ctaSecondary": "Get to Know Us",
+      "stat1Label": "Years of Experience",
+      "stat2Label": "Brand Partners",
+      "stat3Label": "System Accuracy"
+    },
+    "newPunchy": {
+      "eyebrow": "A New Standard in Authentication & Brand Protection",
+      "titlePre": "Protect Your Brand from",
+      "titleHighlight": "Product Counterfeiting",
+      "titlePost": "",
+      "description": "Authentication technology <strong>trusted in Asia Pacific</strong> that has helped <strong>500+ brands</strong> from corporations to SMEs ensure product authenticity, improve supply chain visibility, and build stronger <strong>consumer trust</strong>.",
+      "ctaPrimary": "Free Consultation",
+      "ctaSecondary": "See Our Solutions",
+      "stat1Label": "Years of Experience",
+      "stat2Label": "Trusted Brands",
+      "stat3Label": "System Accuracy"
+    },
+    "newHybrid": {
+      "eyebrow": "A New Standard in Authentication & Brand Protection",
+      "titlePre": "Protecting Products",
+      "titleHighlight": "Since 2017",
+      "titlePost": "in Asia Pacific",
+      "description": "As an authentication technology pioneer in Asia Pacific, we help <strong>corporations to SMEs</strong> ensure product authenticity, improve supply chain visibility, and build a <strong>secure, transparent, and sustainable</strong> trading ecosystem.",
+      "ctaPrimary": "Free Consultation",
+      "ctaSecondary": "See Our Solutions",
+      "stat1Label": "Years of Experience",
+      "stat2Label": "Trusted Brands",
+      "stat3Label": "System Accuracy"
+    },
+    "newFinal": {
+      "eyebrow": "A New Standard in Authentication & Brand Protection",
+      "titlePre": "Protect Your Brand from",
+      "titleHighlight": "Product Counterfeiting",
+      "titlePost": "",
+      "description": "An authentication technology pioneer in Asia Pacific that has helped <strong>corporations, distributors, and SMEs</strong> ensure product authenticity and improve supply chain visibility. We combine product security technology, digital traceability, and data analytics to create a <strong>secure, transparent, and sustainable</strong> trading ecosystem.",
+      "ctaPrimary": "Free Consultation",
+      "ctaSecondary": "See Our Solutions",
+      "stat1Label": "Years of Experience",
+      "stat2Label": "Trusted Brands",
+      "stat3Label": "System Accuracy"
+    },
+    "simple": {
+      "titlePre": "Protect Your Brand from",
+      "titleHighlight": "Product Counterfeiting",
+      "titlePost": "",
+      "description": "Authentication technology <strong>trusted in Asia Pacific</strong> that has helped <strong>500+ brands</strong> ensure product authenticity and build consumer trust.",
+      "ctaPrimary": "Free Consultation",
+      "trust1": "ISO 27001 Certified",
+      "trust2": "99.9% Accuracy",
+      "trust3": "8+ Years of Experience"
+    },
+    "proposal2020": {
+      "badgePrefix": "The First Anti-Counterfeit",
+      "badgeHighlight": "in Indonesia",
+      "eyebrow": "Protect Your Brand with AuthenticGuards®",
+      "titlePre": "Anti-Counterfeiting System",
+      "titleHighlight": "5-Layer Security",
+      "titlePost": "for Your Brand",
+      "description": "Authentication technology that helps <strong>manufacturers and consumers</strong> work together to identify and stop counterfeiting. Combining <strong>3-layer AG algorithm</strong>, <strong>MD5 encryption</strong>, and <strong>ISO/IEC 27000:2016</strong> standards for unmatched supply chain protection.",
+      "ctaPrimary": "Free Consultation",
+      "ctaSecondary": "See Our Solutions",
+      "stat1": "ISO/IEC 27000:2016",
+      "stat2": "100M+ Codes/Day",
+      "stat3": "ISO 18004:2015"
+    }
+  },
   "aboutSection": {
     "eyebrow": "About Us",
     "titleTop": "Eight Years",

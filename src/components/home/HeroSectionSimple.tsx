@@ -1,8 +1,10 @@
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
 import { ArrowRight, Award } from 'lucide-react'
+import { useTranslation, Trans } from 'react-i18next'
 
 export default function HeroSectionSimple() {
+  const { t } = useTranslation('home')
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -27,11 +29,11 @@ export default function HeroSectionSimple() {
         >
           <div className="flex items-center gap-1.5">
             <Award className="w-4 h-4 text-[#C5A059]" />
-            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">{t('heroVariants.since')}</span>
           </div>
           <div className="w-px h-4 bg-[#C5A059]/30" />
           <p className="text-sm text-[#1A1A1A] font-semibold">
-            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+            {t('heroVariants.pioneerPrefix')} <span className="text-[#8C6F3D]">{t('heroVariants.pioneerRegion')}</span>
           </p>
         </motion.div>
 
@@ -43,15 +45,15 @@ export default function HeroSectionSimple() {
           className="space-y-6 mb-10"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.15] tracking-tight">
-            Lindungi Merek Anda dari{' '}
+            {t('heroVariants.simple.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-              Pemalsuan Produk
+              {t('heroVariants.simple.titleHighlight')}
             </span>
           </h1>
           
           {/* Subheadline - 1 Kalimat Ringkas */}
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Teknologi autentikasi <strong className="text-[#1A1A1A]">terpercaya di Asia Pasifik</strong> yang telah membantu <strong className="text-[#1A1A1A]">500+ brand</strong> memastikan keaslian produk dan membangun kepercayaan konsumen.
+            <Trans i18nKey="heroVariants.simple.description" ns="home" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
           </p>
         </motion.div>
 
@@ -66,7 +68,7 @@ export default function HeroSectionSimple() {
             to="/contact"
             className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
           >
-            <span>Konsultasi Gratis</span>
+            <span>{t('heroVariants.simple.ctaPrimary')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
@@ -80,15 +82,15 @@ export default function HeroSectionSimple() {
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-            <span>ISO 27001 Certified</span>
+            <span>{t('heroVariants.simple.trust1')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-            <span>99.9% Akurasi</span>
+            <span>{t('heroVariants.simple.trust2')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-            <span>8+ Tahun Pengalaman</span>
+            <span>{t('heroVariants.simple.trust3')}</span>
           </div>
         </motion.div>
       </div>

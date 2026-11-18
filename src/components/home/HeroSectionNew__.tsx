@@ -1,8 +1,10 @@
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
 import { ArrowRight, Award } from 'lucide-react'
+import { useTranslation, Trans } from 'react-i18next'
 
 export default function HeroSectionNew__() {
+  const { t } = useTranslation('home')
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -27,11 +29,11 @@ export default function HeroSectionNew__() {
         >
           <div className="flex items-center gap-1.5">
             <Award className="w-4 h-4 text-[#C5A059]" />
-            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">Since 2017</span>
+            <span className="text-xs font-bold text-[#C5A059] uppercase tracking-widest">{t('heroVariants.since')}</span>
           </div>
           <div className="w-px h-4 bg-[#C5A059]/30" />
           <p className="text-sm text-[#1A1A1A] font-semibold">
-            Pionir <span className="text-[#8C6F3D]">Asia Pasifik</span>
+            {t('heroVariants.pioneerPrefix')} <span className="text-[#8C6F3D]">{t('heroVariants.pioneerRegion')}</span>
           </p>
         </motion.div>
 
@@ -43,22 +45,22 @@ export default function HeroSectionNew__() {
           className="space-y-6 mb-8"
         >
           <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-sm">
-            Standar Baru Autentikasi & Perlindungan Merek
+            {t('heroVariants.newHybrid.eyebrow')}
           </p>
           
           <h1 className="text-5xl lg:text-7xl font-extrabold text-[#1A1A1A] leading-[1.05] tracking-tight">
-            Melindungi Produk
+            {t('heroVariants.newHybrid.titlePre')}
             {' '} <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-              Sejak 2017
+              {t('heroVariants.newHybrid.titleHighlight')}
             </span>
             {' '} <br className="hidden md:block" />
-            di Asia Pasifik
+            {t('heroVariants.newHybrid.titlePost')}
           </h1>
           
           {/* Subheadline - Hybrid: Compact tapi komprehensif */}
           <p className="sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Sebagai pionir teknologi autentikasi di Asia Pasifik, kami membantu <strong className="text-[#1A1A1A]">korporasi hingga UMKM</strong> memastikan keaslian produk, meningkatkan visibilitas rantai pasok, serta membangun ekosistem perdagangan yang <strong className="text-[#1A1A1A]">aman, transparan, dan berkelanjutan</strong>.
+            <Trans i18nKey="heroVariants.newHybrid.description" ns="home" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
           </p>
         </motion.div>
 
@@ -73,14 +75,14 @@ export default function HeroSectionNew__() {
             to="/contact"
             className="group inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg shadow-[#1A1A1A]/10 hover:shadow-[#8C6F3D]/30 hover:-translate-y-0.5"
           >
-            <span>Konsultasi Sekarang</span>
+            <span>{t('heroVariants.newHybrid.ctaPrimary')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             to="/services"
             className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md border border-gray-200 text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:border-[#C5A059]/40 transition-all duration-300 shadow-sm"
           >
-            <span>Lihat Solusi Kami</span>
+            <span>{t('heroVariants.newHybrid.ctaSecondary')}</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>
@@ -93,15 +95,15 @@ export default function HeroSectionNew__() {
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
         >
           <span className="flex items-center gap-1.5">
-            <span className="font-extrabold text-[#1A1A1A]">8+</span> Tahun Pengalaman
+            <span className="font-extrabold text-[#1A1A1A]">8+</span> {t('heroVariants.newHybrid.stat1Label')}
           </span>
           <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-1.5">
-            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Terpercaya
+            <span className="font-extrabold text-[#1A1A1A]">500+</span> {t('heroVariants.newHybrid.stat2Label')}
           </span>
           <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-1.5">
-            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> {t('heroVariants.newHybrid.stat3Label')}
           </span>
         </motion.div>
       </div>

@@ -1,6 +1,6 @@
 {
   "hero": {
-    "since": "Since 2017",
+    "since": "Sejak 2017",
     "pioneerPrefix": "Pionir",
     "pioneerRegion": "Asia Pasifik",
     "titleLine1": "Sejak 2017, Menghadirkan",
@@ -17,6 +17,95 @@
     "stat2Label": "Brand Terpercaya",
     "stat3Value": "Akurasi",
     "stat3Label": "Teruji"
+  },
+  "heroVariants": {
+    "since": "Sejak 2017",
+    "pioneerPrefix": "Pionir",
+    "pioneerRegion": "Asia Pasifik",
+    "section": {
+      "eyebrow": "Sistem Anti-Counterfeit Pertama",
+      "titlePre": "Melindungi Produk",
+      "titleHighlight": "Sejak 2017",
+      "titlePost": "di Asia Pasifik",
+      "description": "PT. Autentikasi Garda Teknologi hadir sebagai <strong>solusi autentikasi pertama</strong> di kawasan Asia Pasifik. Dengan teknologi scratch PIN, QR code unik, dan database real-time, kami telah dipercaya oleh ratusan brand untuk melindungi produk dan konsumen.",
+      "ctaPrimary": "Hubungi Tim Kami",
+      "ctaSecondary": "Kenali Kami",
+      "stat1Label": "Tahun Berkiprah",
+      "stat2Label": "Brand Partner",
+      "stat3Label": "Akurasi Sistem"
+    },
+    "new": {
+      "eyebrow": "Standar Baru Autentikasi & Perlindungan Merek",
+      "titlePre": "Melindungi Produk",
+      "titleHighlight": "Sejak 2017",
+      "titlePost": "di Asia Pasifik",
+      "description": "Pionir teknologi autentikasi di Asia Pasifik yang telah membantu <strong>ratusan brand</strong> memastikan keaslian produk dan membangun ekosistem perdagangan yang <strong>aman, transparan, dan berkelanjutan</strong>.",
+      "ctaPrimary": "Konsultasi Sekarang",
+      "ctaSecondary": "Kenali Kami",
+      "stat1Label": "Tahun Berkiprah",
+      "stat2Label": "Brand Partner",
+      "stat3Label": "Akurasi Sistem"
+    },
+    "newPunchy": {
+      "eyebrow": "Standar Baru Autentikasi & Perlindungan Merek",
+      "titlePre": "Lindungi Merek Anda dari",
+      "titleHighlight": "Pemalsuan Produk",
+      "titlePost": "",
+      "description": "Teknologi autentikasi <strong>terpercaya di Asia Pasifik</strong> yang telah membantu <strong>500+ brand</strong> dari korporasi hingga UMKM memastikan keaslian produk, meningkatkan visibilitas rantai pasok, dan membangun <strong>kepercayaan konsumen</strong> yang lebih kuat.",
+      "ctaPrimary": "Konsultasi Gratis",
+      "ctaSecondary": "Lihat Solusi Kami",
+      "stat1Label": "Tahun Pengalaman",
+      "stat2Label": "Brand Terpercaya",
+      "stat3Label": "Akurasi Sistem"
+    },
+    "newHybrid": {
+      "eyebrow": "Standar Baru Autentikasi & Perlindungan Merek",
+      "titlePre": "Melindungi Produk",
+      "titleHighlight": "Sejak 2017",
+      "titlePost": "di Asia Pasifik",
+      "description": "Sebagai pionir teknologi autentikasi di Asia Pasifik, kami membantu <strong>korporasi hingga UMKM</strong> memastikan keaslian produk, meningkatkan visibilitas rantai pasok, serta membangun ekosistem perdagangan yang <strong>aman, transparan, dan berkelanjutan</strong>.",
+      "ctaPrimary": "Konsultasi Sekarang",
+      "ctaSecondary": "Lihat Solusi Kami",
+      "stat1Label": "Tahun Pengalaman",
+      "stat2Label": "Brand Terpercaya",
+      "stat3Label": "Akurasi Sistem"
+    },
+    "newFinal": {
+      "eyebrow": "Standar Baru Autentikasi & Perlindungan Merek",
+      "titlePre": "Lindungi Merek Anda dari",
+      "titleHighlight": "Pemalsuan Produk",
+      "titlePost": "",
+      "description": "Pionir teknologi autentikasi di Asia Pasifik yang telah membantu <strong>korporasi, distributor, dan UMKM</strong> memastikan keaslian produk serta meningkatkan visibilitas rantai pasok. Kami menggabungkan teknologi keamanan produk, keterlacakan digital, dan analitik data untuk menciptakan ekosistem perdagangan yang <strong>aman, transparan, dan berkelanjutan</strong>.",
+      "ctaPrimary": "Konsultasi Gratis",
+      "ctaSecondary": "Lihat Solusi Kami",
+      "stat1Label": "Tahun Pengalaman",
+      "stat2Label": "Brand Terpercaya",
+      "stat3Label": "Akurasi Sistem"
+    },
+    "simple": {
+      "titlePre": "Lindungi Merek Anda dari",
+      "titleHighlight": "Pemalsuan Produk",
+      "titlePost": "",
+      "description": "Teknologi autentikasi <strong>terpercaya di Asia Pasifik</strong> yang telah membantu <strong>500+ brand</strong> memastikan keaslian produk dan membangun kepercayaan konsumen.",
+      "ctaPrimary": "Konsultasi Gratis",
+      "trust1": "ISO 27001 Certified",
+      "trust2": "99.9% Akurasi",
+      "trust3": "8+ Tahun Pengalaman"
+    },
+    "proposal2020": {
+      "badgePrefix": "Anti-Counterfeit Pertama",
+      "badgeHighlight": "di Indonesia",
+      "eyebrow": "Lindungi Merek Anda dengan AuthenticGuards®",
+      "titlePre": "Sistem Anti-Pemalsuan",
+      "titleHighlight": "5 Lapis Keamanan",
+      "titlePost": "untuk Brand Anda",
+      "description": "Teknologi autentikasi yang membantu <strong>produsen dan konsumen</strong> bekerja sama mengidentifikasi dan menghentikan aktivitas pemalsuan. Menggabungkan <strong>algoritma AG 3 lapis</strong>, <strong>enkripsi MD5</strong>, dan standar <strong>ISO/IEC 27000:2016</strong> untuk proteksi supply chain yang tak tertandingi.",
+      "ctaPrimary": "Konsultasi Gratis",
+      "ctaSecondary": "Lihat Solusi Kami",
+      "stat1": "ISO/IEC 27000:2016",
+      "stat2": "100M+ Kode/Hari",
+      "stat3": "ISO 18004:2015"
+    }
   },
   "aboutSection": {
     "eyebrow": "Tentang Kami",
