@@ -1,24 +1,11 @@
-// import MainLayout from '@/layout/LayoutMain';
-// import Skeleton_Home from '@/components/skeleton/home';
-// import MainLayout from '@/layout/LayoutMain';
-// import ScanLayout from '@/layout/LayoutScanner';
-// import { 
-//   Home, AboutPage, ContactPage, HelpPage, PrivacyPolicyPage, TermsPage,
-//   ScanHome, ScanCameraPage, ScanSearchPage, ScanResultPage,
-//   ErrorPage 
-// } from '@/router/app';
-// import AccountRegisterPage from '@/view/account/Register'
-// import ClaimLandingPage from '@/view/claim/Home';
-// import { createBrowserRouter } from "react-router";
-
-import { createBrowserRouter, Navigate, redirect } from 'react-router'
+import { createBrowserRouter, redirect } from 'react-router'
 import LayoutMain from '@/layout/Layout'
 
 import { 
   HomePage, AboutPage, ServicesPage, TechnologyPage, PartnersPage, ContactPage,
   FAQPage, PrivacyPolicyPage, TermsPage, OurTeamPage, OurClientsPage, AwardsPage,
   ServiceHologramDetailPage, ServiceTafetaDetailPage
-} from '@/router/app'
+} from '@/router/pages'
 
 export const router = createBrowserRouter([ 
   {
@@ -93,30 +80,11 @@ export const router = createBrowserRouter([
         element: <FAQPage />
       },
       {
-        path: '/legal',
-        children: [
-          {
-            path: 'privacy-policy',
-            element: <PrivacyPolicyPage />
-          },
-          {
-            path: 'term-condition',
-            element: <TermsPage />
-          }
-        ]
-      },
-      {
         path: '/privacy-policy',
-        loader: () => {
-          
-        },
         element: <PrivacyPolicyPage />
       },
       {
         path: '/term-condition',
-        loader: () => {
-          
-        },
         element: <TermsPage />
       },
       
