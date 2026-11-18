@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Awards & Achievements",
+    "titlePre": "Recognized by",
+    "titleHighlight": "the Industry",
+    "titlePost": "National & International",
+    "desc": "Our journey in delivering the best authentication innovation has been recognized through various prestigious awards from national and international institutions.",
+    "statAwards": "{{n}}+ Awards",
+    "statFeatured": "{{n}} Featured",
+    "statYears": "{{n}}+ Years"
+  },
+  "stats": {
+    "eyebrow": "Our Achievements",
+    "titlePre": "Numbers That",
+    "titleHighlight": "Speak",
+    "subtitle": "Eight years of dedication in delivering the best authentication solutions in Asia Pacific.",
+    "items": [
+      { "label": "Total Awards", "desc": "From various categories" },
+      { "label": "Featured Awards", "desc": "Highlighted awards" },
+      { "label": "Years of Achievement", "desc": "Consistency in achievement" },
+      { "label": "Years of Experience", "desc": "Since establishment" }
+    ]
+  },
+  "filter": {
+    "all": "All",
+    "achievement": "Achievement",
+    "certification": "Certification",
+    "partnership": "Partnership",
+    "innovation": "Innovation",
+    "startup": "Startup",
+    "featuredOnly": "Featured Only",
+    "searchPlaceholder": "Search awards..."
+  },
+  "card": {
+    "featuredAward": "Featured Award",
+    "by": "by"
+  },
+  "grid": {
+    "emptyTitle": "No awards found",
+    "emptyDesc": "Try changing your filter or search keywords",
+    "featured": "Featured"
+  },
+  "timeline": {
+    "eyebrow": "Achievement Journey",
+    "titlePre": "Awards",
+    "titleHighlight": "Timeline",
+    "subtitle": "Our track record of achievement year by year in delivering the best authentication solutions.",
+    "count": "{{n}} Awards"
+  },
+  "certifications": {
+    "eyebrow": "Official Certifications",
+    "titlePre": "World-Class",
+    "titleHighlight": "Security Standards",
+    "desc": "We are committed to the highest security and privacy standards. All our systems and processes are independently audited and certified by international bodies.",
+    "licensedTitle": "Licensed Standards",
+    "licensedDesc": "We hold official licenses for the international standards used in our systems, ensuring quality and global interoperability.",
+    "items": [
+      { "title": "ISO/IEC 27000:2016", "desc": "The maximum information security standard applied to the Authentic Guards cloud database." },
+      { "title": "ISO/IEC 18004:2015", "desc": "Our QR code system is developed with reference to the international ISO/IEC 18004:2015 standard as a technical reference, ensuring interoperability with standard QR readers." }
+    ]
+  }
+}

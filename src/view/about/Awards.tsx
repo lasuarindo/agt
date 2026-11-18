@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import { AwardsData, getAwardIcon, type Award } from '@/data/award'
 import AboutJoinUsCTA from '@/components/AboutJoinUs'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -44,6 +45,7 @@ interface FilterOption {
 // ============================================================================
 
 function HeroAwardsPage() {
+  const { t } = useTranslation('awards')
   const totalAwards = AwardsData.length
   const featuredCount = AwardsData.filter(a => a.featured).length
   const uniqueYears = [...new Set(AwardsData.map(a => a.year))].length
@@ -74,7 +76,7 @@ function HeroAwardsPage() {
         >
           <Trophy className="w-4 h-4 text-[#C5A059]" />
           <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-            Penghargaan & Prestasi
+            {t('hero.badge')}
           </span>
         </motion.div>
 
@@ -85,12 +87,12 @@ function HeroAwardsPage() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Diakui oleh{' '}
+          {t('hero.titlePre')}{' '}
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            Industri
+            {t('hero.titleHighlight')}
           </span>
           <br className="hidden md:block" />
-          Nasional & Internasional
+          {t('hero.titlePost')}
         </motion.h1>
 
         {/* Description */}
@@ -100,7 +102,7 @@ function HeroAwardsPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Perjalanan kami dalam menghadirkan inovasi autentikasi terbaik telah diakui melalui berbagai penghargaan bergengsi dari lembaga nasional dan internasional.
+          {t('hero.desc')}
         </motion.p>
 
         {/* Stats */}
@@ -112,17 +114,17 @@ function HeroAwardsPage() {
         >
           <span className="flex items-center gap-2">
             <Trophy className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">{totalAwards}+ Penghargaan</span>
+            <span className="font-semibold">{t('hero.statAwards', { n: totalAwards })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Star className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">{featuredCount} Featured</span>
+            <span className="font-semibold">{t('hero.statFeatured', { n: featuredCount })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">{uniqueYears}+ Tahun</span>
+            <span className="font-semibold">{t('hero.statYears', { n: uniqueYears })}</span>
           </span>
         </motion.div>
       </div>
@@ -135,6 +137,7 @@ function HeroAwardsPage() {
 // ============================================================================
 
 function AwardsStatsSection() {
+  const { t } = useTranslation('awards')
   const stats = useMemo(() => {
     const totalAwards = AwardsData.length
     const featuredCount = AwardsData.filter(a => a.featured).length
@@ -143,37 +146,38 @@ function AwardsStatsSection() {
     const currentYear = new Date().getFullYear()
     const yearsOfExcellence = currentYear - firstYear + 1
 
+    const items = t('stats.items', { returnObjects: true }) as { label: string; desc: string }[]
     return [
       {
         icon: <Trophy className="w-6 h-6" />,
         value: totalAwards,
         suffix: '+',
-        label: 'Total Penghargaan',
-        desc: 'Dari berbagai kategori'
+        label: items[0].label,
+        desc: items[0].desc
       },
       {
         icon: <Star className="w-6 h-6" />,
         value: featuredCount,
         suffix: '',
-        label: 'Featured Awards',
-        desc: 'Penghargaan unggulan'
+        label: items[1].label,
+        desc: items[1].desc
       },
       {
         icon: <Calendar className="w-6 h-6" />,
         value: uniqueYears,
         suffix: '+',
-        label: 'Tahun Berprestasi',
-        desc: 'Konsistensi prestasi'
+        label: items[2].label,
+        desc: items[2].desc
       },
       {
         icon: <TrendingUp className="w-6 h-6" />,
         value: yearsOfExcellence,
         suffix: '+',
-        label: 'Tahun Pengalaman',
-        desc: 'Sejak didirikan'
+        label: items[3].label,
+        desc: items[3].desc
       }
     ]
-  }, [])
+  }, [t])
 
   return (
     <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
@@ -188,16 +192,16 @@ function AwardsStatsSection() {
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
           <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">
-            Pencapaian Kami
+            {t('stats.eyebrow')}
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Angka yang{' '}
+            {t('stats.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
-              Berbicara
+              {t('stats.titleHighlight')}
             </span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Delapan tahun dedikasi dalam menghadirkan solusi autentikasi terbaik di Asia Pasifik.
+            {t('stats.subtitle')}
           </p>
         </motion.div>
 
@@ -247,12 +251,13 @@ function AwardsFilterSection({
   showFeaturedOnly: boolean
   setShowFeaturedOnly: (show: boolean) => void
 }) {
+  const { t } = useTranslation('awards')
   const filterOptions: FilterOption[] = useMemo(() => {
     const categories: AwardCategory[] = ['all', 'achievement', 'certification', 'partnership', 'innovation', 'startup']
     
     return categories.map(cat => ({
       id: cat,
-      label: cat === 'all' ? 'Semua' : cat.charAt(0).toUpperCase() + cat.slice(1),
+      label: t(`filter.${cat}`),
       icon: cat === 'all' ? <Filter className="w-4 h-4" /> :
             cat === 'achievement' ? <Trophy className="w-4 h-4" /> :
             cat === 'certification' ? <BadgeCheck className="w-4 h-4" /> :
@@ -261,7 +266,7 @@ function AwardsFilterSection({
             <Sparkles className="w-4 h-4" />,
       count: cat === 'all' ? AwardsData.length : AwardsData.filter(a => a.category === cat).length
     }))
-  }, [])
+  }, [t])
 
   return (
     <section className="py-8 bg-white border-b border-gray-100 top-20 z-30 backdrop-blur-md bg-white/95">
@@ -301,7 +306,7 @@ function AwardsFilterSection({
               }`}
             >
               <Star className="w-4 h-4" />
-              <span>Featured Only</span>
+              <span>{t('filter.featuredOnly')}</span>
             </button>
           </div>
 
@@ -325,7 +330,7 @@ function AwardsFilterSection({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari penghargaan..."
+              placeholder={t('filter.searchPlaceholder')}
               className="w-full pl-11 pr-10 py-2.5 rounded-xl border border-gray-200 focus:border-[#C5A059] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-gray-50 focus:bg-white text-sm"
             />
             {searchQuery && (
@@ -349,6 +354,7 @@ function AwardsFilterSection({
 // ============================================================================
 
 function FeaturedAwardCard({ award }: { award: Award }) {
+  const { t } = useTranslation('awards')
   const Icon = award.icon || getAwardIcon(award.category)
 
   return (
@@ -394,7 +400,7 @@ function FeaturedAwardCard({ award }: { award: Award }) {
               </span>
               <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
                 <Star className="w-3 h-3 fill-current" />
-                Featured Award
+                {t('card.featuredAward')}
               </span>
               {award.category && (
                 <span className="text-xs font-bold text-gray-400 bg-white/10 px-3 py-1 rounded-full border border-white/10">
@@ -410,7 +416,7 @@ function FeaturedAwardCard({ award }: { award: Award }) {
 
             {/* Organizer */}
             <p className="text-[#E8D09E] font-semibold text-sm md:text-base mb-3">
-              oleh {award.organizer}
+              {t('card.by')} {award.organizer}
             </p>
 
             {/* Description */}
@@ -429,14 +435,15 @@ function FeaturedAwardCard({ award }: { award: Award }) {
 // ============================================================================
 
 function AwardsGridSection({ awards }: { awards: Award[] }) {
+  const { t } = useTranslation('awards')
   if (awards.length === 0) {
     return (
       <div className="text-center py-16">
         <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <Search className="w-8 h-8 text-gray-400" />
         </div>
-        <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Tidak ada penghargaan ditemukan</h3>
-        <p className="text-gray-500">Coba ubah filter atau kata kunci pencarian Anda</p>
+        <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">{t('grid.emptyTitle')}</h3>
+        <p className="text-gray-500">{t('grid.emptyDesc')}</p>
       </div>
     )
   }
@@ -501,7 +508,7 @@ function AwardsGridSection({ awards }: { awards: Award[] }) {
                     {isFeatured && (
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-linear-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
                         <Star className="w-2.5 h-2.5 fill-current" />
-                        Featured
+                        {t('grid.featured')}
                       </span>
                     )}
                   </div>
@@ -541,6 +548,7 @@ function AwardsGridSection({ awards }: { awards: Award[] }) {
 // ============================================================================
 
 function AwardsTimelineSection() {
+  const { t } = useTranslation('awards')
   const timelineByYear = useMemo(() => {
     const grouped: Record<string, Award[]> = {}
     
@@ -569,18 +577,18 @@ function AwardsTimelineSection() {
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Calendar className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Perjalanan Prestasi
+              {t('timeline.eyebrow')}
             </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Timeline{' '}
+            {t('timeline.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Penghargaan
+              {t('timeline.titleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Jejak prestasi kami dari tahun ke tahun dalam menghadirkan solusi autentikasi terbaik.
+            {t('timeline.subtitle')}
           </p>
         </motion.div>
 
@@ -614,7 +622,7 @@ function AwardsTimelineSection() {
                         {year}
                       </span>
                       <span className="text-xs font-bold text-gray-500">
-                        {awards.length} Penghargaan
+                        {t('timeline.count', { n: awards.length })}
                       </span>
                     </div>
 
@@ -661,17 +669,18 @@ function AwardsTimelineSection() {
 // CERTIFICATIONS SECTION
 // ============================================================================
 function CertificationsSection() {
+  const { t } = useTranslation('awards')
   const certifications = [
     {
       icon: <BadgeCheck className="w-6 h-6" />,
-      title: 'ISO/IEC 27000:2016',
-      desc: 'Standar pengamanan informasi maksimum yang diterapkan pada cloud database Authentic Guards.',
+      title: t('certifications.items.0.title'),
+      desc: t('certifications.items.0.desc'),
       color: 'emerald'
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: 'ISO/IEC 18004:2015',
-      desc: 'Sistem QR code kami dikembangkan dengan mengacu pada standar internasional ISO/IEC 18004:2015 sebagai rujukan teknis, memastikan interoperabilitas dengan pembaca QR standar.',
+      title: t('certifications.items.1.title'),
+      desc: t('certifications.items.1.desc'),
       color: 'purple'
     }
   ]
@@ -696,18 +705,17 @@ function CertificationsSection() {
               <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full mb-4">
                 <Shield className="w-4 h-4 text-[#8C6F3D]" />
                 <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-                  Sertifikasi Resmi
+                  {t('certifications.eyebrow')}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Standar Keamanan{' '}
-                <br />
+                {t('certifications.titlePre')} <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-                  Kelas Dunia
+                  {t('certifications.titleHighlight')}
                 </span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Kami berkomitmen pada standar keamanan dan privasi tertinggi. Semua sistem dan proses kami diaudit secara independen dan tersertifikasi oleh lembaga internasional.
+                {t('certifications.desc')}
               </p>
             </div>
 
@@ -717,9 +725,9 @@ function CertificationsSection() {
                   <BadgeCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-2">Licensed Standards</h4>
+                  <h4 className="font-bold mb-2">{t('certifications.licensedTitle')}</h4>
                   <p className="text-sm text-gray-300 leading-relaxed">
-                    Kami memiliki lisensi resmi untuk standar internasional yang digunakan dalam sistem kami, menjamin kualitas dan interoperabilitas global.
+                    {t('certifications.licensedDesc')}
                   </p>
                 </div>
               </div>

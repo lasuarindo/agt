@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Penghargaan & Prestasi",
+    "titlePre": "Diakui oleh",
+    "titleHighlight": "Industri",
+    "titlePost": "Nasional & Internasional",
+    "desc": "Perjalanan kami dalam menghadirkan inovasi autentikasi terbaik telah diakui melalui berbagai penghargaan bergengsi dari lembaga nasional dan internasional.",
+    "statAwards": "{{n}}+ Penghargaan",
+    "statFeatured": "{{n}} Featured",
+    "statYears": "{{n}}+ Tahun"
+  },
+  "stats": {
+    "eyebrow": "Pencapaian Kami",
+    "titlePre": "Angka yang",
+    "titleHighlight": "Berbicara",
+    "subtitle": "Delapan tahun dedikasi dalam menghadirkan solusi autentikasi terbaik di Asia Pasifik.",
+    "items": [
+      { "label": "Total Penghargaan", "desc": "Dari berbagai kategori" },
+      { "label": "Featured Awards", "desc": "Penghargaan unggulan" },
+      { "label": "Tahun Berprestasi", "desc": "Konsistensi prestasi" },
+      { "label": "Tahun Pengalaman", "desc": "Sejak didirikan" }
+    ]
+  },
+  "filter": {
+    "all": "Semua",
+    "achievement": "Pencapaian",
+    "certification": "Sertifikasi",
+    "partnership": "Kemitraan",
+    "innovation": "Inovasi",
+    "startup": "Startup",
+    "featuredOnly": "Featured Only",
+    "searchPlaceholder": "Cari penghargaan..."
+  },
+  "card": {
+    "featuredAward": "Featured Award",
+    "by": "oleh"
+  },
+  "grid": {
+    "emptyTitle": "Tidak ada penghargaan ditemukan",
+    "emptyDesc": "Coba ubah filter atau kata kunci pencarian Anda",
+    "featured": "Featured"
+  },
+  "timeline": {
+    "eyebrow": "Perjalanan Prestasi",
+    "titlePre": "Timeline",
+    "titleHighlight": "Penghargaan",
+    "subtitle": "Jejak prestasi kami dari tahun ke tahun dalam menghadirkan solusi autentikasi terbaik.",
+    "count": "{{n}} Penghargaan"
+  },
+  "certifications": {
+    "eyebrow": "Sertifikasi Resmi",
+    "titlePre": "Standar Keamanan",
+    "titleHighlight": "Kelas Dunia",
+    "desc": "Kami berkomitmen pada standar keamanan dan privasi tertinggi. Semua sistem dan proses kami diaudit secara independen dan tersertifikasi oleh lembaga internasional.",
+    "licensedTitle": "Licensed Standards",
+    "licensedDesc": "Kami memiliki lisensi resmi untuk standar internasional yang digunakan dalam sistem kami, menjamin kualitas dan interoperabilitas global.",
+    "items": [
+      { "title": "ISO/IEC 27000:2016", "desc": "Standar pengamanan informasi maksimum yang diterapkan pada cloud database Authentic Guards." },
+      { "title": "ISO/IEC 18004:2015", "desc": "Sistem QR code kami dikembangkan dengan mengacu pada standar internasional ISO/IEC 18004:2015 sebagai rujukan teknis, memastikan interoperabilitas dengan pembaca QR standar." }
+    ]
+  }
+}
