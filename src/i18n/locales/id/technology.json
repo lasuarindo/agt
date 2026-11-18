@@ -1,0 +1,254 @@
+{
+  "hero": {
+    "eyebrow": "Teknologi Kami",
+    "titleLine1": "Sistem Anti-Pemalsuan",
+    "titleHighlight": "Authentic Guards®",
+    "titleLine2": "Terdepan di Indonesia",
+    "desc": "Teknologi anti-pemalsuan pertama di Indonesia yang membantu produsen dan konsumen bekerja sama mengidentifikasi dan menghentikan aktivitas pemalsuan. Menggabungkan algoritma AG 3 lapis, hash MD5, dan standar ISO/IEC 27000:2016 untuk proteksi supply chain yang tak tertandingi.",
+    "stat1": "ISO/IEC 27000:2016",
+    "stat2": "100M+ Kode / Hari",
+    "stat3": "ISO/IEC 18004:2015"
+  },
+  "core": {
+    "eyebrow": "Core Technology",
+    "titlePre": "5 Lapis",
+    "titleHighlight": "Keamanan",
+    "subtitle": "Lima lapisan keamanan yang bekerja sinergis untuk menciptakan proteksi yang hampir mustahil ditembus oleh pemalsu.",
+    "specTitle": "Spesifikasi Teknis",
+    "layerPrefix": "LAYER",
+    "layers": [
+      {
+        "title": "Keamanan Server",
+        "subtitle": "Server Security Layer",
+        "desc": "Server dilindungi oleh pelindung multi-lapisan yang membantu melindungi aplikasi dari eksploit web umum yang dapat mempengaruhi ketersediaan aplikasi atau memakan sumber daya secara berlebih.",
+        "specs": [
+          { "label": "Proteksi", "value": "Multi-Layer Shield" },
+          { "label": "Standar", "value": "ISO/IEC 27000:2016" },
+          { "label": "Monitoring", "value": "24/7 Active" },
+          { "label": "Tingkat Keamanan", "value": "Sangat Tinggi" }
+        ]
+      },
+      {
+        "title": "Kode Algoritma AG",
+        "subtitle": "Algorithm Security Layer",
+        "desc": "Kode keamanan 3 lapis yang diproduksi dengan kombinasi kompleks: kata kunci personalisasi, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik. Setiap kode memiliki data personalisasi yang unik.",
+        "specs": [
+          { "label": "Lapisan 1", "value": "Kata Kunci Personalisasi" },
+          { "label": "Lapisan 2", "value": "Digit Alfanumerik Unik" },
+          { "label": "Lapisan 3", "value": "Timestamp Unix (ms)" },
+          { "label": "Format", "value": "13 Digit Kompleks" }
+        ]
+      },
+      {
+        "title": "MD5 Hash Integrity",
+        "subtitle": "Integrity Layer",
+        "desc": "Kode AG di-hash menggunakan algoritma MD5 untuk menghasilkan unique identifier 32-karakter hex yang tidak dapat di-reverse. Setiap kode memiliki data personalisasi unik yang menjamin integritas dan keaslian produk.",
+        "specs": [
+          { "label": "Algoritma", "value": "MD5 Hash Function" },
+          { "label": "Output", "value": "32-char Hex Digest" },
+          { "label": "Fungsi", "value": "Integrity Verification" },
+          { "label": "Standar QR", "value": "ISO 18004:2015" }
+        ]
+      },
+      {
+        "title": "Kepekaan Verifikasi QR",
+        "subtitle": "Verification Sensitivity Layer",
+        "desc": "Untuk mengurangi penipuan dan duplikasi kode, kode AG memiliki batasan pengecekan sampai 15 kali. Jika pengecekan telah mencapai limit tanpa validasi, sistem otomatis memberhentikan kode untuk penyelidikan.",
+        "specs": [
+          { "label": "Batas Verifikasi", "value": "15 Kali / Kode" },
+          { "label": "Auto-Suspend", "value": "Aktif Saat Limit" },
+          { "label": "Deteksi", "value": "Anomali Otomatis" },
+          { "label": "Investigasi", "value": "Real-time Flagging" }
+        ]
+      },
+      {
+        "title": "Pelepasan Label",
+        "subtitle": "Tamper-Evident Layer",
+        "desc": "Cara sederhana mengurangi penipuan duplikasi kode QR. Ketika kode yang terlampir pada produk terbuka/terlepas, maka kode QR tidak bisa digunakan lagi dan dianggap tidak sah atau kadaluarsa.",
+        "specs": [
+          { "label": "Tipe", "value": "Tamper-Evident" },
+          { "label": "Status", "value": "Void Saat Terbuka" },
+          { "label": "Fungsi", "value": "Anti-Transfer" },
+          { "label": "Validitas", "value": "Sekali Pakai" }
+        ]
+      }
+    ]
+  },
+  "marking": {
+    "eyebrow": "Marking Development",
+    "titlePre": "Solusi",
+    "titleHighlight": "Penandaan",
+    "titlePost": "Kami",
+    "subtitle": "Authentic Guards menyediakan solusi marking untuk berbagai industri. Dua layanan aktif, dua lainnya sedang dikembangkan.",
+    "comingSoon": "Coming Soon",
+    "available": "Tersedia",
+    "notePrefix": "Tertarik dengan solusi yang sedang dikembangkan?",
+    "noteContact": "Hubungi kami",
+    "noteSuffix": "untuk informasi lebih lanjut.",
+    "options": [
+      {
+        "title": "Hologram dengan QR",
+        "desc": "Kombinasi hologram premium dengan kode QR untuk lapisan keamanan ganda yang sulit dipalsukan."
+      },
+      {
+        "title": "Label Tafeta dengan QR",
+        "desc": "Label tafeta berkualitas tinggi dengan kode QR terintegrasi, cocok untuk industri fashion dan tekstil."
+      }
+    ]
+  },
+  "stack": {
+    "eyebrow": "Technology Stack",
+    "titlePre": "Infrastruktur",
+    "titleHighlight": "Enterprise-Grade",
+    "subtitle": "Dibangun dengan standar ISO/IEC 27000:2016 untuk memastikan performa, keamanan, dan skalabilitas.",
+    "core": "Core",
+    "technologies": [
+      {
+        "title": "Cloud Database AG",
+        "subtitle": "Data Infrastructure",
+        "desc": "Cloud database dengan standar pengamanan informasi maksimum ISO/IEC 27000:2016 untuk menyimpan kode AG yang telah di-hash.",
+        "features": [
+          "Kapasitas 100M kode per hari",
+          "Standar ISO/IEC 27000:2016",
+          "Cloud-based storage",
+          "Multi-region availability"
+        ],
+        "stats": [
+          { "value": "100M+", "label": "Kode / Hari" },
+          { "value": "ISO", "label": "27000:2016" }
+        ]
+      },
+      {
+        "title": "MD5 Hash Integrity",
+        "desc": "Verifikasi integritas kode AG menggunakan fungsi hash MD5. Setiap kode menghasilkan fingerprint digital unik yang menjamin keaslian dan mencegah manipulasi data.",
+        "features": [
+          "MD5 hash function (checksum)",
+          "32-character hex digest output",
+          "One-way integrity verification",
+          "Internal system validation only"
+        ]
+      },
+      {
+        "title": "QR Code Standar Internasional",
+        "subtitle": "ISO/IEC 18004:2015",
+        "desc": "Sistem QR code Authentic Guards dibangun berdasarkan spesifikasi ISO/IEC 18004:2015, menjamin interoperabilitas penuh dengan smartphone dan scanner QR standar di pasaran.",
+        "features": [
+          "Berdasarkan spesifikasi ISO/IEC 18004:2015",
+          "Interoperable dengan QR reader standar",
+          "Ukuran fleksibel 0.18 - 1.5 cm",
+          "Error correction Level Q (25%)"
+        ]
+      },
+      {
+        "title": "Analytics Engine",
+        "subtitle": "Business Intelligence",
+        "desc": "Penemuan, interpretasi, dan komunikasi pola yang berarti pada data. Menganalisa bagaimana kode dihasilkan, didistribusikan, dan digunakan.",
+        "features": [
+          "Code generation analytics",
+          "Distribution tracking",
+          "Usage pattern analysis",
+          "Custom reporting"
+        ],
+        "stats": [
+          { "value": "Real-time", "label": "Analytics" },
+          { "value": "24/7", "label": "Monitoring" }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "eyebrow": "Verification Flow",
+    "titlePre": "Alur Verifikasi",
+    "titleHighlight": "4 Langkah",
+    "subtitle": "Proses verifikasi yang cepat, mudah, dan aman untuk konsumen Anda.",
+    "totalLabel": "Total Waktu Verifikasi",
+    "totalValue": "Kurang dari 5 Detik",
+    "steps": [
+      {
+        "title": "Scan QR Code",
+        "desc": "Konsumen mengarahkan kamera smartphone ke QR code pada label produk.",
+        "detail": "QR code dibaca dan divalidasi formatnya sebelum dikirim ke server untuk verifikasi.",
+        "duration": "< 1 detik"
+      },
+      {
+        "title": "Verifikasi Server",
+        "desc": "Sistem memverifikasi kecocokan hash MD5 kode AG dengan database real-time.",
+        "detail": "Fingerprint digital dicocokkan, status pelepasan label dicek, dan limit verifikasi dihitung secara instan.",
+        "duration": "< 100ms"
+      },
+      {
+        "title": "Cek Batas Verifikasi",
+        "desc": "Sistem menghitung jumlah pengecekan (maksimal 15 kali) untuk mendeteksi duplikasi.",
+        "detail": "Jika limit tercapai tanpa validasi, kode otomatis diberhentikan untuk penyelidikan.",
+        "duration": "Instan"
+      },
+      {
+        "title": "Hasil Verifikasi",
+        "desc": "Hasil verifikasi ditampilkan instan dengan status keaslian produk.",
+        "detail": "Menampilkan status keaslian, informasi produk, brand, dan riwayat verifikasi.",
+        "duration": "Instan"
+      }
+    ]
+  },
+  "security": {
+    "eyebrow": "Security & Compliance",
+    "titlePre": "Standar Keamanan",
+    "titleHighlight": "Kelas Dunia",
+    "desc": "Kami berkomitmen pada standar keamanan dan privasi tertinggi. Cloud database kami tersertifikasi ISO/IEC 27000:2016 untuk pengamanan informasi maksimum.",
+    "protectionTitle": "Multi-Layer Server Protection",
+    "protectionDesc": "Server dilindungi pelindung multi-lapisan dari eksploit web umum yang dapat mempengaruhi ketersediaan aplikasi atau memakan sumber daya secara berlebih.",
+    "certs": [
+      {
+        "title": "ISO/IEC 27000:2016",
+        "desc": "Standar pengamanan informasi maksimum yang diterapkan pada cloud database Authentic Guards."
+      },
+      {
+        "title": "ISO/IEC 18004:2015",
+        "desc": "Sistem QR code kami dikembangkan dengan mengacu pada standar internasional ISO/IEC 18004:2015 (QR Code Bar Code Symbology Specification) sebagai rujukan teknis, memastikan interoperabilitas dengan pembaca QR standar di seluruh dunia."
+      }
+    ],
+    "additionalTitle": "Sertifikasi Tambahan",
+    "additionalDesc": "GDPR, SOC 2 Type II, PCI DSS — segera hadir untuk rancangan pengembangan kedepan."
+  },
+  "performance": {
+    "eyebrow": "Performance Metrics",
+    "titlePre": "Performa yang",
+    "titleHighlight": "Terbukti",
+    "subtitle": "Angka-angka yang menunjukkan komitmen kami terhadap kualitas dan kehandalan sistem.",
+    "metrics": [
+      { "label": "Kode / Hari", "desc": "Kapasitas produksi maksimum kode AG per hari" },
+      { "label": "Limit Verifikasi", "desc": "Batas pengecekan per kode untuk cegah duplikasi" },
+      { "label": "MD5 Hex Digest", "desc": "Verifikasi integritas data menggunakan algoritma hash MD5" },
+      { "label": "Lapis Keamanan", "desc": "Lapisan proteksi sinergis pada setiap produk" },
+      { "label": "Error Correction", "desc": "Koreksi kesalahan Level Q pada QR code" },
+      { "label": "27000:2016", "desc": "Standar pengamanan informasi cloud database" }
+    ]
+  },
+  "integration": {
+    "eyebrow": "Integration",
+    "titlePre": "Integrasi",
+    "titleHighlight": "End-to-End",
+    "desc": "Sistem kami dirancang untuk integrasi yang mulus dengan infrastruktur existing Anda, dari produksi kode hingga pencetakan label pada kemasan produk.",
+    "flow": "AG System Flow",
+    "integrations": [
+      { "title": "Printer Driver Integration", "desc": "Platform komunikasi yang menghubungkan Authentic Guards dengan driver printer klien untuk pengiriman kode QR pencetakan label." },
+      { "title": "Batch & Packing System", "desc": "Modul pengaman dokumen dan pengaturan batch agar siap untuk dicetak, dikemas, dan dikirimkan." },
+      { "title": "Quality Control", "desc": "Pengecekan kualitas produk cetak dari kecacatan dan kesalahan dengan prosedur pelaporan terstandar." },
+      { "title": "Reporting Module", "desc": "Data yang dapat disaring berdasarkan kode AG, nomor batch, tanggal, dan diekspor ke format dokumentasi apapun." },
+      { "title": "User Roles Management", "desc": "Hak istimewa pengguna berbeda untuk mengakses dan memproses sistem Authentic Guards dan modul." },
+      { "title": "History Logs", "desc": "Mencatat aktivitas dari dan ke sistem, mulai dari turunan kode, distribusi, sampai proses pengiriman." }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "titlePre": "Pertanyaan",
+    "titleHighlight": "Teknis",
+    "subtitle": "Jawaban untuk pertanyaan yang sering ditanyakan tentang teknologi Authentic Guards.",
+    "items": [
+      { "q": "Apa itu sistem 5 lapis keamanan AuthenticGuards?", "a": "Sistem keamanan berlapis kami terdiri dari: (1) Keamanan Server — proteksi multi-layer berstandar ISO/IEC 27000:2016, (2) Kode Algoritma AG — 3 lapis (kata kunci personalisasi, digit alfanumerik, timestamp unix), (3) MD5 Hash Integrity — verifikasi integritas 32-char hex, (4) Kepekaan Verifikasi QR — batas 15 kali pengecekan per kode, (5) Pelepasan Label — tamper-evident, kode void saat label terbuka." },
+      { "q": "Apa itu kode AG dan bagaimana cara kerjanya?", "a": "Kode AG (Authentic Guards) adalah kode keamanan 13 digit yang diproduksi dengan algoritma 3 lapis: kata kunci personalisasi brand, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik. Setiap kode di-hash MD5 menjadi identifier 32-karakter hex yang tidak dapat di-reverse, lalu diintegrasikan ke QR code berstandar ISO/IEC 18004:2015." },
+      { "q": "Berapa lama waktu respons verifikasi produk?", "a": "Sistem menggunakan 5 lapis keamanan: keamanan server multi-lapisan, algoritma AG 3 lapis, hash MD5 untuk integritas data, kepekaan verifikasi QR (limit 15x), dan pelepasan label. Ketika label terbuka/terlepas, kode QR otomatis tidak valid. Setiap upaya duplikasi akan terdeteksi oleh sistem." },
+      { "q": "Bagaimana sistem mencegah duplikasi dan penyalahgunaan kode?", "a": "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai tanpa validasi, sistem otomatis men-suspend kode untuk investigasi. Selain itu, label tamper-evident membuat kode void saat label dilepas — mencegah transfer kode ke produk palsu." }
+    ]
+  }
+}

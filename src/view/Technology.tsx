@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { motion, AnimatePresence } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import {
   Shield,
   ShieldCheck,
@@ -40,7 +41,6 @@ import {
   Boxes,
   Activity,
   Users,
-  // Tambahan icon untuk 5 lapis keamanan & marking
   ShieldAlert,
   Hash,
   Timer,
@@ -56,6 +56,7 @@ import {
 // HERO TECHNOLOGY SECTION
 // ============================================================================
 function HeroTechnology() {
+  const { t } = useTranslation('technology')
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -77,7 +78,7 @@ function HeroTechnology() {
           className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/40 px-4 py-2 rounded-full mb-6"
         >
           <Cpu className="w-4 h-4 text-[#C5A059]" />
-          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Teknologi Kami</span>
+          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('hero.eyebrow')}</span>
         </motion.div>
 
         <motion.h1
@@ -86,12 +87,12 @@ function HeroTechnology() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Sistem Anti-Pemalsuan <br className="hidden md:block" />
+          {t('hero.titleLine1')} <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            Authentic Guards®
+            {t('hero.titleHighlight')}
           </span>
           <br className="hidden md:block" />
-          Terdepan di Indonesia
+          {t('hero.titleLine2')}
         </motion.h1>
 
         <motion.p
@@ -100,9 +101,7 @@ function HeroTechnology() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Teknologi anti-pemalsuan pertama di Indonesia yang membantu produsen dan konsumen bekerja sama
-          mengidentifikasi dan menghentikan aktivitas pemalsuan. Menggabungkan <strong className="text-[#1A1A1A]">algoritma AG 3 lapis</strong>,
-          <strong className="text-[#1A1A1A]"> hash MD5</strong>, dan standar <strong className="text-[#1A1A1A]">ISO/IEC 27000:2016</strong> untuk proteksi supply chain yang tak tertandingi.
+          {t('hero.desc')}
         </motion.p>
 
         <motion.div
@@ -113,17 +112,17 @@ function HeroTechnology() {
         >
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">ISO/IEC 27000:2016</span>
+            <span className="font-semibold">{t('hero.stat1')}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">100M+ Kode / Hari</span>
+            <span className="font-semibold">{t('hero.stat2')}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">ISO/IEC 18004:2015</span>
+            <span className="font-semibold">{t('hero.stat3')}</span>
           </span>
         </motion.div>
       </div>
@@ -135,99 +134,23 @@ function HeroTechnology() {
 // CORE TECHNOLOGY - 5 Lapis Keamanan (warna brand gold/brown)
 // ============================================================================
 function CoreTechnologySection() {
-  // PERUBAHAN: Semua warna disesuaikan ke brand color (gold/brown) dengan variasi shade
-  const layers = [
-    {
-      num: '01',
-      icon: <Server className="w-6 h-6" />,
-      title: 'Keamanan Server',
-      subtitle: 'Server Security Layer',
-      desc: 'Server dilindungi oleh pelindung multi-lapisan yang membantu melindungi aplikasi dari eksploit web umum yang dapat mempengaruhi ketersediaan aplikasi atau memakan sumber daya secara berlebih.',
-      specs: [
-        { label: 'Proteksi', value: 'Multi-Layer Shield' },
-        { label: 'Standar', value: 'ISO/IEC 27000:2016' },
-        { label: 'Monitoring', value: '24/7 Active' },
-        { label: 'Tingkat Keamanan', value: 'Sangat Tinggi' }
-      ],
-      // Brand color: primary dark
-      gradient: 'from-[#8C6F3D]/10 to-[#C5A059]/5',
-      iconBg: 'bg-[#E8D09E]/40',
-      iconColor: 'text-[#8C6F3D]',
-      accentBorder: 'border-[#E8D09E]/40'
-    },
-    {
-      num: '02',
-      icon: <Hash className="w-6 h-6" />,
-      title: 'Kode Algoritma AG',
-      subtitle: 'Algorithm Security Layer',
-      desc: 'Kode keamanan 3 lapis yang diproduksi dengan kombinasi kompleks: kata kunci personalisasi, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik. Setiap kode memiliki data personalisasi yang unik.',
-      specs: [
-        { label: 'Lapisan 1', value: 'Kata Kunci Personalisasi' },
-        { label: 'Lapisan 2', value: 'Digit Alfanumerik Unik' },
-        { label: 'Lapisan 3', value: 'Timestamp Unix (ms)' },
-        { label: 'Format', value: '13 Digit Kompleks' }
-      ],
-      // Brand color: medium gold
-      gradient: 'from-[#C5A059]/15 to-[#E8D09E]/5',
-      iconBg: 'bg-[#C5A059]/20',
-      iconColor: 'text-[#6b5530]',
-      accentBorder: 'border-[#C5A059]/30'
-    },
-    {
-      num: '03',
-      icon: <Lock className="w-6 h-6" />,
-      title: 'MD5 Hash Integrity',
-      subtitle: 'Integrity Layer',
-      desc: 'Kode AG di-hash menggunakan algoritma MD5 untuk menghasilkan unique identifier 32-karakter hex yang tidak dapat di-reverse. Setiap kode memiliki data personalisasi unik yang menjamin integritas dan keaslian produk.',
-      specs: [
-        { label: 'Algoritma', value: 'MD5 Hash Function' },
-        { label: 'Output', value: '32-char Hex Digest' },
-        { label: 'Fungsi', value: 'Integrity Verification' },
-        { label: 'Standar QR', value: 'ISO 18004:2015' }
-      ],
-      // Brand color: darker brown
-      gradient: 'from-[#6b5530]/10 to-[#8C6F3D]/5',
-      iconBg: 'bg-[#8C6F3D]/20',
-      iconColor: 'text-[#5a4a2a]',
-      accentBorder: 'border-[#8C6F3D]/30'
-    },
-    {
-      num: '04',
-      icon: <AlertTriangle className="w-6 h-6" />,
-      title: 'Kepekaan Verifikasi QR',
-      subtitle: 'Verification Sensitivity Layer',
-      desc: 'Untuk mengurangi penipuan dan duplikasi kode, kode AG memiliki batasan pengecekan sampai 15 kali. Jika pengecekan telah mencapai limit tanpa validasi, sistem otomatis memberhentikan kode untuk penyelidikan.',
-      specs: [
-        { label: 'Batas Verifikasi', value: '15 Kali / Kode' },
-        { label: 'Auto-Suspend', value: 'Aktif Saat Limit' },
-        { label: 'Deteksi', value: 'Anomali Otomatis' },
-        { label: 'Investigasi', value: 'Real-time Flagging' }
-      ],
-      // Brand color: darkest brown
-      gradient: 'from-[#5a4a2a]/10 to-[#6b5530]/5',
-      iconBg: 'bg-[#6b5530]/20',
-      iconColor: 'text-[#5a4a2a]',
-      accentBorder: 'border-[#6b5530]/30'
-    },
-    {
-      num: '05',
-      icon: <ShieldAlert className="w-6 h-6" />,
-      title: 'Pelepasan Label',
-      subtitle: 'Tamper-Evident Layer',
-      desc: 'Cara sederhana mengurangi penipuan duplikasi kode QR. Ketika kode yang terlampir pada produk terbuka/terlepas, maka kode QR tidak bisa digunakan lagi dan dianggap tidak sah atau kadaluarsa.',
-      specs: [
-        { label: 'Tipe', value: 'Tamper-Evident' },
-        { label: 'Status', value: 'Void Saat Terbuka' },
-        { label: 'Fungsi', value: 'Anti-Transfer' },
-        { label: 'Validitas', value: 'Sekali Pakai' }
-      ],
-      // Brand color: light gold
-      gradient: 'from-[#E8D09E]/30 to-[#FAF8F5]',
-      iconBg: 'bg-[#E8D09E]/50',
-      iconColor: 'text-[#8C6F3D]',
-      accentBorder: 'border-[#E8D09E]/60'
-    }
+  const { t } = useTranslation('technology')
+  const layerIcons = [
+    <Server className="w-6 h-6" />,
+    <Hash className="w-6 h-6" />,
+    <Lock className="w-6 h-6" />,
+    <AlertTriangle className="w-6 h-6" />,
+    <ShieldAlert className="w-6 h-6" />
   ]
+  const layerStyles = [
+    { gradient: 'from-[#8C6F3D]/10 to-[#C5A059]/5', iconBg: 'bg-[#E8D09E]/40', iconColor: 'text-[#8C6F3D]', accentBorder: 'border-[#E8D09E]/40' },
+    { gradient: 'from-[#C5A059]/15 to-[#E8D09E]/5', iconBg: 'bg-[#C5A059]/20', iconColor: 'text-[#6b5530]', accentBorder: 'border-[#C5A059]/30' },
+    { gradient: 'from-[#6b5530]/10 to-[#8C6F3D]/5', iconBg: 'bg-[#8C6F3D]/20', iconColor: 'text-[#5a4a2a]', accentBorder: 'border-[#8C6F3D]/30' },
+    { gradient: 'from-[#5a4a2a]/10 to-[#6b5530]/5', iconBg: 'bg-[#6b5530]/20', iconColor: 'text-[#5a4a2a]', accentBorder: 'border-[#6b5530]/30' },
+    { gradient: 'from-[#E8D09E]/30 to-[#FAF8F5]', iconBg: 'bg-[#E8D09E]/50', iconColor: 'text-[#8C6F3D]', accentBorder: 'border-[#E8D09E]/60' }
+  ]
+  const layers = (t('core.layers', { returnObjects: true }) as { title: string; subtitle: string; desc: string; specs: { label: string; value: string }[] }[])
+    .map((layer, idx) => ({ ...layer, ...layerStyles[idx], icon: layerIcons[idx], num: String(idx + 1).padStart(2, '0') }))
 
   return (
     <section className="py-16 md:py-24 bg-white relative">
@@ -240,13 +163,13 @@ function CoreTechnologySection() {
         >
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Shield className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Core Technology</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('core.eyebrow')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            5 Lapis <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Keamanan</span>
+            {t('core.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('core.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Lima lapisan keamanan yang bekerja sinergis untuk menciptakan proteksi yang hampir mustahil ditembus oleh pemalsu.
+            {t('core.subtitle')}
           </p>
         </motion.div>
 
@@ -271,7 +194,7 @@ function CoreTechnologySection() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-xs font-extrabold text-[#8C6F3D] bg-[#E8D09E]/20 px-2.5 py-1 rounded-md tracking-wider">
-                          LAYER {layer.num}
+                          {t('core.layerPrefix')} {layer.num}
                         </span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
                           {layer.subtitle}
@@ -290,7 +213,7 @@ function CoreTechnologySection() {
                 <div className="lg:col-span-4">
                   <div className="bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-5">
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
-                      Spesifikasi Teknis
+                      {t('core.specTitle')}
                     </p>
                     <div className="space-y-3">
                       {layer.specs.map((spec, sIdx) => (
@@ -320,18 +243,19 @@ interface MarkingOption {
   iconBg?: string
   iconColor?: string
   accentBorder?: string
-  note?: string  // ✅ Optional - hanya untuk status 'coming-soon'
+  note?: string
 }
 
 // ============================================================================
-// MARKING DEVELOPMENT SECTION (warna brand + NFC & Printing sebagai Coming Soon)
+// MARKING DEVELOPMENT SECTION
 // ============================================================================
 function MarkingDevelopmentSection() {
+  const { t } = useTranslation('technology')
   const markingOptions: MarkingOption[] = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: 'Hologram dengan QR',
-      desc: 'Kombinasi hologram premium dengan kode QR untuk lapisan keamanan ganda yang sulit dipalsukan.',
+      title: t('marking.options.0.title'),
+      desc: t('marking.options.0.desc'),
       status: 'active',
       gradient: 'from-[#8C6F3D]/10 to-[#C5A059]/5',
       iconBg: 'bg-[#E8D09E]/40',
@@ -340,28 +264,14 @@ function MarkingDevelopmentSection() {
     },
     {
       icon: <Tag className="w-6 h-6" />,
-      title: 'Label Tafeta dengan QR',
-      desc: 'Label tafeta berkualitas tinggi dengan kode QR terintegrasi, cocok untuk industri fashion dan tekstil.',
+      title: t('marking.options.1.title'),
+      desc: t('marking.options.1.desc'),
       status: 'active',
       gradient: 'from-[#C5A059]/15 to-[#E8D09E]/5',
       iconBg: 'bg-[#C5A059]/20',
       iconColor: 'text-[#6b5530]',
       accentBorder: 'border-[#C5A059]/30'
-    },
-    // {
-    //   icon: <Nfc className="w-6 h-6" />,
-    //   title: 'Sticker ber-NFC',
-    //   desc: 'Verifikasi instan via tap & go dengan teknologi NFC. Cukup mendekatkan smartphone ke sticker.',
-    //   status: 'coming-soon',
-    //   note: 'Masih dalam tahap penelitian & perencanaan'
-    // },
-    // {
-    //   icon: <Printer className="w-6 h-6" />,
-    //   title: 'Printing QR pada Kemasan',
-    //   desc: 'Pencetakan QR langsung pada kemasan produk dengan integrasi driver printer klien.',
-    //   status: 'coming-soon',
-    //   note: 'Dalam tahap penyesuaian infrastruktur'
-    // }
+    }
   ]
 
   return (
@@ -376,13 +286,13 @@ function MarkingDevelopmentSection() {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Package className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Marking Development</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('marking.eyebrow')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Solusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
+            {t('marking.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('marking.titleHighlight')}</span> {t('marking.titlePost')}
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Authentic Guards menyediakan solusi marking untuk berbagai industri. Dua layanan aktif, dua lainnya sedang dikembangkan.
+            {t('marking.subtitle')}
           </p>
         </motion.div>
 
@@ -403,19 +313,17 @@ function MarkingDevelopmentSection() {
                     : `bg-white border ${option.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl`
                 }`}
               >
-                {/* Coming Soon Badge */}
                 {isComingSoon && (
                   <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
                     <Compass className="w-3 h-3" />
-                    <span>Coming Soon</span>
+                    <span>{t('marking.comingSoon')}</span>
                   </div>
                 )}
 
-                {/* Active Badge */}
                 {!isComingSoon && (
                   <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
                     <CheckCircle2 className="w-3 h-3" />
-                    <span>Tersedia</span>
+                    <span>{t('marking.available')}</span>
                   </div>
                 )}
 
@@ -455,11 +363,11 @@ function MarkingDevelopmentSection() {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * Tertarik dengan solusi yang sedang dikembangkan?{' '}
+            * {t('marking.notePrefix')}{' '}
             <Link to="/contact" className="text-[#8C6F3D] font-semibold hover:text-[#C5A059] transition-colors">
-              Hubungi kami
+              {t('marking.noteContact')}
             </Link>{' '}
-            untuk informasi lebih lanjut.
+            {t('marking.noteSuffix')}
           </p>
         </motion.div>
       </div>
@@ -468,91 +376,24 @@ function MarkingDevelopmentSection() {
 }
 
 // ============================================================================
-// TECHNOLOGY STACK - Detailed Components (warna brand gold/brown)
+// TECHNOLOGY STACK
 // ============================================================================
 function TechnologyStackSection() {
-  // PERUBAHAN: Semua warna disesuaikan ke brand color
-  const technologies = [
-    {
-      id: 'database',
-      icon: <Database className="w-6 h-6" />,
-      title: 'Cloud Database AG',
-      subtitle: 'Data Infrastructure',
-      desc: 'Cloud database dengan standar pengamanan informasi maksimum ISO/IEC 27000:2016 untuk menyimpan kode AG yang telah di-hash.',
-      features: [
-        'Kapasitas 100M kode per hari',
-        'Standar ISO/IEC 27000:2016',
-        'Cloud-based storage',
-        'Multi-region availability'
-      ],
-      stats: [
-        { value: '100M+', label: 'Kode / Hari' },
-        { value: 'ISO', label: '27000:2016' }
-      ],
-      gradient: 'from-[#8C6F3D]/10 to-[#C5A059]/5',
-      iconBg: 'bg-[#E8D09E]/40',
-      iconColor: 'text-[#8C6F3D]',
-      accentBorder: 'border-[#E8D09E]/40',
-      size: 'large'
-    },
-    {
-      id: 'hash-integrity',
-      icon: <Lock className="w-6 h-6" />,
-      title: 'MD5 Hash Integrity',
-      desc: 'Verifikasi integritas kode AG menggunakan fungsi hash MD5. Setiap kode menghasilkan fingerprint digital unik yang menjamin keaslian dan mencegah manipulasi data.',
-      features: [
-        'MD5 hash function (checksum)',
-        '32-character hex digest output',
-        'One-way integrity verification',
-        'Internal system validation only'
-      ],
-      gradient: 'from-[#C5A059]/15 to-[#E8D09E]/5',
-      iconBg: 'bg-[#C5A059]/20',
-      iconColor: 'text-[#6b5530]',
-      accentBorder: 'border-[#C5A059]/30',
-      size: 'small'
-    },
-    {
-      id: 'qr-standard',
-      icon: <QrCode className="w-6 h-6" />,
-      title: 'QR Code Standar Internasional',
-      subtitle: 'ISO/IEC 18004:2015',
-      desc: 'Sistem QR code Authentic Guards dibangun berdasarkan spesifikasi ISO/IEC 18004:2015, menjamin interoperabilitas penuh dengan smartphone dan scanner QR standar di pasaran.',
-      features: [
-        'Berdasarkan spesifikasi ISO/IEC 18004:2015',
-        'Interoperable dengan QR reader standar',
-        'Ukuran fleksibel 0.18 - 1.5 cm',
-        'Error correction Level Q (25%)'
-      ],
-      gradient: 'from-[#6b5530]/10 to-[#8C6F3D]/5',
-      iconBg: 'bg-[#8C6F3D]/20',
-      iconColor: 'text-[#5a4a2a]',
-      accentBorder: 'border-[#8C6F3D]/30',
-      size: 'small'
-    },
-    {
-      id: 'analytics',
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: 'Analytics Engine',
-      subtitle: 'Business Intelligence',
-      desc: 'Penemuan, interpretasi, dan komunikasi pola yang berarti pada data. Menganalisa bagaimana kode dihasilkan, didistribusikan, dan digunakan.',
-      features: [
-        'Code generation analytics',
-        'Distribution tracking',
-        'Usage pattern analysis',
-        'Custom reporting'
-      ],
-      stats: [
-        { value: 'Real-time', label: 'Analytics' },
-        { value: '24/7', label: 'Monitoring' }
-      ],
-      gradient: 'from-[#E8D09E]/30 to-[#FAF8F5]',
-      iconBg: 'bg-[#E8D09E]/50',
-      iconColor: 'text-[#8C6F3D]',
-      accentBorder: 'border-[#E8D09E]/60',
-      size: 'large'
-    }
+  const { t } = useTranslation('technology')
+  const techIcons = [
+    <Database className="w-6 h-6" />,
+    <Lock className="w-6 h-6" />,
+    <QrCode className="w-6 h-6" />,
+    <BarChart3 className="w-6 h-6" />
   ]
+  const techStyles = [
+    { gradient: 'from-[#8C6F3D]/10 to-[#C5A059]/5', iconBg: 'bg-[#E8D09E]/40', iconColor: 'text-[#8C6F3D]', accentBorder: 'border-[#E8D09E]/40', size: 'large' },
+    { gradient: 'from-[#C5A059]/15 to-[#E8D09E]/5', iconBg: 'bg-[#C5A059]/20', iconColor: 'text-[#6b5530]', accentBorder: 'border-[#C5A059]/30', size: 'small' },
+    { gradient: 'from-[#6b5530]/10 to-[#8C6F3D]/5', iconBg: 'bg-[#8C6F3D]/20', iconColor: 'text-[#5a4a2a]', accentBorder: 'border-[#8C6F3D]/30', size: 'small' },
+    { gradient: 'from-[#E8D09E]/30 to-[#FAF8F5]', iconBg: 'bg-[#E8D09E]/50', iconColor: 'text-[#8C6F3D]', accentBorder: 'border-[#E8D09E]/60', size: 'large' }
+  ]
+  const technologies = (t('stack.technologies', { returnObjects: true }) as { title: string; subtitle?: string; desc: string; features?: string[]; stats?: { value: string; label: string }[] }[])
+    .map((tech, idx) => ({ ...tech, ...techStyles[idx], icon: techIcons[idx] }))
 
   /* [COMING SOON - BELUM ADA DI PROPOSAL 2020]
      Teknologi di bawah ini belum disebutkan di proposal Authentic Guards 2020,
@@ -575,14 +416,14 @@ function TechnologyStackSection() {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Server className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Technology Stack</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('stack.eyebrow')}</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Infrastruktur <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Enterprise-Grade</span>
+            {t('stack.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('stack.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Dibangun dengan standar ISO/IEC 27000:2016 untuk memastikan performa, keamanan, dan skalabilitas.
+            {t('stack.subtitle')}
           </p>
         </motion.div>
 
@@ -592,7 +433,7 @@ function TechnologyStackSection() {
 
             return (
               <motion.div
-                key={tech.id}
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -624,7 +465,7 @@ function TechnologyStackSection() {
                     {isLarge && (
                       <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Core</span>
+                        <span>{t('stack.core')}</span>
                       </div>
                     )}
                   </div>
@@ -634,7 +475,7 @@ function TechnologyStackSection() {
                   </p>
 
                   <div className="space-y-2 mb-6">
-                    {tech.features.map((feature, fIdx) => (
+                    {(tech.features || []).map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-700">{feature}</span>
@@ -663,43 +504,18 @@ function TechnologyStackSection() {
 }
 
 // ============================================================================
-// HOW IT WORKS - Verification Flow (disesuaikan dengan proposal)
+// HOW IT WORKS - Verification Flow
 // ============================================================================
 function VerificationFlowSection() {
-  const steps = [
-    {
-      num: '01',
-      icon: <ScanLine className="w-6 h-6" />,
-      title: 'Scan QR Code',
-      desc: 'Konsumen mengarahkan kamera smartphone ke QR code pada label produk.',
-      detail: 'QR code dibaca dan divalidasi formatnya sebelum dikirim ke server untuk verifikasi.',
-      duration: '< 1 detik'
-    },
-    {
-      num: '02',
-      icon: <Server className="w-6 h-6" />,
-      title: 'Verifikasi Server',
-      desc: 'Sistem memverifikasi kecocokan hash MD5 kode AG dengan database real-time.',
-      detail: 'Fingerprint digital dicocokkan, status pelepasan label dicek, dan limit verifikasi dihitung secara instan.',
-      duration: '< 100ms'
-    },
-    {
-      num: '03',
-      icon: <AlertTriangle className="w-6 h-6" />,
-      title: 'Cek Batas Verifikasi',
-      desc: 'Sistem menghitung jumlah pengecekan (maksimal 15 kali) untuk mendeteksi duplikasi.',
-      detail: 'Jika limit tercapai tanpa validasi, kode otomatis diberhentikan untuk penyelidikan.',
-      duration: 'Instan'
-    },
-    {
-      num: '04',
-      icon: <CheckCircle2 className="w-6 h-6" />,
-      title: 'Hasil Verifikasi',
-      desc: 'Hasil verifikasi ditampilkan instan dengan status keaslian produk.',
-      detail: 'Menampilkan status keaslian, informasi produk, brand, dan riwayat verifikasi.',
-      duration: 'Instan'
-    }
+  const { t } = useTranslation('technology')
+  const stepIcons = [
+    <ScanLine className="w-6 h-6" />,
+    <Server className="w-6 h-6" />,
+    <AlertTriangle className="w-6 h-6" />,
+    <CheckCircle2 className="w-6 h-6" />
   ]
+  const steps = (t('verification.steps', { returnObjects: true }) as { title: string; desc: string; detail: string; duration: string }[])
+    .map((step, idx) => ({ ...step, icon: stepIcons[idx], num: String(idx + 1).padStart(2, '0') }))
 
   return (
     <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
@@ -714,14 +530,14 @@ function VerificationFlowSection() {
         >
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full">
             <Zap className="w-4 h-4 text-[#E8D09E]" />
-            <span className="text-xs font-bold text-[#E8D09E] uppercase tracking-widest">Verification Flow</span>
+            <span className="text-xs font-bold text-[#E8D09E] uppercase tracking-widest">{t('verification.eyebrow')}</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Alur Verifikasi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">4 Langkah</span>
+            {t('verification.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">{t('verification.titleHighlight')}</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Proses verifikasi yang cepat, mudah, dan aman untuk konsumen Anda.
+            {t('verification.subtitle')}
           </p>
         </motion.div>
 
@@ -774,8 +590,8 @@ function VerificationFlowSection() {
           <div className="inline-flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4">
             <Clock className="w-5 h-5 text-[#E8D09E]" />
             <div className="text-left">
-              <p className="text-xs text-gray-400 uppercase tracking-wider">Total Waktu Verifikasi</p>
-              <p className="text-2xl font-extrabold text-white">Kurang dari 5 Detik</p>
+              <p className="text-xs text-gray-400 uppercase tracking-wider">{t('verification.totalLabel')}</p>
+              <p className="text-2xl font-extrabold text-white">{t('verification.totalValue')}</p>
             </div>
           </div>
         </motion.div>
@@ -785,27 +601,21 @@ function VerificationFlowSection() {
 }
 
 // ============================================================================
-// SECURITY & COMPLIANCE SECTION (warna brand gold/brown)
+// SECURITY & COMPLIANCE SECTION
 // ============================================================================
 function SecurityComplianceSection() {
-  // PERUBAHAN: Hanya ISO/IEC 27000:2016 dan ISO/IEC 18004:2015 (sesuai proposal)
-  const certifications = [
-    {
-      icon: <BadgeCheck className="w-6 h-6" />,
-      title: 'ISO/IEC 27000:2016',
-      desc: 'Standar pengamanan informasi maksimum yang diterapkan pada cloud database Authentic Guards.',
-      bg: 'bg-[#E8D09E]/40',
-      text: 'text-[#8C6F3D]'
-    },
-    {
-      icon: <QrCode className="w-6 h-6" />,
-      title: 'ISO/IEC 18004:2015',
-      desc: 'Sistem QR code kami dikembangkan dengan mengacu pada standar internasional ISO/IEC 18004:2015 (QR Code Bar Code Symbology Specification) sebagai rujukan teknis, memastikan interoperabilitas dengan pembaca QR standar di seluruh dunia.',
-      bg: 'bg-[#C5A059]/20',
-      text: 'text-[#6b5530]'
-    }
+  const { t } = useTranslation('technology')
+  const certIcons = [
+    <BadgeCheck className="w-6 h-6" />,
+    <QrCode className="w-6 h-6" />
   ]
-  
+  const certStyles = [
+    { bg: 'bg-[#E8D09E]/40', text: 'text-[#8C6F3D]' },
+    { bg: 'bg-[#C5A059]/20', text: 'text-[#6b5530]' }
+  ]
+  const certifications = (t('security.certs', { returnObjects: true }) as { title: string; desc: string }[])
+    .map((cert, idx) => ({ ...cert, icon: certIcons[idx], ...certStyles[idx] }))
+
   /* [COMING SOON - BELUM ADA DI PROPOSAL 2020]
      Sertifikasi di bawah ini belum disebutkan di proposal Authentic Guards 2020,
      namun merupakan standar industri yang bisa ditambahkan untuk rancangan kedepan.
@@ -829,17 +639,16 @@ function SecurityComplianceSection() {
             <div>
               <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full mb-4">
                 <Shield className="w-4 h-4 text-[#8C6F3D]" />
-                <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Security & Compliance</span>
+                <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('security.eyebrow')}</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Standar Keamanan <br />
+                {t('security.titlePre')} <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-                  Kelas Dunia
+                  {t('security.titleHighlight')}
                 </span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Kami berkomitmen pada standar keamanan dan privasi tertinggi. Cloud database kami
-                tersertifikasi ISO/IEC 27000:2016 untuk pengamanan informasi maksimum.
+                {t('security.desc')}
               </p>
             </div>
 
@@ -849,10 +658,9 @@ function SecurityComplianceSection() {
                   <Lock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-2">Multi-Layer Server Protection</h4>
+                  <h4 className="font-bold mb-2">{t('security.protectionTitle')}</h4>
                   <p className="text-sm text-gray-300 leading-relaxed">
-                    Server dilindungi pelindung multi-lapisan dari eksploit web umum yang dapat
-                    mempengaruhi ketersediaan aplikasi atau memakan sumber daya secara berlebih.
+                    {t('security.protectionDesc')}
                   </p>
                 </div>
               </div>
@@ -896,9 +704,9 @@ function SecurityComplianceSection() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-bold text-[#1A1A1A] mb-1">Sertifikasi Tambahan</h3>
+                <h3 className="font-bold text-[#1A1A1A] mb-1">{t('security.additionalTitle')}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  GDPR, SOC 2 Type II, PCI DSS — segera hadir untuk rancangan pengembangan kedepan.
+                  {t('security.additionalDesc')}
                 </p>
               </div>
             </motion.div>
@@ -910,53 +718,28 @@ function SecurityComplianceSection() {
 }
 
 // ============================================================================
-// PERFORMANCE METRICS SECTION (sudah brand color, dipertahankan)
+// PERFORMANCE METRICS SECTION
 // ============================================================================
 function PerformanceMetricsSection() {
-  const metrics = [
-    {
-      icon: <Database className="w-6 h-6" />,
-      value: '100',
-      suffix: 'M',
-      label: 'Kode / Hari',
-      desc: 'Kapasitas produksi maksimum kode AG per hari'
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      value: '15',
-      suffix: 'x',
-      label: 'Limit Verifikasi',
-      desc: 'Batas pengecekan per kode untuk cegah duplikasi'
-    },
-    {
-      icon: <Hash className="w-6 h-6" />,
-      value: '32',
-      suffix: 'char',
-      label: 'MD5 Hex Digest',
-      desc: 'Verifikasi integritas data menggunakan algoritma hash MD5'
-    },
-    {
-      icon: <Layers className="w-6 h-6" />,
-      value: '5',
-      suffix: '',
-      label: 'Lapis Keamanan',
-      desc: 'Lapisan proteksi sinergis pada setiap produk'
-    },
-    {
-      icon: <QrCode className="w-6 h-6" />,
-      value: '25',
-      suffix: '%',
-      label: 'Error Correction',
-      desc: 'Koreksi kesalahan Level Q pada QR code'
-    },
-    {
-      icon: <ShieldCheck className="w-6 h-6" />,
-      value: 'ISO',
-      suffix: '',
-      label: '27000:2016',
-      desc: 'Standar pengamanan informasi cloud database'
-    }
+  const { t } = useTranslation('technology')
+  const metricIcons = [
+    <Database className="w-6 h-6" />,
+    <Zap className="w-6 h-6" />,
+    <Hash className="w-6 h-6" />,
+    <Layers className="w-6 h-6" />,
+    <QrCode className="w-6 h-6" />,
+    <ShieldCheck className="w-6 h-6" />
   ]
+  const metricValues = [
+    { value: '100', suffix: 'M' },
+    { value: '15', suffix: 'x' },
+    { value: '32', suffix: 'char' },
+    { value: '5', suffix: '' },
+    { value: '25', suffix: '%' },
+    { value: 'ISO', suffix: '' }
+  ]
+  const metrics = (t('performance.metrics', { returnObjects: true }) as { label: string; desc: string }[])
+    .map((m, idx) => ({ ...m, ...metricValues[idx], icon: metricIcons[idx] }))
 
   return (
     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
@@ -970,14 +753,14 @@ function PerformanceMetricsSection() {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <TrendingUp className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Performance Metrics</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('performance.eyebrow')}</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Performa yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Terbukti</span>
+            {t('performance.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('performance.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Angka-angka yang menunjukkan komitmen kami terhadap kualitas dan kehandalan sistem.
+            {t('performance.subtitle')}
           </p>
         </motion.div>
 
@@ -1008,41 +791,20 @@ function PerformanceMetricsSection() {
 }
 
 // ============================================================================
-// INTEGRATION CAPABILITIES SECTION (sudah brand color, dipertahankan)
+// INTEGRATION CAPABILITIES SECTION
 // ============================================================================
 function IntegrationSection() {
-  const integrations = [
-    {
-      icon: <Printer className="w-5 h-5" />,
-      title: 'Printer Driver Integration',
-      desc: 'Platform komunikasi yang menghubungkan Authentic Guards dengan driver printer klien untuk pengiriman kode QR pencetakan label.'
-    },
-    {
-      icon: <Boxes className="w-5 h-5" />,
-      title: 'Batch & Packing System',
-      desc: 'Modul pengaman dokumen dan pengaturan batch agar siap untuk dicetak, dikemas, dan dikirimkan.'
-    },
-    {
-      icon: <FileCheck className="w-5 h-5" />,
-      title: 'Quality Control',
-      desc: 'Pengecekan kualitas produk cetak dari kecacatan dan kesalahan dengan prosedur pelaporan terstandar.'
-    },
-    {
-      icon: <BarChart3 className="w-5 h-5" />,
-      title: 'Reporting Module',
-      desc: 'Data yang dapat disaring berdasarkan kode AG, nomor batch, tanggal, dan diekspor ke format dokumentasi apapun.'
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      title: 'User Roles Management',
-      desc: 'Hak istimewa pengguna berbeda untuk mengakses dan memproses sistem Authentic Guards dan modul.'
-    },
-    {
-      icon: <Activity className="w-5 h-5" />,
-      title: 'History Logs',
-      desc: 'Mencatat aktivitas dari dan ke sistem, mulai dari turunan kode, distribusi, sampai proses pengiriman.'
-    }
+  const { t } = useTranslation('technology')
+  const integrationIcons = [
+    <Printer className="w-5 h-5" />,
+    <Boxes className="w-5 h-5" />,
+    <FileCheck className="w-5 h-5" />,
+    <BarChart3 className="w-5 h-5" />,
+    <Users className="w-5 h-5" />,
+    <Activity className="w-5 h-5" />
   ]
+  const integrations = (t('integration.integrations', { returnObjects: true }) as { title: string; desc: string }[])
+    .map((it, idx) => ({ ...it, icon: integrationIcons[idx] }))
 
   /* [COMING SOON - BELUM ADA DI PROPOSAL 2020]
      Fitur integrasi di bawah ini belum disebutkan di proposal Authentic Guards 2020,
@@ -1069,14 +831,13 @@ function IntegrationSection() {
             <div>
               <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full mb-4">
                 <Code2 className="w-4 h-4 text-[#8C6F3D]" />
-                <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Integration</span>
+                <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('integration.eyebrow')}</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Integrasi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">End-to-End</span>
+                {t('integration.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('integration.titleHighlight')}</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Sistem kami dirancang untuk integrasi yang mulus dengan infrastruktur existing Anda,
-                dari produksi kode hingga pencetakan label pada kemasan produk.
+                {t('integration.desc')}
               </p>
             </div>
 
@@ -1086,7 +847,7 @@ function IntegrationSection() {
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 bg-[#C5A059] rounded-full animate-pulse" />
-                  <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">AG System Flow</span>
+                  <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">{t('integration.flow')}</span>
                 </div>
 
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 font-mono text-sm">
@@ -1142,28 +903,12 @@ function IntegrationSection() {
 }
 
 // ============================================================================
-// FAQ SECTION (disesuaikan dengan proposal)
+// FAQ SECTION
 // ============================================================================
 function FAQSection() {
+  const { t } = useTranslation('technology')
   const [openIndex, setOpenIndex] = useState<number | null>(0)
-  const faqs = [
-    {
-      q: "Apa itu sistem 5 lapis keamanan AuthenticGuards?",
-      a: "Sistem keamanan berlapis kami terdiri dari: (1) Keamanan Server — proteksi multi-layer berstandar ISO/IEC 27000:2016, (2) Kode Algoritma AG — 3 lapis (kata kunci personalisasi, digit alfanumerik, timestamp unix), (3) MD5 Hash Integrity — verifikasi integritas 32-char hex, (4) Kepekaan Verifikasi QR — batas 15 kali pengecekan per kode, (5) Pelepasan Label — tamper-evident, kode void saat label terbuka."
-    },
-    {
-      q: "Apa itu kode AG dan bagaimana cara kerjanya?",
-      a: "Kode AG (Authentic Guards) adalah kode keamanan 13 digit yang diproduksi dengan algoritma 3 lapis: kata kunci personalisasi brand, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik. Setiap kode di-hash MD5 menjadi identifier 32-karakter hex yang tidak dapat di-reverse, lalu diintegrasikan ke QR code berstandar ISO/IEC 18004:2015."
-    },
-    {
-      q: "Berapa lama waktu respons verifikasi produk?",
-      a: "Sistem menggunakan 5 lapis keamanan: keamanan server multi-lapisan, algoritma AG 3 lapis, hash MD5 untuk integritas data, kepekaan verifikasi QR (limit 15x), dan pelepasan label. Ketika label terbuka/terlepas, kode QR otomatis tidak valid. Setiap upaya duplikasi akan terdeteksi oleh sistem."
-    },
-    {
-      q: "Bagaimana sistem mencegah duplikasi dan penyalahgunaan kode?",
-      a: "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai tanpa validasi, sistem otomatis men-suspend kode untuk investigasi. Selain itu, label tamper-evident membuat kode void saat label dilepas — mencegah transfer kode ke produk palsu."
-    },
-  ]
+  const faqs = t('faq.items', { returnObjects: true }) as { q: string; a: string }[]
 
   return (
     <section className="py-16 md:py-24 bg-[#FAF8F5] relative">
@@ -1176,13 +921,13 @@ function FAQSection() {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Search className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">FAQ</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('faq.eyebrow')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Pertanyaan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Teknis</span>
+            {t('faq.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('faq.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Jawaban untuk pertanyaan yang sering ditanyakan tentang teknologi Authentic Guards.
+            {t('faq.subtitle')}
           </p>
         </motion.div>
 
@@ -1242,72 +987,7 @@ function FAQSection() {
 // ============================================================================
 // CTA SECTION
 // ============================================================================
-function TechnologyCTA() {
-  return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 rounded-full">
-              <Handshake className="w-4 h-4 text-[#E8D09E]" />
-              <span className="text-xs font-bold text-[#E8D09E] tracking-wider uppercase">Demo Teknologi</span>
-            </div>
-
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
-              Lindungi Merek Anda <br className="hidden md:block" />
-              dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Authentic Guards®</span>
-            </h2>
-
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Jadwalkan demo pribadi dengan tim kami dan saksikan langsung bagaimana teknologi
-              anti-pemalsuan kami dapat melindungi brand Anda dari aktivitas pemalsuan.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center justify-center gap-3 bg-[#C5A059] text-[#1A1A1A] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#E8D09E] transition-all duration-300 shadow-lg hover:shadow-[#C5A059]/30 hover:-translate-y-0.5"
-              >
-                <span>Jadwalkan Demo</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a
-                href="#core"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
-              >
-                <Search className="w-5 h-5" />
-                <span>Pelajari Detail</span>
-              </a>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-6 text-xs text-gray-400">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A059]" />
-                Demo Gratis
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A059]" />
-                Konsultasi Teknis
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A059]" />
-                Custom Marking Solution
-              </span>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
+// function TechnologyCTA() { ... }
 
 // ============================================================================
 // MAIN PAGE
@@ -1324,7 +1004,6 @@ export default function TechnologyPage() {
       <PerformanceMetricsSection />
       <IntegrationSection />
       <FAQSection />
-      {/* <TechnologyCTA /> */}
     </>
   )
 }

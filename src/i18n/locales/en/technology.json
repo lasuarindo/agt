@@ -1,0 +1,254 @@
+{
+  "hero": {
+    "eyebrow": "Our Technology",
+    "titleLine1": "Anti-Counterfeit System",
+    "titleHighlight": "Authentic Guards®",
+    "titleLine2": "Leading in Indonesia",
+    "desc": "The first anti-counterfeit technology in Indonesia that helps producers and consumers work together to identify and stop counterfeiting activities. Combining a 3-layer AG algorithm, MD5 hash, and ISO/IEC 27000:2016 standards for unmatched supply chain protection.",
+    "stat1": "ISO/IEC 27000:2016",
+    "stat2": "100M+ Codes / Day",
+    "stat3": "ISO/IEC 18004:2015"
+  },
+  "core": {
+    "eyebrow": "Core Technology",
+    "titlePre": "5 Security",
+    "titleHighlight": "Layers",
+    "subtitle": "Five security layers working synergistically to create protection that is almost impossible for counterfeiters to breach.",
+    "specTitle": "Technical Specifications",
+    "layerPrefix": "LAYER",
+    "layers": [
+      {
+        "title": "Server Security",
+        "subtitle": "Server Security Layer",
+        "desc": "Servers are protected by multi-layer protection that helps guard the application from common web exploits that can affect application availability or excessively consume resources.",
+        "specs": [
+          { "label": "Protection", "value": "Multi-Layer Shield" },
+          { "label": "Standard", "value": "ISO/IEC 27000:2016" },
+          { "label": "Monitoring", "value": "24/7 Active" },
+          { "label": "Security Level", "value": "Very High" }
+        ]
+      },
+      {
+        "title": "AG Algorithm Code",
+        "subtitle": "Algorithm Security Layer",
+        "desc": "A 3-layer security code produced with a complex combination: personalization keywords, unique alphanumeric digits, and a unix timestamp matrix in milliseconds. Each code has unique personalization data.",
+        "specs": [
+          { "label": "Layer 1", "value": "Personalization Keyword" },
+          { "label": "Layer 2", "value": "Unique Alphanumeric Digit" },
+          { "label": "Layer 3", "value": "Unix Timestamp (ms)" },
+          { "label": "Format", "value": "13 Complex Digits" }
+        ]
+      },
+      {
+        "title": "MD5 Hash Integrity",
+        "subtitle": "Integrity Layer",
+        "desc": "AG codes are hashed using the MD5 algorithm to produce a 32-character hex unique identifier that cannot be reversed. Each code has unique personalization data that guarantees product integrity and authenticity.",
+        "specs": [
+          { "label": "Algorithm", "value": "MD5 Hash Function" },
+          { "label": "Output", "value": "32-char Hex Digest" },
+          { "label": "Function", "value": "Integrity Verification" },
+          { "label": "QR Standard", "value": "ISO 18004:2015" }
+        ]
+      },
+      {
+        "title": "QR Verification Sensitivity",
+        "subtitle": "Verification Sensitivity Layer",
+        "desc": "To reduce fraud and code duplication, AG codes have a check limit of up to 15 times. If the check reaches the limit without validation, the system automatically stops the code for investigation.",
+        "specs": [
+          { "label": "Verification Limit", "value": "15 Times / Code" },
+          { "label": "Auto-Suspend", "value": "Active At Limit" },
+          { "label": "Detection", "value": "Automatic Anomaly" },
+          { "label": "Investigation", "value": "Real-time Flagging" }
+        ]
+      },
+      {
+        "title": "Label Release",
+        "subtitle": "Tamper-Evident Layer",
+        "desc": "A simple way to reduce QR code duplication fraud. When the code attached to an opened/removed product, the QR code can no longer be used and is considered invalid or expired.",
+        "specs": [
+          { "label": "Type", "value": "Tamper-Evident" },
+          { "label": "Status", "value": "Void When Opened" },
+          { "label": "Function", "value": "Anti-Transfer" },
+          { "label": "Validity", "value": "Single Use" }
+        ]
+      }
+    ]
+  },
+  "marking": {
+    "eyebrow": "Marking Development",
+    "titlePre": "Our",
+    "titleHighlight": "Marking",
+    "titlePost": "Solutions",
+    "subtitle": "Authentic Guards provides marking solutions for various industries. Two active services, two others under development.",
+    "comingSoon": "Coming Soon",
+    "available": "Available",
+    "notePrefix": "Interested in solutions under development?",
+    "noteContact": "Contact us",
+    "noteSuffix": "for more information.",
+    "options": [
+      {
+        "title": "Hologram with QR",
+        "desc": "A combination of premium hologram with QR code for dual security layers that are hard to counterfeit."
+      },
+      {
+        "title": "Tafeta Label with QR",
+        "desc": "High-quality tafeta label with an integrated QR code, suitable for the fashion and textile industry."
+      }
+    ]
+  },
+  "stack": {
+    "eyebrow": "Technology Stack",
+    "titlePre": "Enterprise-Grade",
+    "titleHighlight": "Infrastructure",
+    "subtitle": "Built with ISO/IEC 27000:2016 standards to ensure performance, security, and scalability.",
+    "core": "Core",
+    "technologies": [
+      {
+        "title": "AG Cloud Database",
+        "subtitle": "Data Infrastructure",
+        "desc": "Cloud database with maximum ISO/IEC 27000:2016 information security standards to store hashed AG codes.",
+        "features": [
+          "100M codes per day capacity",
+          "ISO/IEC 27000:2016 standard",
+          "Cloud-based storage",
+          "Multi-region availability"
+        ],
+        "stats": [
+          { "value": "100M+", "label": "Codes / Day" },
+          { "value": "ISO", "label": "27000:2016" }
+        ]
+      },
+      {
+        "title": "MD5 Hash Integrity",
+        "desc": "Verification of AG code integrity using the MD5 hash function. Each code produces a unique digital fingerprint that guarantees authenticity and prevents data manipulation.",
+        "features": [
+          "MD5 hash function (checksum)",
+          "32-character hex digest output",
+          "One-way integrity verification",
+          "Internal system validation only"
+        ]
+      },
+      {
+        "title": "International Standard QR Code",
+        "subtitle": "ISO/IEC 18004:2015",
+        "desc": "The Authentic Guards QR code system is built on the ISO/IEC 18004:2015 specification, ensuring full interoperability with standard smartphones and QR scanners on the market.",
+        "features": [
+          "Based on ISO/IEC 18004:2015 specification",
+          "Interoperable with standard QR readers",
+          "Flexible size 0.18 - 1.5 cm",
+          "Error correction Level Q (25%)"
+        ]
+      },
+      {
+        "title": "Analytics Engine",
+        "subtitle": "Business Intelligence",
+        "desc": "Discovery, interpretation, and communication of meaningful patterns in data. Analyzing how codes are generated, distributed, and used.",
+        "features": [
+          "Code generation analytics",
+          "Distribution tracking",
+          "Usage pattern analysis",
+          "Custom reporting"
+        ],
+        "stats": [
+          { "value": "Real-time", "label": "Analytics" },
+          { "value": "24/7", "label": "Monitoring" }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "eyebrow": "Verification Flow",
+    "titlePre": "Verification Flow",
+    "titleHighlight": "4 Steps",
+    "subtitle": "A fast, easy, and secure verification process for your consumers.",
+    "totalLabel": "Total Verification Time",
+    "totalValue": "Less than 5 Seconds",
+    "steps": [
+      {
+        "title": "Scan QR Code",
+        "desc": "Consumers point their smartphone camera at the QR code on the product label.",
+        "detail": "The QR code is read and its format validated before being sent to the server for verification.",
+        "duration": "< 1 second"
+      },
+      {
+        "title": "Server Verification",
+        "desc": "The system verifies the MD5 hash match of the AG code against the real-time database.",
+        "detail": "The digital fingerprint is matched, label release status is checked, and the verification limit is calculated instantly.",
+        "duration": "< 100ms"
+      },
+      {
+        "title": "Check Verification Limit",
+        "desc": "The system counts the number of checks (maximum 15) to detect duplicates.",
+        "detail": "If the limit is reached without validation, the code is automatically stopped for investigation.",
+        "duration": "Instant"
+      },
+      {
+        "title": "Verification Result",
+        "desc": "Verification results are displayed instantly with product authenticity status.",
+        "detail": "Displays authenticity status, product information, brand, and verification history.",
+        "duration": "Instant"
+      }
+    ]
+  },
+  "security": {
+    "eyebrow": "Security & Compliance",
+    "titlePre": "World-Class",
+    "titleHighlight": "Security Standards",
+    "desc": "We are committed to the highest security and privacy standards. Our cloud database is ISO/IEC 27000:2016 certified for maximum information security.",
+    "protectionTitle": "Multi-Layer Server Protection",
+    "protectionDesc": "Servers are protected by multi-layer protection from common web exploits that can affect application availability or excessively consume resources.",
+    "certs": [
+      {
+        "title": "ISO/IEC 27000:2016",
+        "desc": "The maximum information security standard applied to the Authentic Guards cloud database."
+      },
+      {
+        "title": "ISO/IEC 18004:2015",
+        "desc": "Our QR code system is developed with reference to the international ISO/IEC 18004:2015 standard (QR Code Bar Code Symbology Specification) as a technical reference, ensuring interoperability with standard QR readers worldwide."
+      }
+    ],
+    "additionalTitle": "Additional Certifications",
+    "additionalDesc": "GDPR, SOC 2 Type II, PCI DSS — coming soon for future development plans."
+  },
+  "performance": {
+    "eyebrow": "Performance Metrics",
+    "titlePre": "Proven",
+    "titleHighlight": "Performance",
+    "subtitle": "Numbers that demonstrate our commitment to system quality and reliability.",
+    "metrics": [
+      { "label": "Codes / Day", "desc": "Maximum daily AG code production capacity" },
+      { "label": "Verification Limit", "desc": "Check limit per code to prevent duplication" },
+      { "label": "MD5 Hex Digest", "desc": "Data integrity verification using the MD5 hash algorithm" },
+      { "label": "Security Layers", "desc": "Synergistic protection layers on every product" },
+      { "label": "Error Correction", "desc": "Level Q error correction on QR codes" },
+      { "label": "27000:2016", "desc": "Information security standard for cloud database" }
+    ]
+  },
+  "integration": {
+    "eyebrow": "Integration",
+    "titlePre": "End-to-End",
+    "titleHighlight": "Integration",
+    "desc": "Our system is designed for seamless integration with your existing infrastructure, from code production to label printing on product packaging.",
+    "flow": "AG System Flow",
+    "integrations": [
+      { "title": "Printer Driver Integration", "desc": "A communication platform connecting Authentic Guards with the client's printer driver for delivering QR printing codes." },
+      { "title": "Batch & Packing System", "desc": "Document security and batch management module so it is ready for printing, packing, and shipping." },
+      { "title": "Quality Control", "desc": "Quality checking of print products for defects and errors with standardized reporting procedures." },
+      { "title": "Reporting Module", "desc": "Data that can be filtered by AG code, batch number, date, and exported to any documentation format." },
+      { "title": "User Roles Management", "desc": "Different user privileges to access and process the Authentic Guards system and modules." },
+      { "title": "History Logs", "desc": "Records activities to and from the system, from code generation, distribution, to the shipping process." }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "titlePre": "Technical",
+    "titleHighlight": "Questions",
+    "subtitle": "Answers to frequently asked questions about Authentic Guards technology.",
+    "items": [
+      { "q": "What is the AuthenticGuards 5-layer security system?", "a": "Our layered security system consists of: (1) Server Security — multi-layer protection to ISO/IEC 27000:2016 standards, (2) AG Algorithm Code — 3 layers (personalization keyword, alphanumeric digits, unix timestamp), (3) MD5 Hash Integrity — 32-char hex integrity verification, (4) QR Verification Sensitivity — 15-check limit per code, (5) Label Release — tamper-evident, code void when the label is opened." },
+      { "q": "What is an AG code and how does it work?", "a": "The AG (Authentic Guards) code is a 13-digit security code produced with a 3-layer algorithm: brand personalization keyword, unique alphanumeric digits, and a unix timestamp matrix in milliseconds. Each code is MD5-hashed into a 32-character hex identifier that cannot be reversed, then integrated into a QR code compliant with ISO/IEC 18004:2015." },
+      { "q": "How long is the product verification response time?", "a": "The system uses 5 security layers: multi-layer server security, 3-layer AG algorithm, MD5 hash for data integrity, QR verification sensitivity (15x limit), and label release. When the label is opened/removed, the QR code automatically becomes invalid. Every duplication attempt is detected by the system." },
+      { "q": "How does the system prevent code duplication and misuse?", "a": "Each AG code has a verification limit of up to 15 times. If the limit is reached without validation, the system automatically suspends the code for investigation. In addition, the tamper-evident label makes the code void when the label is removed — preventing code transfer to counterfeit products." }
+    ]
+  }
+}
