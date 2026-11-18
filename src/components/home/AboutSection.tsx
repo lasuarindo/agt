@@ -1,8 +1,10 @@
 import { motion } from 'motion/react'
 import { Eye, Target } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { getHighlightedMilestones } from '@/data/timeline'
 
 export default function AboutSection() {
+  const { t } = useTranslation('home')
   const timelineData = getHighlightedMilestones()
 
   return (
@@ -17,15 +19,15 @@ export default function AboutSection() {
             className="space-y-6 lg:sticky lg:top-32"
           >
             <div>
-              <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Tentang Kami</p>
+              <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">{t('aboutSection.eyebrow')}</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Delapan Tahun <br />
+                {t('aboutSection.titleTop')} <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-                  Melindungi Keaslian
+                  {t('aboutSection.titleHighlight')}
                 </span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Sejak 2017, AuthenticGuards Technology berkomitmen untuk memberantas produk palsu dan membangun ekosistem perdagangan yang aman di Asia Pasifik dengan teknologi 5 lapis keamanan.
+                {t('aboutSection.intro')}
               </p>
             </div>
 
@@ -33,13 +35,13 @@ export default function AboutSection() {
               {[
                 {
                   icon: <Target className="w-5 h-5" />,
-                  title: "Misi Kami",
-                  desc: "Menyediakan teknologi autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh brand di seluruh Asia Pasifik dengan standar ISO/IEC 27000:2016."
+                  title: t('aboutSection.missionTitle'),
+                  desc: t('aboutSection.missionDesc')
                 },
                 {
                   icon: <Eye className="w-5 h-5" />,
-                  title: "Visi Kami",
-                  desc: "Menjadi standar global dalam sistem anti-counterfeit yang melindungi produk dan konsumen di seluruh dunia."
+                  title: t('aboutSection.visionTitle'),
+                  desc: t('aboutSection.visionDesc')
                 }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4 p-5 bg-white rounded-2xl border border-[#E8D09E]/30 shadow-sm hover:shadow-md transition-shadow">

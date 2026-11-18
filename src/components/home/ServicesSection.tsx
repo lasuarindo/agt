@@ -3,16 +3,19 @@ import { motion } from 'motion/react'
 import {
   CheckCircle2, ArrowRight, Package, Tag, Sparkles, Nfc, Printer
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function ServicesSection() {
+  const { t } = useTranslation('home')
+
   // Layanan aktif
   const activeServices = [
     {
       id: 'hologram',
       icon: <Sparkles className="w-7 h-7" />,
-      title: "Hologram dengan QR",
-      subtitle: "Premium Security",
-      desc: "Kombinasi hologram premium dengan kode QR untuk lapisan keamanan ganda yang sulit dipalsukan. Terintegrasi dengan 5 lapis keamanan AG.",
+      title: t('servicesSection.svc1Title'),
+      subtitle: t('servicesSection.svc1Subtitle'),
+      desc: t('servicesSection.svc1Desc'),
       highlights: [
         { label: "Lapisan Keamanan", value: "Ganda" },
         { label: "Tingkat Kesulitan Palsu", value: "Sangat Tinggi" }
@@ -28,9 +31,9 @@ export default function ServicesSection() {
     {
       id: 'tafeta',
       icon: <Tag className="w-6 h-6" />,
-      title: "Label Tafeta dengan QR",
-      subtitle: "Fashion Solution",
-      desc: "Label tafeta berkualitas tinggi dengan kode QR terintegrasi, dirancang khusus untuk industri fashion dan tekstil tanpa mengorbankan estetika.",
+      title: t('servicesSection.svc2Title'),
+      subtitle: t('servicesSection.svc2Subtitle'),
+      desc: t('servicesSection.svc2Desc'),
       highlights: [
         { label: "Material", value: "Premium" },
         { label: "Industri", value: "Fashion & Tekstil" }
@@ -50,9 +53,9 @@ export default function ServicesSection() {
     {
       id: 'nfc',
       icon: <Nfc className="w-6 h-6" />,
-      title: "Sticker ber-NFC",
-      subtitle: "Smart Technology",
-      desc: "Verifikasi instan via tap & go dengan teknologi NFC. Cukup mendekatkan smartphone ke sticker untuk memverifikasi keaslian produk.",
+      title: t('servicesSection.svc3Title'),
+      subtitle: t('servicesSection.svc3Subtitle'),
+      desc: t('servicesSection.svc3Desc'),
       industries: ["Luxury Goods", "Premium Brand", "Spirits", "Electronics"],
       status: "coming-soon",
       note: "Masih dalam tahap penelitian & perencanaan"
@@ -60,9 +63,9 @@ export default function ServicesSection() {
     {
       id: 'printing',
       icon: <Printer className="w-6 h-6" />,
-      title: "Printing QR pada Kemasan",
-      subtitle: "Direct Integration",
-      desc: "Pencetakan QR langsung pada kemasan produk dengan integrasi driver printer klien. Kapasitas tinggi untuk produksi massal.",
+      title: t('servicesSection.svc4Title'),
+      subtitle: t('servicesSection.svc4Subtitle'),
+      desc: t('servicesSection.svc4Desc'),
       industries: ["FMCG", "Makanan", "Minuman", "Household"],
       status: "coming-soon",
       note: "Dalam tahap penyesuaian infrastruktur"
@@ -81,13 +84,13 @@ export default function ServicesSection() {
         >
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Package className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Layanan Kami</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('servicesSection.eyebrow')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Solusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
+            {t('servicesSection.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('servicesSection.titleHighlight')}</span> {t('servicesSection.titlePost')}
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Dua layanan marking utama yang telah terintegrasi penuh dengan sistem Authentic Guards, dirancang untuk berbagai kebutuhan industri.
+            {t('servicesSection.subtitle')}
           </p>
         </motion.div>
 
@@ -127,7 +130,7 @@ export default function ServicesSection() {
 
                     <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>Tersedia</span>
+                      <span>{t('servicesSection.available')}</span>
                     </div>
                   </div>
 
@@ -163,7 +166,7 @@ export default function ServicesSection() {
 
                   {/* CTA Link - Lebih jelas sebagai ajakan klik */}
                   <div className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm group-hover:gap-3 transition-all">
-                    <span>Lihat Detail Layanan</span>
+                    <span>{t('servicesSection.viewDetail')}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -181,7 +184,7 @@ export default function ServicesSection() {
           className="mt-12 text-center"
         >
           <p className="text-sm text-gray-500 mb-6 max-w-xl mx-auto">
-            Butuh solusi marking yang tepat untuk brand Anda? Jelajahi layanan kami atau langsung konsultasikan kebutuhan Anda dengan tim ahli kami.
+            {t('servicesSection.ctaDesc')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -191,7 +194,7 @@ export default function ServicesSection() {
               className="group inline-flex items-center justify-center gap-2 bg-white border border-gray-200 text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:border-[#C5A059]/60 hover:bg-[#FAF8F5] transition-all duration-300 shadow-sm"
             >
               <Package className="w-4 h-4 text-[#8C6F3D]" />
-              <span>Lihat Semua Layanan</span>
+              <span>{t('servicesSection.ctaSecondary')}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             
@@ -200,7 +203,7 @@ export default function ServicesSection() {
               to="/contact"
               className="group inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <span>Konsultasi Gratis</span>
+              <span>{t('servicesSection.ctaPrimary')}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

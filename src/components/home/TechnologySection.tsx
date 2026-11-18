@@ -3,22 +3,22 @@ import { motion } from 'motion/react'
 import {
   ArrowRight, Sparkles, Lock, BadgeCheck, Server, Database, Hash, AlertTriangle, ShieldAlert
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function TechnologySection() {
-  // Disesuaikan dengan proposal: 5 Lapis Keamanan
-  // PERUBAHAN: Semua warna disesuaikan ke brand color (gold/brown) dengan variasi shade
+  const { t } = useTranslation('home')
+
   const features = [
     {
       id: 'server-security',
       icon: <Server className="w-7 h-7" />,
-      title: "Keamanan Server",
-      subtitle: "Layer 01",
-      desc: "Server dilindungi oleh pelindung multi-lapisan yang membantu melindungi aplikasi dari eksploit web umum yang dapat mempengaruhi ketersediaan aplikasi atau memakan sumber daya secara berlebih.",
+      title: t('technologySection.feat1Title'),
+      subtitle: t('technologySection.feat1Subtitle'),
+      desc: t('technologySection.feat1Desc'),
       highlights: [
-        { label: "Proteksi", value: "Multi-Layer" },
-        { label: "Monitoring", value: "24/7" }
+        { label: t('technologySection.feat1Hl1Label'), value: t('technologySection.feat1Hl1Value') },
+        { label: t('technologySection.feat1Hl2Label'), value: t('technologySection.feat1Hl2Value') }
       ],
-      // Brand color: primary dark
       gradient: "from-[#8C6F3D]/10 to-[#C5A059]/5",
       iconBg: "bg-[#E8D09E]/40",
       iconColor: "text-[#8C6F3D]",
@@ -28,10 +28,9 @@ export default function TechnologySection() {
     {
       id: 'ag-algorithm',
       icon: <Hash className="w-6 h-6" />,
-      title: "Kode Algoritma AG",
-      subtitle: "Layer 02",
-      desc: "Kode keamanan 3 lapis: kata kunci personalisasi, digit alfanumerik unik, dan matriks timestamp unix dalam milidetik.",
-      // Brand color: medium gold
+      title: t('technologySection.feat2Title'),
+      subtitle: t('technologySection.feat2Subtitle'),
+      desc: t('technologySection.feat2Desc'),
       gradient: "from-[#C5A059]/15 to-[#E8D09E]/5",
       iconBg: "bg-[#C5A059]/20",
       iconColor: "text-[#6b5530]",
@@ -41,10 +40,9 @@ export default function TechnologySection() {
     {
       id: 'md5-hash',
       icon: <Lock className="w-6 h-6" />,
-      title: "MD5 Hash Integrity",
-      subtitle: "Layer 03",
-      desc: "Kode AG di-hash menggunakan algoritma MD5 untuk menghasilkan unique identifier 32-karakter hex yang tidak dapat di-reverse.",
-      // Brand color: darker brown
+      title: t('technologySection.feat3Title'),
+      subtitle: t('technologySection.feat3Subtitle'),
+      desc: t('technologySection.feat3Desc'),
       gradient: "from-[#6b5530]/10 to-[#8C6F3D]/5",
       iconBg: "bg-[#8C6F3D]/20",
       iconColor: "text-[#5a4a2a]",
@@ -54,10 +52,9 @@ export default function TechnologySection() {
     {
       id: 'verification-limit',
       icon: <AlertTriangle className="w-6 h-6" />,
-      title: "Kepekaan Verifikasi QR",
-      subtitle: "Layer 04",
-      desc: "Batas pengecekan sampai 15 kali untuk mengurangi penipuan dan duplikasi kode. Auto-suspend saat limit tercapai.",
-      // Brand color: darkest brown
+      title: t('technologySection.feat4Title'),
+      subtitle: t('technologySection.feat4Subtitle'),
+      desc: t('technologySection.feat4Desc'),
       gradient: "from-[#5a4a2a]/10 to-[#6b5530]/5",
       iconBg: "bg-[#6b5530]/20",
       iconColor: "text-[#5a4a2a]",
@@ -67,10 +64,9 @@ export default function TechnologySection() {
     {
       id: 'tamper-evident',
       icon: <ShieldAlert className="w-6 h-6" />,
-      title: "Pelepasan Label",
-      subtitle: "Layer 05",
-      desc: "Ketika kode terlampir pada produk terbuka/terlepas, maka kode QR tidak bisa digunakan lagi dan dianggap tidak sah.",
-      // Brand color: light gold
+      title: t('technologySection.feat5Title'),
+      subtitle: t('technologySection.feat5Subtitle'),
+      desc: t('technologySection.feat5Desc'),
       gradient: "from-[#E8D09E]/30 to-[#FAF8F5]",
       iconBg: "bg-[#E8D09E]/50",
       iconColor: "text-[#8C6F3D]",
@@ -80,14 +76,13 @@ export default function TechnologySection() {
     {
       id: 'iso-standard',
       icon: <BadgeCheck className="w-7 h-7" />,
-      title: "Standar Internasional",
-      subtitle: "Licensed",
-      desc: "Cloud database dengan standar ISO/IEC 27000:2016 dan ISO/IEC 18004:2015 (QR Code Bar Code Symbology Specification).",
+      title: t('technologySection.feat6Title'),
+      subtitle: t('technologySection.feat6Subtitle'),
+      desc: t('technologySection.feat6Desc'),
       highlights: [
-        { label: "Database", value: "ISO 27000" },
-        { label: "QR Code", value: "ISO 18004" }
+        { label: t('technologySection.feat6Hl1Label'), value: t('technologySection.feat6Hl1Value') },
+        { label: t('technologySection.feat6Hl2Label'), value: t('technologySection.feat6Hl2Value') }
       ],
-      // Brand color: sudah sesuai, dipertahankan
       gradient: "from-[#C5A059]/10 to-[#E8D09E]/5",
       iconBg: "bg-[#E8D09E]/30",
       iconColor: "text-[#8C6F3D]",
@@ -108,13 +103,13 @@ export default function TechnologySection() {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Server className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Teknologi Kami</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('technologySection.eyebrow')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Dibangun dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">5 Lapis Keamanan</span>
+            {t('technologySection.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('technologySection.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Lima lapisan keamanan yang bekerja sinergis untuk menciptakan proteksi yang hampir mustahil ditembus oleh pemalsu.
+            {t('technologySection.subtitle')}
           </p>
         </motion.div>
 
@@ -156,7 +151,7 @@ export default function TechnologySection() {
                     {isLarge && (
                       <div className="hidden md:flex items-center gap-1.5 bg-[#E8D09E]/20 text-[#8C6F3D] px-3 py-1.5 rounded-full text-xs font-bold">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Featured</span>
+                        <span>{t('technologySection.featured')}</span>
                       </div>
                     )}
                   </div>
@@ -180,7 +175,7 @@ export default function TechnologySection() {
                     to="/technology"
                     className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm hover:text-[#6b5530] transition-colors group/link"
                   >
-                    <span>Pelajari Lebih Lanjut</span>
+                    <span>{t('technologySection.learnMore')}</span>
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>

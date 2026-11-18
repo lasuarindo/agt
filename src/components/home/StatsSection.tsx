@@ -1,17 +1,18 @@
 import { useMemo } from 'react'
 import { motion } from 'motion/react'
 import { Shield, Calendar, Database, AlertTriangle } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import CountUp from '@/vendor/react-countup'
 import { compactParts } from '@/utils/number'
 
 export default function StatsSection() {
+  const { t } = useTranslation('home')
   const stats = useMemo(() => {
     const rawStats = [
-      // Disesuaikan dengan proposal: kapasitas 100M kode/hari
-      { value: 100, suffix: 'M', label: 'Kode / Hari', icon: <Database className="w-6 h-6" />, desc: 'Kapasitas produksi maksimum' },
-      { value: 5, suffix: '', label: 'Lapis Keamanan', icon: <Shield className="w-6 h-6" />, desc: 'Proteksi sinergis per produk' },
-      { value: 15, suffix: 'x', label: 'Limit Verifikasi', icon: <AlertTriangle className="w-6 h-6" />, desc: 'Batas pengecekan per kode' },
-      { value: 8, suffix: '+', label: 'Tahun Berkiprah', icon: <Calendar className="w-6 h-6" />, desc: 'Sejak 2017 hingga sekarang' }
+      { value: 100, suffix: 'M', label: t('statsSection.stat1Label'), icon: <Database className="w-6 h-6" />, desc: t('statsSection.stat1Desc') },
+      { value: 5, suffix: '', label: t('statsSection.stat2Label'), icon: <Shield className="w-6 h-6" />, desc: t('statsSection.stat2Desc') },
+      { value: 15, suffix: 'x', label: t('statsSection.stat3Label'), icon: <AlertTriangle className="w-6 h-6" />, desc: t('statsSection.stat3Desc') },
+      { value: 8, suffix: '+', label: t('statsSection.stat4Label'), icon: <Calendar className="w-6 h-6" />, desc: t('statsSection.stat4Desc') }
     ];
     return rawStats.map(v => {
       if (v.value > 999) {
@@ -25,7 +26,7 @@ export default function StatsSection() {
       }
       return { ...v, decimal: +!Number.isInteger(v.value) }
     })
-  }, []);
+  }, [t]);
 
   return (
     <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
@@ -38,12 +39,12 @@ export default function StatsSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Performa Sistem</p>
+          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">{t('statsSection.eyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Angka yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+            {t('statsSection.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">{t('statsSection.titleHighlight')}</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Delapan tahun dedikasi dalam melindungi brand dan konsumen di Asia Pasifik.
+            {t('statsSection.subtitle')}
           </p>
         </motion.div>
 
