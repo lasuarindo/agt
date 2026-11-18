@@ -1,0 +1,264 @@
+{
+  "ui": {
+    "overviewLabel": "Overview",
+    "highlightsTitle": "Highlight Utama",
+    "featuresEyebrow": "Fitur Unggulan",
+    "featuresTitlePre": "Fitur",
+    "featuresTitleHighlight": "Detail",
+    "featuresSubtitle": "Setiap fitur dirancang khusus untuk memberikan proteksi maksimal bagi produk fashion Anda.",
+    "detailTech": "Detail Teknis",
+    "specsEyebrow": "Technical Specs",
+    "implementationEyebrow": "Implementation",
+    "industriesEyebrow": "Industri Fashion",
+    "benefitsEyebrow": "Benefits",
+    "galleryEyebrow": "Gallery",
+    "comingSoon": "Coming Soon",
+    "galleryNote": "* Gallery akan segera dilengkapi dengan foto produk asli dan dokumentasi implementasi",
+    "pricingBadge": "Pricing Plans",
+    "whatYouGet": "Yang Anda Dapatkan:",
+    "addonsTitle": "Layanan Tambahan (Add-ons)",
+    "addonsSubtitle": "Tingkatkan paket Anda dengan fitur tambahan sesuai kebutuhan",
+    "notePrefix": "*",
+    "customBadge": "Custom Solution",
+    "customQuote": "Request Custom Quote",
+    "processCustom": "Proses Custom",
+    "howWeWork": "Bagaimana Kami Bekerja",
+    "proposalDays": "Hari Kerja untuk Proposal",
+    "dedicatedSupport": "Dukungan Dedicated",
+    "consultFree": "Konsultasi Gratis",
+    "backToServices": "Kembali ke Services",
+    "relatedEyebrow": "Related Services",
+    "relatedTitlePre": "Layanan",
+    "relatedTitleHighlight": "Lainnya",
+    "relatedSubtitle": "Solusi marking lain yang tersedia atau sedang kami kembangkan untuk memenuhi berbagai kebutuhan brand Anda.",
+    "comingSoonNote": "Akan segera tersedia",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "relatedNotePrefix": "* Tertarik dengan solusi yang sedang dikembangkan?",
+    "relatedNoteContact": "Hubungi kami",
+    "relatedNoteSuffix": "untuk informasi lebih lanjut."
+  },
+  "data": {
+    "id": "tafeta",
+    "title": "Label Tafeta dengan QR",
+    "subtitle": "Fashion Solution",
+    "color": {
+      "primary": "gold",
+      "gradient": "from-[#8C6F3D] to-[#C5A059]",
+      "bg": "bg-[#E8D09E]/30",
+      "text": "text-[#8C6F3D]",
+      "border": "border-[#E8D09E]/40",
+      "dark": "from-[#8C6F3D] to-[#C5A059]"
+    },
+    "hero": {
+      "badge": "Fashion Solution",
+      "title": "Label Tafeta dengan QR Code",
+      "subtitle": "Solusi autentikasi khusus untuk industri fashion & tekstil",
+      "description": "Label tafeta premium dengan kode QR terintegrasi yang dirancang khusus untuk industri fashion. Menggabungkan estetika produk dengan keamanan maksimal, tanpa mengorbankan kenyamanan pemakai.",
+      "stats": [
+        { "value": "100%", "label": "Custom Design" },
+        { "value": "50x+", "label": "Tahan Cuci" },
+        { "value": "ISO", "label": "18004:2015" }
+      ]
+    },
+    "overview": {
+      "title": "Tentang Layanan Ini",
+      "description": [
+        "Label Tafeta dengan QR adalah solusi autentikasi khusus kami untuk industri fashion dan tekstil. Setiap label diproduksi dari material tafeta premium berkualitas tinggi, dilengkapi dengan kode QR yang dicetak menggunakan teknologi high-resolution printing dengan standar ISO/IEC 18004:2015.",
+        "Solusi ini dirancang untuk menjawab tantangan unik industri fashion: bagaimana memberikan proteksi maksimal terhadap produk dari pemalsuan, tanpa mengorbankan estetika, kenyamanan, dan nilai estetika produk. Label kami menyatu sempurna dengan desain produk, tahan terhadap pencucian berulang, dan tetap dapat diverifikasi dengan mudah oleh konsumen."
+      ],
+      "highlights": [
+        "Material tafeta premium berkualitas tinggi",
+        "Tahan hingga 50+ kali pencucian",
+        "QR code dengan printing high-resolution",
+        "Fully customizable sesuai brand identity",
+        "Nyaman dikenakan dan tidak mengganggu produk",
+        "Terintegrasi dengan database real-time AG"
+      ]
+    },
+    "features": [
+      {
+        "icon": "Shirt",
+        "title": "Material Tafeta Premium",
+        "description": "Dibuat dari material tafeta berkualitas tinggi yang lembut, tahan lama, dan nyaman dikenakan. Material ini telah diuji untuk memastikan ketahanan terhadap berbagai kondisi penggunaan produk fashion.",
+        "details": ["Material tafeta premium grade", "Lembut dan nyaman di kulit", "Tahan terhadap gesekan", "Tidak mudah luntur"]
+      },
+      {
+        "icon": "Droplet",
+        "title": "Ketahanan Cuci Superior",
+        "description": "Label dirancang untuk bertahan hingga 50+ kali pencucian tanpa degradasi kualitas. Teknologi printing khusus memastikan QR code tetap terbaca dengan jelas meski setelah pencucian berulang.",
+        "details": ["Tahan 50+ kali pencucian", "Water-resistant printing", "Warna tidak luntur", "QR tetap terbaca jelas"]
+      },
+      {
+        "icon": "QrCode",
+        "title": "QR Code High-Resolution",
+        "description": "QR code dicetak dengan teknologi high-resolution printing yang menghasilkan kode yang tajam, jelas, dan mudah discan. Memenuhi standar ISO/IEC 18004:2015 untuk interoperabilitas maksimal.",
+        "details": ["High-resolution printing", "ISO/IEC 18004:2015 standard", "Error correction Level Q (25%)", "Mudah discan smartphone"]
+      },
+      {
+        "icon": "Palette",
+        "title": "Fully Customizable Design",
+        "description": "Desain label fully customizable sesuai brand identity Anda. Mulai dari ukuran, bentuk, warna, hingga integrasi dengan logo dan elemen desain produk. Tim desain kami akan bekerja sama untuk menciptakan label yang sempurna.",
+        "details": ["Custom ukuran & bentuk", "Full color printing", "Integrasi logo brand", "Desain eksklusif per brand"]
+      }
+    ],
+    "specifications": {
+      "title": "Spesifikasi Teknis",
+      "items": [
+        { "label": "Material", "value": "Tafeta Premium Grade" },
+        { "label": "Standar QR Code", "value": "ISO/IEC 18004:2015" },
+        { "label": "Ukuran Label", "value": "Custom (2cm - 10cm)" },
+        { "label": "Ketahanan Cuci", "value": "50+ kali pencucian" },
+        { "label": "Teknologi Printing", "value": "High-Resolution" },
+        { "label": "Ketahanan Warna", "value": "Anti-Fade, Anti-Bleed" },
+        { "label": "Database Standard", "value": "ISO/IEC 27000:2016" },
+        { "label": "Error Correction", "value": "Level Q (25%)" },
+        { "label": "Response Time", "value": "< 100ms" },
+        { "label": "Verifikasi Limit", "value": "15x per code" }
+      ]
+    },
+    "implementation": {
+      "title": "Alur Implementasi",
+      "description": "Proses implementasi yang terstruktur untuk memastikan kualitas dan kesuksesan setiap proyek label fashion.",
+      "steps": [
+        { "num": "01", "title": "Konsultasi & Analisis", "description": "Diskusi mendalam untuk memahami kebutuhan spesifik brand fashion Anda, jenis produk, target pasar, dan tingkat keamanan yang dibutuhkan.", "duration": "1-2 hari", "icon": "Handshake" },
+        { "num": "02", "title": "Desain & Prototyping", "description": "Tim desain membuat mockup label sesuai brand identity dan karakteristik produk fashion. Prototype diproduksi untuk approval sebelum produksi massal.", "duration": "3-5 hari", "icon": "Lightbulb" },
+        { "num": "03", "title": "Produksi Kode AG", "description": "Sistem menghasilkan kode AG unik dengan algoritma 3 lapis, di-hash MD5, dan disimpan di cloud database berstandar ISO/IEC 27000:2016.", "duration": "1-2 hari", "icon": "Hash" },
+        { "num": "04", "title": "Produksi Label Tafeta", "description": "Label tafeta diproduksi dengan teknologi high-resolution printing, dilengkapi QR code dan fitur keamanan sesuai spesifikasi. Material diuji untuk ketahanan cuci.", "duration": "5-7 hari", "icon": "Shirt" },
+        { "num": "05", "title": "Quality Control", "description": "Pengecekan kualitas label dari kecacatan printing, ketahanan material, dan fungsi QR code. Label yang tidak lolos QC akan dimusnahkan dengan prosedur terstandar.", "duration": "1-2 hari", "icon": "FileCheck" },
+        { "num": "06", "title": "Pengiriman & Implementasi", "description": "Label dikirim ke klien dengan dokumentasi lengkap. Tim kami membantu proses aplikasi label pada produk fashion dan training penggunaan sistem.", "duration": "2-3 hari", "icon": "Package" }
+      ]
+    },
+    "useCases": {
+      "title": "Industri Fashion yang Cocok",
+      "description": "Solusi ini ideal untuk berbagai segmen industri fashion yang membutuhkan proteksi terhadap produk dari pemalsuan.",
+      "industries": [
+        { "icon": "Award", "name": "Fashion Premium & Designer", "description": "Brand fashion premium, designer lokal, dan label eksklusif yang rentan terhadap pemalsuan.", "examples": ["Tas Designer", "Pakaian Premium", "Aksesoris Fashion"] },
+        { "icon": "Shirt", "name": "Apparel & Clothing", "description": "Brand pakaian, kaos, jaket, dan produk apparel lainnya yang membutuhkan label autentikasi.", "examples": ["Kaos Branded", "Jaket", "Kemeja"] },
+        { "icon": "Tag", "name": "Footwear & Sneakers", "description": "Brand sepatu, sneakers, dan alas kaki yang sering menjadi target pemalsuan.", "examples": ["Sneakers Original", "Sepatu Branded", "Sandal Premium"] },
+        { "icon": "Scissors", "name": "Accessories & Textile", "description": "Produk aksesoris fashion, tekstil rumah tangga, dan produk tekstil lainnya.", "examples": ["Topi", "Syal", "Tekstil Rumah Tangga"] }
+      ]
+    },
+    "benefits": {
+      "title": "Keuntungan untuk Brand Fashion Anda",
+      "items": [
+        { "icon": "Shield", "title": "Proteksi Produk Fashion", "description": "Lapisan keamanan yang terintegrasi langsung dengan produk, sulit dipalsukan tanpa merusak estetika." },
+        { "icon": "Users", "title": "Meningkatkan Kepercayaan Konsumen", "description": "Konsumen dapat memverifikasi keaslian produk fashion dengan mudah via smartphone sebelum membeli." },
+        { "icon": "TrendingUp", "title": "ROI Tinggi untuk Brand Fashion", "description": "Penurunan produk palsu dan peningkatan penjualan produk asli secara signifikan." },
+        { "icon": "Eye", "title": "Monitoring Aktivitas Verifikasi", "description": "Pencatatan aktivitas verifikasi untuk analisis pola pembelian dan deteksi anomali." },
+        { "icon": "Globe", "title": "Standar Internasional", "description": "Menggunakan standar ISO/IEC 18004:2015 dan ISO/IEC 27000:2016 yang diakui global." },
+        { "icon": "Target", "title": "Fully Customizable", "description": "Desain label fully customizable sesuai brand identity dan karakteristik produk fashion Anda." }
+      ]
+    },
+    "gallery": {
+      "title": "Visual Preview",
+      "description": "Contoh visual produk fashion dengan label tafeta QR (dokumentasi akan segera dilengkapi)",
+      "items": [
+        { "title": "Label Tafeta Premium", "description": "Contoh label tafeta dengan QR code terintegrasi" },
+        { "title": "Aplikasi pada Pakaian", "description": "Label diaplikasikan pada produk fashion" },
+        { "title": "Verifikasi via Smartphone", "description": "Konsumen memverifikasi produk fashion dengan scan QR" },
+        { "title": "Monitoring Aktivitas", "description": "Pencatatan aktivitas verifikasi real-time" }
+      ]
+    },
+    "faq": {
+      "title": "Pertanyaan Umum",
+      "items": [
+        { "q": "Berapa minimum order untuk label tafeta?", "a": "Minimum order quantity (MOQ) bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi langsung." },
+        { "q": "Berapa lama waktu produksi label tafeta?", "a": "Waktu produksi standar adalah ±14 hari kerja setelah desain di-approve, sesuai dengan ketentuan layanan kami. Untuk kebutuhan khusus, timeline dapat didiskusikan lebih lanjut dengan tim kami." },
+        { "q": "Apakah label tafeta tahan terhadap pencucian?", "a": "Ya, label tafeta kami dirancang untuk bertahan hingga 50+ kali pencucian tanpa degradasi kualitas. Material dan teknologi printing khusus memastikan QR code tetap terbaca dengan jelas." },
+        { "q": "Apakah desain label bisa fully custom?", "a": "Tentu! Tim desain kami akan bekerja sama dengan Anda untuk membuat label custom sesuai brand identity. Mulai dari ukuran, bentuk, warna, hingga integrasi dengan logo dan elemen desain produk fashion." },
+        { "q": "Bagaimana jika ada label yang cacat produksi?", "a": "Kami akan mengkompensasi label baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti." },
+        { "q": "Apakah label nyaman dikenakan?", "a": "Ya, material tafeta premium kami sangat lembut dan nyaman di kulit. Label dirancang untuk tidak mengganggu kenyamanan pemakai produk fashion, bahkan untuk produk yang bersentuhan langsung dengan kulit." },
+        { "q": "Apakah ada solusi lain selain label tafeta?", "a": "Ya, kami juga menyediakan Hologram dengan QR untuk berbagai industri. Untuk solusi teknologi lainnya seperti NFC, saat ini masih dalam tahap penelitian dan pengembangan. Silakan hubungi tim kami untuk informasi lebih lanjut." }
+      ]
+    },
+    "pricing": {
+      "title": "Paket & Investasi",
+      "description": "Setiap proyek fashion memiliki kebutuhan yang unik. Kami menawarkan solusi fleksibel yang disesuaikan dengan skala brand, volume produksi, dan tingkat keamanan yang Anda butuhkan.",
+      "note": "Harga final akan diberikan setelah konsultasi dan analisis kebutuhan. Semua penawaran belum termasuk PPN.",
+      "packages": [
+        {
+          "name": "Starter",
+          "description": "Untuk brand fashion emerging yang baru memulai proteksi produk",
+          "price": "Custom",
+          "priceNote": "Sesuai kebutuhan",
+          "popular": false,
+          "features": [
+            { "text": "Volume produksi disesuaikan", "included": true },
+            { "text": "Desain label standar", "included": true },
+            { "text": "QR code dengan database real-time", "included": true },
+            { "text": "Verifikasi via web browser", "included": true },
+            { "text": "Basic activity logging", "included": true },
+            { "text": "Email support (jam kerja)", "included": true },
+            { "text": "Custom design", "included": false },
+            { "text": "API integration", "included": false },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Mulai Konsultasi",
+          "highlight": "Cocok untuk Brand Emerging"
+        },
+        {
+          "name": "Business",
+          "description": "Untuk brand fashion menengah yang membutuhkan solusi lebih komprehensif",
+          "price": "Custom",
+          "priceNote": "Sesuai kebutuhan",
+          "popular": true,
+          "features": [
+            { "text": "Volume produksi menengah-besar", "included": true },
+            { "text": "Custom design label unlimited", "included": true },
+            { "text": "QR code + Material premium", "included": true },
+            { "text": "Verifikasi via web & mobile", "included": true },
+            { "text": "Advanced activity analytics", "included": true },
+            { "text": "Priority support", "included": true },
+            { "text": "Basic API integration", "included": true },
+            { "text": "Monthly performance report", "included": true },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Pilih Paket Ini",
+          "highlight": "Paling Populer"
+        },
+        {
+          "name": "Enterprise",
+          "description": "Untuk brand fashion besar dengan kebutuhan khusus",
+          "price": "Custom",
+          "priceNote": "Sesuai kebutuhan",
+          "popular": false,
+          "features": [
+            { "text": "Volume produksi besar", "included": true },
+            { "text": "Full customization label & material", "included": true },
+            { "text": "Multi-layer security", "included": true },
+            { "text": "Enterprise analytics & reporting", "included": true },
+            { "text": "Dedicated support + SLA", "included": true },
+            { "text": "Custom MOQ sesuai kebutuhan", "included": true },
+            { "text": "Full API integration", "included": true },
+            { "text": "Dedicated account manager", "included": true },
+            { "text": "On-site training & implementation", "included": true }
+          ],
+          "cta": "Hubungi Sales",
+          "highlight": "Solusi Premium"
+        }
+      ],
+      "addons": [
+        { "title": "Desain Label Custom", "description": "Desain label eksklusif sesuai brand identity fashion Anda", "price": "Harga bervariasi", "icon": "Palette" },
+        { "title": "Material Premium Upgrade", "description": "Upgrade ke material tafeta grade tertinggi untuk produk luxury", "price": "Harga bervariasi", "icon": "Shirt" },
+        { "title": "White-Label Mobile App", "description": "Aplikasi verifikasi dengan branding perusahaan fashion Anda", "price": "Harga bervariasi", "icon": "Smartphone" }
+      ]
+    },
+    "customSolution": {
+      "title": "Butuh Solusi yang Benar-Benar Custom?",
+      "description": "Kami memahami bahwa setiap brand fashion memiliki kebutuhan unik. Tim kami siap merancang solusi autentikasi yang disesuaikan 100% dengan kebutuhan bisnis fashion Anda.",
+      "features": [
+        { "icon": "Target", "title": "Custom Security Level", "desc": "Tentukan sendiri tingkat keamanan sesuai risiko produk fashion Anda" },
+        { "icon": "Palette", "title": "Full Brand Integration", "desc": "Integrasi penuh dengan brand identity dan packaging fashion Anda" },
+        { "icon": "Boxes", "title": "Volume Flexibility", "desc": "Penyesuaian volume produksi sesuai kebutuhan musiman fashion" },
+        { "icon": "Globe", "title": "Multi-Region Support", "desc": "Dukungan untuk distribusi fashion di berbagai wilayah" }
+      ],
+      "process": [
+        "Konsultasi mendalam dengan tim expert kami",
+        "Analisis kebutuhan & risk assessment",
+        "Proposal solusi custom dalam 3-5 hari kerja",
+        "Prototyping & testing material",
+        "Implementasi & monitoring berkelanjutan"
+      ]
+    }
+  }
+}

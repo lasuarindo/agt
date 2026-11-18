@@ -1,0 +1,264 @@
+{
+  "ui": {
+    "overviewLabel": "Overview",
+    "highlightsTitle": "Key Highlights",
+    "featuresEyebrow": "Featured Capabilities",
+    "featuresTitlePre": "Feature",
+    "featuresTitleHighlight": "Details",
+    "featuresSubtitle": "Every feature is specifically designed to provide maximum protection for your fashion products.",
+    "detailTech": "Technical Details",
+    "specsEyebrow": "Technical Specs",
+    "implementationEyebrow": "Implementation",
+    "industriesEyebrow": "Fashion Industries",
+    "benefitsEyebrow": "Benefits",
+    "galleryEyebrow": "Gallery",
+    "comingSoon": "Coming Soon",
+    "galleryNote": "* Gallery will be updated with real product photos and implementation documentation soon",
+    "pricingBadge": "Pricing Plans",
+    "whatYouGet": "What You Get:",
+    "addonsTitle": "Add-ons",
+    "addonsSubtitle": "Enhance your package with additional features tailored to your needs",
+    "notePrefix": "*",
+    "customBadge": "Custom Solution",
+    "customQuote": "Request Custom Quote",
+    "processCustom": "Custom Process",
+    "howWeWork": "How We Work",
+    "proposalDays": "Business Days for Proposal",
+    "dedicatedSupport": "Dedicated Support",
+    "consultFree": "Free Consultation",
+    "backToServices": "Back to Services",
+    "relatedEyebrow": "Related Services",
+    "relatedTitlePre": "Other",
+    "relatedTitleHighlight": "Services",
+    "relatedSubtitle": "Other marking solutions available or under development to meet your brand's various needs.",
+    "comingSoonNote": "Coming soon",
+    "learnMore": "Learn More",
+    "relatedNotePrefix": "* Interested in solutions under development?",
+    "relatedNoteContact": "Contact us",
+    "relatedNoteSuffix": "for more information."
+  },
+  "data": {
+    "id": "tafeta",
+    "title": "Tafeta Label with QR",
+    "subtitle": "Fashion Solution",
+    "color": {
+      "primary": "gold",
+      "gradient": "from-[#8C6F3D] to-[#C5A059]",
+      "bg": "bg-[#E8D09E]/30",
+      "text": "text-[#8C6F3D]",
+      "border": "border-[#E8D09E]/40",
+      "dark": "from-[#8C6F3D] to-[#C5A059]"
+    },
+    "hero": {
+      "badge": "Fashion Solution",
+      "title": "Tafeta Label with QR Code",
+      "subtitle": "Authentication solution specifically for the fashion & textile industry",
+      "description": "Premium tafeta label with an integrated QR code designed specifically for the fashion industry. Combining product aesthetics with maximum security, without compromising wearer comfort.",
+      "stats": [
+        { "value": "100%", "label": "Custom Design" },
+        { "value": "50x+", "label": "Wash Resistant" },
+        { "value": "ISO", "label": "18004:2015" }
+      ]
+    },
+    "overview": {
+      "title": "About This Service",
+      "description": [
+        "Tafeta Label with QR is our authentication solution specifically for the fashion and textile industry. Each label is produced from high-quality premium tafeta material, equipped with a QR code printed using high-resolution printing technology compliant with ISO/IEC 18004:2015.",
+        "This solution is designed to address the fashion industry's unique challenge: how to provide maximum protection against counterfeiting without compromising aesthetics, comfort, and product appeal. Our labels blend seamlessly with product design, withstand repeated washing, and remain easily verifiable by consumers."
+      ],
+      "highlights": [
+        "High-quality premium tafeta material",
+        "Withstands 50+ washes",
+        "QR code with high-resolution printing",
+        "Fully customizable to brand identity",
+        "Comfortable to wear and non-intrusive",
+        "Integrated with AG real-time database"
+      ]
+    },
+    "features": [
+      {
+        "icon": "Shirt",
+        "title": "Premium Tafeta Material",
+        "description": "Made from high-quality tafeta material that is soft, durable, and comfortable to wear. This material has been tested to ensure resistance to various fashion product use conditions.",
+        "details": ["Premium grade tafeta material", "Soft and comfortable on skin", "Resistant to friction", "Fade resistant"]
+      },
+      {
+        "icon": "Droplet",
+        "title": "Superior Wash Resistance",
+        "description": "Labels are designed to withstand 50+ washes without quality degradation. Special printing technology ensures the QR code remains clearly readable even after repeated washing.",
+        "details": ["Withstands 50+ washes", "Water-resistant printing", "Fade-resistant colors", "QR remains clearly readable"]
+      },
+      {
+        "icon": "QrCode",
+        "title": "High-Resolution QR Code",
+        "description": "QR code printed with high-resolution printing technology producing sharp, clear, and easy-to-scan codes. Compliant with ISO/IEC 18004:2015 for maximum interoperability.",
+        "details": ["High-resolution printing", "ISO/IEC 18004:2015 standard", "Error correction Level Q (25%)", "Easy to scan via smartphone"]
+      },
+      {
+        "icon": "Palette",
+        "title": "Fully Customizable Design",
+        "description": "Label design is fully customizable to your brand identity. From size, shape, color, to integration with your logo and product design elements. Our design team will work together to create the perfect label.",
+        "details": ["Custom size & shape", "Full color printing", "Brand logo integration", "Exclusive design per brand"]
+      }
+    ],
+    "specifications": {
+      "title": "Technical Specifications",
+      "items": [
+        { "label": "Material", "value": "Premium Grade Tafeta" },
+        { "label": "QR Code Standard", "value": "ISO/IEC 18004:2015" },
+        { "label": "Label Size", "value": "Custom (2cm - 10cm)" },
+        { "label": "Wash Resistance", "value": "50+ washes" },
+        { "label": "Printing Technology", "value": "High-Resolution" },
+        { "label": "Color Resistance", "value": "Anti-Fade, Anti-Bleed" },
+        { "label": "Database Standard", "value": "ISO/IEC 27000:2016" },
+        { "label": "Error Correction", "value": "Level Q (25%)" },
+        { "label": "Response Time", "value": "< 100ms" },
+        { "label": "Verification Limit", "value": "15x per code" }
+      ]
+    },
+    "implementation": {
+      "title": "Implementation Flow",
+      "description": "A structured implementation process to ensure the quality and success of every fashion label project.",
+      "steps": [
+        { "num": "01", "title": "Consultation & Analysis", "description": "In-depth discussion to understand your fashion brand's specific needs, product type, target market, and required security level.", "duration": "1-2 days", "icon": "Handshake" },
+        { "num": "02", "title": "Design & Prototyping", "description": "Our design team creates label mockups according to brand identity and fashion product characteristics. A prototype is produced for approval before mass production.", "duration": "3-5 days", "icon": "Lightbulb" },
+        { "num": "03", "title": "AG Code Production", "description": "The system generates unique AG codes with a 3-layer algorithm, MD5-hashed, and stored in an ISO/IEC 27000:2016-compliant cloud database.", "duration": "1-2 days", "icon": "Hash" },
+        { "num": "04", "title": "Tafeta Label Production", "description": "Tafeta labels are produced with high-resolution printing technology, equipped with QR codes and security features per specification. Material is tested for wash resistance.", "duration": "5-7 days", "icon": "Shirt" },
+        { "num": "05", "title": "Quality Control", "description": "Quality checking of labels for printing defects, material resistance, and QR code function. Labels that fail QC are destroyed with standard procedures.", "duration": "1-2 days", "icon": "FileCheck" },
+        { "num": "06", "title": "Delivery & Implementation", "description": "Labels are shipped to clients with complete documentation. Our team assists with label application on fashion products and system usage training.", "duration": "2-3 days", "icon": "Package" }
+      ]
+    },
+    "useCases": {
+      "title": "Suitable Fashion Industries",
+      "description": "This solution is ideal for various fashion industry segments requiring product protection against counterfeiting.",
+      "industries": [
+        { "icon": "Award", "name": "Premium & Designer Fashion", "description": "Premium fashion brands, local designers, and exclusive labels vulnerable to counterfeiting.", "examples": ["Designer Bags", "Premium Clothing", "Fashion Accessories"] },
+        { "icon": "Shirt", "name": "Apparel & Clothing", "description": "Clothing brands, t-shirts, jackets, and other apparel products requiring authentication labels.", "examples": ["Branded T-shirts", "Jackets", "Shirts"] },
+        { "icon": "Tag", "name": "Footwear & Sneakers", "description": "Shoe, sneaker, and footwear brands that are often counterfeiting targets.", "examples": ["Original Sneakers", "Branded Shoes", "Premium Sandals"] },
+        { "icon": "Scissors", "name": "Accessories & Textile", "description": "Fashion accessory products, household textiles, and other textile products.", "examples": ["Hats", "Scarves", "Household Textiles"] }
+      ]
+    },
+    "benefits": {
+      "title": "Benefits for Your Fashion Brand",
+      "items": [
+        { "icon": "Shield", "title": "Fashion Product Protection", "description": "Security layer integrated directly with the product, hard to counterfeit without ruining aesthetics." },
+        { "icon": "Users", "title": "Increased Consumer Trust", "description": "Consumers can easily verify fashion product authenticity via smartphone before buying." },
+        { "icon": "TrendingUp", "title": "High ROI for Fashion Brands", "description": "Significant reduction in counterfeit products and increase in genuine product sales." },
+        { "icon": "Eye", "title": "Verification Activity Monitoring", "description": "Verification activity logging for purchase pattern analysis and anomaly detection." },
+        { "icon": "Globe", "title": "International Standards", "description": "Uses globally recognized ISO/IEC 18004:2015 and ISO/IEC 27000:2016 standards." },
+        { "icon": "Target", "title": "Fully Customizable", "description": "Label design is fully customizable to your brand identity and fashion product characteristics." }
+      ]
+    },
+    "gallery": {
+      "title": "Visual Preview",
+      "description": "Fashion product visual examples with tafeta QR labels (documentation coming soon)",
+      "items": [
+        { "title": "Premium Tafeta Label", "description": "Example tafeta label with integrated QR code" },
+        { "title": "Clothing Application", "description": "Label applied to fashion products" },
+        { "title": "Verification via Smartphone", "description": "Consumers verify fashion products by scanning the QR" },
+        { "title": "Activity Monitoring", "description": "Real-time verification activity logging" }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        { "q": "What is the minimum order for tafeta labels?", "a": "Minimum order quantity (MOQ) varies depending on design complexity and label size. For detailed information and the best quote, please contact our sales team for a direct consultation." },
+        { "q": "How long is the tafeta label production time?", "a": "Standard production time is ±14 business days after design approval, in accordance with our service terms. For special needs, the timeline can be discussed further with our team." },
+        { "q": "Are tafeta labels resistant to washing?", "a": "Yes, our tafeta labels are designed to withstand 50+ washes without quality degradation. Material and special printing technology ensure the QR code remains clearly readable." },
+        { "q": "Can the label design be fully custom?", "a": "Absolutely! Our design team will work with you to create a custom label according to your brand identity. From size, shape, color, to integration with your logo and fashion product design elements." },
+        { "q": "What if there are production-defective labels?", "a": "We will compensate with new labels for defects up to 2.5% of total production. Defective code reports are submitted monthly by the client with a notification letter and evidence." },
+        { "q": "Are the labels comfortable to wear?", "a": "Yes, our premium tafeta material is very soft and comfortable on the skin. Labels are designed not to interfere with the wearer's comfort, even for products in direct contact with skin." },
+        { "q": "Are there solutions other than tafeta labels?", "a": "Yes, we also provide Hologram with QR for various industries. For other technology solutions such as NFC, currently still in the research and development stage. Please contact our team for more information." }
+      ]
+    },
+    "pricing": {
+      "title": "Packages & Investment",
+      "description": "Every fashion project has unique needs. We offer flexible solutions tailored to your brand scale, production volume, and required security level.",
+      "note": "Final pricing will be provided after consultation and needs analysis. All quotes exclude VAT.",
+      "packages": [
+        {
+          "name": "Starter",
+          "description": "For emerging fashion brands starting product protection",
+          "price": "Custom",
+          "priceNote": "Tailored to needs",
+          "popular": false,
+          "features": [
+            { "text": "Adjustable production volume", "included": true },
+            { "text": "Standard label design", "included": true },
+            { "text": "QR code with real-time database", "included": true },
+            { "text": "Verification via web browser", "included": true },
+            { "text": "Basic activity logging", "included": true },
+            { "text": "Email support (business hours)", "included": true },
+            { "text": "Custom design", "included": false },
+            { "text": "API integration", "included": false },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Start Consultation",
+          "highlight": "Suitable for Emerging Brands"
+        },
+        {
+          "name": "Business",
+          "description": "For mid-sized fashion brands needing a more comprehensive solution",
+          "price": "Custom",
+          "priceNote": "Tailored to needs",
+          "popular": true,
+          "features": [
+            { "text": "Medium-large production volume", "included": true },
+            { "text": "Unlimited custom label design", "included": true },
+            { "text": "QR code + Premium material", "included": true },
+            { "text": "Verification via web & mobile", "included": true },
+            { "text": "Advanced activity analytics", "included": true },
+            { "text": "Priority support", "included": true },
+            { "text": "Basic API integration", "included": true },
+            { "text": "Monthly performance report", "included": true },
+            { "text": "Dedicated account manager", "included": false }
+          ],
+          "cta": "Choose This Package",
+          "highlight": "Most Popular"
+        },
+        {
+          "name": "Enterprise",
+          "description": "For large fashion brands with special needs",
+          "price": "Custom",
+          "priceNote": "Tailored to needs",
+          "popular": false,
+          "features": [
+            { "text": "Large production volume", "included": true },
+            { "text": "Full label & material customization", "included": true },
+            { "text": "Multi-layer security", "included": true },
+            { "text": "Enterprise analytics & reporting", "included": true },
+            { "text": "Dedicated support + SLA", "included": true },
+            { "text": "Custom MOQ per needs", "included": true },
+            { "text": "Full API integration", "included": true },
+            { "text": "Dedicated account manager", "included": true },
+            { "text": "On-site training & implementation", "included": true }
+          ],
+          "cta": "Contact Sales",
+          "highlight": "Premium Solution"
+        }
+      ],
+      "addons": [
+        { "title": "Custom Label Design", "description": "Exclusive label design according to your fashion brand identity", "price": "Variable pricing", "icon": "Palette" },
+        { "title": "Premium Material Upgrade", "description": "Upgrade to the highest grade tafeta material for luxury products", "price": "Variable pricing", "icon": "Shirt" },
+        { "title": "White-Label Mobile App", "description": "Verification app with your fashion company branding", "price": "Variable pricing", "icon": "Smartphone" }
+      ]
+    },
+    "customSolution": {
+      "title": "Need a Truly Custom Solution?",
+      "description": "We understand that every fashion brand has unique needs. Our team is ready to design an authentication solution 100% tailored to your fashion business needs.",
+      "features": [
+        { "icon": "Target", "title": "Custom Security Level", "desc": "Define your own security level according to your fashion product risk" },
+        { "icon": "Palette", "title": "Full Brand Integration", "desc": "Full integration with your fashion brand identity and packaging" },
+        { "icon": "Boxes", "title": "Volume Flexibility", "desc": "Production volume adjustments for seasonal fashion needs" },
+        { "icon": "Globe", "title": "Multi-Region Support", "desc": "Support for fashion distribution across various regions" }
+      ],
+      "process": [
+        "In-depth consultation with our expert team",
+        "Needs analysis & risk assessment",
+        "Custom solution proposal within 3-5 business days",
+        "Material prototyping & testing",
+        "Implementation & ongoing monitoring"
+      ]
+    }
+  }
+}

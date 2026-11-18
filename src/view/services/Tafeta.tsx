@@ -1,5 +1,7 @@
+import React, { useState } from 'react'
 import { Link, useParams, Navigate } from 'react-router'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import {
   ArrowRight,
   ArrowLeft,
@@ -51,406 +53,16 @@ import {
   Droplet,
   Wind
 } from 'lucide-react'
+import AboutJoinUsCTA from '@/components/AboutJoinUs'
 
-// ============================================================================
-// SERVICE DATA - Label Tafeta dengan QR
-// Disesuaikan dengan kondisi riil layanan Authentic Guards untuk fashion
-// ============================================================================
-const TAFETA_SERVICE_DATA = {
-  id: 'tafeta',
-  title: 'Label Tafeta dengan QR',
-  subtitle: 'Fashion Solution',
-  tagline: 'Autentikasi premium untuk industri fashion & tekstil',
-  color: {
-    primary: 'gold',
-    gradient: 'from-[#8C6F3D] to-[#C5A059]',
-    bg: 'bg-[#E8D09E]/30',
-    text: 'text-[#8C6F3D]',
-    border: 'border-[#E8D09E]/40',
-    dark: 'from-[#8C6F3D] to-[#C5A059]'
-  },
-  hero: {
-    badge: 'Fashion Solution',
-    title: 'Label Tafeta dengan QR Code',
-    subtitle: 'Solusi autentikasi khusus untuk industri fashion & tekstil',
-    description: 'Label tafeta premium dengan kode QR terintegrasi yang dirancang khusus untuk industri fashion. Menggabungkan estetika produk dengan keamanan maksimal, tanpa mengorbankan kenyamanan pemakai.',
-    stats: [
-      { value: '100%', label: 'Custom Design' },
-      { value: '50x+', label: 'Tahan Cuci' },
-      { value: 'ISO', label: '18004:2015' }
-    ]
-  },
-  overview: {
-    title: 'Tentang Layanan Ini',
-    description: [
-      'Label Tafeta dengan QR adalah solusi autentikasi khusus kami untuk industri fashion dan tekstil. Setiap label diproduksi dari material tafeta premium berkualitas tinggi, dilengkapi dengan kode QR yang dicetak menggunakan teknologi high-resolution printing dengan standar ISO/IEC 18004:2015.',
-      'Solusi ini dirancang untuk menjawab tantangan unik industri fashion: bagaimana memberikan proteksi maksimal terhadap produk dari pemalsuan, tanpa mengorbankan estetika, kenyamanan, dan nilai estetika produk. Label kami menyatu sempurna dengan desain produk, tahan terhadap pencucian berulang, dan tetap dapat diverifikasi dengan mudah oleh konsumen.'
-    ],
-    highlights: [
-      'Material tafeta premium berkualitas tinggi',
-      'Tahan hingga 50+ kali pencucian',
-      'QR code dengan printing high-resolution',
-      'Fully customizable sesuai brand identity',
-      'Nyaman dikenakan dan tidak mengganggu produk',
-      'Terintegrasi dengan database real-time AG'
-    ]
-  },
-  features: [
-    {
-      icon: 'Shirt',
-      title: 'Material Tafeta Premium',
-      description: 'Dibuat dari material tafeta berkualitas tinggi yang lembut, tahan lama, dan nyaman dikenakan. Material ini telah diuji untuk memastikan ketahanan terhadap berbagai kondisi penggunaan produk fashion.',
-      details: [
-        'Material tafeta premium grade',
-        'Lembut dan nyaman di kulit',
-        'Tahan terhadap gesekan',
-        'Tidak mudah luntur'
-      ]
-    },
-    {
-      icon: 'Droplet',
-      title: 'Ketahanan Cuci Superior',
-      description: 'Label dirancang untuk bertahan hingga 50+ kali pencucian tanpa degradasi kualitas. Teknologi printing khusus memastikan QR code tetap terbaca dengan jelas meski setelah pencucian berulang.',
-      details: [
-        'Tahan 50+ kali pencucian',
-        'Water-resistant printing',
-        'Warna tidak luntur',
-        'QR tetap terbaca jelas'
-      ]
-    },
-    {
-      icon: 'QrCode',
-      title: 'QR Code High-Resolution',
-      description: 'QR code dicetak dengan teknologi high-resolution printing yang menghasilkan kode yang tajam, jelas, dan mudah discan. Memenuhi standar ISO/IEC 18004:2015 untuk interoperabilitas maksimal.',
-      details: [
-        'High-resolution printing',
-        'ISO/IEC 18004:2015 standard',
-        'Error correction Level Q (25%)',
-        'Mudah discan smartphone'
-      ]
-    },
-    {
-      icon: 'Palette',
-      title: 'Fully Customizable Design',
-      description: 'Desain label fully customizable sesuai brand identity Anda. Mulai dari ukuran, bentuk, warna, hingga integrasi dengan logo dan elemen desain produk. Tim desain kami akan bekerja sama untuk menciptakan label yang sempurna.',
-      details: [
-        'Custom ukuran & bentuk',
-        'Full color printing',
-        'Integrasi logo brand',
-        'Desain eksklusif per brand'
-      ]
-    }
-  ],
-  specifications: {
-    title: 'Spesifikasi Teknis',
-    items: [
-      { label: 'Material', value: 'Tafeta Premium Grade' },
-      { label: 'Standar QR Code', value: 'ISO/IEC 18004:2015' },
-      { label: 'Ukuran Label', value: 'Custom (2cm - 10cm)' },
-      { label: 'Ketahanan Cuci', value: '50+ kali pencucian' },
-      { label: 'Teknologi Printing', value: 'High-Resolution' },
-      { label: 'Ketahanan Warna', value: 'Anti-Fade, Anti-Bleed' },
-      { label: 'Database Standard', value: 'ISO/IEC 27000:2016' },
-      { label: 'Error Correction', value: 'Level Q (25%)' },
-      { label: 'Response Time', value: '< 100ms' },
-      { label: 'Verifikasi Limit', value: '15x per code' }
-    ]
-  },
-  implementation: {
-    title: 'Alur Implementasi',
-    description: 'Proses implementasi yang terstruktur untuk memastikan kualitas dan kesuksesan setiap proyek label fashion.',
-    steps: [
-      {
-        num: '01',
-        title: 'Konsultasi & Analisis',
-        description: 'Diskusi mendalam untuk memahami kebutuhan spesifik brand fashion Anda, jenis produk, target pasar, dan tingkat keamanan yang dibutuhkan.',
-        duration: '1-2 hari',
-        icon: 'Handshake'
-      },
-      {
-        num: '02',
-        title: 'Desain & Prototyping',
-        description: 'Tim desain membuat mockup label sesuai brand identity dan karakteristik produk fashion. Prototype diproduksi untuk approval sebelum produksi massal.',
-        duration: '3-5 hari',
-        icon: 'Lightbulb'
-      },
-      {
-        num: '03',
-        title: 'Produksi Kode AG',
-        description: 'Sistem menghasilkan kode AG unik dengan algoritma 3 lapis, di-hash MD5, dan disimpan di cloud database berstandar ISO/IEC 27000:2016.',
-        duration: '1-2 hari',
-        icon: 'Hash'
-      },
-      {
-        num: '04',
-        title: 'Produksi Label Tafeta',
-        description: 'Label tafeta diproduksi dengan teknologi high-resolution printing, dilengkapi QR code dan fitur keamanan sesuai spesifikasi. Material diuji untuk ketahanan cuci.',
-        duration: '5-7 hari',
-        icon: 'Shirt'
-      },
-      {
-        num: '05',
-        title: 'Quality Control',
-        description: 'Pengecekan kualitas label dari kecacatan printing, ketahanan material, dan fungsi QR code. Label yang tidak lolos QC akan dimusnahkan dengan prosedur terstandar.',
-        duration: '1-2 hari',
-        icon: 'FileCheck'
-      },
-      {
-        num: '06',
-        title: 'Pengiriman & Implementasi',
-        description: 'Label dikirim ke klien dengan dokumentasi lengkap. Tim kami membantu proses aplikasi label pada produk fashion dan training penggunaan sistem.',
-        duration: '2-3 hari',
-        icon: 'Package'
-      }
-    ]
-  },
-  useCases: {
-    title: 'Industri Fashion yang Cocok',
-    description: 'Solusi ini ideal untuk berbagai segmen industri fashion yang membutuhkan proteksi terhadap produk dari pemalsuan.',
-    industries: [
-      {
-        icon: 'Award',
-        name: 'Fashion Premium & Designer',
-        description: 'Brand fashion premium, designer lokal, dan label eksklusif yang rentan terhadap pemalsuan.',
-        examples: ['Tas Designer', 'Pakaian Premium', 'Aksesoris Fashion']
-      },
-      {
-        icon: 'Shirt',
-        name: 'Apparel & Clothing',
-        description: 'Brand pakaian, kaos, jaket, dan produk apparel lainnya yang membutuhkan label autentikasi.',
-        examples: ['Kaos Branded', 'Jaket', 'Kemeja']
-      },
-      {
-        icon: 'Tag',
-        name: 'Footwear & Sneakers',
-        description: 'Brand sepatu, sneakers, dan alas kaki yang sering menjadi target pemalsuan.',
-        examples: ['Sneakers Original', 'Sepatu Branded', 'Sandal Premium']
-      },
-      {
-        icon: 'Scissors',
-        name: 'Accessories & Textile',
-        description: 'Produk aksesoris fashion, tekstil rumah tangga, dan produk tekstil lainnya.',
-        examples: ['Topi', 'Syal', 'Tekstil Rumah Tangga']
-      }
-    ]
-  },
-  benefits: {
-    title: 'Keuntungan untuk Brand Fashion Anda',
-    items: [
-      {
-        icon: 'Shield',
-        title: 'Proteksi Produk Fashion',
-        description: 'Lapisan keamanan yang terintegrasi langsung dengan produk, sulit dipalsukan tanpa merusak estetika.'
-      },
-      {
-        icon: 'Users',
-        title: 'Meningkatkan Kepercayaan Konsumen',
-        description: 'Konsumen dapat memverifikasi keaslian produk fashion dengan mudah via smartphone sebelum membeli.'
-      },
-      {
-        icon: 'TrendingUp',
-        title: 'ROI Tinggi untuk Brand Fashion',
-        description: 'Penurunan produk palsu dan peningkatan penjualan produk asli secara signifikan.'
-      },
-      {
-        icon: 'Eye',
-        title: 'Monitoring Aktivitas Verifikasi',
-        description: 'Pencatatan aktivitas verifikasi untuk analisis pola pembelian dan deteksi anomali.'
-      },
-      {
-        icon: 'Globe',
-        title: 'Standar Internasional',
-        description: 'Menggunakan standar ISO/IEC 18004:2015 dan ISO/IEC 27000:2016 yang diakui global.'
-      },
-      {
-        icon: 'Target',
-        title: 'Fully Customizable',
-        description: 'Desain label fully customizable sesuai brand identity dan karakteristik produk fashion Anda.'
-      }
-    ]
-  },
-  gallery: {
-    title: 'Visual Preview',
-    description: 'Contoh visual produk fashion dengan label tafeta QR (dokumentasi akan segera dilengkapi)',
-    items: [
-      { title: 'Label Tafeta Premium', description: 'Contoh label tafeta dengan QR code terintegrasi', placeholder: <Tags className='w-12 h-12 opacity-60' /> },
-      { title: 'Aplikasi pada Pakaian', description: 'Label diaplikasikan pada produk fashion', placeholder: <Shirt className='w-12 h-12 opacity-60' /> },
-      { title: 'Verifikasi via Smartphone', description: 'Konsumen memverifikasi produk fashion dengan scan QR', placeholder: <Smartphone className='w-12 h-12 opacity-60' /> },
-      { title: 'Monitoring Aktivitas', description: 'Pencatatan aktivitas verifikasi real-time', placeholder: <ChartColumn className='w-12 h-12 opacity-60' /> }
-    ]
-  },
-  faq: {
-    title: 'Pertanyaan Umum',
-    items: [
-      {
-        q: 'Berapa minimum order untuk label tafeta?',
-        a: 'Minimum order quantity (MOQ) bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi langsung.'
-      },
-      {
-        q: 'Berapa lama waktu produksi label tafeta?',
-        a: 'Waktu produksi standar adalah ±14 hari kerja setelah desain di-approve, sesuai dengan ketentuan layanan kami. Untuk kebutuhan khusus, timeline dapat didiskusikan lebih lanjut dengan tim kami.'
-      },
-      {
-        q: 'Apakah label tafeta tahan terhadap pencucian?',
-        a: 'Ya, label tafeta kami dirancang untuk bertahan hingga 50+ kali pencucian tanpa degradasi kualitas. Material dan teknologi printing khusus memastikan QR code tetap terbaca dengan jelas.'
-      },
-      {
-        q: 'Apakah desain label bisa fully custom?',
-        a: 'Tentu! Tim desain kami akan bekerja sama dengan Anda untuk membuat label custom sesuai brand identity. Mulai dari ukuran, bentuk, warna, hingga integrasi dengan logo dan elemen desain produk fashion.'
-      },
-      {
-        q: 'Bagaimana jika ada label yang cacat produksi?',
-        a: 'Kami akan mengkompensasi label baru jika ada kecacatan sampai 2.5% dari total produksi. Laporan kode cacat dilakukan per bulan oleh klien dengan melampirkan surat pemberitahuan dan bukti.'
-      },
-      {
-        q: 'Apakah label nyaman dikenakan?',
-        a: 'Ya, material tafeta premium kami sangat lembut dan nyaman di kulit. Label dirancang untuk tidak mengganggu kenyamanan pemakai produk fashion, bahkan untuk produk yang bersentuhan langsung dengan kulit.'
-      },
-      {
-        q: 'Apakah ada solusi lain selain label tafeta?',
-        a: 'Ya, kami juga menyediakan Hologram dengan QR untuk berbagai industri. Untuk solusi teknologi lainnya seperti NFC, saat ini masih dalam tahap penelitian dan pengembangan. Silakan hubungi tim kami untuk informasi lebih lanjut.'
-      }
-    ]
-  },
-  pricing: {
-    title: 'Paket & Investasi',
-    description: 'Setiap proyek fashion memiliki kebutuhan yang unik. Kami menawarkan solusi fleksibel yang disesuaikan dengan skala brand, volume produksi, dan tingkat keamanan yang Anda butuhkan.',
-    note: 'Harga final akan diberikan setelah konsultasi dan analisis kebutuhan. Semua penawaran belum termasuk PPN.',
-    packages: [
-      {
-        name: 'Starter',
-        description: 'Untuk brand fashion emerging yang baru memulai proteksi produk',
-        price: 'Custom',
-        priceUnit: '',
-        pricePeriod: '',
-        priceNote: 'Sesuai kebutuhan',
-        popular: false,
-        features: [
-          { text: 'Volume produksi disesuaikan', included: true },
-          { text: 'Desain label standar', included: true },
-          { text: 'QR code dengan database real-time', included: true },
-          { text: 'Verifikasi via web browser', included: true },
-          { text: 'Basic activity logging', included: true },
-          { text: 'Email support (jam kerja)', included: true },
-          { text: 'Custom design', included: false },
-          { text: 'API integration', included: false },
-          { text: 'Dedicated account manager', included: false }
-        ],
-        cta: 'Mulai Konsultasi',
-        highlight: 'Cocok untuk Brand Emerging'
-      },
-      {
-        name: 'Business',
-        description: 'Untuk brand fashion menengah yang membutuhkan solusi lebih komprehensif',
-        price: 'Custom',
-        priceUnit: '',
-        pricePeriod: '',
-        priceNote: 'Sesuai kebutuhan',
-        popular: true,
-        features: [
-          { text: 'Volume produksi menengah-besar', included: true },
-          { text: 'Custom design label unlimited', included: true },
-          { text: 'QR code + Material premium', included: true },
-          { text: 'Verifikasi via web & mobile', included: true },
-          { text: 'Advanced activity analytics', included: true },
-          { text: 'Priority support', included: true },
-          { text: 'Basic API integration', included: true },
-          { text: 'Monthly performance report', included: true },
-          { text: 'Dedicated account manager', included: false }
-        ],
-        cta: 'Pilih Paket Ini',
-        highlight: 'Paling Populer'
-      },
-      {
-        name: 'Enterprise',
-        description: 'Untuk brand fashion besar dengan kebutuhan khusus',
-        price: 'Custom',
-        priceUnit: '',
-        pricePeriod: '',
-        priceNote: 'Sesuai kebutuhan',
-        popular: false,
-        features: [
-          { text: 'Volume produksi besar', included: true },
-          { text: 'Full customization label & material', included: true },
-          { text: 'Multi-layer security', included: true },
-          { text: 'Enterprise analytics & reporting', included: true },
-          { text: 'Dedicated support + SLA', included: true },
-          { text: 'Custom MOQ sesuai kebutuhan', included: true },
-          { text: 'Full API integration', included: true },
-          { text: 'Dedicated account manager', included: true },
-          { text: 'On-site training & implementation', included: true }
-        ],
-        cta: 'Hubungi Sales',
-        highlight: 'Solusi Premium'
-      }
-    ],
-    addons: [
-      {
-        title: 'Desain Label Custom',
-        description: 'Desain label eksklusif sesuai brand identity fashion Anda',
-        price: 'Harga bervariasi',
-        icon: 'Palette'
-      },
-      {
-        title: 'Material Premium Upgrade',
-        description: 'Upgrade ke material tafeta grade tertinggi untuk produk luxury',
-        price: 'Harga bervariasi',
-        icon: 'Shirt'
-      },
-      {
-        title: 'White-Label Mobile App',
-        description: 'Aplikasi verifikasi dengan branding perusahaan fashion Anda',
-        price: 'Harga bervariasi',
-        icon: 'Smartphone'
-      },
-      // {
-      //   title: 'API Integration Package',
-      //   description: 'Integrasi penuh dengan sistem e-commerce atau ERP Anda',
-      //   price: 'Harga bervariasi',
-      //   icon: 'Code2'
-      // }
-    ]
-  },
-  customSolution: {
-    title: 'Butuh Solusi yang Benar-Benar Custom?',
-    description: 'Kami memahami bahwa setiap brand fashion memiliki kebutuhan unik. Tim kami siap merancang solusi autentikasi yang disesuaikan 100% dengan kebutuhan bisnis fashion Anda.',
-    features: [
-      {
-        icon: 'Target',
-        title: 'Custom Security Level',
-        desc: 'Tentukan sendiri tingkat keamanan sesuai risiko produk fashion Anda'
-      },
-      {
-        icon: 'Palette',
-        title: 'Full Brand Integration',
-        desc: 'Integrasi penuh dengan brand identity dan packaging fashion Anda'
-      },
-      {
-        icon: 'Boxes',
-        title: 'Volume Flexibility',
-        desc: 'Penyesuaian volume produksi sesuai kebutuhan musiman fashion'
-      },
-      {
-        icon: 'Globe',
-        title: 'Multi-Region Support',
-        desc: 'Dukungan untuk distribusi fashion di berbagai wilayah'
-      }
-    ],
-    process: [
-      'Konsultasi mendalam dengan tim expert kami',
-      'Analisis kebutuhan & risk assessment',
-      'Proposal solusi custom dalam 3-5 hari kerja',
-      'Prototyping & testing material',
-      'Implementasi & monitoring berkelanjutan'
-    ]
-  }
-}
+type ServiceData = any
 
 // ============================================================================
 // HERO SECTION
 // ============================================================================
-function HeroDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
-  const { hero, color } = data
+function HeroDetailSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
+  const { hero } = data
 
   return (
     <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden">
@@ -518,7 +130,7 @@ function HeroDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
             to="/contact"
             className="group inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg"
           >
-            <span>Konsultasi Gratis</span>
+            <span>{t('ui.consultFree')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
@@ -526,7 +138,7 @@ function HeroDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
             className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:border-[#C5A059]/40 transition-all duration-300"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span>Kembali ke Services</span>
+            <span>{t('ui.backToServices')}</span>
           </Link>
         </motion.div>
 
@@ -536,7 +148,7 @@ function HeroDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600"
         >
-          {hero.stats.map((stat, idx) => (
+          {hero.stats.map((stat: any, idx: number) => (
             <span key={idx} className="flex items-center gap-1.5">
               <span className="font-extrabold text-[#1A1A1A]">{stat.value}</span> {stat.label}
             </span>
@@ -550,7 +162,8 @@ function HeroDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // OVERVIEW SECTION
 // ============================================================================
-function OverviewSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function OverviewSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { overview, color } = data
 
   return (
@@ -564,14 +177,14 @@ function OverviewSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
             className="lg:col-span-2 space-y-6"
           >
             <div>
-              <p className={`text-xs font-bold ${color.text} uppercase tracking-widest mb-3`}>Overview</p>
+              <p className={`text-xs font-bold ${color.text} uppercase tracking-widest mb-3`}>{t('ui.overviewLabel')}</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-6">
                 {overview.title}
               </h2>
             </div>
 
             <div className="space-y-4">
-              {overview.description.map((paragraph, idx) => (
+              {overview.description.map((paragraph: string, idx: number) => (
                 <p key={idx} className="text-gray-600 leading-relaxed text-lg">
                   {paragraph}
                 </p>
@@ -588,10 +201,10 @@ function OverviewSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
             <div className={`${color.bg} rounded-3xl p-6 border ${color.border} sticky top-24`}>
               <h4 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
                 <CheckCircle2 className={`w-5 h-5 ${color.text}`} />
-                Highlight Utama
+                {t('ui.highlightsTitle')}
               </h4>
               <div className="space-y-3">
-                {overview.highlights.map((highlight, idx) => (
+                {overview.highlights.map((highlight: string, idx: number) => (
                   <div key={idx} className="flex items-start gap-2">
                     <div className={`w-1.5 h-1.5 ${color.text.replace('text-', 'bg-')} rounded-full mt-2 shrink-0`} />
                     <span className="text-sm text-gray-700">{highlight}</span>
@@ -609,7 +222,8 @@ function OverviewSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // FEATURES SECTION
 // ============================================================================
-function FeaturesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function FeaturesSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { features, color } = data
 
   const getIcon = (iconName: string) => {
@@ -632,17 +246,17 @@ function FeaturesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Fitur Unggulan</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.featuresEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Fitur <span className={`text-transparent bg-clip-text bg-linear-to-r ${color.gradient}`}>Detail</span>
+            {t('ui.featuresTitlePre')} <span className={`text-transparent bg-clip-text bg-linear-to-r ${color.gradient}`}>{t('ui.featuresTitleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Setiap fitur dirancang khusus untuk memberikan proteksi maksimal bagi produk fashion Anda.
+            {t('ui.featuresSubtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {features.map((feature, idx) => (
+          {features.map((feature: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -662,9 +276,9 @@ function FeaturesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Detail Teknis</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">{t('ui.detailTech')}</p>
                 <div className="grid grid-cols-2 gap-2">
-                  {feature.details.map((detail, dIdx) => (
+                  {feature.details.map((detail: string, dIdx: number) => (
                     <div key={dIdx} className="flex items-center gap-2">
                       <CheckCircle2 className={`w-4 h-4 ${color.text} shrink-0`} />
                       <span className="text-xs text-gray-600">{detail}</span>
@@ -683,7 +297,8 @@ function FeaturesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // SPECIFICATIONS SECTION
 // ============================================================================
-function SpecificationsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function SpecificationsSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { specifications, color } = data
 
   return (
@@ -695,7 +310,7 @@ function SpecificationsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Technical Specs</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.specsEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {specifications.title}
           </h2>
@@ -707,7 +322,7 @@ function SpecificationsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto bg-[#FAF8F5] rounded-3xl border border-[#E8D09E]/30 overflow-hidden"
         >
-          {specifications.items.map((spec, idx) => (
+          {specifications.items.map((spec: any, idx: number) => (
             <div
               key={idx}
               className={`flex items-center justify-between p-5 ${
@@ -727,7 +342,8 @@ function SpecificationsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // IMPLEMENTATION FLOW SECTION
 // ============================================================================
-function ImplementationSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function ImplementationSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { implementation, color } = data
 
   const getIcon = (iconName: string) => {
@@ -754,7 +370,7 @@ function ImplementationSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Implementation</p>
+          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">{t('ui.implementationEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
             {implementation.title}
           </h2>
@@ -764,7 +380,7 @@ function ImplementationSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {implementation.steps.map((step, idx) => (
+          {implementation.steps.map((step: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -802,7 +418,8 @@ function ImplementationSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // USE CASES / INDUSTRIES SECTION
 // ============================================================================
-function UseCasesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function UseCasesSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { useCases, color } = data
 
   const getIcon = (iconName: string) => {
@@ -824,7 +441,7 @@ function UseCasesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Industri Fashion</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.industriesEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {useCases.title}
           </h2>
@@ -834,7 +451,7 @@ function UseCasesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {useCases.industries.map((industry, idx) => (
+          {useCases.industries.map((industry: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -854,9 +471,8 @@ function UseCasesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                {/* <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Contoh Produk</p> */}
                 <div className="flex flex-wrap gap-2">
-                  {industry.examples.map((example, eIdx) => (
+                  {industry.examples.map((example: string, eIdx: number) => (
                     <span
                       key={eIdx}
                       className="text-xs font-semibold text-gray-600 bg-white px-3 py-1.5 rounded-full border border-gray-100"
@@ -877,7 +493,8 @@ function UseCasesSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // BENEFITS SECTION
 // ============================================================================
-function BenefitsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function BenefitsSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { benefits, color } = data
 
   const getIcon = (iconName: string) => {
@@ -902,14 +519,14 @@ function BenefitsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Benefits</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.benefitsEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {benefits.title}
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.items.map((benefit, idx) => (
+          {benefits.items.map((benefit: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -932,10 +549,17 @@ function BenefitsSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 }
 
 // ============================================================================
-// GALLERY SECTION (DUMMY - placeholder untuk foto asli)
+// GALLERY SECTION
 // ============================================================================
-function GallerySection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function GallerySection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { gallery, color } = data
+  const placeholders = [
+    <Tags className="w-12 h-12 opacity-60" />,
+    <Shirt className="w-12 h-12 opacity-60" />,
+    <Smartphone className="w-12 h-12 opacity-60" />,
+    <ChartColumn className="w-12 h-12 opacity-60" />
+  ]
 
   return (
     <section className="py-16 md:py-24 bg-white relative">
@@ -946,7 +570,7 @@ function GallerySection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
-          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Gallery</p>
+          <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.galleryEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {gallery.title}
           </h2>
@@ -956,7 +580,7 @@ function GallerySection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {gallery.items.map((item, idx) => (
+          {gallery.items.map((item: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -965,12 +589,12 @@ function GallerySection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               className="group relative aspect-square bg-linear-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-dashed border-[#E8D09E]/40 hover:border-[#C5A059]/60 flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-md"
             >
-              <div className="text-6xl mb-3 opacity-60">{item.placeholder}</div>
+              <div className="text-6xl mb-3 opacity-60">{placeholders[idx % placeholders.length]}</div>
               <h4 className="font-bold text-[#1A1A1A] text-center mb-1">{item.title}</h4>
               <p className="text-xs text-gray-500 text-center">{item.description}</p>
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-[10px] font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2 py-0.5 rounded">
-                  Coming Soon
+                  {t('ui.comingSoon')}
                 </span>
               </div>
             </motion.div>
@@ -984,7 +608,7 @@ function GallerySection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * Gallery akan segera dilengkapi dengan foto produk asli dan dokumentasi implementasi
+            {t('ui.galleryNote')}
           </p>
         </motion.div>
       </div>
@@ -995,7 +619,8 @@ function GallerySection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // PRICING SECTION
 // ============================================================================
-function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function PricingSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { pricing, color } = data
 
   return (
@@ -1011,7 +636,7 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full">
-            <span className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Pricing Plans</span>
+            <span className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>{t('ui.pricingBadge')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             {pricing.title}
@@ -1022,7 +647,7 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-          {pricing.packages.map((pkg, idx) => (
+          {pricing.packages.map((pkg: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -1056,37 +681,14 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
                 </p>
 
                 <div className="mb-6">
-                  {pkg.price === 'Custom' ? (
-                    <div>
-                      <p className={`text-4xl font-extrabold ${pkg.popular ? 'text-[#E8D09E]' : 'text-[#1A1A1A]'}`}>
-                        Custom
-                      </p>
-                      <p className={`text-xs mt-1 ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {pkg.priceNote}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="flex items-baseline gap-1">
-                      <span className={`text-xs ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {pkg.priceNote}
-                      </span>
-                    </div>
-                  )}
-
-                  {pkg.price !== 'Custom' && (
-                    <div className="flex items-baseline gap-1 mt-2">
-                      <span className={`text-sm ${pkg.popular ? 'text-gray-300' : 'text-gray-600'}`}>Rp</span>
-                      <span className={`text-5xl font-extrabold tracking-tight ${pkg.popular ? 'text-white' : 'text-[#1A1A1A]'}`}>
-                        {pkg.price}
-                      </span>
-                      <span className={`text-lg font-bold ${pkg.popular ? 'text-gray-300' : 'text-gray-600'}`}>
-                        {pkg.priceUnit}
-                      </span>
-                      <span className={`text-sm ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {pkg.pricePeriod}
-                      </span>
-                    </div>
-                  )}
+                  <div>
+                    <p className={`text-4xl font-extrabold ${pkg.popular ? 'text-[#E8D09E]' : 'text-[#1A1A1A]'}`}>
+                      {pkg.price}
+                    </p>
+                    <p className={`text-xs mt-1 ${pkg.popular ? 'text-gray-400' : 'text-gray-500'}`}>
+                      {pkg.priceNote}
+                    </p>
+                  </div>
                 </div>
 
                 <Link
@@ -1104,10 +706,10 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 
               <div className="p-8 pt-6">
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
-                  Yang Anda Dapatkan:
+                  {t('ui.whatYouGet')}
                 </p>
                 <div className="space-y-3">
-                  {pkg.features.map((feature, fIdx) => (
+                  {pkg.features.map((feature: any, fIdx: number) => (
                     <div key={fIdx} className="flex items-start gap-2.5">
                       {feature.included ? (
                         <CheckCircle2 className={`w-5 h-5 ${color.text} shrink-0 mt-0.5`} />
@@ -1134,12 +736,12 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           >
             <div className="bg-white rounded-3xl border border-[#E8D09E]/30 p-8 shadow-sm">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">Layanan Tambahan (Add-ons)</h3>
-                <p className="text-gray-500">Tingkatkan paket Anda dengan fitur tambahan sesuai kebutuhan</p>
+                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{t('ui.addonsTitle')}</h3>
+                <p className="text-gray-500">{t('ui.addonsSubtitle')}</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {pricing.addons.map((addon, idx) => (
+                {pricing.addons.map((addon: any, idx: number) => (
                   <div
                     key={idx}
                     className="flex items-start gap-4 p-4 bg-[#FAF8F5] rounded-2xl hover:bg-[#E8D09E]/10 transition-colors"
@@ -1169,7 +771,7 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * {pricing.note}
+            {t('ui.notePrefix')} {pricing.note}
           </p>
         </motion.div>
       </div>
@@ -1180,7 +782,8 @@ function PricingSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // CUSTOM SOLUTION SECTION
 // ============================================================================
-function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function CustomSolutionSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { customSolution, color } = data
 
   const getIcon = (iconName: string) => {
@@ -1208,7 +811,7 @@ function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
           >
             <div className="inline-flex items-center gap-2 bg-[#E8D09E]/20 border border-[#E8D09E]/40 px-4 py-2 rounded-full">
               <Sparkles className="w-4 h-4 text-[#8C6F3D]" />
-              <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Custom Solution</span>
+              <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('ui.customBadge')}</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight">
@@ -1220,7 +823,7 @@ function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {customSolution.features.map((feature, idx) => (
+              {customSolution.features.map((feature: any, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -1244,7 +847,7 @@ function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
               to="/contact"
               className="group inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-lg"
             >
-              <span>Request Custom Quote</span>
+              <span>{t('ui.customQuote')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
@@ -1261,13 +864,13 @@ function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-2 h-2 bg-[#C5A059] rounded-full animate-pulse" />
-                  <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Proses Custom</span>
+                  <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">{t('ui.processCustom')}</span>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-6">Bagaimana Kami Bekerja</h3>
+                <h3 className="text-2xl font-bold mb-6">{t('ui.howWeWork')}</h3>
 
                 <div className="space-y-4">
-                  {customSolution.process.map((step, idx) => (
+                  {customSolution.process.map((step: string, idx: number) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: 20 }}
@@ -1295,11 +898,11 @@ function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-white/5 rounded-xl p-4">
                       <p className="text-2xl font-extrabold text-[#E8D09E] mb-1">3-5</p>
-                      <p className="text-xs text-gray-400">Hari Kerja untuk Proposal</p>
+                      <p className="text-xs text-gray-400">{t('ui.proposalDays')}</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-4">
                       <p className="text-2xl font-extrabold text-[#E8D09E] mb-1">24/7</p>
-                      <p className="text-xs text-gray-400">Dukungan Dedicated</p>
+                      <p className="text-xs text-gray-400">{t('ui.dedicatedSupport')}</p>
                     </div>
                   </div>
                 </div>
@@ -1315,7 +918,8 @@ function CustomSolutionSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 // ============================================================================
 // FAQ SECTION
 // ============================================================================
-function FAQDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
+function FAQDetailSection({ data }: { data: ServiceData }) {
+  const { t } = useTranslation('tafeta')
   const { faq, color } = data
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
 
@@ -1335,7 +939,7 @@ function FAQDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
         </motion.div>
 
         <div className="space-y-3">
-          {faq.items.map((item, idx) => (
+          {faq.items.map((item: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 10 }}
@@ -1378,9 +982,10 @@ function FAQDetailSection({ data }: { data: typeof TAFETA_SERVICE_DATA }) {
 }
 
 // ============================================================================
-// RELATED SERVICES SECTION - Disesuaikan dengan kondisi riil
+// RELATED SERVICES SECTION
 // ============================================================================
 function RelatedServicesSection() {
+  const { t } = useTranslation('tafeta')
   const relatedServices = [
     {
       id: 'hologram',
@@ -1429,15 +1034,15 @@ function RelatedServicesSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-4"
         >
-          <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Related Services</p>
+          <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('ui.relatedEyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Layanan{' '}
+            {t('ui.relatedTitlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Lainnya
+              {t('ui.relatedTitleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Solusi marking lain yang tersedia atau sedang kami kembangkan untuk memenuhi berbagai kebutuhan brand Anda.
+            {t('ui.relatedSubtitle')}
           </p>
         </motion.div>
 
@@ -1461,7 +1066,7 @@ function RelatedServicesSection() {
                 {isComingSoon && (
                   <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
                     <Compass className="w-3 h-3" />
-                    <span>Coming Soon</span>
+                    <span>{t('ui.comingSoon')}</span>
                   </div>
                 )}
 
@@ -1487,7 +1092,7 @@ function RelatedServicesSection() {
 
                     <div className="flex items-center gap-2 text-xs text-gray-400">
                       <Clock className="w-3.5 h-3.5" />
-                      <span>Akan segera tersedia</span>
+                      <span>{t('ui.comingSoonNote')}</span>
                     </div>
                   </div>
                 ) : (
@@ -1509,7 +1114,7 @@ function RelatedServicesSection() {
                     <p className="text-sm text-gray-600 leading-relaxed mb-4">{service.desc}</p>
 
                     <div className="inline-flex items-center gap-2 text-[#8C6F3D] font-bold text-sm group-hover:gap-3 transition-all">
-                      <span>Pelajari Lebih Lanjut</span>
+                      <span>{t('ui.learnMore')}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </Link>
@@ -1526,11 +1131,11 @@ function RelatedServicesSection() {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-500 italic">
-            * Tertarik dengan solusi yang sedang dikembangkan?{' '}
+            {t('ui.relatedNotePrefix')}{' '}
             <Link to="/contact" className="text-[#8C6F3D] font-semibold hover:text-[#C5A059] transition-colors">
-              Hubungi kami
+              {t('ui.relatedNoteContact')}
             </Link>{' '}
-            untuk informasi lebih lanjut.
+            {t('ui.relatedNoteSuffix')}
           </p>
         </motion.div>
       </div>
@@ -1541,11 +1146,9 @@ function RelatedServicesSection() {
 // ============================================================================
 // MAIN PAGE
 // ============================================================================
-import React from 'react'
-import AboutJoinUsCTA from '@/components/AboutJoinUs'
-
 export default function ServiceTafetaDetailPage() {
-  const data = TAFETA_SERVICE_DATA
+  const { t } = useTranslation('tafeta')
+  const data = t('data', { returnObjects: true })
 
   return (
     <>
@@ -1554,7 +1157,7 @@ export default function ServiceTafetaDetailPage() {
       <FeaturesSection data={data} />
       <SpecificationsSection data={data} />
       <ImplementationSection data={data} />
-      <UseCasesSection data={data} />
+          <UseCasesSection data={data} />
       <BenefitsSection data={data} />
       <GallerySection data={data} />
       <PricingSection data={data} />
