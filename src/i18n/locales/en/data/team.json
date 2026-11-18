@@ -1,0 +1,34 @@
+{
+  "ryan-othink": {
+    "role": "Co-Founder & CEO",
+    "department": "Executive",
+    "bio": "A visionary with 17+ years of experience in e-commerce, digital business development, and interaction design. Has various business lines from fashion, property, to digital marketing with a strong client base in Indonesia.",
+    "experience": "17+ years in entrepreneurship & digital business",
+    "education": "Communication & Business Management",
+    "expertise": ["E-Commerce", "Digital Business", "Interaction Design", "Digital Marketing"]
+  },
+  "riman-budiman": {
+    "role": "Co-Founder & CTO",
+    "department": "Technology",
+    "bio": "Experienced living on two continents with out-of-the-box business thinking. 12+ years building a software house with deep expertise in technology and corporate management.",
+    "experience": "12+ years in software development & management",
+    "education": "Web Design & Multimedia",
+    "expertise": ["Software Development", "Technology Management", "Business Strategy"]
+  },
+  "tommy-pratomo": {
+    "role": "Co-Founder & CMO",
+    "department": "Marketing & Communication",
+    "bio": "International education background (Indonesia, Singapore, UK). 15+ years in property communication management and marketing for multinational companies such as Plaza Indonesia Realty, Bakrie Group, Lippo Group, and Colliers International.",
+    "experience": "15+ years in corporate communication & property marketing",
+    "education": "International Education (ID, SG, UK)",
+    "expertise": ["Corporate Communication", "Property Marketing", "Strategic Management"]
+  },
+  "fauzi-ramdhani": {
+    "role": "Co-Founder & COO",
+    "department": "Operations & Finance",
+    "bio": "7 years of banking experience in program development and branch portfolio management. Focused on cashflow, business planning, and operational management in the football sports industry.",
+    "experience": "7+ years in banking & business operations",
+    "education": "Economics & Management",
+    "expertise": ["Business Operations", "Financial Planning", "Cashflow Management"]
+  }
+}

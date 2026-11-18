@@ -8,6 +8,7 @@ import {
   Briefcase,
   type LucideIcon
 } from 'lucide-react'
+import type { TFunction } from 'i18next'
 
 
 // ============================================================================
@@ -206,3 +207,20 @@ export const TeamData: TeamMember[] = [
     joinYear: '2017'
   }
 ]
+
+// ============================================================================
+// I18N HELPER - Translate display fields per member (keeps structure/icons)
+// ============================================================================
+export const getTeamData = (t: TFunction): TeamMember[] =>
+  TeamData.map(m => {
+    const key = `data/team:${m.id}`
+    return {
+      ...m,
+      role: t(`${key}.role`, { defaultValue: m.role }),
+      department: m.department ? t(`${key}.department`, { defaultValue: m.department }) : m.department,
+      bio: t(`${key}.bio`, { defaultValue: m.bio }),
+      experience: m.experience ? t(`${key}.experience`, { defaultValue: m.experience }) : m.experience,
+      education: m.education ? t(`${key}.education`, { defaultValue: m.education }) : m.education,
+      expertise: m.expertise ? (t(`${key}.expertise`, { returnObjects: true, defaultValue: m.expertise }) as string[]) : m.expertise
+    }
+  })

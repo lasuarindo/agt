@@ -1,0 +1,34 @@
+{
+  "ryan-othink": {
+    "role": "Co-Founder & CEO",
+    "department": "Executive",
+    "bio": "Visioner dengan 17+ tahun pengalaman di e-commerce, pengembangan bisnis digital, dan desain interaksi. Memiliki berbagai lini bisnis dari fashion, properti, hingga digital marketing dengan basis klien yang kuat di Indonesia.",
+    "experience": "17+ tahun di entrepreneur & digital business",
+    "education": "Manajemen Komunikasi & Bisnis",
+    "expertise": ["E-Commerce", "Digital Business", "Interaction Design", "Digital Marketing"]
+  },
+  "riman-budiman": {
+    "role": "Co-Founder & CTO",
+    "department": "Technology",
+    "bio": "Berpengalaman hidup di dua benua dengan pola pikir bisnis out of the box. 12+ tahun membangun software house dengan keahlian mendalam di teknologi dan manajerial perusahaan.",
+    "experience": "12+ tahun di software development & management",
+    "education": "Web Design & Multimedia",
+    "expertise": ["Software Development", "Technology Management", "Business Strategy"]
+  },
+  "tommy-pratomo": {
+    "role": "Co-Founder & CMO",
+    "department": "Marketing & Communication",
+    "bio": "Latar belakang pendidikan internasional (Indonesia, Singapura, Inggris). 15+ tahun di manajemen komunikasi properti dan pemasaran untuk perusahaan multinasional seperti Plaza Indonesia Realty, Grup Bakrie, Grup Lippo, dan Colliers International.",
+    "experience": "15+ tahun di corporate communication & property marketing",
+    "education": "International Education (ID, SG, UK)",
+    "expertise": ["Corporate Communication", "Property Marketing", "Strategic Management"]
+  },
+  "fauzi-ramdhani": {
+    "role": "Co-Founder & COO",
+    "department": "Operations & Finance",
+    "bio": "7 tahun pengalaman di perbankan dalam manajemen pengembangan program dan portofolio cabang. Fokus pada cashflow, perencanaan bisnis, dan pengelolaan operasional bisnis di industri olahraga sepak bola.",
+    "experience": "7+ tahun di banking & business operations",
+    "education": "Ilmu Ekonomi & Manajemen",
+    "expertise": ["Business Operations", "Financial Planning", "Cashflow Management"]
+  }
+}

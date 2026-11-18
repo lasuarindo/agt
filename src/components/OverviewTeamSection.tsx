@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import { Users, Sparkles, ArrowUpRight, User } from 'lucide-react'
 import { Link } from 'react-router'
 import { 
-  TeamData, 
+  getTeamData, 
   getTeamGradient, 
   getFeaturedTeam,
   type TeamMember 
@@ -14,8 +14,9 @@ import { useTranslation } from 'react-i18next'
 // ============================================================================
 export function TeamOverviewSection() {
   const { t } = useTranslation('overview')
-  const featuredTeam = getFeaturedTeam(TeamData)
-  const totalTeam = TeamData.length
+  const teamData = getTeamData(t)
+  const featuredTeam = getFeaturedTeam(teamData)
+  const totalTeam = teamData.length
 
   return (
     <section className="py-16 md:py-20 bg-white relative">

@@ -20,7 +20,7 @@ import {
   // Twitter
 } from 'lucide-react'
 import {
-  TeamData,
+  getTeamData,
   getTeamGradient,
   getTeamCategoryLabel,
   getSocialIcon,
@@ -254,6 +254,7 @@ function TeamDetailModal({
 // ============================================================================
 function HeroTeam() {
   const { t } = useTranslation('ourteam')
+  const teamData = getTeamData(t)
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -311,12 +312,12 @@ function HeroTeam() {
         >
           <span className="flex items-center gap-2">
             <Users className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">{t('hero.statMembers', { n: TeamData.length })}</span>
+            <span className="font-semibold">{t('hero.statMembers', { n: teamData.length })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">{t('hero.statDepartments', { n: getUniqueDepartments(TeamData).length })}</span>
+            <span className="font-semibold">{t('hero.statDepartments', { n: getUniqueDepartments(teamData).length })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
@@ -415,20 +416,21 @@ function TeamValuesSection() {
 // ============================================================================
 function TeamGridSection() {
   const { t } = useTranslation('ourteam')
+  const teamData = getTeamData(t)
   const [selectedDepartment, setSelectedDepartment] = useState<string>('all')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedMember, setSelectedMember] = useState<{ member: TeamMember; idx: number } | null>(null)
 
-  const departments = getUniqueDepartments(TeamData)
-  const categories = getUniqueCategories(TeamData)
+  const departments = getUniqueDepartments(teamData)
+  const categories = getUniqueCategories(teamData)
 
   const filteredTeam = useMemo(() => {
-    return TeamData.filter(member => {
+    return teamData.filter(member => {
       const matchDepartment = selectedDepartment === 'all' || member.department === selectedDepartment
       const matchCategory = selectedCategory === 'all' || member.category === selectedCategory
       return matchDepartment && matchCategory
     })
-  }, [selectedDepartment, selectedCategory])
+  }, [teamData, selectedDepartment, selectedCategory])
 
   return (
     <>
