@@ -1,7 +1,10 @@
 import { motion } from 'motion/react'
 import { ShieldCheck, BadgeCheck, Sparkles, Calendar } from 'lucide-react'
+import { useTranslation, Trans } from 'react-i18next'
 
 export default function HeroAbout() {
+  const { t } = useTranslation('about')
+
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -23,7 +26,7 @@ export default function HeroAbout() {
           className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/40 px-4 py-2 rounded-full mb-6"
         >
           <Sparkles className="w-4 h-4 text-[#C5A059]" />
-          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Tentang Kami</span>
+          <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('hero.eyebrow')}</span>
         </motion.div>
 
         <motion.h1
@@ -32,12 +35,12 @@ export default function HeroAbout() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Delapan Tahun <br className="hidden md:block" />
+          {t('hero.titleTop')} <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            Melindungi Keaslian
+            {t('hero.titleHighlight')}
           </span>
           <br className="hidden md:block" />
-          di Asia Pasifik
+          {t('hero.titleRegion')}
         </motion.h1>
 
         <motion.p
@@ -46,7 +49,7 @@ export default function HeroAbout() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Kami adalah pelopor sistem anti-counterfeit pertama di Asia Pasifik yang berkomitmen untuk memberantas produk palsu dan membangun ekosistem perdagangan yang aman, terpercaya, dan berkelanjutan dengan teknologi <strong className="text-[#1A1A1A]">5 lapis keamanan</strong>.
+          <Trans i18nKey="hero.desc" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
         </motion.p>
 
         <motion.div
@@ -57,18 +60,16 @@ export default function HeroAbout() {
         >
           <span className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">Berdiri Sejak 2017</span>
+            <span className="font-semibold">{t('hero.since')}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#8C6F3D]" />
-            {/* Disesuaikan: ISO/IEC 27000:2016 sesuai proposal */}
             <span className="font-semibold">ISO/IEC 27000:2016</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <BadgeCheck className="w-4 h-4 text-[#8C6F3D]" />
-            {/* Disesuaikan: Licensed ISO 18004:2015 */}
             <span className="font-semibold">ISO 18004:2015</span>
           </span>
         </motion.div>

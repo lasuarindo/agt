@@ -1,45 +1,17 @@
 import { motion } from 'motion/react'
 import { Shield, BadgeCheck, Building2, Calendar, Database, AlertTriangle } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function ImpactSection() {
-  // Disesuaikan dengan angka-angka dari proposal
+  const { t } = useTranslation('about')
+
   const impacts = [
-    {
-      icon: <Database className="w-6 h-6" />,
-      value: '100M',
-      label: 'Kode / Hari',
-      desc: 'Kapasitas produksi maksimum kode AG'
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      value: '5',
-      label: 'Lapis Keamanan',
-      desc: 'Proteksi sinergis per produk'
-    },
-    {
-      icon: <AlertTriangle className="w-6 h-6" />,
-      value: '15x',
-      label: 'Limit Verifikasi',
-      desc: 'Batas pengecekan per kode'
-    },
-    {
-      icon: <Building2 className="w-6 h-6" />,
-      value: 'Terpercaya',
-      label: 'Brand Partner',
-      desc: 'Dari berbagai industri di Asia Pasifik'
-    },
-    {
-      icon: <BadgeCheck className="w-6 h-6" />,
-      value: 'ISO',
-      label: '27000:2016',
-      desc: 'Standar pengamanan informasi cloud database'
-    },
-    {
-      icon: <Calendar className="w-6 h-6" />,
-      value: '8+',
-      label: 'Tahun Berkiprah',
-      desc: 'Sejak 2017 hingga sekarang'
-    }
+    { icon: <Database className="w-6 h-6" />, value: '100M', label: t('impact.impact1Label'), desc: t('impact.impact1Desc') },
+    { icon: <Shield className="w-6 h-6" />, value: '5', label: t('impact.impact2Label'), desc: t('impact.impact2Desc') },
+    { icon: <AlertTriangle className="w-6 h-6" />, value: '15x', label: t('impact.impact3Label'), desc: t('impact.impact3Desc') },
+    { icon: <Building2 className="w-6 h-6" />, value: 'Terpercaya', label: t('impact.impact4Label'), desc: t('impact.impact4Desc') },
+    { icon: <BadgeCheck className="w-6 h-6" />, value: 'ISO', label: t('impact.impact5Label'), desc: t('impact.impact5Desc') },
+    { icon: <Calendar className="w-6 h-6" />, value: '8+', label: t('impact.impact6Label'), desc: t('impact.impact6Desc') }
   ]
 
   return (
@@ -53,12 +25,12 @@ export default function ImpactSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Dampak Kami</p>
+          <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">{t('impact.eyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Angka yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+            {t('impact.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">{t('impact.titleHighlight')}</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Dampak nyata yang kami berikan untuk industri dan konsumen di Asia Pasifik.
+            {t('impact.subtitle')}
           </p>
         </motion.div>
 

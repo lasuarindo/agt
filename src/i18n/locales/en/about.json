@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "About Us",
+    "titleTop": "Eight Years",
+    "titleHighlight": "Protecting Authenticity",
+    "titleRegion": "in Asia Pacific",
+    "desc": "We are the pioneer of the first anti-counterfeit system in Asia Pacific, committed to eradicating counterfeit products and building a secure, trusted, and sustainable trading ecosystem with <strong>5-layer security</strong> technology.",
+    "since": "Established Since 2017"
+  },
+  "story": {
+    "eyebrow": "Our Story",
+    "titlePre": "Starting from",
+    "titleHighlight": "Concern",
+    "p1": "In 2017, we witnessed how counterfeit products were increasingly rampant in the Asia Pacific market. According to the UN, the counterfeiting market is worth 250 Billion Dollars per year and continues to grow, hurting corporate revenue and damaging brand reputation.",
+    "p2": "<strong>PT. Autentikasi Garda Teknologi</strong> was founded with one simple yet ambitious mission: <em>to create an authentication system that is affordable, accurate, and easy for all brands to adopt</em>.",
+    "p3": "We began our journey with <strong>3-layer AG algorithm</strong> technology encrypted with MD5 and integrated with a real-time database compliant with <strong>ISO/IEC 27000:2016</strong> standards. This innovation became a game-changer for the anti-counterfeit industry in Indonesia, and gradually expanded across Asia Pacific.",
+    "quote": "\"Authentic Guards is the simplest way to validate the authenticity of your products.\"",
+    "quoteAuthor": "Ryan Othink",
+    "quoteRole": "Managing Director",
+    "statYearLabel": "Year Established",
+    "statCodeLabel": "Codes / Day",
+    "statLayerLabel": "Security Layers",
+    "statTopLabel": "Asia Pacific Startup"
+  },
+  "missionVision": {
+    "eyebrow": "Direction & Purpose",
+    "titlePre": "Mission &",
+    "titleHighlight": "Vision",
+    "titlePost": "",
+    "subtitle": "The guiding principles behind every step and decision we make in building the future of product authentication.",
+    "core": "Core",
+    "missionTitle": "Our Mission",
+    "missionSubtitle": "Our Mission",
+    "missionContent": "To provide authentication technology that is affordable, accurate, and easy to adopt by brands across Asia Pacific to ISO/IEC 27000:2016 standards. We are committed to continuously innovating in the fight against counterfeit products and protecting consumers.",
+    "missionPoints": [
+      "Develop cutting-edge 5-layer security technology",
+      "Provide 24/7 customer support",
+      "Build a secure trading ecosystem",
+      "Empower local and international brands"
+    ],
+    "visionTitle": "Our Vision",
+    "visionSubtitle": "Our Vision",
+    "visionContent": "To become the global standard in anti-counterfeit systems that protect products and consumers worldwide. We aspire to create a world where every product's authenticity can be easily verified.",
+    "visionPoints": [
+      "Become the anti-counterfeit market leader in Asia",
+      "Expand into global markets within the next 5 years",
+      "Develop international authentication standards",
+      "Create a positive impact on society"
+    ]
+  },
+  "coreValues": {
+    "eyebrow": "Our Values",
+    "titlePre": "Core",
+    "titleHighlight": "Values",
+    "subtitle": "Six core values that form the foundation of every decision and action we take.",
+    "featured": "Featured",
+    "integrityTitle": "Integrity",
+    "integritySubtitle": "Foundation",
+    "integrityDesc": "We uphold honesty and transparency in every aspect of our business. Every decision we make is based on strong ethical principles, ensuring the trust of our partners and consumers.",
+    "integrityPoints": [
+      "Transparency in every transaction",
+      "Commitment to business ethics",
+      "Full accountability for actions"
+    ],
+    "innovationTitle": "Innovation",
+    "innovationSubtitle": "Driving Force",
+    "innovationDesc": "Continuously innovating with cutting-edge technology to combat product counterfeiting. We believe innovation is the key to staying relevant and providing the best solutions for evolving challenges.",
+    "innovationPoints": [
+      "Continuous R&D",
+      "Adoption of the latest technology",
+      "Creative solutions for complex problems"
+    ],
+    "careTitle": "Care",
+    "careDesc": "We care about consumers, partner brands, and the wider community.",
+    "collaborationTitle": "Collaboration",
+    "collaborationDesc": "Working together with various parties to create a safer ecosystem.",
+    "excellenceTitle": "Excellence",
+    "excellenceDesc": "Striving to provide the best service with the highest quality standards.",
+    "impactTitle": "Global Impact",
+    "impactDesc": "Contributing positively to society and the environment in Asia Pacific."
+  },
+  "timeline": {
+    "eyebrow": "Our Journey",
+    "titlePre": "The Journey of",
+    "titleHighlight": "Eight Years",
+    "subtitle": "From a small startup to becoming the anti-counterfeit market leader in Asia Pacific.",
+    "milestone": "Milestone"
+  },
+  "impact": {
+    "eyebrow": "Our Impact",
+    "titlePre": "Numbers That",
+    "titleHighlight": "Speak",
+    "subtitle": "The real impact we deliver for the industry and consumers in Asia Pacific.",
+    "impact1Label": "Codes / Day",
+    "impact1Desc": "Maximum AG code production capacity",
+    "impact2Label": "Security Layers",
+    "impact2Desc": "Synergistic protection per product",
+    "impact3Label": "Verification Limit",
+    "impact3Desc": "Check limit per code",
+    "impact4Label": "Trusted",
+    "impact4Desc": "Brand partners across various industries in Asia Pacific",
+    "impact5Label": "27000:2016",
+    "impact5Desc": "Information security standard for cloud database",
+    "impact6Label": "Years of Service",
+    "impact6Desc": "Since 2017 until now"
+  },
+  "office": {
+    "eyebrow": "Our Location",
+    "titlePre": "Head",
+    "titleHighlight": "Office",
+    "desc": "Headquartered in {{city}}, {{country}}, with strategic access to all of Asia Pacific.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "mapTitle": "Head Office",
+    "mapLink": "View on Google Maps"
+  }
+}

@@ -2,9 +2,11 @@ import { motion } from 'motion/react'
 import {
   Lightbulb, Users, Globe, Award, Trophy, BadgeCheck, Rocket, Zap, Handshake
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { timelineData } from '@/data/timeline'
 
 export default function DetailedTimelineSection() {
+  const { t } = useTranslation('about')
   // const timeline = [
   //   {
   //     year: '2017',
@@ -13,65 +15,6 @@ export default function DetailedTimelineSection() {
   //     desc: 'PT. Autentikasi Garda Teknologi resmi didirikan di Bandung oleh tim yang terdiri dari para ahli teknologi dan bisnis dengan visi menjadi pelopor sistem anti-counterfeit di Asia Pasifik.',
   //     icon: <Rocket className="w-5 h-5" />,
   //     highlight: true
-  //   },
-  //   {
-  //     year: '2018',
-  //     quarter: 'Q1',
-  //     title: 'Pengembangan Produk Pertama',
-  //     desc: 'Meluncurkan prototype sticker hologram dengan QR code dan scratch PIN pertama yang terintegrasi dengan database real-time.',
-  //     icon: <Lightbulb className="w-5 h-5" />
-  //   },
-  //   {
-  //     year: '2019',
-  //     quarter: 'Q2',
-  //     title: 'Klien Pertama & Ekspansi',
-  //     desc: 'Memperoleh klien pertama dari industri F&B dan mulai mengembangkan teknologi garment label untuk industri fashion.',
-  //     icon: <Users className="w-5 h-5" />
-  //   },
-  //   {
-  //     year: '2020',
-  //     quarter: 'Q1',
-  //     title: 'Mendukung Telkom Indonesia',
-  //     desc: 'Menjadi mitra strategis Telkom Indonesia untuk infrastruktur cloud dan konektivitas digital.',
-  //     icon: <Handshake className="w-5 h-5" />,
-  //     highlight: true
-  //   },
-  //   {
-  //     year: '2021',
-  //     quarter: 'Q3',
-  //     title: '100+ Brand Partner',
-  //     desc: 'Mencapai milestone 100 brand partner dari berbagai industri, dari fashion hingga farmasi. Mulai mengembangkan dashboard analytics.',
-  //     icon: <Award className="w-5 h-5" />
-  //   },
-  //   {
-  //     year: '2022',
-  //     quarter: 'Q2',
-  //     title: 'Sertifikasi ISO 27001',
-  //     desc: 'Mendapatkan sertifikasi ISO 27001 untuk Information Security Management, membuktikan komitmen kami terhadap keamanan data.',
-  //     icon: <BadgeCheck className="w-5 h-5" />,
-  //     highlight: true
-  //   },
-  //   {
-  //     year: '2023',
-  //     quarter: 'Q1',
-  //     title: 'Mobile Platform Launch',
-  //     desc: 'Meluncurkan aplikasi mobile untuk verifikasi produk yang dapat diakses oleh konsumen secara langsung, meningkatkan engagement dengan end-user.',
-  //     icon: <Zap className="w-5 h-5" />
-  //   },
-  //   {
-  //     year: '2024',
-  //     quarter: 'Q2',
-  //     title: 'Best Innovation Award',
-  //     desc: 'Menerima penghargaan "Best Anti-Counterfeit Innovation" dari Indonesia Digital Awards atas kontribusi inovatif dalam industri.',
-  //     icon: <Trophy className="w-5 h-5" />,
-  //     highlight: true
-  //   },
-  //   {
-  //     year: '2025',
-  //     quarter: 'Q1',
-  //     title: 'Ekspansi Regional',
-  //     desc: 'Memperluas jangkauan ke seluruh Asia Pasifik dengan lebih dari 500 brand partner aktif di 5 negara.',
-  //     icon: <Globe className="w-5 h-5" />
   //   }
   // ]
   
@@ -88,17 +31,16 @@ export default function DetailedTimelineSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Perjalanan Kami</p>
+          <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">{t('timeline.eyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Perjalanan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Delapan Tahun</span>
+            {t('timeline.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('timeline.titleHighlight')}</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Dari startup kecil hingga menjadi pemimpin pasar anti-counterfeit di Asia Pasifik.
+            {t('timeline.subtitle')}
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
           <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-linear-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
 
           <div className="space-y-8">
@@ -115,17 +57,14 @@ export default function DetailedTimelineSection() {
                     isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  {/* Timeline Dot */}
                   <div className={`absolute left-6 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-white border-2 ${
                     item.highlight ? 'border-[#C5A059]' : 'border-[#E8D09E]/50'
                   } rounded-xl flex items-center justify-center ${
                     item.highlight ? 'text-[#8C6F3D]' : 'text-gray-400'
                   } shadow-md z-10 ${item.highlight ? 'scale-110' : ''}`}>
-                    {/* {item.icon} */}
                     <item.icon className='w-5 h-5' />
                   </div>
 
-                  {/* Content Card */}
                   <div className={`pl-20 md:pl-0 md:w-1/2 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
                     <div className={`bg-white rounded-2xl p-5 border ${
                       item.highlight ? 'border-[#E8D09E]/50 shadow-md' : 'border-gray-100 shadow-sm'
@@ -136,7 +75,7 @@ export default function DetailedTimelineSection() {
                         </span>
                         {item.highlight && (
                           <span className="text-[10px] font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
-                            Milestone
+                            {t('timeline.milestone')}
                           </span>
                         )}
                       </div>

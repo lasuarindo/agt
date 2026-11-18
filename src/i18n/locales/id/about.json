@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Tentang Kami",
+    "titleTop": "Delapan Tahun",
+    "titleHighlight": "Melindungi Keaslian",
+    "titleRegion": "di Asia Pasifik",
+    "desc": "Kami adalah pelopor sistem anti-counterfeit pertama di Asia Pasifik yang berkomitmen untuk memberantas produk palsu dan membangun ekosistem perdagangan yang aman, terpercaya, dan berkelanjutan dengan teknologi <strong>5 lapis keamanan</strong>.",
+    "since": "Berdiri Sejak 2017"
+  },
+  "story": {
+    "eyebrow": "Cerita Kami",
+    "titlePre": "Bermula dari",
+    "titleHighlight": "Keprihatinan",
+    "p1": "Pada tahun 2017, kami menyaksikan bagaimana produk palsu semakin merajalela di pasar Asia Pasifik. Menurut PBB, pasar pemalsuan berharga 250 Milyar Dollar per tahun dan terus bertumbuh, membentur pendapatan perusahaan dan merusak reputasi merek.",
+    "p2": "<strong>PT. Autentikasi Garda Teknologi</strong> didirikan dengan satu misi sederhana namun ambisius: <em>menciptakan sistem autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh semua brand</em>.",
+    "p3": "Kami memulai perjalanan dengan teknologi <strong>algoritma AG 3 lapis</strong> yang dienkripsi MD5 dan terintegrasi dengan database real-time berstandar <strong>ISO/IEC 27000:2016</strong>. Inovasi ini menjadi game-changer bagi industri anti-counterfeit di Indonesia, dan perlahan meluas ke seluruh Asia Pasifik.",
+    "quote": "\"Authentic Guards adalah cara paling sederhana untuk memvalidasi keaslian produk anda.\"",
+    "quoteAuthor": "Ryan Othink",
+    "quoteRole": "Managing Director",
+    "statYearLabel": "Tahun Berdiri",
+    "statCodeLabel": "Kode / Hari",
+    "statLayerLabel": "Lapis Keamanan",
+    "statTopLabel": "Startup Asia Pacific"
+  },
+  "missionVision": {
+    "eyebrow": "Arah & Tujuan",
+    "titlePre": "Misi &",
+    "titleHighlight": "Visi",
+    "titlePost": "Kami",
+    "subtitle": "Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.",
+    "core": "Core",
+    "missionTitle": "Misi Kami",
+    "missionSubtitle": "Our Mission",
+    "missionContent": "Menyediakan teknologi autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh brand di seluruh Asia Pasifik dengan standar ISO/IEC 27000:2016. Kami berkomitmen untuk terus berinovasi dalam memerangi produk palsu dan melindungi konsumen.",
+    "missionPoints": [
+      "Mengembangkan teknologi 5 lapis keamanan terdepan",
+      "Memberikan layanan customer support 24/7",
+      "Membangun ekosistem perdagangan yang aman",
+      "Memberdayakan brand lokal dan internasional"
+    ],
+    "visionTitle": "Visi Kami",
+    "visionSubtitle": "Our Vision",
+    "visionContent": "Menjadi standar global dalam sistem anti-counterfeit yang melindungi produk dan konsumen di seluruh dunia. Kami bercita-cita untuk menciptakan dunia di mana setiap produk dapat diverifikasi keasliannya dengan mudah.",
+    "visionPoints": [
+      "Menjadi pemimpin pasar anti-counterfeit di Asia",
+      "Ekspansi ke pasar global dalam 5 tahun ke depan",
+      "Mengembangkan standar autentikasi internasional",
+      "Menciptakan dampak positif bagi masyarakat"
+    ]
+  },
+  "coreValues": {
+    "eyebrow": "Nilai-Nilai Kami",
+    "titlePre": "Core",
+    "titleHighlight": "Values",
+    "subtitle": "Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.",
+    "featured": "Featured",
+    "integrityTitle": "Integritas",
+    "integritySubtitle": "Foundation",
+    "integrityDesc": "Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis kami. Setiap keputusan yang kami ambil didasarkan pada prinsip-prinsip etika yang kuat, memastikan kepercayaan dari para mitra dan konsumen.",
+    "integrityPoints": [
+      "Transparansi dalam setiap transaksi",
+      "Komitmen terhadap etika bisnis",
+      "Akuntabilitas penuh atas tindakan"
+    ],
+    "innovationTitle": "Inovasi",
+    "innovationSubtitle": "Driving Force",
+    "innovationDesc": "Terus berinovasi dengan teknologi terdepan untuk melawan pemalsuan produk. Kami percaya bahwa inovasi adalah kunci untuk tetap relevan dan memberikan solusi terbaik bagi tantangan yang terus berkembang.",
+    "innovationPoints": [
+      "R&D berkelanjutan",
+      "Adopsi teknologi terkini",
+      "Solusi kreatif untuk masalah kompleks"
+    ],
+    "careTitle": "Kepedulian",
+    "careDesc": "Kami peduli pada konsumen, brand partner, dan masyarakat luas.",
+    "collaborationTitle": "Kolaborasi",
+    "collaborationDesc": "Bekerja sama dengan berbagai pihak untuk menciptakan ekosistem yang lebih aman.",
+    "excellenceTitle": "Keunggulan",
+    "excellenceDesc": "Berusaha memberikan layanan terbaik dengan standar kualitas tertinggi.",
+    "impactTitle": "Dampak Global",
+    "impactDesc": "Berkontribusi positif bagi masyarakat dan lingkungan di Asia Pasifik."
+  },
+  "timeline": {
+    "eyebrow": "Perjalanan Kami",
+    "titlePre": "Perjalanan",
+    "titleHighlight": "Delapan Tahun",
+    "subtitle": "Dari startup kecil hingga menjadi pemimpin pasar anti-counterfeit di Asia Pasifik.",
+    "milestone": "Milestone"
+  },
+  "impact": {
+    "eyebrow": "Dampak Kami",
+    "titlePre": "Angka yang",
+    "titleHighlight": "Berbicara",
+    "subtitle": "Dampak nyata yang kami berikan untuk industri dan konsumen di Asia Pasifik.",
+    "impact1Label": "Kode / Hari",
+    "impact1Desc": "Kapasitas produksi maksimum kode AG",
+    "impact2Label": "Lapis Keamanan",
+    "impact2Desc": "Proteksi sinergis per produk",
+    "impact3Label": "Limit Verifikasi",
+    "impact3Desc": "Batas pengecekan per kode",
+    "impact4Label": "Brand Partner",
+    "impact4Desc": "Dari berbagai industri di Asia Pasifik",
+    "impact5Label": "27000:2016",
+    "impact5Desc": "Standar pengamanan informasi cloud database",
+    "impact6Label": "Tahun Berkiprah",
+    "impact6Desc": "Sejak 2017 hingga sekarang"
+  },
+  "office": {
+    "eyebrow": "Lokasi Kami",
+    "titlePre": "Kantor",
+    "titleHighlight": "Pusat",
+    "desc": "Berkantor pusat di {{city}}, {{country}}, dengan akses strategis ke seluruh Asia Pasifik.",
+    "addressLabel": "Alamat",
+    "phoneLabel": "Telepon",
+    "emailLabel": "Email",
+    "mapTitle": "Kantor Pusat",
+    "mapLink": "Lihat di Google Maps"
+  }
+}
