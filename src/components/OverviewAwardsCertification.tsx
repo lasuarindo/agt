@@ -70,7 +70,7 @@
 import { motion } from 'motion/react'
 import { Link } from 'react-router'
 import { Trophy, Star, Award as AwardIcon, Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react'
-import { AwardsData, getAwardIcon, type Award } from '@/data/award'
+import { getAwardsData, getAwardIcon, type Award } from '@/data/award'
 import { useTranslation } from 'react-i18next'
 
 // ============================================================================
@@ -78,9 +78,10 @@ import { useTranslation } from 'react-i18next'
 // ============================================================================
 export default function AwardsCertificationsOverviewSection({ navigateDetail = false }: { navigateDetail?: boolean }) {
   const { t } = useTranslation('overview')
+  const awards = getAwardsData(t)
   // Pisahkan featured dan regular awards
-  const featuredAwards = AwardsData.filter(a => a.featured)
-  const regularAwards = AwardsData.filter(a => !a.featured)
+  const featuredAwards = awards.filter(a => a.featured)
+  const regularAwards = awards.filter(a => !a.featured)
   const mainFeatured = featuredAwards[0] // Hero card
   
   // Featured sisanya digabung dengan regular awards
@@ -88,8 +89,8 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
   const allRegularAwards = [...remainingFeatured, ...regularAwards]
 
   // Stats calculation
-  const uniqueYears = [...new Set(AwardsData.map(a => a.year))].length
-  const firstYear = AwardsData.map(a => parseInt(a.year)).sort((a, b) => a - b)[0]
+  const uniqueYears = [...new Set(awards.map(a => a.year))].length
+  const firstYear = awards.map(a => parseInt(a.year)).sort((a, b) => a - b)[0]
   const currentYear = new Date().getFullYear()
   const yearsOfExcellence = currentYear - firstYear + 1
 
@@ -256,7 +257,7 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
         >
           <div className="bg-[#FAF8F5] rounded-2xl p-4 md:p-5 border border-[#E8D09E]/30 text-center hover:border-[#C5A059]/40 transition-colors">
             <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
-              {AwardsData.length}+
+              {awards.length}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
               {t('awards.statAwards')}

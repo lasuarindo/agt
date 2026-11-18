@@ -22,7 +22,7 @@ import {
   X,
   CheckCircle2
 } from 'lucide-react'
-import { AwardsData, getAwardIcon, type Award } from '@/data/award'
+import { getAwardsData, getAwardIcon, type Award } from '@/data/award'
 import AboutJoinUsCTA from '@/components/AboutJoinUs'
 import { useTranslation } from 'react-i18next'
 
@@ -46,9 +46,10 @@ interface FilterOption {
 
 function HeroAwardsPage() {
   const { t } = useTranslation('awards')
-  const totalAwards = AwardsData.length
-  const featuredCount = AwardsData.filter(a => a.featured).length
-  const uniqueYears = [...new Set(AwardsData.map(a => a.year))].length
+  const awards = getAwardsData(t)
+  const totalAwards = awards.length
+  const featuredCount = awards.filter(a => a.featured).length
+  const uniqueYears = [...new Set(awards.map(a => a.year))].length
 
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
@@ -139,10 +140,11 @@ function HeroAwardsPage() {
 function AwardsStatsSection() {
   const { t } = useTranslation('awards')
   const stats = useMemo(() => {
-    const totalAwards = AwardsData.length
-    const featuredCount = AwardsData.filter(a => a.featured).length
-    const uniqueYears = [...new Set(AwardsData.map(a => a.year))].length
-    const firstYear = Math.min(...AwardsData.map(a => parseInt(a.year)))
+    const awards = getAwardsData(t)
+    const totalAwards = awards.length
+    const featuredCount = awards.filter(a => a.featured).length
+    const uniqueYears = [...new Set(awards.map(a => a.year))].length
+    const firstYear = Math.min(...awards.map(a => parseInt(a.year)))
     const currentYear = new Date().getFullYear()
     const yearsOfExcellence = currentYear - firstYear + 1
 
@@ -253,6 +255,7 @@ function AwardsFilterSection({
 }) {
   const { t } = useTranslation('awards')
   const filterOptions: FilterOption[] = useMemo(() => {
+    const awards = getAwardsData(t)
     const categories: AwardCategory[] = ['all', 'achievement', 'certification', 'partnership', 'innovation', 'startup']
     
     return categories.map(cat => ({
@@ -264,7 +267,7 @@ function AwardsFilterSection({
             cat === 'partnership' ? <Handshake className="w-4 h-4" /> :
             cat === 'innovation' ? <Lightbulb className="w-4 h-4" /> :
             <Sparkles className="w-4 h-4" />,
-      count: cat === 'all' ? AwardsData.length : AwardsData.filter(a => a.category === cat).length
+      count: cat === 'all' ? awards.length : awards.filter(a => a.category === cat).length
     }))
   }, [t])
 
@@ -550,9 +553,10 @@ function AwardsGridSection({ awards }: { awards: Award[] }) {
 function AwardsTimelineSection() {
   const { t } = useTranslation('awards')
   const timelineByYear = useMemo(() => {
+    const awards = getAwardsData(t)
     const grouped: Record<string, Award[]> = {}
     
-    AwardsData.forEach(award => {
+    awards.forEach(award => {
       if (!grouped[award.year]) {
         grouped[award.year] = []
       }
@@ -561,7 +565,7 @@ function AwardsTimelineSection() {
 
     return Object.entries(grouped)
       .sort(([a], [b]) => parseInt(b) - parseInt(a)) // Sort descending
-  }, [])
+  }, [t])
 
   return (
     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
@@ -774,13 +778,15 @@ function CertificationsSection() {
 // ============================================================================
 
 export default function AwardsPage() {
+  const { t } = useTranslation('awards')
+  const awards = useMemo(() => getAwardsData(t), [t])
   const [activeFilter, setActiveFilter] = useState<AwardCategory>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false)
 
   // Filter awards
   const filteredAwards = useMemo(() => {
-    let filtered = AwardsData
+    let filtered = awards
 
     // Filter by category
     if (activeFilter !== 'all') {
@@ -805,10 +811,10 @@ export default function AwardsPage() {
     }
 
     return filtered
-  }, [activeFilter, searchQuery, showFeaturedOnly])
+  }, [awards, activeFilter, searchQuery, showFeaturedOnly])
 
   // Get main featured award
-  const mainFeatured = filteredAwards.find(a => a.featured) || AwardsData.find(a => a.featured)
+  const mainFeatured = filteredAwards.find(a => a.featured) || awards.find(a => a.featured)
 
   return (
     <>

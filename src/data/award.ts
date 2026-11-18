@@ -13,6 +13,7 @@ import {
   type LucideIcon,
   
 } from 'lucide-react'
+import type { TFunction } from 'i18next'
 
 // ============================================================================
 // TYPES
@@ -260,3 +261,22 @@ export const AwardsData: Award[] = [
   //   featured: true
   // }
 ]
+
+// ============================================================================
+// I18N HELPERS - Translate display fields (keeps structure/icons/gradients)
+// ============================================================================
+
+/**
+ * Translate display fields of every award (title, description).
+ * `organizer`, `year`, `category`, `gradient`, `icon` stay as-is.
+ */
+export const getAwardsData = (t: TFunction): Award[] =>
+  AwardsData.map(a => {
+    if (!a.id) return a
+    const key = `data/awards:${a.id}`
+    return {
+      ...a,
+      title: t(`${key}.title`, { defaultValue: a.title }),
+      description: a.description ? t(`${key}.description`, { defaultValue: a.description }) : a.description
+    }
+  })
