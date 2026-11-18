@@ -8,6 +8,7 @@ import {
   type LucideIcon
 } from 'lucide-react'
 import { logodev } from '@/utils/image'
+import type { TFunction } from 'i18next'
 
 // ============================================================================
 // TYPES
@@ -39,7 +40,7 @@ export type Investor = {
 // ============================================================================
 // HELPER - Type Label
 // ============================================================================
-export const getInvestorTypeLabel = (type?: InvestorType): string => {
+export const getInvestorTypeLabel = (type?: InvestorType, t?: TFunction): string => {
   const map: Record<InvestorType, string> = {
     'venture-capital': 'Venture Capital',
     'angel': 'Angel Investor',
@@ -49,7 +50,9 @@ export const getInvestorTypeLabel = (type?: InvestorType): string => {
     'family-office': 'Family Office',
     'custom': 'Investor'
   }
-  return map[type || 'custom'] || 'Investor'
+  const fallback = map[type || 'custom'] || 'Investor'
+  if (!t) return fallback
+  return t(`data/investors:types.${type || 'custom'}`, { defaultValue: fallback })
 }
 
 // ============================================================================
@@ -202,3 +205,21 @@ export const InvestorsData: Investor[] = [
     featured: false
   },
 ]
+
+// ============================================================================
+// I18N HELPERS - Translate display fields (keeps structure/logos/gradients)
+// ============================================================================
+
+/**
+ * Translate display fields of every investor (tagline, description).
+ * `name`, `initial`, `gradient`, `logo`, `type`, `since` stay as-is.
+ */
+export const getInvestorsData = (t: TFunction): Investor[] =>
+  InvestorsData.map(i => {
+    const key = `data/investors:items.${i.id}`
+    return {
+      ...i,
+      tagline: t(`${key}.tagline`, { defaultValue: i.tagline }),
+      description: i.description ? t(`${key}.description`, { defaultValue: i.description }) : i.description
+    }
+  })

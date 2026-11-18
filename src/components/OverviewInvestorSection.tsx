@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import { TrendingUp, Award, ArrowRight, Building2 } from 'lucide-react'
 import { Link } from 'react-router'
 import { 
-  InvestorsData, 
+  getInvestorsData, 
   getInvestorGradient, 
   getInvestorTypeLabel,
   type Investor 
@@ -14,10 +14,11 @@ import { useTranslation } from 'react-i18next'
 // ============================================================================
 export default function InvestorsOverviewSection() {
   const { t } = useTranslation('overview')
-  const hasInvestors = InvestorsData.length > 0
+  const investors = getInvestorsData(t)
+  const hasInvestors = investors.length > 0
   const placeholderSlots = 6
   
-  const renderRestPlacholder = placeholderSlots - InvestorsData.length
+  const renderRestPlacholder = placeholderSlots - investors.length
   
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
@@ -58,7 +59,7 @@ export default function InvestorsOverviewSection() {
           {hasInvestors && (
             // REAL DATA MODE
             <>
-              {InvestorsData.map((investor, idx) => (
+              {investors.map((investor, idx) => (
                 <InvestorCard key={investor.id} investor={investor} idx={idx} />
               ))}
             </>
@@ -115,8 +116,9 @@ export default function InvestorsOverviewSection() {
 // INVESTOR CARD - Real Data
 // ============================================================================
 function InvestorCard({ investor, idx }: { investor: Investor; idx: number }) {
+  const { t } = useTranslation('overview')
   const gradient = investor.gradient || getInvestorGradient(investor.type)
-  const typeLabel = getInvestorTypeLabel(investor.type)
+  const typeLabel = getInvestorTypeLabel(investor.type, t)
 
   return (
     <motion.a

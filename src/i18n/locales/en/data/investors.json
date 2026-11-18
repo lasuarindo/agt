@@ -1,0 +1,25 @@
+{
+  "types": {
+    "venture-capital": "Venture Capital",
+    "angel": "Angel Investor",
+    "corporate": "Corporate Investor",
+    "government": "Government Fund",
+    "strategic": "Strategic Investor",
+    "family-office": "Family Office",
+    "custom": "Investor"
+  },
+  "items": {
+    "backer-kadin-jabar": {
+      "tagline": "Chamber of Commerce and Industry of West Java",
+      "description": "Umbrella business organization covering entrepreneurs in West Java, providing legitimacy, advocacy, and strategic business network expansion."
+    },
+    "backer-hipmi-jabar": {
+      "tagline": "Indonesian Young Entrepreneurs Association",
+      "description": "A platform for entrepreneurship development, business networking, and innovation for young entrepreneurs, supporting the growth of technology startups at the regional level."
+    },
+    "backer-ardin-jabar": {
+      "tagline": "Association of Trading & Distribution Companies",
+      "description": "Strategic partner in strengthening the distribution and trade ecosystem for goods, supporting the integration of product security solutions into the regional supply chain."
+    }
+  }
+}

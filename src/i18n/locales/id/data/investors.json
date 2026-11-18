@@ -1,0 +1,25 @@
+{
+  "types": {
+    "venture-capital": "Venture Capital",
+    "angel": "Investor Angel",
+    "corporate": "Investor Korporasi",
+    "government": "Dana Pemerintah",
+    "strategic": "Investor Strategis",
+    "family-office": "Family Office",
+    "custom": "Investor"
+  },
+  "items": {
+    "backer-kadin-jabar": {
+      "tagline": "Kamar Dagang dan Industri Provinsi Jawa Barat",
+      "description": "Induk organisasi dunia usaha yang memayungi pelaku usaha di Jawa Barat, memberikan legitimasi, advokasi, dan perluasan jaringan bisnis yang strategis."
+    },
+    "backer-hipmi-jabar": {
+      "tagline": "Himpunan Pengusaha Muda Indonesia",
+      "description": "Wadah pengembangan kewirausahaan, jejaring bisnis, dan inovasi bagi pengusaha muda, yang mendukung pertumbuhan startup teknologi di tingkat daerah."
+    },
+    "backer-ardin-jabar": {
+      "tagline": "Asosiasi Perusahaan Perdagangan & Distributor",
+      "description": "Mitra strategis dalam penguatan ekosistem distribusi dan perdagangan barang, mendukung integrasi solusi keamanan produk ke dalam rantai pasok regional."
+    }
+  }
+}
