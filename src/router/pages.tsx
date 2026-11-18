@@ -1,5 +1,5 @@
 // import { createBrowserRouter } from "react-router";
-import { lazy } from 'react';
+import { lazyPage } from '@/router/lazy';
 
 // import HomePage from '@/view/Home';
 // import AboutPage from '@/view/About';
@@ -11,22 +11,22 @@ import { lazy } from 'react';
 // import PrivacyPolicyPage from '@/view/PrivacyPolicy';
 // import TermsPage from '@/view/TermConditions';
 
-const HomePage              = lazy(() => import("@/view/Home"));
-const AboutPage             = lazy(() => import('@/view/About'));
-const ServicesPage = lazy(() => import("@/view/Services"));
-const TechnologyPage = lazy(() => import("@/view/Technology"));
-const PartnersPage = lazy(() => import("@/view/Partners"));
-const ContactPage           = lazy(() => import('@/view/Contact'));
-const FAQPage = lazy(() => import("@/view/FAQ"));
-const PrivacyPolicyPage = lazy(() => import("@/view/legal/PrivacyPolicy"));
-const TermsPage = lazy(() => import("@/view/legal/TermConditions"));
+const HomePage              = lazyPage(() => import("@/view/Home"));
+const AboutPage             = lazyPage(() => import('@/view/About'));
+const ServicesPage = lazyPage(() => import("@/view/Services"));
+const TechnologyPage = lazyPage(() => import("@/view/Technology"));
+const PartnersPage = lazyPage(() => import("@/view/Partners"));
+const ContactPage           = lazyPage(() => import('@/view/Contact'));
+const FAQPage = lazyPage(() => import("@/view/FAQ"));
+const PrivacyPolicyPage = lazyPage(() => import("@/view/legal/PrivacyPolicy"));
+const TermsPage = lazyPage(() => import("@/view/legal/TermConditions"));
 
-const OurTeamPage = lazy(() => import('@/view/about/OurTeam'));
-const OurClientsPage = lazy(() => import('@/view/partners/OurClients'));
-const AwardsPage = lazy(() => import('@/view/about/Awards'));
-const ServiceHologramDetailPage = lazy(() => import('@/view/services/Hologram'));
-const ServiceTafetaDetailPage = lazy(() => import('@/view/services/Tafeta'));
-const NotFoundPage = lazy(() => import('@/view/NotFound'));
+const OurTeamPage = lazyPage(() => import('@/view/about/OurTeam'));
+const OurClientsPage = lazyPage(() => import('@/view/partners/OurClients'));
+const AwardsPage = lazyPage(() => import('@/view/about/Awards'));
+const ServiceHologramDetailPage = lazyPage(() => import('@/view/services/Hologram'));
+const ServiceTafetaDetailPage = lazyPage(() => import('@/view/services/Tafeta'));
+const NotFoundPage = lazyPage(() => import('@/view/NotFound'));
 
 
 

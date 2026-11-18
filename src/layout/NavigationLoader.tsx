@@ -1,46 +1,93 @@
-import { useEffect, useState } from 'react'
-import { useNavigation } from 'react-router'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { ShieldCheck } from 'lucide-react'
+import { lazyLoading } from '@/router/lazy'
+
+// Tampilkan overlay minimal selama ini agar tidak berkedip pada navigasi cepat.
+const MIN_VISIBLE_MS = 400
 
 /**
- * Progress bar tipis yang muncul saat navigasi (termasuk pemuatan lazy chunk)
- * sedang berjalan. Ditunda 150ms agar tidak berkedip pada navigasi cepat/ter-cache.
+ * Overlay loader saat perpindahan halaman (termasuk pemuatan lazy chunk).
+ * Bergaya sama dengan loader inisialisasi (spinner + teks) dan menutupi layar
+ * selama navigasi berlangsung. Root Suspense tetap dipakai untuk load awal.
  */
 export default function NavigationLoader() {
-  const navigation = useNavigation()
-  const isLoading = navigation.state === 'loading'
+  const pending = useSyncExternalStore(lazyLoading.subscribe, lazyLoading.getSnapshot)
+  const isLoading = pending > 0
   const reduceMotion = useReducedMotion()
   const [visible, setVisible] = useState(false)
+  const visibleRef = useRef(false)
+  const loadingRef = useRef(false)
+  const minElapsedRef = useRef(false)
+  const minTimerRef = useRef<number | null>(null)
 
   useEffect(() => {
-    if (!isLoading) {
-      setVisible(false)
+    if (isLoading) {
+      loadingRef.current = true
+      if (visibleRef.current) return
+
+      visibleRef.current = true
+      setVisible(true)
+      minElapsedRef.current = false
+
+      if (minTimerRef.current !== null) window.clearTimeout(minTimerRef.current)
+      minTimerRef.current = window.setTimeout(() => {
+        minElapsedRef.current = true
+        minTimerRef.current = null
+        if (!loadingRef.current) {
+          visibleRef.current = false
+          setVisible(false)
+        }
+      }, MIN_VISIBLE_MS)
       return
     }
-    const id = window.setTimeout(() => setVisible(true), 150)
-    return () => window.clearTimeout(id)
+
+    // Navigasi selesai: sembunyikan jika sudah memenuhi durasi minimum.
+    loadingRef.current = false
+    if (!visibleRef.current) return
+    if (minElapsedRef.current) {
+      visibleRef.current = false
+      setVisible(false)
+    }
+    // Jika belum, biarkan minTimer yang menyembunyikan saat durasi tercapai.
   }, [isLoading])
+
+  useEffect(
+    () => () => {
+      if (minTimerRef.current !== null) window.clearTimeout(minTimerRef.current)
+    },
+    [],
+  )
 
   if (!visible) return null
 
   return (
-    <div
+    <motion.div
       data-testid="navigation-loader"
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-x-0 top-0 z-[70] h-1 overflow-hidden"
+      role="status"
+      aria-live="polite"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: reduceMotion ? 0 : 0.15 }}
+      className="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-[#FAFAFA]/95 backdrop-blur-sm"
     >
-      <motion.div
-        className={`h-full rounded-r-full bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#E8D09E] shadow-[0_0_10px_rgba(197,160,89,0.6)] ${
-          reduceMotion ? 'w-full' : 'w-1/3'
+      <div className="relative" aria-hidden="true">
+        <div
+          className={`w-16 h-16 border-4 border-[#E8D09E] border-t-[#8C6F3D] rounded-full ${
+            reduceMotion ? '' : 'animate-spin'
+          }`}
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <ShieldCheck className="w-6 h-6 text-[#8C6F3D]" />
+        </div>
+      </div>
+      <p
+        className={`mt-6 text-sm font-semibold text-[#8C6F3D] tracking-wide ${
+          reduceMotion ? '' : 'animate-pulse'
         }`}
-        initial={reduceMotion ? { opacity: 0 } : { x: '-120%' }}
-        animate={reduceMotion ? { opacity: 1 } : { x: '320%' }}
-        transition={
-          reduceMotion
-            ? { duration: 0.2 }
-            : { duration: 1.1, repeat: Infinity, ease: 'easeInOut' }
-        }
-      />
-    </div>
+      >
+        Memuat halaman...
+      </p>
+    </motion.div>
   )
 }

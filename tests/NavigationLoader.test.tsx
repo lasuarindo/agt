@@ -1,73 +1,93 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, act } from '@testing-library/react'
 
-const { useNavigationMock } = vi.hoisted(() => ({ useNavigationMock: vi.fn() }))
+const { loadingStore } = vi.hoisted(() => {
+  let pending = 0
+  const listeners = new Set<() => void>()
+  return {
+    loadingStore: {
+      subscribe(cb: () => void) {
+        listeners.add(cb)
+        return () => {
+          listeners.delete(cb)
+        }
+      },
+      getSnapshot() {
+        return pending
+      },
+      set(v: number) {
+        pending = v
+        listeners.forEach((l) => l())
+      },
+    },
+  }
+})
 
-vi.mock('react-router', () => ({
-  useNavigation: () => useNavigationMock(),
-}))
+vi.mock('@/router/lazy', () => ({ lazyLoading: loadingStore }))
 
 import NavigationLoader from '@/layout/NavigationLoader'
+
+const MIN_VISIBLE_MS = 400
 
 describe('NavigationLoader', () => {
   beforeEach(() => {
     vi.useFakeTimers()
-    useNavigationMock.mockReset()
+    loadingStore.set(0)
   })
 
   afterEach(() => {
     vi.useRealTimers()
   })
 
-  it('renders nothing when idle', () => {
-    useNavigationMock.mockReturnValue({ state: 'idle' })
+  it('renders nothing when no page chunk is loading', () => {
     render(<NavigationLoader />)
     expect(screen.queryByTestId('navigation-loader')).not.toBeInTheDocument()
   })
 
-  it('appears after the delay while loading', () => {
-    useNavigationMock.mockReturnValue({ state: 'loading' })
+  it('appears while a page chunk is loading', () => {
     render(<NavigationLoader />)
-
-    // Belum terlihat sebelum delay 150ms.
-    expect(screen.queryByTestId('navigation-loader')).not.toBeInTheDocument()
-
     act(() => {
-      vi.advanceTimersByTime(200)
+      loadingStore.set(1)
     })
 
     expect(screen.getByTestId('navigation-loader')).toBeInTheDocument()
+    expect(screen.getByText('Memuat halaman...')).toBeInTheDocument()
   })
 
-  it('does not flash when navigation finishes before the delay', () => {
-    useNavigationMock.mockReturnValue({ state: 'loading' })
-    const { rerender } = render(<NavigationLoader />)
-
+  it('keeps the overlay for the minimum duration after loading finishes', () => {
+    render(<NavigationLoader />)
+    act(() => {
+      loadingStore.set(1)
+    })
     act(() => {
       vi.advanceTimersByTime(100)
     })
 
-    useNavigationMock.mockReturnValue({ state: 'idle' })
-    rerender(<NavigationLoader />)
-
     act(() => {
-      vi.advanceTimersByTime(200)
+      loadingStore.set(0)
     })
 
+    // Masih terlihat tepat setelah chunk selesai.
+    expect(screen.getByTestId('navigation-loader')).toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(MIN_VISIBLE_MS)
+    })
     expect(screen.queryByTestId('navigation-loader')).not.toBeInTheDocument()
   })
 
-  it('hides again once navigation becomes idle', () => {
-    useNavigationMock.mockReturnValue({ state: 'loading' })
-    const { rerender } = render(<NavigationLoader />)
+  it('hides right away when loading took longer than the minimum', () => {
+    render(<NavigationLoader />)
+    act(() => {
+      loadingStore.set(1)
+    })
+    act(() => {
+      vi.advanceTimersByTime(MIN_VISIBLE_MS + 100)
+    })
 
     act(() => {
-      vi.advanceTimersByTime(200)
+      loadingStore.set(0)
     })
-    expect(screen.getByTestId('navigation-loader')).toBeInTheDocument()
-
-    useNavigationMock.mockReturnValue({ state: 'idle' })
-    rerender(<NavigationLoader />)
 
     expect(screen.queryByTestId('navigation-loader')).not.toBeInTheDocument()
   })
