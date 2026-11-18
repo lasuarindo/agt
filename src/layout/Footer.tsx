@@ -23,52 +23,54 @@ import {
 } from 'lucide-react'
 import appLogo from "/favicon.ico"
 import { getHQOffice } from '@/data/offices'
+import { useTranslation } from 'react-i18next'
 
 
 export default function FooterMain() {
+  const { t } = useTranslation('common')
   const currentYear = new Date().getFullYear()
 
   const footerSections = [
     {
-      title: 'Layanan',
+      title: t('footer.sections.services'),
       links: [
-        { label: 'Sticker Hologram', href: '/services/hologram' },
-        { label: 'Tafeta Label', href: '/services/tafeta' },
+        { label: t('footer.links.hologramSticker'), href: '/services/hologram' },
+        { label: t('footer.links.tafetaLabel'), href: '/services/tafeta' },
         // { label: 'Brand Protection', href: '/services#protection' },
         // { label: 'Supply Chain Security', href: '/services#supply' }
       ]
     },
     {
-      title: 'Perusahaan',
+      title: t('footer.sections.company'),
       links: [
-        { label: 'Tentang Kami', href: '/about' },
-        { label: 'Teknologi', href: '/technology' },
-        { label: 'Mitra Kami', href: '/partners' },
+        { label: t('footer.links.aboutUs'), href: '/about' },
+        { label: t('footer.links.technology'), href: '/technology' },
+        { label: t('footer.links.ourPartners'), href: '/partners' },
         // { label: 'Karir', href: '/contact' }
       ]
     },
     {
-      title: 'Sumber Daya',
+      title: t('footer.sections.resources'),
       links: [
         // { label: 'Pusat FAQ', href: '/faq', icon: <HelpCircle className="w-3 h-3" /> },
         // { label: 'Panduan Verifikasi', href: '/faq?category=verification', icon: <BookOpen className="w-3 h-3" /> },
         // { label: 'Dokumentasi API', href: '/faq?category=technology', icon: <FileText className="w-3 h-3" /> },
         // { label: 'Studi Kasus', href: '/partners', icon: <Award className="w-3 h-3" /> },
         // { label: 'Keamanan Data', href: '/faq?category=security', icon: <Shield className="w-3 h-3" /> },
-        { label: 'ISO/IEC 27000', href: '^', icon: <ShieldCheck className="w-3.5 h-3.5" /> },
-        { label: 'ISO/IEC 18004', href: '^', icon: <QrCode className="w-3.5 h-3.5" /> },
-        { label: 'GS1 Standards', href: '^', icon: <Barcode className="w-3.5 h-3.5" /> },
-        { label: 'NIB 9120107221893', href: '^', icon: <PenTool className="w-3.5 h-3.5" /> },
-        { label: 'HKI IDM000836339', href: '^', icon: <FileBadge className="w-3.5 h-3.5" /> }
+        { label: t('footer.links.iso27000'), href: '^', icon: <ShieldCheck className="w-3.5 h-3.5" /> },
+        { label: t('footer.links.iso18004'), href: '^', icon: <QrCode className="w-3.5 h-3.5" /> },
+        { label: t('footer.links.gs1'), href: '^', icon: <Barcode className="w-3.5 h-3.5" /> },
+        { label: t('footer.links.nib'), href: '^', icon: <PenTool className="w-3.5 h-3.5" /> },
+        { label: t('footer.links.hki'), href: '^', icon: <FileBadge className="w-3.5 h-3.5" /> }
       ]
     },
     {
-      title: 'Bantuan',
+      title: t('footer.sections.help'),
       links: [
-        { label: 'Hubungi Kami', href: '/contact', icon: <MessageCircle className="w-3 h-3" /> },
-        { label: 'Kebijakan Privasi', href: '/privacy-policy', icon: <Lock className="w-3 h-3" /> },
-        { label: 'Syarat & Ketentuan', href: '/term-condition', icon: <FileText className="w-3 h-3" /> },
-        { label: 'Pusat FAQ', href: '/faq', icon: <HelpCircle className="w-3 h-3" /> },
+        { label: t('footer.links.contactUs'), href: '/contact', icon: <MessageCircle className="w-3 h-3" /> },
+        { label: t('footer.links.privacyPolicy'), href: '/privacy-policy', icon: <Lock className="w-3 h-3" /> },
+        { label: t('footer.links.terms'), href: '/term-condition', icon: <FileText className="w-3 h-3" /> },
+        { label: t('footer.links.faq'), href: '/faq', icon: <HelpCircle className="w-3 h-3" /> },
         // { label: 'NIB', href: '#', icon: <PenTool className="w-3 h-3" /> },
         // { label: 'HIK', href: '#', icon: <ShieldCheck className="w-3 h-3" /> },
       ]
@@ -80,28 +82,27 @@ export default function FooterMain() {
   const contactInfo = [
     {
       icon: <MapPin className="w-4 h-4" />,
-      label: 'Alamat',
+      label: t('footer.contact.address'),
       value: officeHQ.address,
       href: officeHQ.mapsUrl
     },
     {
       icon: <Phone className="w-4 h-4" />,
-      label: 'Telepon',
+      label: t('footer.contact.phone'),
       value: officeHQ.phoneDisplay,
       href: officeHQ.phoneLink
     },
     {
       icon: <Mail className="w-4 h-4" />,
-      label: 'Email',
+      label: t('footer.contact.email'),
       value: officeHQ.email,
       href: `mailto:${officeHQ.email}`
     }
   ]
 
   const trustBadges = [
-    { label: 'Since 2017', icon: <Award className="w-3.5 h-3.5" /> },
-    // { label: '500+ Brand', icon: <Award className="w-3.5 h-3.5" /> },
-    { label: 'Made in Indonesia', icon: <GlobeCheck className="w-3.5 h-3.5" /> }
+    { label: t('footer.since2017'), icon: <Award className="w-3.5 h-3.5" /> },
+    { label: t('footer.madeInIndonesia'), icon: <GlobeCheck className="w-3.5 h-3.5" /> }
   ]
 
   // Smooth scroll handler untuk anchor links
@@ -150,7 +151,7 @@ export default function FooterMain() {
               </Link>
 
               <p className="text-sm text-gray-400 leading-relaxed max-w-md">
-                Sistem Anti-Counterfeit Pertama di Asia Pasifik. Melindungi produk dan membangun kepercayaan konsumen dengan teknologi autentikasi canggih sejak 2017.
+                {t('footer.description')}
               </p>
 
               {/* Trust Badges */}
@@ -272,25 +273,25 @@ export default function FooterMain() {
         <div className="py-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-gray-500 text-center md:text-left">
-              © {currentYear} PT. Autentikasi Garda Teknologi. Hak cipta dilindungi.
+              {t('footer.bottom.copyright', { year: currentYear })}
             </p>
             <div className="flex items-center gap-4 text-xs text-gray-500">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#E8D09E]" />
-                <span>Pionir Anti-Counterfeit Asia Pasifik</span>
+                <span>{t('footer.bottom.pioneer')}</span>
               </div>
               <div className="hidden md:block w-px h-4 bg-white/10" />
               <div className="flex items-center gap-3">
                 <Link to="/privacy-policy" className="hover:text-[#E8D09E] transition-colors">
-                  Privasi
+                  {t('footer.bottom.privacy')}
                 </Link>
                 <span className="text-white/20">•</span>
                 <Link to="/term-condition" className="hover:text-[#E8D09E] transition-colors">
-                  Ketentuan
+                  {t('footer.bottom.terms')}
                 </Link>
                 <span className="text-white/20">•</span>
                 <Link to="/faq" className="hover:text-[#E8D09E] transition-colors">
-                  FAQ
+                  {t('footer.bottom.faq')}
                 </Link>
               </div>
             </div>

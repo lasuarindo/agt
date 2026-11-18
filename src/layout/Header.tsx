@@ -5,24 +5,29 @@ import { motion } from 'motion/react'
 
 import appLogo from "/favicon.ico";
 
-import GoogleTranslate, { LANGUAGES } from "next-google-translate-widget";
-import "next-google-translate-widget/styles";
+import { useTranslation } from 'react-i18next';
 
 const LanguageSwitcher = () => {
-  // Contoh: filter hanya menampilkan beberapa bahasa
-  const selectedLangs = LANGUAGES.filter((lang) =>
-    ["en", "id"].includes(lang.value)
-  );
-  
+  const { i18n } = useTranslation();
+  const [lang, setLang] = useState(i18n.language);
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const next = e.target.value;
+    void i18n.changeLanguage(next);
+    document.documentElement.lang = next;
+    setLang(next);
+  };
+
   return (
-    <GoogleTranslate
-      pageLanguage="id"
-      languages={selectedLangs}
-      menuAlign="right"
-      onLanguageChange={(lang) => {
-        document.documentElement.lang = lang;
-      }}
-    />
+    <select
+      value={lang}
+      onChange={handleChange}
+      aria-label="Language"
+      className="text-sm font-semibold text-gray-700 bg-transparent border border-[#E8D09E]/40 rounded-lg px-2 py-1.5 hover:border-[#C5A059] focus:outline-none cursor-pointer"
+    >
+      <option value="id">ID</option>
+      <option value="en">EN</option>
+    </select>
   );
 }
 
@@ -48,16 +53,17 @@ interface NavLinkProps {
 }
 
 export default function HeaderMain() {
+  const { t } = useTranslation('common')
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const location = useLocation()
   
   const navLinks: NavLinkProps[] = [
-    { label: 'Beranda', href: '/' },
-    { label: 'Tentang', href: '/about' },
-    { label: 'Layanan', href: '/services' },
-    { label: 'Teknologi', href: '/technology' },
-    { label: 'Mitra', href: '/partners' },
-    { label: 'Kontak', href: '/contact' }
+    { label: t('nav.home'), href: '/' },
+    { label: t('nav.about'), href: '/about' },
+    { label: t('nav.services'), href: '/services' },
+    { label: t('nav.technology'), href: '/technology' },
+    { label: t('nav.partners'), href: '/partners' },
+    { label: t('nav.contact'), href: '/contact' }
   ];
   
   function toggleMobileNav(show: boolean) {
@@ -149,7 +155,7 @@ export default function HeaderMain() {
               <button
                 onClick={() => toggleMobileNav(false)}
                 className='p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer'
-                aria-label='Close Menu'
+                aria-label={t('menu.close')}
               >
                 <X className="w-6 h-6" />
               </button>
@@ -178,8 +184,8 @@ export default function HeaderMain() {
             </nav>
             
             <div className="text-center text-xs text-gray-400 font-medium tracking-wide space-y-1 border-t border-[#E8D09E]/20 p-6 bg-[#FAF8F5]">
-              <p>All Rights Reserved</p>
-              <p>© {new Date().getFullYear()} PT. Autentikasi Garda Teknologi</p>
+              <p>{t('menu.rightsReserved')}</p>
+              <p>{t('menu.copyright', { year: new Date().getFullYear() })}</p>
             </div>
           </div>
           
@@ -187,7 +193,7 @@ export default function HeaderMain() {
           <button
             onClick={() => toggleMobileNav(true)}
             className="lg:hidden p-2 text-[#1A1A1A] hover:bg-[#FAF8F5] rounded-lg"
-            aria-label="Open Menu"
+            aria-label={t('menu.open')}
           >
             <Menu className="w-6 h-6" />
           </button>

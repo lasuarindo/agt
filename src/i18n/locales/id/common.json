@@ -1,0 +1,59 @@
+{
+  "brand": {
+    "name": "AuthenticGuards",
+    "tagline": "Technology"
+  },
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "technology": "Teknologi",
+    "partners": "Mitra",
+    "contact": "Kontak"
+  },
+  "menu": {
+    "open": "Open Menu",
+    "close": "Close Menu",
+    "rightsReserved": "All Rights Reserved",
+    "copyright": "© {{year}} PT. Autentikasi Garda Teknologi"
+  },
+  "footer": {
+    "description": "Sistem Anti-Counterfeit Pertama di Asia Pasifik. Melindungi produk dan membangun kepercayaan konsumen dengan teknologi autentikasi canggih sejak 2017.",
+    "since2017": "Since 2017",
+    "madeInIndonesia": "Made in Indonesia",
+    "contact": {
+      "address": "Alamat",
+      "phone": "Telepon",
+      "email": "Email"
+    },
+    "sections": {
+      "services": "Layanan",
+      "company": "Perusahaan",
+      "resources": "Sumber Daya",
+      "help": "Bantuan"
+    },
+    "links": {
+      "hologramSticker": "Sticker Hologram",
+      "tafetaLabel": "Tafeta Label",
+      "aboutUs": "Tentang Kami",
+      "technology": "Teknologi",
+      "ourPartners": "Mitra Kami",
+      "iso27000": "ISO/IEC 27000",
+      "iso18004": "ISO/IEC 18004",
+      "gs1": "GS1 Standards",
+      "nib": "NIB 9120107221893",
+      "hki": "HKI IDM000836339",
+      "contactUs": "Hubungi Kami",
+      "privacyPolicy": "Kebijakan Privasi",
+      "terms": "Syarat & Ketentuan",
+      "faq": "Pusat FAQ"
+    },
+    "bottom": {
+      "copyright": "© {{year}} PT. Autentikasi Garda Teknologi. Hak cipta dilindungi.",
+      "pioneer": "Pionir Anti-Counterfeit Asia Pasifik",
+      "privacy": "Privasi",
+      "terms": "Ketentuan",
+      "faq": "FAQ"
+    }
+  }
+}

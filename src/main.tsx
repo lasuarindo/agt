@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router'
 import { ShieldCheck } from 'lucide-react'
 import { router } from '@/router/routes'
+import '@/i18n'
 import './index.css'
 // import App from './App.tsx'
 
