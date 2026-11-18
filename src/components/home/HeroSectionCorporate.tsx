@@ -59,10 +59,10 @@ export default function HeroSectionCorporate() {
           {/* Subheadline - 2 paragraf ringkas dari 3 paragraf asli */}
           <div className="space-y-4 max-w-4xl mx-auto">
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-              <Trans i18nKey="hero.subtitle1" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
+              <Trans i18nKey="hero.subtitle1" ns="home" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
             </p>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-              <Trans i18nKey="hero.subtitle2" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
+              <Trans i18nKey="hero.subtitle2" ns="home" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
             </p>
           </div>
         </motion.div>

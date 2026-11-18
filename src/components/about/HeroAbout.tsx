@@ -49,7 +49,7 @@ export default function HeroAbout() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          <Trans i18nKey="hero.desc" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
+          <Trans i18nKey="hero.desc" ns="about" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
         </motion.p>
 
         <motion.div

@@ -28,10 +28,10 @@ export default function OurStorySection() {
                 {t('story.p1')}
               </p>
               <p>
-                <Trans i18nKey="story.p2" components={{ strong: <strong className="text-[#1A1A1A]" />, em: <em /> }} />
+                <Trans i18nKey="story.p2" ns="about" components={{ strong: <strong className="text-[#1A1A1A]" />, em: <em /> }} />
               </p>
               <p>
-                <Trans i18nKey="story.p3" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
+                <Trans i18nKey="story.p3" ns="about" components={{ strong: <strong className="text-[#1A1A1A]" /> }} />
               </p>
             </div>
 
