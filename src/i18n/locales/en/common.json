@@ -3,6 +3,7 @@
     "name": "AuthenticGuards",
     "tagline": "Technology"
   },
+  "language": "Language",
   "nav": {
     "home": "Home",
     "about": "About",

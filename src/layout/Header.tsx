@@ -1,33 +1,188 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
-import { ArrowRight, Menu, X } from "lucide-react";
-import { motion } from 'motion/react'
+import { ArrowRight, Menu, X, Globe, Check, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 
 import appLogo from "/favicon.ico";
 
 import { useTranslation } from 'react-i18next';
 
-const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
-  const [lang, setLang] = useState(i18n.language);
+const LANGUAGES = [
+  { code: "id", label: "Bahasa Indonesia", short: "ID" },
+  { code: "en", label: "English", short: "EN" },
+] as const;
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const next = e.target.value;
-    void i18n.changeLanguage(next);
-    document.documentElement.lang = next;
-    setLang(next);
+type LanguageCode = (typeof LANGUAGES)[number]["code"];
+
+const LanguageSwitcher = () => {
+  const { i18n, t } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const optionRefs = useRef<Array<HTMLLIElement | null>>([]);
+  const reduceMotion = useReducedMotion();
+
+  const current = LANGUAGES.find((l) => l.code === i18n.language) ?? LANGUAGES[0];
+  const currentIdx = Math.max(0, LANGUAGES.findIndex((l) => l.code === i18n.language));
+
+  const selectLanguage = (code: LanguageCode) => {
+    if (code !== i18n.language) {
+      void i18n.changeLanguage(code);
+    }
+    setOpen(false);
+    triggerRef.current?.focus();
   };
 
+  const openMenu = (index: number = currentIdx) => {
+    setActiveIndex(index);
+    setOpen(true);
+  };
+
+  // Saat dibuka, pindahkan fokus ke opsi bahasa aktif.
+  useEffect(() => {
+    if (!open) return;
+    optionRefs.current[activeIndex]?.focus();
+    // Fokus hanya perlu diatur saat menu dibuka, bukan saat activeIndex berubah.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  // Tutup saat klik di luar.
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [open]);
+
+  const focusOption = (index: number) => {
+    const next = (index + LANGUAGES.length) % LANGUAGES.length;
+    setActiveIndex(next);
+    optionRefs.current[next]?.focus();
+  };
+
+  const handleListKeyDown = (e: React.KeyboardEvent) => {
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        focusOption(activeIndex + 1);
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        focusOption(activeIndex - 1);
+        break;
+      case "Home":
+        e.preventDefault();
+        focusOption(0);
+        break;
+      case "End":
+        e.preventDefault();
+        focusOption(LANGUAGES.length - 1);
+        break;
+      case "Enter":
+      case " ":
+        e.preventDefault();
+        selectLanguage(LANGUAGES[activeIndex].code);
+        break;
+      case "Escape":
+        e.preventDefault();
+        setOpen(false);
+        triggerRef.current?.focus();
+        break;
+      case "Tab":
+        setOpen(false);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleTriggerKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      openMenu();
+    }
+  };
+
+  const menuAnim = reduceMotion
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
+    : {
+        initial: { opacity: 0, y: -6, scale: 0.98 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: -6, scale: 0.98 },
+      };
+
   return (
-    <select
-      value={lang}
-      onChange={handleChange}
-      aria-label="Language"
-      className="text-sm font-semibold text-gray-700 bg-transparent border border-[#E8D09E]/40 rounded-lg px-2 py-1.5 hover:border-[#C5A059] focus:outline-none cursor-pointer"
-    >
-      <option value="id">ID</option>
-      <option value="en">EN</option>
-    </select>
+    <div ref={rootRef} className="relative">
+      <button
+        ref={triggerRef}
+        type="button"
+        onClick={() => (open ? setOpen(false) : openMenu())}
+        onKeyDown={handleTriggerKeyDown}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={`${t("language")}: ${current.label}`}
+        className="group inline-flex items-center gap-1.5 rounded-full border border-[#E8D09E]/50 bg-white/70 px-3 py-1.5 text-sm font-semibold text-[#1A1A1A] shadow-sm backdrop-blur-sm transition-colors hover:border-[#C5A059] hover:bg-[#FAF8F5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059]/60"
+      >
+        <Globe className="h-4 w-4 text-[#8C6F3D]" aria-hidden="true" />
+        <span className="uppercase tracking-wide">{current.short}</span>
+        <ChevronDown
+          className={`h-3.5 w-3.5 text-[#8C6F3D] transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
+          aria-hidden="true"
+        />
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.ul
+            role="listbox"
+            aria-label={t("language")}
+            tabIndex={-1}
+            onKeyDown={handleListKeyDown}
+            {...menuAnim}
+            transition={{ duration: reduceMotion ? 0 : 0.15, ease: "easeOut" }}
+            className="absolute right-0 top-full z-[60] mt-2 min-w-[13rem] origin-top-right overflow-hidden rounded-2xl border border-[#E8D09E]/40 bg-white p-1.5 shadow-xl shadow-[#1A1A1A]/10"
+          >
+            {LANGUAGES.map((lang, i) => {
+              const selected = lang.code === i18n.language;
+              return (
+                <li
+                  key={lang.code}
+                  ref={(el) => {
+                    optionRefs.current[i] = el;
+                  }}
+                  role="option"
+                  aria-selected={selected}
+                  tabIndex={-1}
+                  onClick={() => selectLanguage(lang.code)}
+                  onMouseEnter={() => setActiveIndex(i)}
+                  className={`flex cursor-pointer select-none items-center gap-2 rounded-xl px-3 py-2 outline-none transition-colors focus:bg-[#FAF8F5] ${
+                    selected ? "bg-[#FAF8F5]" : "hover:bg-[#FAF8F5]"
+                  }`}
+                >
+                  <span className="flex-1 whitespace-nowrap text-left text-sm font-semibold text-[#1A1A1A]">
+                    {lang.label}
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#8C6F3D]">
+                    {lang.short}
+                  </span>
+                  <Check
+                    className={`h-4 w-4 text-[#8C6F3D] transition-opacity ${
+                      selected ? "opacity-100" : "opacity-0"
+                    }`}
+                    aria-hidden="true"
+                  />
+                </li>
+              );
+            })}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
