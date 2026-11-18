@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "eyebrow": "Hubungi Kami",
+    "titleLine1": "Mari Berdiskusi Tentang",
+    "titleHighlight": "Solusi Anda",
+    "desc": "Tim kami siap membantu Anda menemukan solusi autentikasi yang tepat. Pilih kantor terdekat atau cara komunikasi yang paling nyaman untuk Anda.",
+    "stat1": "Response < 24 Jam",
+    "statOffices": "{{n}} Kantor di Indonesia",
+    "stat3": "Konsultasi Gratis"
+  },
+  "officeSelect": {
+    "eyebrow": "Lokasi Kantor",
+    "titlePre": "Pilih Kantor",
+    "titleHighlight": "Terdekat",
+    "subtitle": "AuthenticGuards hadir di berbagai kota besar Indonesia. Pilih kantor untuk melihat detail lengkap dan cara menghubungi kami.",
+    "pickerTitle": "Pilih Kantor ({{n}} Lokasi)",
+    "type": {
+      "hq": "HQ",
+      "regional": "Regional",
+      "branch": "Branch"
+    }
+  },
+  "contactCards": {
+    "phoneTitle": "Telepon",
+    "phoneDesc": "Respon cepat untuk pertanyaan umum dan bantuan teknis.",
+    "phoneCta": "Hubungi Sekarang",
+    "emailTitle": "Email Kantor",
+    "emailDesc": "Untuk pertanyaan formal, kemitraan, dan laporan hukum.",
+    "emailCta": "Kirim Email"
+  },
+  "form": {
+    "eyebrow": "Kirim Pesan",
+    "titleTop": "Ceritakan",
+    "titleHighlight": "Kebutuhan Anda",
+    "desc": "Isi formulir di samping dan pesan Anda akan diteruskan ke kantor {{city}} dalam 1x24 jam kerja.",
+    "activeTeam": "Tim Aktif",
+    "responseTitle": "Waktu Respons",
+    "response": [
+      { "label": "Email", "time": "< 24 jam" },
+      { "label": "Telepon", "time": "Langsung" },
+      { "label": "Form", "time": "< 24 jam" },
+      { "label": "WhatsApp", "time": "< 2 jam" }
+    ],
+    "guaranteeTitle": "Jaminan Kami",
+    "guarantee": [
+      "Data Anda aman & terenkripsi",
+      "Tidak ada spam, hanya respon relevan",
+      "Konsultasi awal gratis tanpa komitmen",
+      "Tim ahli dengan pengalaman 8+ tahun"
+    ],
+    "successTitle": "Pesan Terkirim!",
+    "successDesc": "Terima kasih. Tim {{city}} akan merespon pesan Anda dalam 1x24 jam kerja.",
+    "categoryLabel": "Kategori Pertanyaan",
+    "categories": [
+      { "value": "general", "label": "Pertanyaan Umum" },
+      { "value": "sales", "label": "Sales & Partnership" },
+      { "value": "support", "label": "Dukungan Teknis" },
+      { "value": "enterprise", "label": "Solusi Enterprise" },
+      { "value": "media", "label": "Media & Press" }
+    ],
+    "nameLabel": "Nama Lengkap",
+    "namePlaceholder": "Nama lengkap Anda",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@perusahaan.com",
+    "companyLabel": "Perusahaan",
+    "companyPlaceholder": "Nama perusahaan (opsional)",
+    "phoneLabel": "Nomor Telepon",
+    "phonePlaceholder": "+62 812-xxxx-xxxx",
+    "subjectLabel": "Subjek",
+    "subjectPlaceholder": "Ringkasan singkat pesan Anda",
+    "messageLabel": "Pesan",
+    "messagePlaceholder": "Ceritakan kebutuhan atau pertanyaan Anda secara detail...",
+    "charCount": "{{n}} karakter",
+    "privacyPrefix": "Dengan mengirim formulir ini, Anda menyetujui",
+    "privacyLink": "Kebijakan Privasi",
+    "privacySuffix": "kami. Data Anda akan diproses dengan aman dan hanya digunakan untuk merespon pertanyaan Anda.",
+    "sending": "Mengirim Pesan...",
+    "sent": "Pesan Terkirim!",
+    "submit": "Kirim Pesan ke {{city}}"
+  },
+  "detail": {
+    "eyebrow": "Detail Kantor",
+    "titlePre": "Kunjungi",
+    "titleHighlight": "Kantor {{city}}",
+    "subtitle": "Informasi lengkap alamat, jam operasional, dan cara menghubungi kantor {{city}}.",
+    "mapCta": "Buka di Google Maps",
+    "hoursTitle": "Jam Operasional",
+    "today": "Hari Ini",
+    "holidaysTitle": "Hari Libur",
+    "visitTitle": "Kunjungan Bisnis",
+    "visitDesc": "Untuk kunjungan bisnis atau meeting di kantor {{city}}, harap buat janji terlebih dahulu melalui email atau telepon.",
+    "visitCta": "Buat Janji"
+  },
+  "social": {
+    "title": "Media Sosial - {{city}}",
+    "subtitle": "Ikuti kami untuk update terbaru dari kantor {{city}}"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "titlePre": "Pertanyaan",
+    "titleHighlight": "Umum",
+    "subtitle": "Jawaban untuk pertanyaan yang sering diajukan sebelum menghubungi kami.",
+    "items": [
+      { "q": "Berapa lama waktu respons untuk pertanyaan saya?", "a": "Kami berkomitmen untuk merespon semua pertanyaan dalam waktu 1x24 jam kerja. Untuk pertanyaan mendesak, Anda dapat menghubungi kami langsung melalui telepon di kantor terdekat pada jam operasional." },
+      { "q": "Apakah konsultasi awal berbayar?", "a": "Tidak, konsultasi awal sepenuhnya gratis tanpa komitmen. Tim kami akan membantu memahami kebutuhan Anda dan merekomendasikan solusi yang paling sesuai sebelum Anda membuat keputusan." },
+      { "q": "Apakah saya harus datang ke kantor untuk konsultasi?", "a": "Tidak perlu. Kami menyediakan konsultasi online melalui video call untuk kenyamanan Anda. Namun, jika Anda ingin mengunjungi kantor kami di kota manapun, silakan buat janji terlebih dahulu." },
+      { "q": "Apakah AuthenticGuards melayani klien di luar Indonesia?", "a": "Ya, kami melayani klien di seluruh Asia Pasifik termasuk Malaysia, Singapura, Thailand, dan Vietnam. Tim kami dapat berkomunikasi dalam Bahasa Indonesia dan English." }
+    ]
+  }
+}

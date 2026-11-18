@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { motion, AnimatePresence } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import {
   MapPin,
   Phone,
@@ -49,6 +50,7 @@ const getCurrentDay = () => {
 // HERO CONTACT SECTION
 // ============================================================================
 function HeroContact() {
+  const { t } = useTranslation('contact')
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
@@ -71,7 +73,7 @@ function HeroContact() {
         >
           <MessageCircle className="w-4 h-4 text-[#C5A059]" />
           <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-            Hubungi Kami
+            {t('hero.eyebrow')}
           </span>
         </motion.div>
 
@@ -81,9 +83,9 @@ function HeroContact() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Mari Berdiskusi Tentang <br className="hidden md:block" />
+          {t('hero.titleLine1')} <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            Solusi Anda
+            {t('hero.titleHighlight')}
           </span>
         </motion.h1>
 
@@ -93,8 +95,7 @@ function HeroContact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Tim kami siap membantu Anda menemukan solusi autentikasi yang tepat.
-          Pilih kantor terdekat atau cara komunikasi yang paling nyaman untuk Anda.
+          {t('hero.desc')}
         </motion.p>
 
         {/* Quick Stats */}
@@ -106,19 +107,19 @@ function HeroContact() {
         >
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">Response &lt; 24 Jam</span>
+            <span className="font-semibold">{t('hero.stat1')}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-[#C5A059]" />
             <span className="font-semibold">
-              {OfficesData.length} Kantor di Indonesia
+              {t('hero.statOffices', { n: OfficesData.length })}
             </span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">Konsultasi Gratis</span>
+            <span className="font-semibold">{t('hero.stat3')}</span>
           </span>
         </motion.div>
       </div>
@@ -136,6 +137,7 @@ function OfficeSelectSection({
   activeOffice: OfficeProps
   setActiveOffice: (office: OfficeProps) => void
 }) {
+  const { t } = useTranslation('contact')
   const [isSelect, setIsSelect] = useState<boolean>(false)
 
   const selectOffice = (id: string) => {
@@ -147,16 +149,7 @@ function OfficeSelectSection({
   }
 
   const getTypeLabel = (type: OfficeProps['type']) => {
-    switch (type) {
-      case 'hq':
-        return 'HQ'
-      case 'regional':
-        return 'Regional'
-      case 'branch':
-        return 'Branch'
-      default:
-        return ''
-    }
+    return t(`officeSelect.type.${type}`)
   }
 
   const getTypeBadgeClass = (type: OfficeProps['type']) => {
@@ -202,17 +195,17 @@ function OfficeSelectSection({
           <div className="inline-flex items-center gap-2 bg-white border border-[#E8D09E]/40 px-4 py-2 rounded-full shadow-sm">
             <MapPin className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Lokasi Kantor
+              {t('officeSelect.eyebrow')}
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Pilih Kantor{' '}
+            {t('officeSelect.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Terdekat
+              {t('officeSelect.titleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            AuthenticGuards hadir di berbagai kota besar Indonesia. Pilih kantor untuk melihat detail lengkap dan cara menghubungi kami.
+            {t('officeSelect.subtitle')}
           </p>
         </div>
 
@@ -266,7 +259,7 @@ function OfficeSelectSection({
                 >
                   <div className="px-4 py-3 bg-[#FAF8F5] border-b border-[#E8D09E]/20">
                     <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-wider">
-                      Pilih Kantor ({OfficesData.length} Lokasi)
+                      {t('officeSelect.pickerTitle', { n: OfficesData.length })}
                     </p>
                   </div>
 
@@ -339,6 +332,7 @@ function OfficeSelectSection({
 // OFFICE CONTACT CARDS - Dinamis berdasarkan kantor terpilih
 // ============================================================================
 function OfficeSelectedContactSection({ activeOffice }: { activeOffice: OfficeProps }) {
+  const { t } = useTranslation('contact')
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -360,16 +354,16 @@ function OfficeSelectedContactSection({ activeOffice }: { activeOffice: OfficePr
                 <Phone className="w-6 h-6 text-[#8C6F3D]" />
               </div>
               <div className="flex-1 mb-4">
-                <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">Telepon</h4>
+                <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">{t('contactCards.phoneTitle')}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Respon cepat untuk pertanyaan umum dan bantuan teknis.
+                  {t('contactCards.phoneDesc')}
                 </p>
               </div>
               <p className="text-base font-bold text-[#1A1A1A] mb-3">
                 {activeOffice.phoneDisplay}
               </p>
               <div className="flex items-center gap-2 text-sm font-medium text-[#8C6F3D] group-hover:text-[#6b5530]">
-                <span>Hubungi Sekarang</span>
+                <span>{t('contactCards.phoneCta')}</span>
                 <ExternalLink className="w-4 h-4" />
               </div>
             </div>
@@ -385,16 +379,16 @@ function OfficeSelectedContactSection({ activeOffice }: { activeOffice: OfficePr
                 <Mail className="w-6 h-6 text-[#8C6F3D]" />
               </div>
               <div className="flex-1 mb-4">
-                <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">Email Kantor</h4>
+                <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">{t('contactCards.emailTitle')}</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Untuk pertanyaan formal, kemitraan, dan laporan hukum.
+                  {t('contactCards.emailDesc')}
                 </p>
               </div>
               <p className="text-base font-bold text-[#1A1A1A] mb-3 truncate">
                 {activeOffice.email}
               </p>
               <div className="flex items-center gap-2 text-sm font-medium text-[#8C6F3D] group-hover:text-[#6b5530]">
-                <span>Kirim Email</span>
+                <span>{t('contactCards.emailCta')}</span>
                 <ExternalLink className="w-4 h-4" />
               </div>
             </div>
@@ -409,6 +403,7 @@ function OfficeSelectedContactSection({ activeOffice }: { activeOffice: OfficePr
 // CONTACT FORM SECTION
 // ============================================================================
 function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
+  const { t } = useTranslation('contact')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -422,11 +417,11 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const categories = [
-    { value: 'general', label: 'Pertanyaan Umum', icon: <HelpCircle className="w-4 h-4" /> },
-    { value: 'sales', label: 'Sales & Partnership', icon: <Handshake className="w-4 h-4" /> },
-    { value: 'support', label: 'Dukungan Teknis', icon: <HeadphonesIcon className="w-4 h-4" /> },
-    { value: 'enterprise', label: 'Solusi Enterprise', icon: <Building2 className="w-4 h-4" /> },
-    { value: 'media', label: 'Media & Press', icon: <Newspaper className="w-4 h-4" /> }
+    { value: 'general', label: t('form.categories.0.label'), icon: <HelpCircle className="w-4 h-4" /> },
+    { value: 'sales', label: t('form.categories.1.label'), icon: <Handshake className="w-4 h-4" /> },
+    { value: 'support', label: t('form.categories.2.label'), icon: <HeadphonesIcon className="w-4 h-4" /> },
+    { value: 'enterprise', label: t('form.categories.3.label'), icon: <Building2 className="w-4 h-4" /> },
+    { value: 'media', label: t('form.categories.4.label'), icon: <Newspaper className="w-4 h-4" /> }
   ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -471,18 +466,17 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
               <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full mb-4">
                 <Send className="w-4 h-4 text-[#8C6F3D]" />
                 <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-                  Kirim Pesan
+                  {t('form.eyebrow')}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Ceritakan <br />
+                {t('form.titleTop')} <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-                  Kebutuhan Anda
+                  {t('form.titleHighlight')}
                 </span>
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Isi formulir di samping dan pesan Anda akan diteruskan ke kantor{' '}
-                <span className="font-bold text-[#8C6F3D]">{activeOffice.city}</span> dalam 1x24 jam kerja.
+                {t('form.desc', { city: activeOffice.city })}
               </p>
             </div>
 
@@ -493,17 +487,12 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                   <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
-                    Tim Aktif
+                    {t('form.activeTeam')}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-4">Waktu Respons</h3>
+                <h3 className="text-xl font-bold mb-4">{t('form.responseTitle')}</h3>
                 <div className="space-y-3">
-                  {[
-                    { label: 'Email', time: '< 24 jam' },
-                    { label: 'Telepon', time: 'Langsung' },
-                    { label: 'Form', time: '< 24 jam' },
-                    { label: 'WhatsApp', time: '< 2 jam' }
-                  ].map((item, idx) => (
+                  {(t('form.response', { returnObjects: true }) as { label: string; time: string }[]).map((item, idx) => (
                     <div key={idx} className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/10">
                       <span className="text-sm text-gray-300">{item.label}</span>
                       <span className="text-sm font-bold text-[#E8D09E]">{item.time}</span>
@@ -517,15 +506,10 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
             <div className="bg-[#FAF8F5] rounded-3xl p-6 border border-[#E8D09E]/30 shadow-sm">
               <h4 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                Jaminan Kami
+                {t('form.guaranteeTitle')}
               </h4>
               <div className="space-y-3">
-                {[
-                  'Data Anda aman & terenkripsi',
-                  'Tidak ada spam, hanya respon relevan',
-                  'Konsultasi awal gratis tanpa komitmen',
-                  'Tim ahli dengan pengalaman 8+ tahun'
-                ].map((item, idx) => (
+                {(t('form.guarantee', { returnObjects: true }) as string[]).map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-700">{item}</span>
@@ -556,9 +540,9 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                         <CheckCircle2 className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-emerald-900 mb-1">Pesan Terkirim!</h4>
+                        <h4 className="font-bold text-emerald-900 mb-1">{t('form.successTitle')}</h4>
                         <p className="text-sm text-emerald-800 leading-relaxed">
-                          Terima kasih. Tim {activeOffice.city} akan merespon pesan Anda dalam 1x24 jam kerja.
+                          {t('form.successDesc', { city: activeOffice.city })}
                         </p>
                       </div>
                     </div>
@@ -570,7 +554,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                 {/* Category Selection */}
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700">
-                    Kategori Pertanyaan <span className="text-red-500">*</span>
+                    {t('form.categoryLabel')} <span className="text-red-500">*</span>
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
                     {categories.map(cat => (
@@ -595,7 +579,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label htmlFor="name" className="text-sm font-semibold text-gray-700">
-                      Nama Lengkap <span className="text-red-500">*</span>
+                      {t('form.nameLabel')} <span className="text-red-500">*</span>
                     </label>
                     <input
                       id="name"
@@ -605,12 +589,12 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white"
-                      placeholder="Nama lengkap Anda"
+                      placeholder={t('form.namePlaceholder')}
                     />
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="email" className="text-sm font-semibold text-gray-700">
-                      Email <span className="text-red-500">*</span>
+                      {t('form.emailLabel')} <span className="text-red-500">*</span>
                     </label>
                     <input
                       id="email"
@@ -620,7 +604,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white"
-                      placeholder="email@perusahaan.com"
+                      placeholder={t('form.emailPlaceholder')}
                     />
                   </div>
                 </div>
@@ -629,7 +613,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label htmlFor="company" className="text-sm font-semibold text-gray-700">
-                      Perusahaan
+                      {t('form.companyLabel')}
                     </label>
                     <input
                       id="company"
@@ -638,12 +622,12 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white"
-                      placeholder="Nama perusahaan (opsional)"
+                      placeholder={t('form.companyPlaceholder')}
                     />
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="phone" className="text-sm font-semibold text-gray-700">
-                      Nomor Telepon
+                      {t('form.phoneLabel')}
                     </label>
                     <input
                       id="phone"
@@ -652,7 +636,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white"
-                      placeholder="+62 812-xxxx-xxxx"
+                      placeholder={t('form.phonePlaceholder')}
                     />
                   </div>
                 </div>
@@ -660,7 +644,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                 {/* Subject */}
                 <div className="space-y-1.5">
                   <label htmlFor="subject" className="text-sm font-semibold text-gray-700">
-                    Subjek <span className="text-red-500">*</span>
+                    {t('form.subjectLabel')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="subject"
@@ -670,14 +654,14 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                     value={formData.subject}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white"
-                    placeholder="Ringkasan singkat pesan Anda"
+                    placeholder={t('form.subjectPlaceholder')}
                   />
                 </div>
 
                 {/* Message */}
                 <div className="space-y-1.5">
                   <label htmlFor="message" className="text-sm font-semibold text-gray-700">
-                    Pesan <span className="text-red-500">*</span>
+                    {t('form.messageLabel')} <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -687,10 +671,10 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white resize-none"
-                    placeholder="Ceritakan kebutuhan atau pertanyaan Anda secara detail..."
+                    placeholder={t('form.messagePlaceholder')}
                   />
                   <p className="text-xs text-gray-500 text-right">
-                    {formData.message.length} karakter
+                    {t('form.charCount', { n: formData.message.length })}
                   </p>
                 </div>
 
@@ -698,11 +682,11 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                 <div className="flex items-start gap-2 p-4 bg-white rounded-xl border border-[#E8D09E]/30">
                   <ShieldCheck className="w-4 h-4 text-[#8C6F3D] shrink-0 mt-0.5" />
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    Dengan mengirim formulir ini, Anda menyetujui{' '}
+                    {t('form.privacyPrefix')}{' '}
                     <Link to="/privacy-policy" className="text-[#8C6F3D] font-semibold hover:underline">
-                      Kebijakan Privasi
+                      {t('form.privacyLink')}
                     </Link>{' '}
-                    kami. Data Anda akan diproses dengan aman dan hanya digunakan untuk merespon pertanyaan Anda.
+                    {t('form.privacySuffix')}
                   </p>
                 </div>
 
@@ -715,16 +699,16 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Mengirim Pesan...</span>
+                      <span>{t('form.sending')}</span>
                     </>
                   ) : submitStatus === 'success' ? (
                     <>
                       <CheckCircle2 className="w-5 h-5" />
-                      <span>Pesan Terkirim!</span>
+                      <span>{t('form.sent')}</span>
                     </>
                   ) : (
                     <>
-                      <span>Kirim Pesan ke {activeOffice.city}</span>
+                      <span>{t('form.submit', { city: activeOffice.city })}</span>
                       <Send className="w-5 h-5" />
                     </>
                   )}
@@ -743,6 +727,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
 // OFFICE DETAIL SECTION - Dinamis (Map + Hours + Holidays + Visit CTA)
 // ============================================================================
 function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficeProps }) {
+  const { t } = useTranslation('contact')
   const currentDay = getCurrentDay()
 
   return (
@@ -757,17 +742,17 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <MapPin className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Detail Kantor
+              {t('detail.eyebrow')}
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Kunjungi{' '}
+            {t('detail.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Kantor {activeOffice.city}
+              {t('detail.titleHighlight', { city: activeOffice.city })}
             </span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Informasi lengkap alamat, jam operasional, dan cara menghubungi kantor {activeOffice.city}.
+            {t('detail.subtitle', { city: activeOffice.city })}
           </p>
         </motion.div>
 
@@ -810,7 +795,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#C5A059] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:bg-[#E8D09E] transition-all duration-300"
                 >
-                  <span>Buka di Google Maps</span>
+                  <span>{t('detail.mapCta')}</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
@@ -825,7 +810,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1A1A1A]">Jam Operasional</h4>
+                    <h4 className="font-bold text-[#1A1A1A]">{t('detail.hoursTitle')}</h4>
                     {activeOffice.timezone && (
                       <p className="text-xs text-gray-500 mt-0.5">{activeOffice.timezone}</p>
                     )}
@@ -848,7 +833,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
                           {item.day}
                           {isToday && (
                             <span className="ml-2 text-[10px] bg-[#C5A059] text-white px-1.5 py-0.5 rounded-full">
-                              Hari Ini
+                              {t('detail.today')}
                             </span>
                           )}
                         </span>
@@ -867,7 +852,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
                   <div className="p-2 bg-[#E8D09E]/20 text-[#8C6F3D] rounded-xl shrink-0">
                     <Calendar className="w-5 h-5" />
                   </div>
-                  <h4 className="font-bold text-[#1A1A1A]">Hari Libur</h4>
+                  <h4 className="font-bold text-[#1A1A1A]">{t('detail.holidaysTitle')}</h4>
                 </div>
                 <div className="space-y-2 mb-3">
                   {activeOffice.holidays.map((holiday, idx) => (
@@ -893,17 +878,17 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
                     <Award className="w-5 h-5 text-[#E8D09E]" />
-                    <h4 className="font-bold">Kunjungan Bisnis</h4>
+                    <h4 className="font-bold">{t('detail.visitTitle')}</h4>
                   </div>
                   <p className="text-sm text-gray-300 leading-relaxed">
-                    Untuk kunjungan bisnis atau meeting di kantor {activeOffice.city}, harap buat janji terlebih dahulu melalui email atau telepon.
+                    {t('detail.visitDesc', { city: activeOffice.city })}
                   </p>
                 </div>
                 <a
                   href={`mailto:${activeOffice.email}?subject=Permintaan%20Kunjungan%20Kantor%20${activeOffice.city}`}
                   className="inline-flex items-center gap-2 bg-[#C5A059] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:bg-[#E8D09E] transition-all duration-300 whitespace-nowrap"
                 >
-                  <span>Buat Janji</span>
+                  <span>{t('detail.visitCta')}</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -919,6 +904,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
 // SOCIAL MEDIA SECTION - Dinamis per kantor
 // ============================================================================
 function OfficeSelectedSocialSection({ activeOffice }: { activeOffice: OfficeProps }) {
+  const { t } = useTranslation('contact')
   if (!activeOffice.socialMedia || activeOffice.socialMedia.length === 0) {
     return null
   }
@@ -938,10 +924,10 @@ function OfficeSelectedSocialSection({ activeOffice }: { activeOffice: OfficePro
             </div>
             <div>
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-1">
-                Media Sosial - {activeOffice.city}
+                {t('social.title', { city: activeOffice.city })}
               </h3>
               <p className="text-sm text-gray-500">
-                Ikuti kami untuk update terbaru dari kantor {activeOffice.city}
+                {t('social.subtitle', { city: activeOffice.city })}
               </p>
             </div>
           </div>
@@ -979,29 +965,9 @@ function OfficeSelectedSocialSection({ activeOffice }: { activeOffice: OfficePro
 // FAQ SECTION
 // ============================================================================
 function FAQSection() {
+  const { t } = useTranslation('contact')
   const [openIndex, setOpenIndex] = useState<number | null>(0)
-  const faqs = [
-    {
-      q: 'Berapa lama waktu respons untuk pertanyaan saya?',
-      a: 'Kami berkomitmen untuk merespon semua pertanyaan dalam waktu 1x24 jam kerja. Untuk pertanyaan mendesak, Anda dapat menghubungi kami langsung melalui telepon di kantor terdekat pada jam operasional.'
-    },
-    {
-      q: 'Apakah konsultasi awal berbayar?',
-      a: 'Tidak, konsultasi awal sepenuhnya gratis tanpa komitmen. Tim kami akan membantu memahami kebutuhan Anda dan merekomendasikan solusi yang paling sesuai sebelum Anda membuat keputusan.'
-    },
-    {
-      q: 'Apakah saya harus datang ke kantor untuk konsultasi?',
-      a: 'Tidak perlu. Kami menyediakan konsultasi online melalui video call untuk kenyamanan Anda. Namun, jika Anda ingin mengunjungi kantor kami di kota manapun, silakan buat janji terlebih dahulu.'
-    },
-    {
-      q: 'Apakah AuthenticGuards melayani klien di luar Indonesia?',
-      a: 'Ya, kami melayani klien di seluruh Asia Pasifik termasuk Malaysia, Singapura, Thailand, dan Vietnam. Tim kami dapat berkomunikasi dalam Bahasa Indonesia dan English.'
-    },
-    // {
-    //   q: 'Bagaimana jika saya memiliki pertanyaan teknis tentang API?',
-    //   a: 'Untuk pertanyaan teknis dan integrasi API, silakan hubungi tim Dukungan Teknis kami di support@authenticguards.com atau melalui kategori "Dukungan Teknis" di formulir kontak.'
-    // }
-  ]
+  const faqs = t('faq.items', { returnObjects: true }) as { q: string; a: string }[]
 
   return (
     <section className="py-16 md:py-24 bg-white relative">
@@ -1014,16 +980,16 @@ function FAQSection() {
         >
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <HelpCircle className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">FAQ</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('faq.eyebrow')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Pertanyaan{' '}
+            {t('faq.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Umum
+              {t('faq.titleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Jawaban untuk pertanyaan yang sering diajukan sebelum menghubungi kami.
+            {t('faq.subtitle')}
           </p>
         </motion.div>
 

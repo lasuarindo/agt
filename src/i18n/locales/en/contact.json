@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "eyebrow": "Contact Us",
+    "titleLine1": "Let's Discuss",
+    "titleHighlight": "Your Solution",
+    "desc": "Our team is ready to help you find the right authentication solution. Choose the nearest office or the most convenient way to communicate with us.",
+    "stat1": "Response < 24 Hours",
+    "statOffices": "{{n}} Offices in Indonesia",
+    "stat3": "Free Consultation"
+  },
+  "officeSelect": {
+    "eyebrow": "Office Location",
+    "titlePre": "Choose the",
+    "titleHighlight": "Nearest Office",
+    "subtitle": "AuthenticGuards is present in various major cities in Indonesia. Choose an office to see full details and how to contact us.",
+    "pickerTitle": "Choose Office ({{n}} Locations)",
+    "type": {
+      "hq": "HQ",
+      "regional": "Regional",
+      "branch": "Branch"
+    }
+  },
+  "contactCards": {
+    "phoneTitle": "Phone",
+    "phoneDesc": "Quick response for general questions and technical support.",
+    "phoneCta": "Contact Now",
+    "emailTitle": "Office Email",
+    "emailDesc": "For formal inquiries, partnerships, and legal reports.",
+    "emailCta": "Send Email"
+  },
+  "form": {
+    "eyebrow": "Send Message",
+    "titleTop": "Tell Us About",
+    "titleHighlight": "Your Needs",
+    "desc": "Fill out the form and your message will be forwarded to the {{city}} office within 1x24 business hours.",
+    "activeTeam": "Team Active",
+    "responseTitle": "Response Time",
+    "response": [
+      { "label": "Email", "time": "< 24 hours" },
+      { "label": "Phone", "time": "Instant" },
+      { "label": "Form", "time": "< 24 hours" },
+      { "label": "WhatsApp", "time": "< 2 hours" }
+    ],
+    "guaranteeTitle": "Our Guarantee",
+    "guarantee": [
+      "Your data is safe & encrypted",
+      "No spam, only relevant responses",
+      "Free initial consultation with no commitment",
+      "Expert team with 8+ years of experience"
+    ],
+    "successTitle": "Message Sent!",
+    "successDesc": "Thank you. The {{city}} team will respond to your message within 1x24 business hours.",
+    "categoryLabel": "Question Category",
+    "categories": [
+      { "value": "general", "label": "General Question" },
+      { "value": "sales", "label": "Sales & Partnership" },
+      { "value": "support", "label": "Technical Support" },
+      { "value": "enterprise", "label": "Enterprise Solution" },
+      { "value": "media", "label": "Media & Press" }
+    ],
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@company.com",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company name (optional)",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+62 812-xxxx-xxxx",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Brief summary of your message",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe your needs or questions in detail...",
+    "charCount": "{{n}} characters",
+    "privacyPrefix": "By submitting this form, you agree to our",
+    "privacyLink": "Privacy Policy",
+    "privacySuffix": ". Your data will be processed securely and used only to respond to your inquiry.",
+    "sending": "Sending Message...",
+    "sent": "Message Sent!",
+    "submit": "Send Message to {{city}}"
+  },
+  "detail": {
+    "eyebrow": "Office Details",
+    "titlePre": "Visit",
+    "titleHighlight": "Office {{city}}",
+    "subtitle": "Complete information on address, operating hours, and how to contact the {{city}} office.",
+    "mapCta": "Open in Google Maps",
+    "hoursTitle": "Operating Hours",
+    "today": "Today",
+    "holidaysTitle": "Holidays",
+    "visitTitle": "Business Visit",
+    "visitDesc": "For a business visit or meeting at the {{city}} office, please make an appointment in advance via email or phone.",
+    "visitCta": "Make Appointment"
+  },
+  "social": {
+    "title": "Social Media - {{city}}",
+    "subtitle": "Follow us for the latest updates from the {{city}} office"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "titlePre": "Frequently",
+    "titleHighlight": "Asked",
+    "subtitle": "Answers to frequently asked questions before contacting us.",
+    "items": [
+      { "q": "How long is the response time for my question?", "a": "We are committed to responding to all questions within 1x24 business hours. For urgent questions, you can contact us directly by phone at the nearest office during operating hours." },
+      { "q": "Is the initial consultation paid?", "a": "No, the initial consultation is completely free with no commitment. Our team will help understand your needs and recommend the most suitable solution before you make a decision." },
+      { "q": "Do I need to come to the office for a consultation?", "a": "No need. We provide online consultation via video call for your convenience. However, if you'd like to visit our office in any city, please make an appointment in advance." },
+      { "q": "Does AuthenticGuards serve clients outside Indonesia?", "a": "Yes, we serve clients across Asia Pacific including Malaysia, Singapore, Thailand, and Vietnam. Our team can communicate in Indonesian and English." }
+    ]
+  }
+}
