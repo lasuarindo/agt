@@ -1,0 +1,341 @@
+{
+  "hero": {
+    "eyebrow": "Help Center",
+    "titleLine1": "Anything We Can",
+    "titleHighlight": "Help With?",
+    "desc": "Find answers to frequently asked questions about marking services, 5-layer security technology, product verification, and AuthenticGuards partnerships.",
+    "searchPlaceholder": "Search questions... (e.g. hologram, verification, MOQ, tafeta)",
+    "statQuestions": "{{n}}+ Questions",
+    "statCategories": "{{n}} Categories",
+    "statUpdate": "Regular Updates"
+  },
+  "categories": {
+    "all": "All",
+    "about": "About Us",
+    "services": "Services",
+    "technology": "Technology",
+    "security": "Security",
+    "verification": "Verification",
+    "partners": "Partnership",
+    "pricing": "Pricing"
+  },
+  "categoryCount": "{{n}} questions",
+  "searchResults": {
+    "title": "Search Results",
+    "count": "{{n}} questions found",
+    "forQuery": "for \"{{query}}\"",
+    "reset": "Reset Filter"
+  },
+  "popular": {
+    "eyebrow": "Most Frequently Asked",
+    "titlePre": "Popular",
+    "titleHighlight": "Questions",
+    "itemBadge": "Popular"
+  },
+  "accordion": {
+    "noResultsTitle": "No Results",
+    "noResultsDesc": "We couldn't find any questions matching your search.",
+    "contactCta": "Contact Our Team",
+    "updatedPrefix": "Updated",
+    "relatedTitle": "Related Articles:",
+    "helpful": "Was this helpful?",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "still": {
+    "eyebrow": "Still Have Questions?",
+    "titlePre": "Our Team Is Ready to",
+    "titleHighlight": "Help",
+    "subtitle": "Choose the most convenient way to communicate with us. All channels are available on our contact page.",
+    "cta": "Contact Our Team",
+    "notePre": "Response within",
+    "noteHighlight": "1x24 business hours",
+    "noteSuffix": "• Free consultation"
+  },
+  "resources": {
+    "eyebrow": "Resources",
+    "titlePre": "Learn",
+    "titleHighlight": "More",
+    "subtitle": "Documentation, guides, and other resources to help you understand our services.",
+    "cta": "Read More",
+    "items": [
+      { "title": "Our Technology", "desc": "Learn about the 5-layer security system and AuthenticGuards AG codes" },
+      { "title": "Hologram Services", "desc": "Details of the premium hologram solution with integrated QR code" },
+      { "title": "Our Clients", "desc": "Partner brands from various industries that trust AuthenticGuards" },
+      { "title": "Privacy Policy", "desc": "Personal data protection information under Indonesian PDP Law" }
+    ]
+  },
+  "faqData": [
+    {
+      "id": "about-1",
+      "category": "about",
+      "popular": true,
+      "question": "What is AuthenticGuards?",
+      "answer": "AuthenticGuards is an anti-counterfeit service operated by PT. Autentikasi Garda Teknologi — the pioneer of the first product authentication system in Asia Pacific since 2017. We provide marking solutions integrated with AG codes, unique QR codes, scratch PINs, and an ISO/IEC 27000:2016-compliant real-time database to protect brands and consumers.",
+      "lastUpdated": "2026-06-27",
+      "relatedLinks": [
+        { "label": "About Us", "href": "/about" },
+        { "label": "Our Services", "href": "/services" }
+      ]
+    },
+    {
+      "id": "about-2",
+      "category": "about",
+      "question": "Who can use AuthenticGuards services?",
+      "answer": "Our services are designed for brands, manufacturers, distributors, and retailers across various industries — F&B, fashion & apparel, beauty, technology, healthcare, lifestyle, automotive, and education. Both emerging and enterprise brands can use our solutions according to their business scale.",
+      "relatedLinks": [
+        { "label": "See Our Clients", "href": "/partners/our-client" },
+        { "label": "Contact Sales Team", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "about-3",
+      "category": "about",
+      "question": "Where is the AuthenticGuards office located?",
+      "answer": "Our headquarters is located at District 8 SCBD, Revenue Tower, Jl. Jend. Sudirman Kav. 52-53, Jakarta Selatan 12190. We also have a branch office at Jl. Tamblong No.46, Bandung 40112, and a regional office at Vision Exchange, 2 Venture Drive, Singapore 608526. Operating hours: Monday–Thursday 09:00–17:00, Friday 09:00–16:30.",
+      "lastUpdated": "2026-06-27",
+      "relatedLinks": [
+        { "label": "Contact Us", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "about-4",
+      "category": "about",
+      "question": "What are AuthenticGuards' achievements?",
+      "answer": "Since its founding in Bandung in 2017, we have won Top 100 Startup Asia Pacific (Echelon Asia Summit), VIISA Vietnam alumni, Indigo Creative Nation (Telkom Group) alumni, a strategic partnership with Telkom Indonesia, ISO/IEC 18004:2015 adoption, and have been trusted by various leading brands across Asia Pacific.",
+      "relatedLinks": [
+        { "label": "Our Awards", "href": "/about/awards" },
+        { "label": "Company Timeline", "href": "/about" }
+      ]
+    },
+    {
+      "id": "about-5",
+      "category": "about",
+      "question": "Where can I see the AuthenticGuards team, investors, and supporters?",
+      "answer": "Leadership team profiles are available on the Our Team page. Investor, supporter, media coverage, and awards & certification information are also displayed on the About Us and Partners pages as company credibility references.",
+      "relatedLinks": [
+        { "label": "Our Team", "href": "/about/our-team" },
+        { "label": "Partners Page", "href": "/partners" }
+      ]
+    },
+    {
+      "id": "service-1",
+      "category": "services",
+      "popular": true,
+      "question": "What marking services does AuthenticGuards offer?",
+      "answer": "We currently provide 2 active marking services: (1) Hologram with QR — a flagship solution with dual security layers for premium products, and (2) Tafeta Label with QR — textile labels for the fashion & apparel industry. NFC Sticker and Printing QR on packaging solutions are still in the research & development stage.",
+      "relatedLinks": [
+        { "label": "All Services", "href": "/services" },
+        { "label": "Hologram with QR", "href": "/services/hologram" },
+        { "label": "Tafeta Label", "href": "/services/tafeta" }
+      ]
+    },
+    {
+      "id": "service-2",
+      "category": "services",
+      "question": "How does Hologram with QR work?",
+      "answer": "Each premium hologram label comes with a unique QR code connected to a real-time database. Consumers scan the QR via smartphone to verify product authenticity in seconds. The label also has a tamper-evident feature — the code becomes invalid after the label is removed. Each AG code has a verification limit of up to 15 times.",
+      "lastUpdated": "2026-06-27",
+      "relatedLinks": [
+        { "label": "Hologram Details", "href": "/services/hologram" },
+        { "label": "Our Technology", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "service-3",
+      "category": "services",
+      "question": "Is the Tafeta Label resistant to washing?",
+      "answer": "Yes, our Tafeta Labels are designed to withstand 50+ washes without quality degradation. Premium material and high-resolution printing technology ensure the QR code remains clearly readable. The label design is fully customizable to your fashion product's brand identity.",
+      "relatedLinks": [
+        { "label": "Tafeta Label Details", "href": "/services/tafeta" }
+      ]
+    },
+    {
+      "id": "service-4",
+      "category": "services",
+      "question": "Are NFC or packaging QR printing solutions available?",
+      "answer": "NFC Stickers and direct QR printing on packaging are currently not available to the public — still in the internal planning and research stage. For current marking needs, we recommend Hologram with QR or Tafeta Label with QR. Contact our team for a consultation on the best solution.",
+      "relatedLinks": [
+        { "label": "Active Services", "href": "/services" },
+        { "label": "Contact Us", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "tech-1",
+      "category": "technology",
+      "popular": true,
+      "question": "What is the AuthenticGuards 5-layer security system?",
+      "answer": "Our layered security system consists of: (1) Server Security — multi-layer protection to ISO/IEC 27000:2016 standards, (2) AG Algorithm Code — 3 layers (personalization keyword, alphanumeric digits, unix timestamp), (3) MD5 Hash Integrity — 32-char hex integrity verification, (4) QR Verification Sensitivity — 15-check limit per code, (5) Label Release — tamper-evident, code void when the label is opened.",
+      "relatedLinks": [
+        { "label": "Learn About Technology", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "tech-2",
+      "category": "technology",
+      "question": "What is an AG code and how does it work?",
+      "answer": "The AG (Authentic Guards) code is a 13-digit security code produced with a 3-layer algorithm: brand personalization keyword, unique alphanumeric digits, and a unix timestamp matrix in milliseconds. Each code is MD5-hashed into a 32-character hex identifier that cannot be reversed, then integrated into a QR code compliant with ISO/IEC 18004:2015.",
+      "lastUpdated": "2026-06-27",
+      "relatedLinks": [
+        { "label": "Technology Details", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "tech-3",
+      "category": "technology",
+      "question": "How long is the product verification response time?",
+      "answer": "Our system has a response time of less than 100ms per verification. The cloud infrastructure is supported by a strategic partnership with Telkom Indonesia, capable of processing 100 million+ codes per day with active 24/7 server monitoring.",
+      "relatedLinks": [
+        { "label": "Technology & Performance", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "tech-4",
+      "category": "technology",
+      "question": "How does the system prevent code duplication and misuse?",
+      "answer": "Each AG code has a verification limit of up to 15 times. If the limit is reached without validation, the system automatically suspends the code for investigation. In addition, the tamper-evident label makes the code void when the label is removed — preventing code transfer to counterfeit products.",
+      "relatedLinks": [
+        { "label": "5 Security Layers", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "security-1",
+      "category": "security",
+      "popular": true,
+      "question": "Is my data safe with AuthenticGuards?",
+      "answer": "Data security is our top priority. ISO/IEC 27000:2016-compliant databases, servers protected by multi-layer shields with 24/7 monitoring, and we are compliant with ISO 27001 and Indonesian PDP Law No. 27 of 2022. Data is not shared with third parties without consent.",
+      "relatedLinks": [
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Security Technology", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "security-2",
+      "category": "security",
+      "question": "Is AuthenticGuards compliant with Indonesian PDP Law?",
+      "answer": "Yes, we operate in accordance with the Personal Data Protection Law (UU PDP) No. 27 of 2022. Our Privacy Policy covers data access rights, correction rights, and personal data deletion rights. For questions regarding personal data, contact info@authenticguards.com.",
+      "relatedLinks": [
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms & Conditions", "href": "/term-condition" }
+      ]
+    },
+    {
+      "id": "security-3",
+      "category": "security",
+      "question": "How long is verification data stored?",
+      "answer": "Verification data and personal information retention is governed by our Privacy Policy and the audit needs of brand partners. Full details on storage periods and data deletion procedures are set out in the Data Retention section of the Privacy Policy page.",
+      "relatedLinks": [
+        { "label": "Privacy Policy", "href": "/privacy-policy" }
+      ]
+    },
+    {
+      "id": "verify-1",
+      "category": "verification",
+      "popular": true,
+      "question": "How do I verify product authenticity?",
+      "answer": "AuthenticGuards product verification is very easy: (1) Open your smartphone camera and scan the QR code on the product label (hologram or tafeta), (2) Your browser will open the verification page, (3) The system checks the AG code in the real-time database, (4) The product authenticity status is displayed instantly — usually in less than 15 seconds.",
+      "lastUpdated": "2026-06-27",
+      "relatedLinks": [
+        { "label": "How Technology Works", "href": "/technology" },
+        { "label": "Hologram Service Details", "href": "/services/hologram" }
+      ]
+    },
+    {
+      "id": "verify-2",
+      "category": "verification",
+      "question": "What should I do if the QR code can't be scanned?",
+      "answer": "If the QR code can't be scanned: (1) Ensure sufficient lighting and the camera is in focus, (2) Clean the QR code surface of dirt or scratches, (3) Try manual code entry if available on the verification page. If the problem persists, contact the brand's customer service or the AuthenticGuards team via the contact page.",
+      "relatedLinks": [
+        { "label": "Contact Support", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "verify-3",
+      "category": "verification",
+      "question": "What does it mean if a code has reached the verification limit?",
+      "answer": "Each AG code has a verification limit of up to 15 times. If the limit is reached, the system automatically suspends the code for investigation — this could indicate a duplication or counterfeiting attempt. If you are sure the product is genuine and has not been verified before, immediately contact the brand or the AuthenticGuards team.",
+      "relatedLinks": [
+        { "label": "Report Suspicious Product", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "verify-4",
+      "category": "verification",
+      "question": "Do I need internet to verify?",
+      "answer": "Yes, an internet connection is required because verification accesses the AuthenticGuards real-time database. The process is very light (a few KB of data) so it can be done even with a slow mobile connection.",
+      "relatedLinks": [
+        { "label": "Our Technology", "href": "/technology" }
+      ]
+    },
+    {
+      "id": "partners-1",
+      "category": "partners",
+      "popular": true,
+      "question": "What industries does AuthenticGuards serve?",
+      "answer": "We serve various industries: F&B & beverages, fashion & apparel, beauty & cosmetics, technology & electronics, healthcare & pharmaceuticals, lifestyle & luxury goods, automotive, and education. A complete list of partner brands can be seen on the Our Clients page.",
+      "relatedLinks": [
+        { "label": "Client List", "href": "/partners/our-client" },
+        { "label": "Partners Page", "href": "/partners" }
+      ]
+    },
+    {
+      "id": "partners-2",
+      "category": "partners",
+      "question": "How do I become an AuthenticGuards brand partner?",
+      "answer": "Contact our team via the Contact page for a free consultation. The process begins with brand needs analysis, label design & prototyping, AG code production, quality control, and delivery and implementation training — a total of ±14 business days after the design is approved.",
+      "relatedLinks": [
+        { "label": "Contact Sales Team", "href": "/contact" },
+        { "label": "Implementation Flow", "href": "/services/hologram" }
+      ]
+    },
+    {
+      "id": "partners-3",
+      "category": "partners",
+      "question": "Is AuthenticGuards backed by investors and strategic partners?",
+      "answer": "Yes, AuthenticGuards is backed by investors and strategic partners including Telkom Group (Indigo Creative Nation), as well as a cloud infrastructure partnership with Telkom Indonesia. Investor, supporter, and media coverage information is available on the About and Partners pages.",
+      "relatedLinks": [
+        { "label": "About Us", "href": "/about" },
+        { "label": "Partners", "href": "/partners" }
+      ]
+    },
+    {
+      "id": "pricing-1",
+      "category": "pricing",
+      "popular": true,
+      "question": "How much do AuthenticGuards services cost?",
+      "answer": "Pricing is flexible and tailored to your business needs. Determining factors: label volume, service type (Hologram or Tafeta), design complexity, and additional features (custom design, API integration, dedicated account manager). We offer Starter, Business, and Enterprise packages — all with custom pricing after consultation.",
+      "relatedLinks": [
+        { "label": "Free Consultation", "href": "/contact" },
+        { "label": "Hologram Package", "href": "/services/hologram" }
+      ]
+    },
+    {
+      "id": "pricing-2",
+      "category": "pricing",
+      "question": "How long is the production and implementation time?",
+      "answer": "Standard production time is ±14 business days after the design is approved. Implementation flow: consultation (1-2 days) → design & prototyping (3-5 days) → AG code production (1-2 days) → label production (5-7 days) → quality control (1-2 days) → delivery & training (2-3 days). The timeline can be adjusted for special needs.",
+      "relatedLinks": [
+        { "label": "Implementation Process", "href": "/services/hologram" }
+      ]
+    },
+    {
+      "id": "pricing-3",
+      "category": "pricing",
+      "question": "Is there a minimum order quantity (MOQ)?",
+      "answer": "MOQ varies depending on design complexity and label size. For detailed MOQ information and the best quote, please contact our sales team for a direct consultation — we will tailor the solution to your business scale.",
+      "relatedLinks": [
+        { "label": "Contact Sales", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "pricing-4",
+      "category": "pricing",
+      "question": "What happens if there are production-defective labels?",
+      "answer": "We compensate with new labels for production defects up to 2.5% of total production. Defective code reports are submitted monthly by the client with a notification letter and evidence, then the QC team will process replacements according to standard procedures.",
+      "relatedLinks": [
+        { "label": "Service Details", "href": "/services" },
+        { "label": "Contact Us", "href": "/contact" }
+      ]
+    }
+  ]
+}
