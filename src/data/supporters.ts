@@ -1,4 +1,5 @@
 import { logodev } from '@/utils/image'
+import type { TFunction } from 'i18next'
 
 import {
   Server,
@@ -280,5 +281,30 @@ export const SupportersData: Supporter[] = [
     featured: true
   }
 ]
+
+// ============================================================================
+// I18N HELPERS - Translate display fields (keeps structure/logos/gradients)
+// ============================================================================
+
+/**
+ * Translate display fields of every supporter (tagline, description, contributions).
+ * `name`, `initial`, `gradient`, `logo`, `category`, `since` stay as-is.
+ */
+export const getSupportersData = (t: TFunction): Supporter[] =>
+  SupportersData.map(s => {
+    const key = `data/supporters:${s.id}`
+    return {
+      ...s,
+      tagline: t(`${key}.tagline`, { defaultValue: s.tagline }),
+      description: s.description ? t(`${key}.description`, { defaultValue: s.description }) : s.description,
+      contributions: s.contributions?.map((c, i) => ({
+        ...c,
+        title: t(`${key}.contributions.${i}.title`, { defaultValue: c.title }),
+        description: c.description
+          ? t(`${key}.contributions.${i}.description`, { defaultValue: c.description })
+          : c.description
+      }))
+    }
+  })
 
 

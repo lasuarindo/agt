@@ -1,0 +1,32 @@
+{
+  "telkom-indonesia": {
+    "tagline": "Mitra Teknologi",
+    "description": "Telkom Indonesia sebagai BUMN telekomunikasi terbesar mendukung pengembangan infrastruktur teknologi dan konektivitas untuk solusi autentikasi produk kami.",
+    "contributions": [
+      { "title": "Infrastruktur Cloud", "description": "Penyediaan server & bandwidth" },
+      { "title": "Jaringan Nasional", "description": "Konektivitas ke seluruh Indonesia" },
+      { "title": "Keamanan Data", "description": "Standar keamanan enterprise-grade" },
+      { "title": "Akses Pasar", "description": "Jaringan 150M+ pelanggan" }
+    ]
+  },
+  "indigo-creative-nation": {
+    "tagline": "Inkubator Bisnis",
+    "description": "Program inkubasi dari Telkom Group yang membantu pengembangan bisnis startup kreatif Indonesia melalui mentoring, networking, dan akses pendanaan.",
+    "contributions": [
+      { "title": "Mentoring Bisnis", "description": "Bimbingan dari para expert" },
+      { "title": "Innovation Lab", "description": "Akses fasilitas R&D" },
+      { "title": "Networking", "description": "Koneksi ke berbagai startup kreatif" },
+      { "title": "Akses Pasar", "description": "Bantuan go-to-market strategy" }
+    ]
+  },
+  "viisa-accelerator": {
+    "tagline": "Akselerator Startup",
+    "description": "Vietnam Innovative Startup Accelerator - program akselerator internasional yang membantu ekspansi regional dan akses ke pasar Asia Tenggara.",
+    "contributions": [
+      { "title": "Akselerasi Bisnis", "description": "Program intensif 6 bulan" },
+      { "title": "Ekspansi ASEAN", "description": "Akses ke 5 negara Asia Tenggara" },
+      { "title": "Investment Ready", "description": "Persiapan untuk funding round" },
+      { "title": "Global Exposure", "description": "Demo day internasional" }
+    ]
+  }
+}

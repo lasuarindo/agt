@@ -1,0 +1,32 @@
+{
+  "telkom-indonesia": {
+    "tagline": "Technology Partner",
+    "description": "Telkom Indonesia, the largest state-owned telecommunications company, supports the development of technology infrastructure and connectivity for our product authentication solutions.",
+    "contributions": [
+      { "title": "Cloud Infrastructure", "description": "Server & bandwidth provision" },
+      { "title": "National Network", "description": "Connectivity across Indonesia" },
+      { "title": "Data Security", "description": "Enterprise-grade security standards" },
+      { "title": "Market Access", "description": "150M+ customer network" }
+    ]
+  },
+  "indigo-creative-nation": {
+    "tagline": "Business Incubator",
+    "description": "An incubation program from Telkom Group that helps develop Indonesian creative startups through mentoring, networking, and funding access.",
+    "contributions": [
+      { "title": "Business Mentoring", "description": "Guidance from experts" },
+      { "title": "Innovation Lab", "description": "R&D facility access" },
+      { "title": "Networking", "description": "Connections to various creative startups" },
+      { "title": "Market Access", "description": "Go-to-market strategy assistance" }
+    ]
+  },
+  "viisa-accelerator": {
+    "tagline": "Startup Accelerator",
+    "description": "Vietnam Innovative Startup Accelerator - an international accelerator program that supports regional expansion and access to Southeast Asian markets.",
+    "contributions": [
+      { "title": "Business Acceleration", "description": "Intensive 6-month program" },
+      { "title": "ASEAN Expansion", "description": "Access to 5 Southeast Asian countries" },
+      { "title": "Investment Ready", "description": "Preparation for funding round" },
+      { "title": "Global Exposure", "description": "International demo day" }
+    ]
+  }
+}

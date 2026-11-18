@@ -2,6 +2,7 @@ import { motion } from 'motion/react'
 import { Handshake, Calendar, CheckCircle2, ExternalLink, ShieldCheck } from 'lucide-react'
 import { 
   SupportersData, 
+  getSupportersData,
   getSupporterAccentBorder, 
   getSupporterIconStyle,
   getSupporterCategoryLabel,
@@ -187,6 +188,7 @@ export function SupportersOverviewSection() {
 // ============================================================================
 export function SupportersSimpleOverviewSection() {
   const { t } = useTranslation('overview')
+  const supporters = getSupportersData(t)
   return (
     <section className="py-16 md:py-20 bg-white relative overflow-hidden">
       {/* Background Decoration */}
@@ -210,7 +212,7 @@ export function SupportersSimpleOverviewSection() {
 
         {/* Supporters Grid - Simple Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-          {SupportersData.map((supporter, idx) => (
+          {supporters.map((supporter, idx) => (
             <motion.a
               key={supporter.id}
               href={supporter.website || '#'}
