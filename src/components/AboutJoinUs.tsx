@@ -56,7 +56,7 @@ const variantContent: Record<CTAVariant, CTAContent> = {
     badgeText: 'Mulai Kolaborasi',
     titleLine1: 'Siap Berkolaborasi',
     titleLine2: 'Membangun Masa Depan?',
-    description: 'Bergabunglah dengan ratusan brand yang telah mempercayakan perlindungan produk mereka kepada kami.',
+    description: 'Bergabunglah dengan ekosistem brand terpercaya yang telah mempercayakan perlindungan produk mereka kepada kami.',
     primaryCta: {
       text: 'Hubungi Tim Kami',
       to: '/contact'
@@ -121,7 +121,7 @@ export default function AboutJoinUsCTA({
   const SecondaryIcon = content.secondaryCta.icon
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -143,7 +143,7 @@ export default function AboutJoinUsCTA({
           {/* Title */}
           <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
             {content.titleLine1} <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
               {content.titleLine2}
             </span>
           </h2>

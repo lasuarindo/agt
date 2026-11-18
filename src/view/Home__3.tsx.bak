@@ -231,7 +231,7 @@ function ClientsSection() {
   const [activeFilter, setActiveFilter] = useState<string>('all')
   
   const clients = [
-    { name: 'JuiceNation', industry: 'F&B & Vaping', since: '2019', category: 'fb' },
+    { name: 'JuiceNation', industry: 'F&B & Vaping', since: '2019', category: 'fnb' },
     { name: 'VaporIndo', industry: 'Lifestyle', since: '2019', category: 'lifestyle' },
     { name: 'FashionID', industry: 'Fashion & Apparel', since: '2020', category: 'fashion' },
     { name: 'BeautyLab', industry: 'Kosmetik & Perawatan', since: '2020', category: 'beauty' },
@@ -243,7 +243,7 @@ function ClientsSection() {
   
   const filters = [
     { id: 'all', label: 'Semua Industri' },
-    { id: 'fb', label: 'F&B' },
+    { id: 'fnb', label: 'F&B' },
     { id: 'fashion', label: 'Fashion' },
     { id: 'beauty', label: 'Kecantikan' },
     { id: 'tech', label: 'Teknologi' },

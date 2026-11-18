@@ -106,13 +106,13 @@ const faqData: FAQItem[] = [
     ]
   },
   {
-    id: 'about-4',
-    category: 'about',
-    question: 'Apa saja pencapaian AuthenticGuards?',
-    answer: 'Sejak berdiri di Bandung pada 2017, kami meraih Top 100 Startup Asia Pacific (Echelon Asia Summit), alumni VIISA Vietnam, alumni Indigo Creative Nation (Telkom Group), kemitraan strategis Telkom Indonesia, adopsi ISO/IEC 18004:2015, dan ekspansi ke 500+ brand partner aktif di Asia Pasifik.',
-    relatedLinks: [
-      { label: 'Penghargaan Kami', href: '/about/awards' },
-      { label: 'Timeline Perusahaan', href: '/about' }
+    "id": "about-4",
+    "category": "about",
+    "question": "Apa saja pencapaian AuthenticGuards?",
+    "answer": "Sejak berdiri di Bandung pada 2017, kami meraih Top 100 Startup Asia Pacific (Echelon Asia Summit), alumni VIISA Vietnam, alumni Indigo Creative Nation (Telkom Group), kemitraan strategis Telkom Indonesia, adopsi ISO/IEC 18004:2015, dan telah dipercaya oleh berbagai brand terkemuka di Asia Pasifik.",
+    "relatedLinks": [
+      { "label": "Penghargaan Kami", "href": "/about/awards" },
+      { "label": "Timeline Perusahaan", "href": "/about" }
     ]
   },
   {
@@ -445,7 +445,7 @@ function HeroFAQSection({ searchQuery, setSearchQuery }: {
 }) {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -474,7 +474,7 @@ function HeroFAQSection({ searchQuery, setSearchQuery }: {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Ada yang Bisa <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Kami Bantu?
           </span>
         </motion.h1>
@@ -632,7 +632,7 @@ function PopularFAQSection({
   if (popularFaqs.length === 0) return null
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -648,7 +648,7 @@ function PopularFAQSection({
             <span className="text-xs font-bold text-[#E8D09E] uppercase tracking-widest">Paling Sering Ditanyakan</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Pertanyaan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Populer</span>
+            Pertanyaan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Populer</span>
           </h2>
         </motion.div>
 
@@ -966,7 +966,7 @@ function FAQAccordion({
 //             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Masih Ada Pertanyaan?</span>
 //           </div>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Tim Kami Siap <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Membantu</span>
+//             Tim Kami Siap <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Membantu</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
 //             Jika Anda tidak menemukan jawaban yang dicari, jangan ragu untuk menghubungi tim support kami.
@@ -1056,7 +1056,7 @@ function StillHaveQuestionsSection() {
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Tim Kami Siap{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Membantu
             </span>
           </h2>
@@ -1114,7 +1114,7 @@ function StillHaveQuestionsSection() {
         >
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#8C6F3D] to-[#C5A059] text-white px-8 py-4 rounded-2xl font-bold text-base hover:shadow-xl hover:shadow-[#C5A059]/30 hover:-translate-y-0.5 transition-all duration-300"
+            className="group inline-flex items-center gap-3 bg-linear-to-r from-[#8C6F3D] to-[#C5A059] text-white px-8 py-4 rounded-2xl font-bold text-base hover:shadow-xl hover:shadow-[#C5A059]/30 hover:-translate-y-0.5 transition-all duration-300"
           >
             <span>Hubungi Tim Kami</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -1186,7 +1186,7 @@ function RelatedResourcesSection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Sumber Daya</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Pelajari Lebih <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Lanjut</span>
+            Pelajari Lebih <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Lanjut</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
             Dokumentasi, panduan, dan sumber daya lainnya untuk membantu Anda memahami layanan kami.

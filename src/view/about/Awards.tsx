@@ -51,7 +51,7 @@ function HeroAwardsPage() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       
@@ -86,7 +86,7 @@ function HeroAwardsPage() {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Diakui oleh{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Industri
           </span>
           <br className="hidden md:block" />
@@ -176,7 +176,7 @@ function AwardsStatsSection() {
   }, [])
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       
@@ -192,7 +192,7 @@ function AwardsStatsSection() {
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
             Angka yang{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
               Berbicara
             </span>
           </h2>
@@ -296,7 +296,7 @@ function AwardsFilterSection({
               onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                 showFeaturedOnly
-                  ? 'bg-gradient-to-r from-amber-400 to-amber-600 text-white shadow-md'
+                  ? 'bg-linear-to-r from-amber-400 to-amber-600 text-white shadow-md'
                   : 'bg-[#FAF8F5] text-gray-600 hover:bg-amber-100 hover:text-amber-700'
               }`}
             >
@@ -310,7 +310,7 @@ function AwardsFilterSection({
             onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
               showFeaturedOnly
-                ? 'bg-gradient-to-r from-amber-400 to-amber-600 text-white shadow-md'
+                ? 'bg-linear-to-r from-amber-400 to-amber-600 text-white shadow-md'
                 : 'bg-[#FAF8F5] text-gray-600 hover:bg-amber-100 hover:text-amber-700'
             }`}
           >
@@ -359,7 +359,7 @@ function FeaturedAwardCard({ award }: { award: Award }) {
       transition={{ duration: 0.6 }}
       className="mb-8"
     >
-      <div className="group relative bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20 hover:border-[#C5A059]/40 transition-all duration-500">
+      <div className="group relative bg-linear-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20 hover:border-[#C5A059]/40 transition-all duration-500">
         {/* Background Glows */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[#C5A059]/20 transition-colors duration-500" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -377,10 +377,10 @@ function FeaturedAwardCard({ award }: { award: Award }) {
         <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
           {/* Icon */}
           <div className="shrink-0">
-            <div className={`relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br ${award.gradient} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-105 transition-transform duration-500`}>
+            <div className={`relative w-20 h-20 md:w-24 md:h-24 bg-linear-to-br ${award.gradient} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-105 transition-transform duration-500`}>
               <Icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
               {/* Glow Ring */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${award.gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${award.gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
             </div>
           </div>
 
@@ -459,26 +459,26 @@ function AwardsGridSection({ awards }: { awards: Award[] }) {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className={`group relative rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 ${
                 isFeatured
-                  ? 'bg-gradient-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 hover:border-[#C5A059]/60 hover:shadow-xl shadow-md'
-                  : 'bg-gradient-to-br from-[#FAF8F5] to-white border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-xl'
+                  ? 'bg-linear-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 hover:border-[#C5A059]/60 hover:shadow-xl shadow-md'
+                  : 'bg-linear-to-br from-[#FAF8F5] to-white border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-xl'
               }`}
             >
               {/* Featured Glow Effect */}
               {isFeatured && (
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C5A059]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-br from-[#C5A059]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               )}
 
               {/* Hover Glow */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${award.gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${award.gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
 
               <div className="relative flex items-start gap-4">
                 {/* Icon */}
                 <div className="shrink-0">
-                  <div className={`relative w-14 h-14 bg-gradient-to-br ${award.gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <div className={`relative w-14 h-14 bg-linear-to-br ${award.gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     <Icon className="w-6 h-6" />
                     {/* Featured Star Badge */}
                     {isFeatured && (
-                      <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                      <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-linear-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
                         <Star className="w-3 h-3 text-white fill-current" />
                       </div>
                     )}
@@ -499,7 +499,7 @@ function AwardsGridSection({ awards }: { awards: Award[] }) {
                     )}
                     {/* Featured Tag */}
                     {isFeatured && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-gradient-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-linear-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
                         <Star className="w-2.5 h-2.5 fill-current" />
                         Featured
                       </span>
@@ -575,7 +575,7 @@ function AwardsTimelineSection() {
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Timeline{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Penghargaan
             </span>
           </h2>
@@ -586,7 +586,7 @@ function AwardsTimelineSection() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
+          <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-linear-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
 
           <div className="space-y-12">
             {timelineByYear.map(([year, awards], yearIdx) => (
@@ -628,7 +628,7 @@ function AwardsTimelineSection() {
                             key={award.id}
                             className="flex items-start gap-3 p-3 bg-[#FAF8F5] rounded-xl hover:bg-[#E8D09E]/10 transition-colors"
                           >
-                            <div className={`w-10 h-10 bg-gradient-to-br ${award.gradient} rounded-lg flex items-center justify-center text-white shrink-0`}>
+                            <div className={`w-10 h-10 bg-linear-to-br ${award.gradient} rounded-lg flex items-center justify-center text-white shrink-0`}>
                               <Icon className="w-5 h-5" />
                             </div>
                             <div className="flex-1 min-w-0">
@@ -702,7 +702,7 @@ function CertificationsSection() {
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
                 Standar Keamanan{' '}
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
                   Kelas Dunia
                 </span>
               </h2>
@@ -711,7 +711,7 @@ function CertificationsSection() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white">
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center shrink-0">
                   <BadgeCheck className="w-5 h-5" />

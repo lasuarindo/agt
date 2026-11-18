@@ -15,6 +15,7 @@ import {
   Heart,
   Zap,
   X,
+  User,
   // Linkedin,
   // Twitter
 } from 'lucide-react'
@@ -93,8 +94,8 @@ function TeamDetailModal({
         </button>
 
         {/* Header with Photo */}
-        <div className={`relative h-64 md:h-80 bg-gradient-to-br ${gradient} overflow-hidden`}>
-          {member.photo ? (
+        <div className={`relative h-64 md:h-80 bg-linear-to-br ${gradient} overflow-hidden flex items-center justify-center`}>
+          {member.photo && (
             <img 
               src={member.photo} 
               alt={member.name}
@@ -103,16 +104,10 @@ function TeamDetailModal({
                 e.currentTarget.style.display = 'none'
               }}
             />
-          ) : (
-            <img 
-              src={dummyImage}
-              alt={member.name}
-              className="w-full h-full object-cover"
-            />
           )}
           
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
           
           {/* Name & Role Overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
@@ -258,7 +253,7 @@ function TeamDetailModal({
 function HeroTeam() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -290,7 +285,7 @@ function HeroTeam() {
         >
           Orang-Orang Hebat di Balik{' '}
           <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             AuthenticGuards
           </span>
         </motion.h1>
@@ -379,7 +374,7 @@ function TeamValuesSection() {
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Apa yang{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Menggerakkan Kami
             </span>
           </h2>
@@ -395,7 +390,7 @@ function TeamValuesSection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="group relative bg-white rounded-3xl border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               <div className="relative z-10">
                 <div className={`w-14 h-14 ${value.iconBg} ${value.iconColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {value.icon}
@@ -452,7 +447,7 @@ function TeamGridSection() {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">
                   Kenali{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
                     Tim Kami
                   </span>
                 </h2>
@@ -649,7 +644,7 @@ function TeamCard({
       className="group relative overflow-hidden rounded-2xl bg-[#FAF8F5] hover:bg-white border border-gray-100 hover:border-[#E8D09E]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
     >
       {/* Image Container */}
-      <div className="relative aspect-square overflow-hidden bg-gray-100">
+      <div className="relative aspect-square overflow-hidden bg-gray-100 flex items-center justify-center">
         {member.photo ? (
           <img 
             src={member.photo} 
@@ -660,21 +655,23 @@ function TeamCard({
               target.style.display = 'none'
               const parent = target.parentElement
               if (parent) {
-                parent.classList.add('bg-gradient-to-br', ...gradient.split(' '))
+                parent.classList.add('bg-linear-to-br', ...gradient.split(' '))
                 parent.innerHTML = `<span class="text-5xl font-extrabold text-white">${member.initial}</span>`
               }
             }}
           />
         ) : (
-          <img 
-            src={dummyImage}
-            alt={member.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          <User size={48} color="gray" className="group-hover:scale-105 transition-transform duration-500" />
+          
+          // <img 
+          //   src={dummyImage}
+          //   alt={member.name}
+          //   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          // />
         )}
 
         {/* Gradient Overlay on Hover */}
-        <div className={`absolute inset-0 bg-gradient-to-t ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+        <div className={`absolute inset-0 bg-linear-to-t ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
         
         {/* View Detail Indicator */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">

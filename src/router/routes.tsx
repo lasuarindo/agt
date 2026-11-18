@@ -11,7 +11,7 @@
 // import ClaimLandingPage from '@/view/claim/Home';
 // import { createBrowserRouter } from "react-router";
 
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, Navigate, redirect } from 'react-router'
 import LayoutMain from '@/layout/Layout'
 
 import { 
@@ -118,6 +118,14 @@ export const router = createBrowserRouter([
           
         },
         element: <TermsPage />
+      },
+      
+      
+      {
+        path: '*',
+        loader: () => {
+          throw redirect('/');
+        }
       }
     ]
   }

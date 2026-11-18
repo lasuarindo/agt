@@ -58,7 +58,7 @@ import {
 function HeroTechnology() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -87,7 +87,7 @@ function HeroTechnology() {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Sistem Anti-Pemalsuan <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Authentic Guards®
           </span>
           <br className="hidden md:block" />
@@ -243,7 +243,7 @@ function CoreTechnologySection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Core Technology</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            5 Lapis <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Keamanan</span>
+            5 Lapis <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Keamanan</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Lima lapisan keamanan yang bekerja sinergis untuk menciptakan proteksi yang hampir mustahil ditembus oleh pemalsu.
@@ -260,7 +260,7 @@ function CoreTechnologySection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className={`group relative bg-white rounded-3xl border ${layer.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${layer.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${layer.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-8">
@@ -379,7 +379,7 @@ function MarkingDevelopmentSection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Marking Development</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Solusi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
+            Solusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Authentic Guards menyediakan solusi marking untuk berbagai industri. Dua layanan aktif, dua lainnya sedang dikembangkan.
@@ -419,7 +419,7 @@ function MarkingDevelopmentSection() {
                   </div>
                 )}
 
-                <div className={`absolute inset-0 bg-gradient-to-br ${isComingSoon ? 'from-gray-100 to-gray-50' : option.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${isComingSoon ? 'from-gray-100 to-gray-50' : option.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div className="relative z-10">
                   <div className={`w-14 h-14 ${isComingSoon ? 'bg-gray-100 text-gray-500' : `${option.iconBg} ${option.iconColor}`} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
@@ -579,7 +579,7 @@ function TechnologyStackSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Infrastruktur <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Enterprise-Grade</span>
+            Infrastruktur <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Enterprise-Grade</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Dibangun dengan standar ISO/IEC 27000:2016 untuk memastikan performa, keamanan, dan skalabilitas.
@@ -601,7 +601,7 @@ function TechnologyStackSection() {
                   isLarge ? 'md:col-span-2 p-8 md:p-10' : 'p-6 md:p-8'
                 }`}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${tech.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
@@ -702,7 +702,7 @@ function VerificationFlowSection() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
@@ -718,7 +718,7 @@ function VerificationFlowSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Alur Verifikasi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">4 Langkah</span>
+            Alur Verifikasi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">4 Langkah</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
             Proses verifikasi yang cepat, mudah, dan aman untuk konsumen Anda.
@@ -833,7 +833,7 @@ function SecurityComplianceSection() {
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
                 Standar Keamanan <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
                   Kelas Dunia
                 </span>
               </h2>
@@ -843,7 +843,7 @@ function SecurityComplianceSection() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white">
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center shrink-0">
                   <Lock className="w-5 h-5" />
@@ -974,7 +974,7 @@ function PerformanceMetricsSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Performa yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Terbukti</span>
+            Performa yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Terbukti</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Angka-angka yang menunjukkan komitmen kami terhadap kualitas dan kehandalan sistem.
@@ -1072,7 +1072,7 @@ function IntegrationSection() {
                 <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Integration</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Integrasi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">End-to-End</span>
+                Integrasi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">End-to-End</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
                 Sistem kami dirancang untuk integrasi yang mulus dengan infrastruktur existing Anda,
@@ -1080,7 +1080,7 @@ function IntegrationSection() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-2xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
 
               <div className="relative z-10">
@@ -1195,7 +1195,7 @@ function FAQSection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">FAQ</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Pertanyaan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Teknis</span>
+            Pertanyaan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Teknis</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Jawaban untuk pertanyaan yang sering ditanyakan tentang teknologi Authentic Guards.
@@ -1266,7 +1266,7 @@ function TechnologyCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -1279,7 +1279,7 @@ function TechnologyCTA() {
 
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Lindungi Merek Anda <br className="hidden md:block" />
-              dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Authentic Guards®</span>
+              dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Authentic Guards®</span>
             </h2>
 
             <p className="text-gray-300 text-lg leading-relaxed">

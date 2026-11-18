@@ -9,6 +9,7 @@ import {
   Target,
   Rocket,
   Shield,
+  Globe,
   type LucideIcon,
   
 } from 'lucide-react'
@@ -183,36 +184,47 @@ export const AwardsData: Award[] = [
   {
     id: 'award-2017-echelon',
     year: '2017',
-    title: 'Top 100 startup Asia Pacific 2017',
+    title: 'Top 100 Startup Asia Pacific',
     organizer: 'Echelon Asia Summit',
-    category: 'startup',
-    description: 'Dipilih sebagai salah satu dari 100 startup paling menjanjikan di kawasan Asia Pacific.',
+    category: 'achievement',
+    description: 'Dipilih sebagai salah satu dari 100 startup paling menjanjikan di kawasan Asia Pacific, membuktikan validasi teknologi di kancah internasional.',
     icon: Trophy,
     gradient: 'from-amber-400 to-amber-600',
     featured: true
   },
   {
-    id: 'award-2017-viisa',
-    year: '2017',
-    title: 'Alumni Vietnam Innovative Startup Accelerator',
-    organizer: 'Vietnam Innovative Startup Accelerator (VIISA)',
-    category: 'startup',
-    description: 'Program akselerator startup internasional yang prestisius di Vietnam.',
-    icon: Award,
-    gradient: 'from-[#C5A059] to-[#8C6F3D]',
-    featured: false
-  },
-  {
-    id: 'award-2018-indigo',
+    id: 'achievement-2018-indigo',
     year: '2018',
     title: 'Alumni Indigo Creative Nation',
     organizer: 'Telkom Group',
-    category: 'startup',
-    description: 'Program inkubasi bisnis dari Telkom Group untuk startup kreatif Indonesia.',
+    category: 'achievement',
+    description: 'Lulus dari program inkubasi bisnis Telkom Group, menandai kesiapan produk dan layanan untuk diluncurkan ke pasar yang lebih luas.',
     icon: BadgeCheck,
     gradient: 'from-blue-500 to-blue-700',
     featured: false
   },
+  {
+    id: 'achievement-2018-viisa',
+    year: '2018',
+    title: 'Alumni Vietnam Innovative Startup Accelerator',
+    organizer: 'Vietnam Innovative Startup Accelerator (VIISA)',
+    category: 'achievement',
+    description: 'Menyelesaikan program akselerator startup internasional yang prestisius di Vietnam, memperluas jaringan dan wawasan bisnis di tingkat Asia Tenggara.',
+    icon: Globe,
+    gradient: 'from-[#C5A059] to-[#8C6F3D]',
+    featured: false
+  },
+  {
+    id: 'certification-2019-iso',
+    year: '2019',
+    title: 'Adopsi Standar ISO/IEC 18004:2015',
+    organizer: 'International Organization for Standardization',
+    category: 'certification',
+    description: 'Mengadopsi standar internasional sebagai rujukan spesifikasi teknis utama dalam pengembangan QR code Authentic Guards.',
+    icon: Award,
+    gradient: 'from-emerald-500 to-emerald-700',
+    featured: true
+  }
   
   // {
   //   id: 'award-2019-innovation',

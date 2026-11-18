@@ -60,7 +60,7 @@ import {
 function HeroServices() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -89,7 +89,7 @@ function HeroServices() {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Solusi Marking <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Anti-Pemalsuan
           </span>
           <br className="hidden md:block" />
@@ -256,7 +256,7 @@ function ServicesOverview() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Marking Development</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Solusi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
+            Solusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Dua layanan marking utama yang telah terintegrasi penuh dengan sistem Authentic Guards, dirancang untuk berbagai kebutuhan industri.
@@ -274,7 +274,7 @@ function ServicesOverview() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className={`group relative bg-white rounded-3xl border ${service.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10 cursor-pointer`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
@@ -339,7 +339,7 @@ function ServicesOverview() {
           transition={{ delay: 0.3 }}
           className="mt-12 max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-[#FAF8F5] to-white rounded-2xl border border-dashed border-[#E8D09E]/60 p-6 flex items-start gap-4">
+          <div className="bg-linear-to-r from-[#FAF8F5] to-white rounded-2xl border border-dashed border-[#E8D09E]/60 p-6 flex items-start gap-4">
             <div className="w-10 h-10 bg-[#E8D09E]/30 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
@@ -412,7 +412,7 @@ function HologramDetail() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight">
-              Hologram <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">dengan QR</span>
+              Hologram <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">dengan QR</span>
             </h2>
 
             <p className="text-gray-600 leading-relaxed text-lg">
@@ -451,7 +451,7 @@ function HologramDetail() {
             className="space-y-6"
           >
             {/* Visual Card */}
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
               {/* PERUBAHAN: Glow ke brand color */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
 
@@ -464,7 +464,7 @@ function HologramDetail() {
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 space-y-4">
                   <div className="flex items-center gap-3">
                     {/* PERUBAHAN: Icon gradient ke brand color */}
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-xl flex items-center justify-center">
                       <Sparkles className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -581,7 +581,7 @@ function TafetaLabelDetail() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight">
-              Label <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Tafeta dengan QR</span>
+              Label <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Tafeta dengan QR</span>
             </h2>
 
             <p className="text-gray-600 leading-relaxed text-lg">
@@ -609,7 +609,7 @@ function TafetaLabelDetail() {
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-2xl p-6 text-white">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-2xl p-6 text-white">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-[#E8D09E]/20 text-[#E8D09E] rounded-xl flex items-center justify-center shrink-0">
                   <Lightbulb className="w-5 h-5" />
@@ -631,7 +631,7 @@ function TafetaLabelDetail() {
             viewport={{ once: true }}
             className="lg:order-1 space-y-6"
           >
-            <div className="bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl p-8 border border-[#E8D09E]/30 shadow-sm">
+            <div className="bg-linear-to-br from-[#FAF8F5] to-white rounded-3xl p-8 border border-[#E8D09E]/30 shadow-sm">
               <div className="space-y-4">
                 <div className="bg-white rounded-2xl p-6 border border-gray-100">
                   <div className="flex items-center gap-3 mb-4">
@@ -660,7 +660,7 @@ function TafetaLabelDetail() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl p-5 text-white">
+                  <div className="bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl p-5 text-white">
                     <p className="text-3xl font-extrabold mb-1">100%</p>
                     <p className="text-xs text-white/80 uppercase tracking-wider">Custom Design</p>
                   </div>
@@ -722,7 +722,7 @@ function TafetaLabelDetail() {
 //           className="relative bg-white rounded-3xl border border-[#E8D09E]/30 shadow-sm overflow-hidden"
 //         >
 //           {/* Top Research Phase Strip */}
-//           <div className="bg-gradient-to-r from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] px-6 py-3 flex items-center justify-center gap-3 relative overflow-hidden">
+//           <div className="bg-linear-to-r from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] px-6 py-3 flex items-center justify-center gap-3 relative overflow-hidden">
 //             <div className="absolute inset-0 opacity-20" style={{
 //               backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(232, 208, 158, 0.1) 10px, rgba(232, 208, 158, 0.1) 20px)`
 //             }} />
@@ -742,7 +742,7 @@ function TafetaLabelDetail() {
 
 //               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight">
 //                 Sticker{' '}
-//                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+//                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
 //                   ber-NFC
 //                 </span>
 //               </h2>
@@ -788,7 +788,7 @@ function TafetaLabelDetail() {
 
 //             {/* Right - Visual Research Card */}
 //             <div className="relative">
-//               <div className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 text-white shadow-xl overflow-hidden h-full flex flex-col">
+//               <div className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 text-white shadow-xl overflow-hidden h-full flex flex-col">
 //                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
 
 //                 {/* Blueprint grid overlay */}
@@ -804,7 +804,7 @@ function TafetaLabelDetail() {
 //                   {/* NFC Icon Big - dengan sketch feel */}
 //                   <div className="flex justify-center mb-6">
 //                     <div className="relative">
-//                       <div className="w-24 h-24 bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl flex items-center justify-center shadow-2xl relative">
+//                       <div className="w-24 h-24 bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl flex items-center justify-center shadow-2xl relative">
 //                         <Compass className="w-12 h-12 text-white" />
 //                       </div>
 //                       {/* Dashed ring - mencerminkan fase planning */}
@@ -838,7 +838,7 @@ function TafetaLabelDetail() {
 //                         <div key={idx} className="flex items-center gap-3">
 //                           <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
 //                             milestone.status === 'active'
-//                               ? 'bg-gradient-to-br from-[#C5A059] to-[#8C6F3D]'
+//                               ? 'bg-linear-to-br from-[#C5A059] to-[#8C6F3D]'
 //                               : 'bg-white/5 border border-white/20'
 //                           }`}>
 //                             {milestone.status === 'active' ? (
@@ -866,7 +866,7 @@ function TafetaLabelDetail() {
 //                   <div className="mt-auto space-y-3">
 //                     <Link
 //                       to="/contact"
-//                       className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#C5A059] to-[#8C6F3D] text-white px-5 py-3 rounded-xl font-bold hover:shadow-[#C5A059]/30 transition-all duration-300"
+//                       className="group w-full flex items-center justify-center gap-2 bg-linear-to-r from-[#C5A059] to-[#8C6F3D] text-white px-5 py-3 rounded-xl font-bold hover:shadow-[#C5A059]/30 transition-all duration-300"
 //                     >
 //                       <BellRing className="w-4 h-4" />
 //                       <span>Daftar Early Adopter</span>
@@ -883,7 +883,7 @@ function TafetaLabelDetail() {
 //                 initial={{ opacity: 0, scale: 0.8 }}
 //                 whileInView={{ opacity: 1, scale: 1 }}
 //                 viewport={{ once: true }}
-//                 className="absolute -top-3 -right-3 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] text-[#E8D09E] px-4 py-2 rounded-full text-xs font-bold shadow-xl flex items-center gap-1.5 z-20 border border-[#E8D09E]/30"
+//                 className="absolute -top-3 -right-3 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] text-[#E8D09E] px-4 py-2 rounded-full text-xs font-bold shadow-xl flex items-center gap-1.5 z-20 border border-[#E8D09E]/30"
 //               >
 //                 <Lightbulb className="w-3.5 h-3.5" />
 //                 <span>Research Phase</span>
@@ -1051,7 +1051,7 @@ function CustomerFeaturesSection() {
   // }
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
@@ -1066,7 +1066,7 @@ function CustomerFeaturesSection() {
             <span className="text-xs font-bold text-[#E8D09E] uppercase tracking-widest">Customer Features</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Keuntungan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Bagi Anda</span>
+            Keuntungan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Bagi Anda</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
             Dengan menjadi klien kami, Anda akan mendapatkan banyak keuntungan yang menjamin Return on Investment (ROI).
@@ -1103,7 +1103,7 @@ function CustomerFeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-12 bg-gradient-to-r from-[#C5A059]/20 to-[#8C6F3D]/20 backdrop-blur-sm border border-[#E8D09E]/30 rounded-3xl p-8"
+          className="mt-12 bg-linear-to-r from-[#C5A059]/20 to-[#8C6F3D]/20 backdrop-blur-sm border border-[#E8D09E]/30 rounded-3xl p-8"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -1174,7 +1174,7 @@ function CustomerFeaturesSection() {
 //             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Proses Kami</span>
 //           </div>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Alur Kerja <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Terstandar</span>
+//             Alur Kerja <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Terstandar</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Proses implementasi yang terstruktur untuk memastikan kualitas dan kesuksesan setiap proyek.
@@ -1313,7 +1313,7 @@ function ProcessSection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Alur Implementasi</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Dari Konsultasi hingga <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Pengiriman</span>
+            Dari Konsultasi hingga <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Pengiriman</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Kami menangani seluruh proses produksi — Anda cukup fokus pada bisnis. Total estimasi waktu <strong className="text-[#8C6F3D]">±14 hari kerja</strong> dari konsultasi hingga label siap digunakan.
@@ -1323,7 +1323,7 @@ function ProcessSection() {
         {/* Timeline Steps */}
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical Line - Desktop */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
 
           <div className="space-y-6 lg:space-y-12">
             {steps.map((step, idx) => {
@@ -1386,7 +1386,7 @@ function ProcessSection() {
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">
-              Dukungan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Berkelanjutan</span>
+              Dukungan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Berkelanjutan</span>
             </h3>
             <p className="text-gray-500">Layanan pendukung yang kami sediakan untuk memastikan kesuksesan implementasi Anda.</p>
           </div>
@@ -1437,7 +1437,7 @@ function ProcessSection() {
           transition={{ delay: 0.5 }}
           className="mt-12 max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-[#FAF8F5] to-white rounded-2xl border border-dashed border-[#E8D09E]/60 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="bg-linear-to-r from-[#FAF8F5] to-white rounded-2xl border border-dashed border-[#E8D09E]/60 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-[#E8D09E]/30 text-[#8C6F3D] rounded-xl flex items-center justify-center shrink-0">
                 <Clock className="w-5 h-5" />
@@ -1511,7 +1511,7 @@ function FAQSection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">FAQ</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Pertanyaan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Umum</span>
+            Pertanyaan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Umum</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Jawaban untuk pertanyaan yang sering ditanyakan tentang layanan kami.
@@ -1582,7 +1582,7 @@ function ServicesCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -1595,7 +1595,7 @@ function ServicesCTA() {
 
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Siap Melindungi <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
                 Brand Anda?
               </span>
             </h2>
@@ -1648,17 +1648,17 @@ function ServicesCTA() {
 export default function ServicesPage() {
   const location = useLocation()
   
-  useEffect(() => {
-    console.log(window.navigator.userAgent)
-    console.log(window.navigator.platform)
-    console.log(window.navigator.vendor)
-    console.log(window.navigator.appVersion)
-    console.log(window.navigator.appCodeName)
-    console.log(window.navigator.appName)
-    console.log(window.navigator.language)
-    console.log(window.navigator.languages)
+  // useEffect(() => {
+  //   console.log(window.navigator.userAgent)
+  //   console.log(window.navigator.platform)
+  //   console.log(window.navigator.vendor)
+  //   console.log(window.navigator.appVersion)
+  //   console.log(window.navigator.appCodeName)
+  //   console.log(window.navigator.appName)
+  //   console.log(window.navigator.language)
+  //   console.log(window.navigator.languages)
     
-  }, [])
+  // }, [])
   
   return (
     <>

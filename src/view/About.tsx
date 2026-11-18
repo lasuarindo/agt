@@ -55,7 +55,7 @@ import { getHQOffice } from '@/data/offices'
 // function HeroAbout() {
 //   return (
 //     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-//       <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+//       <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
 //       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 //       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       
@@ -85,7 +85,7 @@ import { getHQOffice } from '@/data/offices'
 //           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
 //         >
 //           Delapan Tahun <br className="hidden md:block" />
-//           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+//           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
 //             Melindungi Keaslian
 //           </span>
 //           <br className="hidden md:block" />
@@ -134,7 +134,7 @@ import { getHQOffice } from '@/data/offices'
 function HeroAbout() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -163,7 +163,7 @@ function HeroAbout() {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Delapan Tahun <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Melindungi Keaslian
           </span>
           <br className="hidden md:block" />
@@ -225,13 +225,13 @@ function HeroAbout() {
 //             <div>
 //               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Cerita Kami</p>
 //               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-//                 Bermula dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Keprihatinan</span>
+//                 Bermula dari <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Keprihatinan</span>
 //               </h2>
 //             </div>
 
 //             <div className="space-y-4 text-gray-600 leading-relaxed">
 //               <p>
-//                 Pada tahun 2017, kami menyaksikan bagaimana produk palsu semakin merajalela di pasar Asia Pasifik. Brand-brand lokal dan internasional kehilangan miliaran rupiah setiap tahunnya, sementara konsumen dirugikan dengan produk yang tidak aman dan tidak berkualitas.
+//                 Pada tahun 2017, kami menyaksikan bagaimana produk palsu semakin merajalela di pasar Asia Pasifik. Berbagai brand lokal dan internasional kehilangan miliaran rupiah setiap tahunnya, sementara konsumen dirugikan dengan produk yang tidak aman dan tidak berkualitas.
 //               </p>
 //               <p>
 //                 <strong className="text-[#1A1A1A]">PT. Autentikasi Garda Teknologi</strong> didirikan dengan satu misi sederhana namun ambisius: <em>menciptakan sistem autentikasi yang terjangkau, akurat, dan mudah diadopsi oleh semua brand</em>.
@@ -260,7 +260,7 @@ function HeroAbout() {
 //           >
 //             <div className="grid grid-cols-2 gap-4">
 //               <div className="space-y-4">
-//                 <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-xl">
+//                 <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-xl">
 //                   <Rocket className="w-8 h-8 text-[#E8D09E] mb-3" />
 //                   <p className="text-3xl font-extrabold mb-1">2017</p>
 //                   <p className="text-xs text-gray-400 uppercase tracking-wider">Tahun Berdiri</p>
@@ -277,7 +277,7 @@ function HeroAbout() {
 //                   <p className="text-3xl font-extrabold text-[#1A1A1A] mb-1">5+</p>
 //                   <p className="text-xs text-gray-500 uppercase tracking-wider">Negara Dilayani</p>
 //                 </div>
-//                 <div className="bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl p-6 text-white shadow-xl">
+//                 <div className="bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl p-6 text-white shadow-xl">
 //                   <Award className="w-8 h-8 text-white mb-3" />
 //                   <p className="text-3xl font-extrabold mb-1">15+</p>
 //                   <p className="text-xs text-white/80 uppercase tracking-wider">Penghargaan</p>
@@ -310,7 +310,7 @@ function OurStorySection() {
             <div>
               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Cerita Kami</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Bermula dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Keprihatinan</span>
+                Bermula dari <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Keprihatinan</span>
               </h2>
             </div>
 
@@ -350,7 +350,7 @@ function OurStorySection() {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-xl">
+                <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-xl">
                   <Rocket className="w-8 h-8 text-[#E8D09E] mb-3" />
                   <p className="text-3xl font-extrabold mb-1">2017</p>
                   <p className="text-xs text-gray-400 uppercase tracking-wider">Tahun Berdiri</p>
@@ -369,7 +369,7 @@ function OurStorySection() {
                   <p className="text-3xl font-extrabold text-[#1A1A1A] mb-1">5</p>
                   <p className="text-xs text-gray-500 uppercase tracking-wider">Lapis Keamanan</p>
                 </div>
-                <div className="bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl p-6 text-white shadow-xl">
+                <div className="bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-3xl p-6 text-white shadow-xl">
                   <Award className="w-8 h-8 text-white mb-3" />
                   <p className="text-3xl font-extrabold mb-1">Top 100</p>
                   <p className="text-xs text-white/80 uppercase tracking-wider">Startup Asia Pacific</p>
@@ -439,7 +439,7 @@ function OurStorySection() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Misi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
+//             Misi & <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.
@@ -456,7 +456,7 @@ function OurStorySection() {
 //               transition={{ duration: 0.5, delay: idx * 0.1 }}
 //               className={`group relative bg-white rounded-3xl border ${item.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
 //             >
-//               <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//               <div className={`absolute inset-0 bg-linear-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
 //               <div className="relative z-10">
 //                 {/* Header dengan Badge */}
@@ -554,7 +554,7 @@ function OurStorySection() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Misi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
+//             Misi & <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.
@@ -571,7 +571,7 @@ function OurStorySection() {
 //               transition={{ duration: 0.5, delay: idx * 0.1 }}
 //               className={`group relative bg-white rounded-3xl border ${item.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
 //             >
-//               <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//               <div className={`absolute inset-0 bg-linear-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
 //               <div className="relative z-10">
 //                 {/* Header dengan Badge */}
@@ -669,7 +669,7 @@ function MissionVisionSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Misi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
+            Misi & <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Visi</span> Kami
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Panduan yang mengarahkan setiap langkah dan keputusan kami dalam membangun masa depan autentikasi produk.
@@ -686,7 +686,7 @@ function MissionVisionSection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className={`group relative bg-white rounded-3xl border ${item.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
               <div className="relative z-10">
                 {/* Header dengan Badge */}
@@ -832,7 +832,7 @@ function MissionVisionSection() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
+//             Core <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.
@@ -856,7 +856,7 @@ function MissionVisionSection() {
 //                   isLarge || isFull ? (isFull ? 'md:col-span-3 p-8 md:p-10' : 'md:col-span-2 p-8 md:p-10') : 'p-6 md:p-8'
 //                 }`}
 //               >
-//                 <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//                 <div className={`absolute inset-0 bg-linear-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
 //                 <div className="relative z-10">
 //                   {/* Header */}
@@ -1012,7 +1012,7 @@ function MissionVisionSection() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
+//             Core <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.
@@ -1036,7 +1036,7 @@ function MissionVisionSection() {
 //                   isLarge || isFull ? (isFull ? 'md:col-span-3 p-8 md:p-10' : 'md:col-span-2 p-8 md:p-10') : 'p-6 md:p-8'
 //                 }`}
 //               >
-//                 <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//                 <div className={`absolute inset-0 bg-linear-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
 //                 <div className="relative z-10">
 //                   {/* Header */}
@@ -1196,7 +1196,7 @@ function CoreValuesSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
+            Core <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Values</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Enam nilai inti yang menjadi fondasi dalam setiap keputusan dan tindakan kami.
@@ -1220,7 +1220,7 @@ function CoreValuesSection() {
                   isLarge || isFull ? (isFull ? 'md:col-span-3 p-8 md:p-10' : 'md:col-span-2 p-8 md:p-10') : 'p-6 md:p-8'
                 }`}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
                 <div className="relative z-10">
                   {/* Header */}
@@ -1367,7 +1367,7 @@ function DetailedTimelineSection() {
         >
           <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Perjalanan Kami</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Perjalanan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Delapan Tahun</span>
+            Perjalanan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Delapan Tahun</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Dari startup kecil hingga menjadi pemimpin pasar anti-counterfeit di Asia Pasifik.
@@ -1376,7 +1376,7 @@ function DetailedTimelineSection() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
+          <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-linear-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
 
           <div className="space-y-8">
             {timeline.map((item, idx) => {
@@ -1475,7 +1475,7 @@ function DetailedTimelineSection() {
 //   ]
 
 //   return (
-//     <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+//     <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
 //       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 //       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -1488,7 +1488,7 @@ function DetailedTimelineSection() {
 //         >
 //           <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Dampak Kami</p>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-//             Angka yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+//             Angka yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
 //           </h2>
 //           <p className="text-gray-400 text-lg leading-relaxed">
 //             Dampak nyata yang kami berikan untuk industri dan konsumen di Asia Pasifik.
@@ -1547,7 +1547,7 @@ function ImpactSection() {
     },
     {
       icon: <Building2 className="w-6 h-6" />,
-      value: '500+',
+      value: 'Terpercaya',
       label: 'Brand Partner',
       desc: 'Dari berbagai industri di Asia Pasifik'
     },
@@ -1566,7 +1566,7 @@ function ImpactSection() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
@@ -1578,7 +1578,7 @@ function ImpactSection() {
         >
           <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Dampak Kami</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Angka yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+            Angka yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
             Dampak nyata yang kami berikan untuk industri dan konsumen di Asia Pasifik.
@@ -1653,7 +1653,7 @@ function TeamSection() {
         >
           <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Tim Kami</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Orang-Orang di Balik <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">AuthenticGuards</span>
+            Orang-Orang di Balik <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">AuthenticGuards</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Tim profesional yang berdedikasi untuk memberikan solusi autentikasi terbaik.
@@ -1670,7 +1670,7 @@ function TeamSection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="group bg-[#FAF8F5] hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300 text-center"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+              <div className="w-20 h-20 bg-linear-to-br from-[#E8D09E] to-[#C5A059] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
                 <span className="text-3xl font-extrabold text-white">{member.initial}</span>
               </div>
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-1">{member.name}</h3>
@@ -1723,7 +1723,7 @@ function OfficeSection() {
             <div>
               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Lokasi Kami</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-                Kantor <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Pusat</span>
+                Kantor <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Pusat</span>
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 Berkantor pusat di {office.city}, {office.countryName}, dengan akses strategis ke seluruh Asia Pasifik.
@@ -1788,13 +1788,13 @@ function OfficeSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
               
               <div className="relative z-10">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 mb-4">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-linear-to-br from-[#E8D09E] to-[#C5A059] rounded-xl flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -1855,7 +1855,7 @@ function OfficeSection() {
 //             <div>
 //               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Lokasi Kami</p>
 //               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
-//                 Kantor <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Pusat</span>
+//                 Kantor <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Pusat</span>
 //               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Berkantor pusat di Bandung, Jawa Barat, dengan akses strategis ke seluruh Asia Pasifik.
@@ -1920,13 +1920,13 @@ function OfficeSection() {
 //             viewport={{ once: true }}
 //             className="relative"
 //           >
-//             <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+//             <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
 //               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
               
 //               <div className="relative z-10">
 //                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 mb-4">
 //                   <div className="flex items-center gap-3 mb-4">
-//                     <div className="w-12 h-12 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-xl flex items-center justify-center">
+//                     <div className="w-12 h-12 bg-linear-to-br from-[#E8D09E] to-[#C5A059] rounded-xl flex items-center justify-center">
 //                       <MapPin className="w-6 h-6 text-white" />
 //                     </div>
 //                     <div>
@@ -1977,7 +1977,7 @@ function CTAAboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -1990,13 +1990,14 @@ function CTAAboutSection() {
 
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Siap Melindungi <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
                 Brand Anda?
               </span>
             </h2>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              Bergabunglah dengan 500+ brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards.
+              {/* Bergabunglah dengan 500+ brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards. */}
+              Jaringan brand terpercaya dari berbagai industri telah mempercayakan perlindungan produk terbaik mereka kepada kami
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

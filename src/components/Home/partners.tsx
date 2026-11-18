@@ -112,7 +112,7 @@ export default function PartnersMarquee() {
           className="mt-10 text-center"
         >
           <p className="text-sm text-gray-500">
-            Bergabunglah dengan <span className="font-bold text-[#1A1A1A]">500+ brand</span> yang telah melindungi produknya.{' '}
+            Bergabunglah dengan <span className="font-bold text-[#1A1A1A]">Ratusan brand</span> yang telah melindungi produknya.{' '}
             <Link 
               to="/contact" 
               className="text-[#8C6F3D] font-semibold hover:text-[#6b5530] transition-colors inline-flex items-center gap-1"

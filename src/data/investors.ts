@@ -130,32 +130,75 @@ export const getUniqueInvestorTypes = (investors: Investor[]): InvestorType[] =>
 // INVESTORS DATA - AuthenticGuards
 // ============================================================================
 // Saat ini kosong - akan diisi ketika ada investor real
+// export const InvestorsData: Investor[] = [
+//   // Contoh data (uncomment dan edit ketika ada investor):
+//   // {
+//   //   id: 'east-ventures',
+//   //   name: 'East Ventures',
+//   //   tagline: 'Venture Capital',
+//   //   initial: 'E',
+//   //   gradient: 'from-blue-500 to-blue-700',
+//   //   logo: 'https://logo.clearbit.com/eastventures.com',
+//   //   type: 'venture-capital',
+//   //   since: '2023',
+//   //   description: 'Venture capital firm fokus pada startup early-stage di Asia Tenggara.',
+//   //   investmentStage: 'Seed Round',
+//   //   website: 'https://eastventures.com',
+//   //   featured: true
+//   // },
+//   // {
+//   //   id: 'angel-investor-1',
+//   //   name: 'John Doe',
+//   //   tagline: 'Angel Investor',
+//   //   initial: 'J',
+//   //   gradient: 'from-purple-500 to-pink-500',
+//   //   type: 'angel',
+//   //   since: '2022',
+//   //   description: 'Serial entrepreneur dan investor di bidang teknologi.',
+//   //   investmentStage: 'Pre-Seed',
+//   //   featured: false
+//   // }
+  
+// ]
+
+
 export const InvestorsData: Investor[] = [
-  // Contoh data (uncomment dan edit ketika ada investor):
-  // {
-  //   id: 'east-ventures',
-  //   name: 'East Ventures',
-  //   tagline: 'Venture Capital',
-  //   initial: 'E',
-  //   gradient: 'from-blue-500 to-blue-700',
-  //   logo: 'https://logo.clearbit.com/eastventures.com',
-  //   type: 'venture-capital',
-  //   since: '2023',
-  //   description: 'Venture capital firm fokus pada startup early-stage di Asia Tenggara.',
-  //   investmentStage: 'Seed Round',
-  //   website: 'https://eastventures.com',
-  //   featured: true
-  // },
-  // {
-  //   id: 'angel-investor-1',
-  //   name: 'John Doe',
-  //   tagline: 'Angel Investor',
-  //   initial: 'J',
-  //   gradient: 'from-purple-500 to-pink-500',
-  //   type: 'angel',
-  //   since: '2022',
-  //   description: 'Serial entrepreneur dan investor di bidang teknologi.',
-  //   investmentStage: 'Pre-Seed',
-  //   featured: false
-  // }
+  {
+    id: 'backer-kadin-jabar',
+    name: 'KADIN Jawa Barat',
+    tagline: 'Kamar Dagang dan Industri Provinsi Jawa Barat',
+    initial: 'KJ',
+    gradient: 'from-blue-600 to-blue-800',
+    type: 'strategic', // Sesuaikan dengan InvestorType
+    since: '2017',
+    description: 'Induk organisasi dunia usaha yang memayungi pelaku usaha di Jawa Barat, memberikan legitimasi, advokasi, dan perluasan jaringan bisnis yang strategis.',
+    website: 'https://kadinprovjabar.id',
+    featured: true,
+    logo: logodev('kadinjabar.or.id')
+  },
+  {
+    id: 'backer-hipmi-jabar',
+    name: 'HIPMI Jawa Barat',
+    tagline: 'Himpunan Pengusaha Muda Indonesia',
+    initial: 'HJ',
+    gradient: 'from-red-500 to-red-700',
+    type: 'strategic',
+    since: '2017',
+    description: 'Wadah pengembangan kewirausahaan, jejaring bisnis, dan inovasi bagi pengusaha muda, yang mendukung pertumbuhan startup teknologi di tingkat daerah.',
+    website: 'https://hipmijabar.org',
+    featured: true,
+    logo: logodev('hipmijabar.com')
+  },
+  {
+    id: 'backer-ardin-jabar',
+    name: 'ARDIN Jawa Barat',
+    tagline: 'Asosiasi Perusahaan Perdagangan & Distributor',
+    initial: 'AJ',
+    gradient: 'from-emerald-600 to-emerald-800',
+    type: 'strategic',
+    since: '2018',
+    description: 'Mitra strategis dalam penguatan ekosistem distribusi dan perdagangan barang, mendukung integrasi solusi keamanan produk ke dalam rantai pasok regional.',
+    website: 'https://ardinjabar.or.id',
+    featured: false
+  },
 ]

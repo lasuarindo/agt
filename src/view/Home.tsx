@@ -701,11 +701,11 @@ function HeroSectionCorporate() {
           </span>
           <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-1.5">
-            <span className="font-extrabold text-[#1A1A1A]">500+</span> Brand Terpercaya
+            <span className="font-extrabold text-[#1A1A1A]">Berbagai</span> Brand Terpercaya
           </span>
           <span className="hidden sm:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-1.5">
-            <span className="font-extrabold text-[#1A1A1A]">99.9%</span> Akurasi Sistem
+            <span className="font-extrabold text-[#1A1A1A]">Akurasi</span> Teruji
           </span>
         </motion.div>
       </div>
@@ -819,7 +819,7 @@ function HeroSectionSimple() {
 function HeroSectionProposal2020() {
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -862,7 +862,7 @@ function HeroSectionProposal2020() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight">
             Sistem Anti-Pemalsuan
             {' '}<br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
               5 Lapis Keamanan
             </span>
             {' '}<br className="hidden md:block" />
@@ -954,7 +954,7 @@ function SupportedBySection() {
 
   return (
     <section className="py-16 md:py-20 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-linear-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
       
       <div className="relative max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
@@ -979,7 +979,7 @@ function SupportedBySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-gradient-to-br from-white to-[#FAF8F5] rounded-2xl p-6 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group relative bg-linear-to-br from-white to-[#FAF8F5] rounded-2xl p-6 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-center gap-4">
                 {supporter.logo ? (
@@ -993,13 +993,13 @@ function SupportedBySection() {
                         const parent = e.currentTarget.parentElement
                         if (parent) {
                           parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${supporter.initial}</span>`
-                          parent.className = `w-16 h-16 bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
+                          parent.className = `w-16 h-16 bg-linear-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
                         }
                       }}
                     />
                   </div>
                 ) : (
-                  <div className={`w-16 h-16 bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0`}>
+                  <div className={`w-16 h-16 bg-linear-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0`}>
                     <span className="text-white font-extrabold text-2xl">{supporter.initial}</span>
                   </div>
                 )}
@@ -1159,7 +1159,7 @@ function AboutSection() {
               <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs mb-3">Tentang Kami</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
                 Delapan Tahun <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
                   Melindungi Keaslian
                 </span>
               </h2>
@@ -1200,7 +1200,7 @@ function AboutSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#C5A059] via-[#E8D09E] to-transparent" />
 
             <div className="space-y-6">
               {timelineData.map((item, idx) => (
@@ -1242,7 +1242,7 @@ function AboutSection() {
 //   const [activeFilter, setActiveFilter] = useState<string>('all')
   
 //   const clients = [
-//     { name: 'JuiceNation', industry: 'F&B & Vaping', since: '2019', category: 'fb' },
+//     { name: 'JuiceNation', industry: 'F&B & Vaping', since: '2019', category: 'fnb' },
 //     { name: 'VaporIndo', industry: 'Lifestyle', since: '2019', category: 'lifestyle' },
 //     { name: 'FashionID', industry: 'Fashion & Apparel', since: '2020', category: 'fashion' },
 //     { name: 'BeautyLab', industry: 'Kosmetik & Perawatan', since: '2020', category: 'beauty' },
@@ -1254,7 +1254,7 @@ function AboutSection() {
   
 //   const filters = [
 //     { id: 'all', label: 'Semua Industri' },
-//     { id: 'fb', label: 'F&B' },
+//     { id: 'fnb', label: 'F&B' },
 //     { id: 'fashion', label: 'Fashion' },
 //     { id: 'beauty', label: 'Kecantikan' },
 //     { id: 'tech', label: 'Teknologi' },
@@ -1268,7 +1268,7 @@ function AboutSection() {
   
 //   return (
 //     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
       
 //       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
 //         <motion.div
@@ -1283,7 +1283,7 @@ function AboutSection() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Brand yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span> pada Kami
+//             Brand yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span> pada Kami
 //           </h2>
 //           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
 //             Lebih dari 500 brand telah mengimplementasikan teknologi autentikasi AuthenticGuards untuk melindungi produk dan membangun kepercayaan konsumen.
@@ -1326,10 +1326,10 @@ function AboutSection() {
 //                 animate={{ opacity: 1, scale: 1 }}
 //                 exit={{ opacity: 0, scale: 0.9 }}
 //                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-//                 className="group relative bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
+//                 className="group relative bg-linear-to-br from-[#FAF8F5] to-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
 //               >
 //                 <div className="flex items-start gap-3">
-//                   <div className="w-12 h-12 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+//                   <div className="w-12 h-12 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
 //                     <span className="text-[#E8D09E] font-extrabold text-lg">{client.name.charAt(0)}</span>
 //                   </div>
                   
@@ -1631,7 +1631,7 @@ function AboutSection() {
 //         >
 //           <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Layanan Kami</p>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Empat Opsi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span>
+//             Empat Opsi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Solusi marking multi-industri yang terintegrasi penuh dengan sistem Authentic Guards.
@@ -1653,7 +1653,7 @@ function AboutSection() {
 //                   isLarge ? 'p-8 md:p-10' : 'p-6 md:p-8'
 //                 }`}
 //               >
-//                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//                 <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
 //                 <div className="relative z-10">
 //                   <div className="flex items-start justify-between mb-6">
@@ -1816,7 +1816,7 @@ function AboutSection() {
 //             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Layanan Kami</span>
 //           </div>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Solusi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
+//             Solusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Dua layanan marking utama yang telah terintegrasi penuh dengan sistem Authentic Guards, dirancang untuk berbagai kebutuhan industri.
@@ -1834,7 +1834,7 @@ function AboutSection() {
 //               transition={{ duration: 0.5, delay: idx * 0.1 }}
 //               className={`group relative bg-white rounded-3xl border ${service.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10 cursor-pointer`}
 //             >
-//               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//               <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
 //               <div className="relative z-10">
 //                 <div className="flex items-start justify-between mb-6">
@@ -2083,7 +2083,7 @@ function ServicesSection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Layanan Kami</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Solusi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
+            Solusi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Penandaan</span> Kami
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Dua layanan marking utama yang telah terintegrasi penuh dengan sistem Authentic Guards, dirancang untuk berbagai kebutuhan industri.
@@ -2106,7 +2106,7 @@ function ServicesSection() {
                 to={`/services#${service.id}`}
                 className={`block bg-white rounded-3xl border ${service.accentBorder} hover:border-[#C5A059]/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden p-8 md:p-10`}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`} />
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
@@ -2305,7 +2305,7 @@ function ServicesSection() {
 //         >
 //           <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Teknologi Kami</p>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Dibangun dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Teknologi Terdepan</span>
+//             Dibangun dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Teknologi Terdepan</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Setiap fitur dirancang untuk memberikan jaminan keaslian produk yang tak tertandingi.
@@ -2327,7 +2327,7 @@ function ServicesSection() {
 //                   isLarge ? 'md:col-span-2 p-8 md:p-10' : 'p-6 md:p-8'
 //                 }`}
 //               >
-//                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//                 <div className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
 //                 <div className="relative z-10">
 //                   <div className="flex items-start justify-between mb-6">
@@ -2488,7 +2488,7 @@ function ServicesSection() {
 //         >
 //           <p className="text-[#8C6F3D] font-bold tracking-widest uppercase text-xs">Teknologi Kami</p>
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Dibangun dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">5 Lapis Keamanan</span>
+//             Dibangun dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">5 Lapis Keamanan</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed">
 //             Lima lapisan keamanan yang bekerja sinergis untuk menciptakan proteksi yang hampir mustahil ditembus oleh pemalsu.
@@ -2510,7 +2510,7 @@ function ServicesSection() {
 //                   isLarge ? 'md:col-span-2 p-8 md:p-10' : 'p-6 md:p-8'
 //                 }`}
 //               >
-//                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+//                 <div className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
 //                 <div className="relative z-10">
 //                   <div className="flex items-start justify-between mb-6">
@@ -2678,7 +2678,7 @@ function TechnologySection() {
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Teknologi Kami</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Dibangun dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">5 Lapis Keamanan</span>
+            Dibangun dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">5 Lapis Keamanan</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Lima lapisan keamanan yang bekerja sinergis untuk menciptakan proteksi yang hampir mustahil ditembus oleh pemalsu.
@@ -2700,7 +2700,7 @@ function TechnologySection() {
                   isLarge ? 'md:col-span-2 p-8 md:p-10' : 'p-6 md:p-8'
                 }`}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
@@ -2862,7 +2862,7 @@ function StatsSection() {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
@@ -2874,7 +2874,7 @@ function StatsSection() {
         >
           <p className="text-[#E8D09E] font-bold tracking-widest uppercase text-xs">Performa Sistem</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Angka yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
+            Angka yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">Berbicara</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
             Delapan tahun dedikasi dalam melindungi brand dan konsumen di Asia Pasifik.
@@ -2915,7 +2915,7 @@ function StatsSection() {
 
 //   return (
 //     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-linear-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
       
 //       <div className="relative max-w-6xl mx-auto px-4 md:px-8">
 //         <motion.div
@@ -3044,7 +3044,7 @@ function StatsSection() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             Dipercaya oleh <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Ratusan Brand</span>
+//             Dipercaya oleh <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Ratusan Brand</span>
 //           </h2>
 //           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
 //             Dengarkan langsung dari para pemimpin industri yang telah merasakan dampak nyata dari solusi autentikasi kami.
@@ -3058,7 +3058,7 @@ function StatsSection() {
 //               whileInView={{ opacity: 1, y: 0 }}
 //               viewport={{ once: true, margin: "-50px" }}
 //               transition={{ duration: 0.5 }}
-//               className="md:col-span-2 group relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-10 text-white shadow-xl overflow-hidden"
+//               className="md:col-span-2 group relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-10 text-white shadow-xl overflow-hidden"
 //             >
 //               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 //               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -3084,7 +3084,7 @@ function StatsSection() {
 
 //                 <div className="flex items-center justify-between pt-6 border-t border-white/10">
 //                   <div className="flex items-center gap-3">
-//                     <div className="w-12 h-12 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-full flex items-center justify-center text-[#1A1A1A] font-extrabold text-lg shadow-lg">
+//                     <div className="w-12 h-12 bg-linear-to-br from-[#E8D09E] to-[#C5A059] rounded-full flex items-center justify-center text-[#1A1A1A] font-extrabold text-lg shadow-lg">
 //                       {featured.name.charAt(0)}
 //                     </div>
 //                     <div>
@@ -3127,7 +3127,7 @@ function StatsSection() {
 
 //                 <div className="pt-4 border-t border-gray-100">
 //                   <div className="flex items-center gap-2.5">
-//                     <div className="w-9 h-9 bg-gradient-to-br from-[#E8D09E]/50 to-[#C5A059]/50 rounded-full flex items-center justify-center text-white font-bold text-sm">
+//                     <div className="w-9 h-9 bg-linear-to-br from-[#E8D09E]/50 to-[#C5A059]/50 rounded-full flex items-center justify-center text-white font-bold text-sm">
 //                       {item.name.charAt(0)}
 //                     </div>
 //                     <div className="flex-1 min-w-0">
@@ -3172,7 +3172,7 @@ function TestimonialsSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Visi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Kami</span>
+            Visi <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Kami</span>
           </h2>
         </motion.div>
 
@@ -3180,7 +3180,7 @@ function TestimonialsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-12 text-white shadow-xl overflow-hidden"
+          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-12 text-white shadow-xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -3193,7 +3193,7 @@ function TestimonialsSection() {
             </blockquote>
 
             <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#E8D09E] to-[#C5A059] rounded-full flex items-center justify-center text-[#1A1A1A] font-extrabold text-xl shadow-lg">
+              <div className="w-14 h-14 bg-linear-to-br from-[#E8D09E] to-[#C5A059] rounded-full flex items-center justify-center text-[#1A1A1A] font-extrabold text-xl shadow-lg">
                 R
               </div>
               <div>
@@ -3244,7 +3244,7 @@ function CTASection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -3257,13 +3257,13 @@ function CTASection() {
 
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Lindungi Brand Anda <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
                 Mulai Sekarang
               </span>
             </h2>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              Bergabunglah dengan ratusan brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards.
+              Bergabunglah dengan berbagai brand terkemuka yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

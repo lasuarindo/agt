@@ -31,7 +31,7 @@ export function SupportersOverviewSection() {
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Kolaborasi{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Strategis
             </span>
           </h2>
@@ -73,13 +73,13 @@ export function SupportersOverviewSection() {
                               const parent = e.currentTarget.parentElement
                               if (parent) {
                                 parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${partner.initial}</span>`
-                                parent.className = `w-16 h-16 bg-gradient-to-br ${partner.gradient} rounded-2xl flex items-center justify-center`
+                                parent.className = `w-16 h-16 bg-linear-to-br ${partner.gradient} rounded-2xl flex items-center justify-center`
                               }
                             }}
                           />
                         </div>
                       ) : (
-                        <div className={`w-16 h-16 bg-gradient-to-br ${partner.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                        <div className={`w-16 h-16 bg-linear-to-br ${partner.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
                           <span className="text-white font-extrabold text-2xl">{partner.initial}</span>
                         </div>
                       )}
@@ -188,7 +188,7 @@ export function SupportersSimpleOverviewSection() {
   return (
     <section className="py-16 md:py-20 bg-white relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-linear-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
@@ -218,10 +218,10 @@ export function SupportersSimpleOverviewSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group relative bg-gradient-to-br from-white to-[#FAF8F5] rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-linear-to-br from-white to-[#FAF8F5] rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               {/* Hover Glow */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${supporter.gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${supporter.gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
 
               <div className="relative flex flex-col items-center text-center gap-3">
                 {/* Logo with fallback */}
@@ -237,13 +237,13 @@ export function SupportersSimpleOverviewSection() {
                           const parent = e.currentTarget.parentElement
                           if (parent) {
                             parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${supporter.initial}</span>`
-                            parent.className = `w-16 h-16 bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
+                            parent.className = `w-16 h-16 bg-linear-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
                           }
                         }}
                       />
                     </div>
                   ) : (
-                    <div className={`w-16 h-16 bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                    <div className={`w-16 h-16 bg-linear-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
                       <span className="text-white font-extrabold text-2xl">{supporter.initial}</span>
                     </div>
                   )}
@@ -337,12 +337,12 @@ export function SupportersMinimalOverviewSection() {
                       const parent = e.currentTarget.parentElement
                       if (parent) {
                         parent.innerHTML = `<span class="text-white font-extrabold text-3xl">${supporter.initial}</span>`
-                        parent.className = `w-full h-full bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
+                        parent.className = `w-full h-full bg-linear-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`
                       }
                     }}
                   />
                 ) : (
-                  <div className={`w-full h-full bg-gradient-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`}>
+                  <div className={`w-full h-full bg-linear-to-br ${supporter.gradient} rounded-2xl flex items-center justify-center`}>
                     <span className="text-white font-extrabold text-3xl">{supporter.initial}</span>
                   </div>
                 )}

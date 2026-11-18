@@ -51,7 +51,7 @@ const getCurrentDay = () => {
 function HeroContact() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -82,7 +82,7 @@ function HeroContact() {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Mari Berdiskusi Tentang <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Solusi Anda
           </span>
         </motion.h1>
@@ -175,7 +175,7 @@ function OfficeSelectSection({
   const getTypeIconClass = (type: OfficeProps['type']) => {
     switch (type) {
       case 'hq':
-        return 'bg-gradient-to-br from-[#E8D09E] to-[#C5A059] text-white shadow-md'
+        return 'bg-linear-to-br from-[#E8D09E] to-[#C5A059] text-white shadow-md'
       case 'regional':
         return 'bg-blue-100 text-blue-700'
       case 'branch':
@@ -207,7 +207,7 @@ function OfficeSelectSection({
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Pilih Kantor{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Terdekat
             </span>
           </h2>
@@ -287,7 +287,7 @@ function OfficeSelectSection({
                           <div className="flex items-start gap-3">
                             <div className={`p-2 rounded-lg shrink-0 ${
                               isHQ
-                                ? 'bg-gradient-to-br from-[#E8D09E] to-[#C5A059] text-white'
+                                ? 'bg-linear-to-br from-[#E8D09E] to-[#C5A059] text-white'
                                 : isActive
                                   ? 'bg-[#E8D09E]/20 text-[#8C6F3D]'
                                   : 'bg-gray-100 text-gray-600'
@@ -476,7 +476,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight tracking-tight mb-4">
                 Ceritakan <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
                   Kebutuhan Anda
                 </span>
               </h2>
@@ -487,7 +487,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
             </div>
 
             {/* Response Time Card */}
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-2xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-4">
@@ -762,7 +762,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Kunjungi{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Kantor {activeOffice.city}
             </span>
           </h2>
@@ -785,7 +785,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
               key={activeOffice.id + '-map'}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="relative rounded-3xl overflow-hidden shadow-xl min-h-[400px] bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a]"
+              className="relative rounded-3xl overflow-hidden shadow-xl min-h-[400px] bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a]"
             >
               <div
                 className="absolute inset-0 opacity-20"
@@ -887,7 +887,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
             </div>
 
             {/* CTA Kunjungan Bisnis */}
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/10 rounded-full blur-3xl" />
               <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1">
@@ -1018,7 +1018,7 @@ function FAQSection() {
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Pertanyaan{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Umum
             </span>
           </h2>

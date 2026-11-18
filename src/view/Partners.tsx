@@ -70,7 +70,7 @@ import {
 function HeroPartner() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -100,7 +100,7 @@ function HeroPartner() {
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
           Bersama Membangun <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Ekosistem Aman
           </span>
           <br className="hidden md:block" />
@@ -129,12 +129,12 @@ function HeroPartner() {
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">500+ Brand Partner</span>
+            <span className="font-semibold">Brand Terpercaya</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="font-semibold">15+ Industri</span>
+            <span className="font-semibold">Berbagai Sektor Industri</span>
           </span>
         </motion.div>
       </div>
@@ -160,7 +160,7 @@ function HeroPartner() {
 
 //   return (
 //     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
-//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
 //       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
 //         <motion.div
@@ -175,7 +175,7 @@ function HeroPartner() {
 //           </div>
           
 //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-//             500+ Brand yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span>
+//             500+ Brand yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span>
 //           </h2>
 //           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
 //             Brand-brand terkemuka dari berbagai industri telah mengimplementasikan teknologi autentikasi AuthenticGuards.
@@ -222,7 +222,7 @@ function HeroPartner() {
 //                 className="group relative bg-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
 //               >
 //                 <div className="flex items-start gap-3">
-//                   <div className="w-12 h-12 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+//                   <div className="w-12 h-12 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
 //                     <span className="text-[#E8D09E] font-extrabold text-lg">{client.name.charAt(0)}</span>
 //                   </div>
                   
@@ -292,7 +292,7 @@ function ClientsSection() {
 
   return (
     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
@@ -307,10 +307,10 @@ function ClientsSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            500+ Brand yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span>
+            Berbagai Brand yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-            Brand-brand terkemuka dari berbagai industri telah mengimplementasikan teknologi autentikasi AuthenticGuards.
+            Berbagai brand terkemuka dari berbagai industri telah mengimplementasikan teknologi autentikasi AuthenticGuards.
           </p>
         </motion.div>
 
@@ -353,7 +353,7 @@ function ClientsSection() {
                 className="group relative bg-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-[#E8D09E] font-extrabold text-lg">{client.name.charAt(0)}</span>
                   </div>
                   
@@ -388,10 +388,10 @@ function ClientsSection() {
           className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { value: '500+', label: 'Total Brand' },
-            { value: '15+', label: 'Industri' },
-            { value: '8+', label: 'Tahun Kerjasama' },
-            { value: '99%', label: 'Kepuasan Klien' }
+            { value: 'Terpercaya', label: 'Brand Partner' },
+            { value: 'Lintas', label: 'Industri' },
+            { value: '8+', label: 'Tahun Pengalaman' },
+            { value: 'Tinggi', label: 'Tingkat Akurasi' }
           ].map((stat, idx) => (
             <div key={idx} className="text-center p-4 bg-white rounded-xl border border-gray-100">
               <p className="text-2xl font-extrabold text-[#1A1A1A] mb-1">{stat.value}</p>
@@ -410,18 +410,18 @@ function ClientsSection() {
         >
           <Link
             to="/partners/our-client"
-            className="group relative block bg-gradient-to-br from-[#FAF8F5] via-white to-[#FAF8F5] rounded-3xl p-8 md:p-10 border border-[#E8D09E]/30 hover:border-[#C5A059]/50 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden"
+            className="group relative block bg-linear-to-br from-[#FAF8F5] via-white to-[#FAF8F5] rounded-3xl p-8 md:p-10 border border-[#E8D09E]/30 hover:border-[#C5A059]/50 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden"
           >
             {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#C5A059]/10 to-transparent rounded-full blur-3xl pointer-events-none group-hover:from-[#C5A059]/20 transition-all duration-500" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#E8D09E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#C5A059]/10 to-transparent rounded-full blur-3xl pointer-events-none group-hover:from-[#C5A059]/20 transition-all duration-500" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-linear-to-tr from-[#E8D09E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
             
             {/* Content */}
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
               {/* Left: Icon & Stats */}
               <div className="flex items-center gap-4 shrink-0">
                 <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <Building2 className="w-8 h-8 text-white" />
                   </div>
                   <div className="absolute -top-1 -right-1 w-6 h-6 bg-white border-2 border-[#C5A059] rounded-full flex items-center justify-center">
@@ -430,8 +430,8 @@ function ClientsSection() {
                 </div>
                 
                 <div className="hidden md:block">
-                  <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
-                    500+
+                  <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
+                    Beragam
                   </div>
                   <div className="text-xs text-gray-500 font-medium">
                     Brand Partner
@@ -445,7 +445,7 @@ function ClientsSection() {
                   Jelajahi Lebih Banyak Brand Partner Kami
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Temukan cerita sukses dari ratusan brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards. Lihat daftar lengkap klien kami dari berbagai industri.
+                  Temukan cerita sukses dari berbagai brand yang telah mempercayakan perlindungan produk mereka kepada AuthenticGuards. Lihat daftar lengkap klien kami dari berbagai industri.
                 </p>
               </div>
 
@@ -460,7 +460,7 @@ function ClientsSection() {
             {/* Bottom Stats (Mobile) */}
             <div className="md:hidden mt-6 pt-6 border-t border-[#E8D09E]/20 flex items-center justify-center gap-6">
               <div className="text-center">
-                <div className="text-2xl font-extrabold text-[#8C6F3D]">500+</div>
+                <div className="text-2xl font-extrabold text-[#8C6F3D]">Berbagai</div>
                 <div className="text-xs text-gray-500">Brand</div>
               </div>
               <div className="w-px h-8 bg-[#E8D09E]/30" />
@@ -489,7 +489,7 @@ function InvestorsSection() {
 
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-linear-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
@@ -504,7 +504,7 @@ function InvestorsSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Didukung oleh <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Investor</span>
+            Didukung oleh <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Investor</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
             Kami bangga didukung oleh para investor dan backer yang percaya pada visi kami untuk merevolusi industri anti-counterfeit di Asia Pasifik.
@@ -568,7 +568,7 @@ function InvestorsSection() {
 // ============================================================================
 // function AboutJoinUsCTA() {
 //   return (
-//     <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+//     <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
 //       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 //       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -586,7 +586,7 @@ function InvestorsSection() {
 
 //           <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
 //             Siap Menjadi Bagian dari <br className="hidden md:block" />
-//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+//             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
 //               Ekosistem Kami?
 //             </span>
 //           </h2>

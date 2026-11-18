@@ -19,7 +19,8 @@ import {
   ClientCategoryData,
   getClientCategoryById,
   type Client,
-  type ClientCategory
+  type ClientCategory,
+  getClientBgColor
 } from '@/data/clients'
 
 // ============================================================================
@@ -41,7 +42,7 @@ export default function ClientsOverviewSection() {
   
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
@@ -56,7 +57,7 @@ export default function ClientsOverviewSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Brand yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span> pada Kami
+            Brand yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span> pada Kami
           </h2>
           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Lebih dari 500 brand telah mengimplementasikan teknologi autentikasi AuthenticGuards untuk melindungi produk dan membangun kepercayaan konsumen.
@@ -93,17 +94,26 @@ export default function ClientsOverviewSection() {
           <AnimatePresence mode="wait">
             {filteredClients.map((client, idx) => (
               <motion.div
-                key={client.name}
+                key={client.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: 0.05 }}
-                className="group relative bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
+                className="group relative bg-linear-to-br from-[#FAF8F5] to-white rounded-2xl p-5 border border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-[#E8D09E] font-extrabold text-lg">{client.name.charAt(0)}</span>
+                  <div 
+                    className="w-12 h-12 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] overflow-hidden rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    {client.logo ? (
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} Logo`}
+                        className="w-full h-full object-contain"
+                        ></img>
+                    ) : (
+                      <span className="text-[#E8D09E] font-extrabold text-lg">{client.name.charAt(0)}</span>
+                    )}
                   </div>
                   
                   <div className="flex-1 min-w-0">
@@ -135,7 +145,7 @@ export default function ClientsOverviewSection() {
           className="mt-12 text-center"
         >
           <p className="text-sm text-gray-500 mb-4">
-            Bergabunglah dengan ratusan brand yang telah melindungi produknya
+          Bergabunglah dengan berbagai brand terkemuka yang telah mempercayakan perlindungan produknya
           </p>
           <Link 
             to="/contact" 

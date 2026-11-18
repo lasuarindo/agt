@@ -1,4 +1,4 @@
-import { Rocket, Trophy, Globe, Lightbulb, BadgeCheck, Users, Handshake, type LucideIcon, User } from 'lucide-react'
+import { Rocket, Trophy, Globe, Lightbulb, BadgeCheck, Users, Handshake, Zap, type LucideIcon, User } from 'lucide-react'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -108,14 +108,14 @@ export const TIMELINE_CATEGORY_COLORS: Record<TimelineCategory, { bg: string; te
 // ============================================================================
 
 /**
- * Data timeline utama - Perjalanan 8 tahun Authentic Guards
+ * Data timeline utama - Perjalanan Authentic Guards
  */
 export const timelineData: TimelineItem[] = [
   { 
     year: '2017',
     quarter: 'Q2',
     title: 'Berdiri',
-    desc: 'PT. Autentikasi Garda Teknologi didirikan dengan visi menjadi pelopor sistem anti-counterfeit pertama di Indonesia dan Asia Pasifik.', 
+    desc: 'PT. Autentikasi Garda Teknologi didirikan dengan visi menjadi pelopor sistem anti-counterfeit dan keamanan produk terpercaya di Indonesia.', 
     highlight: true,
     icon: Rocket,
     category: 'milestone',
@@ -125,78 +125,70 @@ export const timelineData: TimelineItem[] = [
     year: '2017',
     quarter: 'Q3',
     title: 'Top 100 Startup Asia Pacific',
-    desc: 'Meraih penghargaan Top 100 Startup Asia Pacific di Echelon Asia Summit, membuktikan potensi teknologi kami di kancah internasional.', 
+    desc: 'Meraih penghargaan Top 100 Startup Asia Pacific di Echelon Asia Summit, membuktikan potensi dan validasi teknologi kami di kancah internasional.', 
     highlight: true,
     icon: Trophy,
     category: 'achievement',
-    tags: ['International', 'Award']
+    tags: ['International', 'Award', 'Echelon']
   },
   {
     year: '2017',
-    quarter: 'Q4',
-    title: 'Alumni VIISA',
-    desc: 'Menjadi bagian dari Vietnam Innovative Startup Accelerator (VIISA) 2017, program akselerator startup terkemuka di Asia Tenggara.',
-    icon: Globe,
-    category: 'achievement',
-    tags: ['Accelerator', 'Vietnam']
-  },
-  {
-    year: '2018',
-    quarter: 'Q1',
-    title: 'Alumni Indigo Creative Nation',
-    desc: 'Bergabung dengan Indigo Creative Nation 2018, program inkubasi bisnis dari Telkom Group untuk mengembangkan produk dan layanan.',
+    quarter: 'Q3',
+    title: 'Join Indigo',
+    desc: 'Resmi bergabung dengan program Indigo Creative Nation dari Telkom Group sebagai langkah awal inkubasi bisnis dan pengembangan produk.',
     icon: Lightbulb,
     category: 'partnership',
     tags: ['Telkom Group', 'Incubator']
   },
+  {
+    year: '2017',
+    quarter: 'Q4',
+    title: 'Inkubasi Indigo',
+    desc: 'Menjalani masa inkubasi intensif untuk mematangkan model bisnis, validasi pasar, dan pengembangan teknologi inti bersama para mentor ahli.',
+    icon: Lightbulb,
+    category: 'partnership',
+    tags: ['Incubator', 'Development']
+  },
+  {
+    year: '2018',
+    quarter: 'Q3',
+    title: 'Alumni Indigo Creative Nation',
+    desc: 'Lulus dari program inkubasi Indigo Creative Nation dengan produk yang siap diluncurkan ke pasar, didukung oleh jaringan ekosistem yang kuat.',
+    icon: BadgeCheck,
+    highlight: true,
+    category: 'achievement',
+    tags: ['Graduate', 'Telkom Group']
+  },
+  {
+    year: '2018',
+    quarter: 'Q4',
+    title: 'Alumni VIISA',
+    desc: 'Menjadi bagian dari Vietnam Innovative Startup Accelerator (VIISA), memperluas jaringan, validasi, dan wawasan startup di tingkat Asia Tenggara.',
+    icon: Globe,
+    highlight: true,
+    category: 'achievement',
+    tags: ['Accelerator', 'Vietnam', 'ASEAN']
+  },
   { 
     year: '2018',
-    quarter: 'Q2',
+    quarter: 'Q4',
     title: 'Ekspansi Produk',
-    desc: 'Meluncurkan teknologi kode AG dengan 5 lapis keamanan, terintegrasi dengan database real-time berstandar ISO/IEC 27000:2016.', 
+    desc: 'Meluncurkan teknologi kode keamanan generasi terbaru yang terintegrasi dengan sistem database real-time untuk verifikasi keaslian produk yang lebih akurat.', 
     highlight: true,
-    icon: Lightbulb,
+    icon: Zap,
     category: 'technology',
-    tags: ['5 Lapis Keamanan', 'ISO 27000']
+    tags: ['Product Launch', 'Security', 'Real-time']
   },
   {
     year: '2019',
     quarter: 'Q2',
     title: 'Adopsi Standar ISO 18004:2015',
-    desc: 'Mengadopsi standar internasional ISO/IEC 18004:2015 sebagai rujukan spesifikasi teknis dalam pengembangan QR code Authentic Guards.',
+    desc: 'Mengadopsi standar internasional ISO/IEC 18004:2015 sebagai rujukan spesifikasi teknis utama dalam pengembangan QR code Authentic Guards.',
     icon: BadgeCheck,
     highlight: true,
     category: 'achievement',
-    tags: ['Licensed', 'International Standard']
-  },
-  { 
-    year: '2020',
-    quarter: 'Q1',
-    title: 'Proposal Global & 100+ Brand',
-    desc: 'Merilis Proposal Global 2020 dengan teknologi 5 lapis keamanan. Mencapai milestone 100+ brand partner dari berbagai industri.',
-    highlight: true,
-    icon: Users,
-    category: 'milestone',
-    tags: ['100+ Brand', 'Global Proposal']
-  },
-  {
-    year: '2020',
-    quarter: 'Q2',
-    title: 'Kemitraan Strategis Telkom',
-    desc: 'Menjadi mitra strategis Telkom Indonesia untuk infrastruktur cloud dan konektivitas digital, memperkuat fondasi teknologi.',
-    icon: Handshake,
-    category: 'partnership',
-    tags: ['Telkom Indonesia', 'Cloud Infrastructure']
-  },
-  { 
-    year: '2025',
-    title: '500+ Brand & Regional',
-    desc: 'Memperluas jangkauan ke seluruh Asia Pasifik dengan lebih dari 500 brand partner aktif di berbagai industri.', 
-    highlight: true,
-    icon: Globe,
-    category: 'expansion',
-    tags: ['500+ Brand', 'Asia Pasifik']
-  },
+    tags: ['Licensed', 'International Standard', 'ISO']
+  }
 ]
 
 // ============================================================================
