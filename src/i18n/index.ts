@@ -14,12 +14,16 @@ for (const path in modules) {
   ;(resources[lang] ??= {})[ns] = modules[path] as object
 }
 
+// Selaraskan atribut <html lang> dengan bahasa aktif (aksesibilitas & SEO).
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng;
+});
+
 void i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'id',
     fallbackLng: 'id',
     supportedLngs: ['id', 'en'],
     defaultNS: 'common',
@@ -29,5 +33,8 @@ void i18n
       caches: ['localStorage'],
     },
   })
+  .then(() => {
+    document.documentElement.lang = i18n.language;
+  });
 
 export default i18n
