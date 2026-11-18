@@ -12,6 +12,7 @@ import {
   type LucideIcon
 } from 'lucide-react'
 import { logodev } from '@/utils/image'
+import type { TFunction } from 'i18next'
 
 // ============================================================================
 // TYPES
@@ -342,3 +343,22 @@ export const MediaCoverageData: MediaCoverage[] = [
     featured: true
   }
 ]
+
+// ============================================================================
+// I18N HELPERS - Translate display fields (keeps outlet/logos/links)
+// ============================================================================
+
+/**
+ * Translate display fields of every coverage (title, description, quote).
+ * `outlet`, `date`, `year`, `category`, `language`, `url` stay as-is.
+ */
+export const getMediaCoverageData = (t: TFunction): MediaCoverage[] =>
+  MediaCoverageData.map(c => {
+    const key = `data/media-coverage:${c.id}`
+    return {
+      ...c,
+      title: c.title ? t(`${key}.title`, { defaultValue: c.title }) : c.title,
+      description: c.description ? t(`${key}.description`, { defaultValue: c.description }) : c.description,
+      quote: c.quote ? t(`${key}.quote`, { defaultValue: c.quote }) : c.quote
+    }
+  })

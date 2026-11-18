@@ -2,6 +2,7 @@ import { motion } from 'motion/react'
 import { Newspaper, Star, ExternalLink, Calendar, Quote, Sparkles, ArrowRight, Globe } from 'lucide-react'
 import { 
   MediaCoverageData, 
+  getMediaCoverageData,
   getCoverageIcon, 
   getCoverageGradient,
   getCoverageBadgeStyle,
@@ -451,8 +452,9 @@ function FeaturedCardContent({ coverage }: { coverage: MediaCoverage }) {
 // ============================================================================
 export function MediaCoverageSimpleOverviewSection() {
   const { t } = useTranslation('overview')
-  const coverages = sortCoverageByDate(MediaCoverageData)
-  const uniqueOutlets = getUniqueOutlets(MediaCoverageData).length
+  const data = getMediaCoverageData(t)
+  const coverages = sortCoverageByDate(data)
+  const uniqueOutlets = getUniqueOutlets(data).length
 
   return (
     <section className="py-12 md:py-16 bg-white relative">
