@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom/vitest'
 import { vi } from 'vitest'
+import '@/i18n'
 
 // jsdom does not implement matchMedia; motion/react may require it.
 if (!window.matchMedia) {

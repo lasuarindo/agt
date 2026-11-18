@@ -1,8 +1,11 @@
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
 import { ShieldAlert, ArrowLeft } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function NotFound() {
+  const { t } = useTranslation('notfound')
+
   return (
     <section className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-20 text-center bg-[#FAF8F5] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-linear-to-b from-[#E8D09E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -21,10 +24,10 @@ export default function NotFound() {
           404
         </p>
         <h1 className="mt-4 text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
-          Halaman Tidak Ditemukan
+          {t('title')}
         </h1>
         <p className="mt-3 text-gray-500 text-base md:text-lg leading-relaxed max-w-md">
-          Maaf, halaman yang Anda cari tidak tersedia atau telah dipindahkan.
+          {t('description')}
         </p>
 
         <Link
@@ -32,7 +35,7 @@ export default function NotFound() {
           className="mt-8 inline-flex items-center gap-2 bg-[#1A1A1A] hover:bg-[#8C6F3D] text-white px-6 py-3.5 rounded-xl font-semibold text-sm transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Kembali ke Beranda
+          {t('backHome')}
         </Link>
       </motion.div>
     </section>
