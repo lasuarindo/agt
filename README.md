@@ -158,4 +158,4 @@ Because the build emits `dist/404.html`, deep links such as `/about` and page re
 
 ## License
 
-Private / proprietary. All rights reserved.
+Proprietary — all rights reserved. See [LICENSE](./LICENSE).
