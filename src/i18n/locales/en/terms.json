@@ -1,0 +1,337 @@
+{
+  "ui": {
+    "heroBadge": "Terms & Conditions",
+    "heroTitlePre": "Terms &",
+    "heroTitleHighlight": "Conditions",
+    "heroDesc": "These terms and conditions govern the use of {{company}} services. By using our services, you agree to all the terms set out below.",
+    "effectiveLabel": "Effective Since:",
+    "versionLabel": "Version",
+    "lawLabel": "Law of",
+    "tocTitle": "Table of Contents",
+    "ipTitle": "Our IP Protection",
+    "regulationsTitle": "Relevant Regulations",
+    "contactSubject": "For legal or compliance requests, please use the email subject <strong>\"{{subject}}\"</strong> so it can be processed quickly by our team."
+  },
+  "data": {
+    "meta": {
+      "effectiveDate": "June 22, 2026",
+      "version": "2.0",
+      "jurisdiction": "Indonesia",
+      "company": "PT. Autentikasi Garda Teknologi",
+      "brandName": "AuthenticGuards"
+    },
+    "tableOfContents": [
+      { "id": "introduction", "label": "Introduction", "icon": "BookOpen" },
+      { "id": "definitions", "label": "Definitions", "icon": "FileText" },
+      { "id": "services", "label": "Our Services", "icon": "Package" },
+      { "id": "accountRegistration", "label": "Account Registration", "icon": "UserCheck" },
+      { "id": "userObligations", "label": "User Obligations", "icon": "CheckCircle2" },
+      { "id": "intellectualProperty", "label": "Intellectual Property", "icon": "Shield" },
+      { "id": "paymentPricing", "label": "Payment & Pricing", "icon": "CreditCard" },
+      { "id": "liabilityLimitations", "label": "Limitation of Liability", "icon": "AlertTriangle" },
+      { "id": "indemnification", "label": "Indemnification", "icon": "Handshake" },
+      { "id": "serviceTermination", "label": "Service Termination", "icon": "XCircle" },
+      { "id": "disputeResolution", "label": "Dispute Resolution", "icon": "Gavel" },
+      { "id": "governingLaw", "label": "Governing Law", "icon": "Scale" },
+      { "id": "changesToTerms", "label": "Changes to Terms", "icon": "RefreshCw" },
+      { "id": "contactUs", "label": "Contact Us", "icon": "MessageCircle" }
+    ],
+    "introduction": {
+      "title": "Introduction",
+      "icon": "BookOpen",
+      "paragraphs": [
+        { "type": "text", "content": "Welcome to <strong>AuthenticGuards</strong>, a service platform operated by <strong>PT. Autentikasi Garda Teknologi</strong> (\"we\", \"us\", or \"the company\"), a limited liability company established under the laws of the Republic of Indonesia." },
+        { "type": "text", "content": "These Terms and Conditions (\"Terms\") constitute a binding legal agreement between you (\"User\", \"you\", or \"Client\") and PT. Autentikasi Garda Teknologi regarding your use of the product authentication services we provide via the website, mobile application, API, and related platforms (collectively, the \"Services\")." }
+      ],
+      "callout": {
+        "type": "important",
+        "title": "IMPORTANT: Read Carefully",
+        "content": "By registering, accessing, or using our Services, you represent that you have read, understood, and agree to be bound by these Terms and Conditions and our <Link to=\"/privacy-policy\">Privacy Policy</Link>. If you do not agree to these Terms, you are not permitted to use our Services."
+      },
+      "scope": {
+        "intro": "These Terms apply to all users of our Services, including but not limited to:",
+        "items": [
+          "Brand owners and manufacturers using product authentication services",
+          "Distributors and retailers using the tracking system",
+          "Consumers who verify products",
+          "Users who register an AuthenticGuards account",
+          "Developers using our API"
+        ]
+      }
+    },
+    "definitions": {
+      "title": "Definitions",
+      "icon": "FileText",
+      "intro": "For the purposes of these Terms and Conditions, the following terms have the meanings defined below:",
+      "terms": [
+        { "term": "Services", "definition": "All products, features, and functions provided by AuthenticGuards including hologram stickers, garment labels, verification systems, analytics dashboards, and API." },
+        { "term": "User", "definition": "Any individual or legal entity that registers and/or uses our Services, whether as a brand owner, distributor, or consumer." },
+        { "term": "Product", "definition": "Physical goods labeled with AuthenticGuards authentication technology (QR code, scratch PIN, hologram)." },
+        { "term": "Verification", "definition": "The process of validating product authenticity via QR code scanning and scratch PIN entry." },
+        { "term": "Claim", "definition": "The process of registering product ownership by consumers to activate warranty and benefits." },
+        { "term": "Dashboard", "definition": "Web-based interface for monitoring and analytics provided to brand owners." },
+        { "term": "API", "definition": "Application Programming Interface that enables integration of external systems with our Services." },
+        { "term": "Verification Data", "definition": "Information recorded when product verification is performed, including time, location, and status." }
+      ]
+    },
+    "services": {
+      "title": "Our Services",
+      "icon": "Package",
+      "intro": "AuthenticGuards provides various authentication and product protection services, including but not limited to:",
+      "items": [
+        { "icon": "ShieldCheck", "title": "Hologram Sticker", "description": "Authentication label with premium hologram technology, unique QR code, and 6-digit scratch PIN." },
+        { "icon": "Package", "title": "Garment Label", "description": "Textile label specifically for the fashion industry with authentication technology integration." },
+        { "icon": "Shield", "title": "Brand Protection", "description": "Real-time monitoring system to detect counterfeiting and anomalies." },
+        { "icon": "Lock", "title": "Supply Chain Security", "description": "End-to-end tracking from factory to consumer hands." },
+        { "icon": "Code2", "title": "API Integration", "description": "RESTful API and GraphQL for integration with clients' existing systems." },
+        { "icon": "Building2", "title": "Dashboard Analytics", "description": "Web-based platform for monitoring and verification data analysis." }
+      ],
+      "callout": {
+        "type": "info",
+        "title": "Service Coverage",
+        "content": "We reserve the right to modify, suspend, or discontinue some or all of the Services at any time, with or without prior notice, for maintenance, improvement, or other reasons. We will endeavor to provide reasonable notice if such changes significantly affect the Services you are using."
+      }
+    },
+    "accountRegistration": {
+      "title": "Account Registration",
+      "icon": "UserCheck",
+      "intro": "To access certain features of our Services, you are required to create an account. In the registration process, you agree to:",
+      "requirements": [
+        "Provide accurate, complete, and current information per the registration form",
+        "Maintain the confidentiality of your password and account credentials",
+        "Promptly notify us of any unauthorized use of your account",
+        "Ensure that you are at least 17 years old or have obtained parental/guardian consent",
+        "Assume full responsibility for all activities that occur under your account"
+      ],
+      "callout": {
+        "type": "warning",
+        "title": "Account Security",
+        "content": "You are solely responsible for maintaining the confidentiality of your password and all activities that occur under your account. We will not be liable for any loss or damage arising from your failure to comply with this security obligation. Contact us immediately if you suspect unauthorized use of your account."
+      },
+      "terminationConditions": {
+        "intro": "We reserve the right to refuse registration, suspend, or terminate your account if:",
+        "items": [
+          "The information provided is inaccurate, misleading, or incomplete",
+          "You violate the provisions of these Terms and Conditions",
+          "Your account activity is suspected to be fraudulent or unlawful",
+          "You do not use the Services for an extended period",
+          "It is necessary to fulfill legal or regulatory obligations"
+        ]
+      }
+    },
+    "userObligations": {
+      "title": "User Obligations",
+      "icon": "CheckCircle2",
+      "intro": "In using our Services, you agree not to:",
+      "prohibitedActions": [
+        "Use the Services for illegal or unauthorized purposes",
+        "Violate laws and regulations applicable in your jurisdiction",
+        "Copy, modify, or distribute our authentication technology without permission",
+        "Attempt to break, reverse-engineer, or gain unauthorized access to our systems",
+        "Upload or transmit viruses, malware, or other harmful code",
+        "Use the Services to send spam or unsolicited communications",
+        "Spread false or misleading information about products or Services",
+        "Violate our or third-party intellectual property rights",
+        "Use the Services to counterfeit or forge products",
+        "Provide false data when performing product verification or claims"
+      ],
+      "callout": {
+        "type": "important",
+        "title": "Violation of Terms",
+        "content": "Any violation of the above provisions may result in permanent suspension or termination of your account, as well as potential legal action under applicable laws. We also reserve the right to report illegal activity to the authorities."
+      }
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "icon": "Shield",
+      "intro": "All content, technology, designs, logos, trademarks, and other intellectual property related to the AuthenticGuards Services are the exclusive property of PT. Autentikasi Garda Teknologi or our licensors, and are protected by:",
+      "protections": [
+        "Law No. 28 of 2014 on Copyright",
+        "Law No. 20 of 2016 on Trademarks and Geographical Indications",
+        "Law No. 13 of 2016 on Patents",
+        "Other applicable laws and regulations"
+      ],
+      "standards": [
+        { "label": "Hologram Technology", "value": "Patent & Trade Secret" },
+        { "label": "Verification System", "value": "Copyright" },
+        { "label": "AuthenticGuards Brand", "value": "Registered Trademark" },
+        { "label": "Source Code", "value": "Copyright & Trade Secret" }
+      ],
+      "restrictions": {
+        "intro": "Except as expressly permitted in these Terms or with our written consent, you may not:",
+        "items": [
+          "Use, copy, or distribute our copyrighted materials",
+          "Use our trademarks without written permission",
+          "Reverse engineer, decompile, or disassemble our technology",
+          "Create derivative works based on our Services",
+          "Remove or alter copyright or other ownership information"
+        ]
+      }
+    },
+    "paymentPricing": {
+      "title": "Payment & Pricing",
+      "icon": "CreditCard",
+      "intro": "For paid services, payment terms apply as follows:",
+      "tableHeaders": { "aspect": "Aspect", "terms": "Terms" },
+      "table": [
+        { "aspect": "Pricing", "terms": "Agreed in a separate contract based on volume, service type, and cooperation duration" },
+        { "aspect": "Currency", "terms": "All payments in Indonesian Rupiah (IDR) unless otherwise agreed in writing" },
+        { "aspect": "Payment Method", "terms": "Bank transfer, virtual account, or other approved methods" },
+        { "aspect": "Due Date", "terms": "Per the terms of the contract or issued invoice" },
+        { "aspect": "Tax", "terms": "Prices do not include VAT and other applicable taxes" },
+        { "aspect": "Late Payment", "terms": "Late payments are subject to a penalty of 0.5% per month of the outstanding amount" }
+      ],
+      "callout": {
+        "type": "info",
+        "title": "Pricing Consultation",
+        "content": "For pricing information and special offers, please contact our sales team at <a href=\"mailto:sales@authenticguards.com\" class=\"font-semibold hover:underline\">sales@authenticguards.com</a> or visit the <Link to=\"/contact\">Contact</Link> page."
+      },
+      "priceChange": "We reserve the right to change service prices with at least 30 days' written notice before the change takes effect. For long-term contracts, price changes will follow the terms agreed in the contract."
+    },
+    "liabilityLimitations": {
+      "title": "Limitation of Liability",
+      "icon": "AlertTriangle",
+      "intro": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, AUTHENTICGUARDS AND ITS AFFILIATES SHALL NOT BE LIABLE FOR:",
+      "exclusions": [
+        "Indirect, incidental, special, or consequential damages",
+        "Loss of profits, revenue, or business",
+        "Loss of data or business interruption",
+        "Damages arising from the use or inability to use the Services",
+        "Actions or omissions of third parties",
+        "Force majeure (natural disasters, war, riots, pandemics, etc.)",
+        "System failures beyond our reasonable control"
+      ],
+      "callout": {
+        "type": "warning",
+        "title": "Maximum Liability Limit",
+        "content": "If we are nonetheless found liable under applicable law, our total liability to you for all claims arising from or related to these Terms or our Services will not exceed the amount you have paid us in the last twelve (12) months prior to the claim arising."
+      },
+      "exceptions": {
+        "intro": "The above does not limit our liability for:",
+        "items": [
+          "Personal injury or death caused by our negligence",
+          "Fraud or willful misrepresentation",
+          "Willful infringement of intellectual property rights",
+          "Liabilities that cannot be excluded under applicable law"
+        ]
+      }
+    },
+    "indemnification": {
+      "title": "Indemnification",
+      "icon": "Handshake",
+      "intro": "You agree to indemnify, defend, and hold harmless PT. Autentikasi Garda Teknologi, its affiliates, directors, officers, employees, and agents from and against any and all claims, demands, liabilities, losses, damages, costs, and expenses (including reasonable attorneys' fees) arising from or related to:",
+      "items": [
+        "Your use of the Services",
+        "Your violation of these Terms and Conditions",
+        "Your violation of third-party rights",
+        "False or inaccurate information you provide",
+        "Your negligence or misconduct",
+        "Your products labeled with our technology (for brand owners)"
+      ],
+      "callout": {
+        "type": "info",
+        "title": "Right to Assume Defense",
+        "content": "We reserve the right, at our own expense, to assume exclusive defense and control of any matter subject to indemnification by you, and in such event, you agree to cooperate with us in asserting any available defenses."
+      }
+    },
+    "serviceTermination": {
+      "title": "Service Termination",
+      "icon": "XCircle",
+      "intro": "This Agreement remains in effect until terminated by you or us under the following terms:",
+      "byUser": {
+        "title": "Termination by You",
+        "icon": "UserCheck",
+        "items": [
+          "May close your account at any time via account settings",
+          "For paid services, follow the contract's procedure",
+          "30 days' written notice for enterprise contracts"
+        ]
+      },
+      "byCompany": {
+        "title": "Termination by Us",
+        "icon": "Building2",
+        "items": [
+          "Material breach of these Terms",
+          "Illegal or fraudulent activity",
+          "Inactivity for 12+ months (for free accounts)",
+          "Legal or regulatory obligation"
+        ]
+      },
+      "callout": {
+        "type": "warning",
+        "title": "Effect of Termination",
+        "content": "Upon termination, your right to use the Services will immediately cease. Provisions that by their nature are intended to survive termination will remain in effect, including but not limited to: ownership provisions, limitations of liability, indemnification, and dispute provisions."
+      }
+    },
+    "disputeResolution": {
+      "title": "Dispute Resolution",
+      "icon": "Gavel",
+      "intro": "Any dispute arising from or related to these Terms and Conditions will be resolved through the following stages:",
+      "steps": [
+        { "step": "1", "title": "Direct Negotiation", "description": "The parties will endeavor to resolve the dispute amicably within 30 days of the dispute notice.", "color": "emerald" },
+        { "step": "2", "title": "Mediation", "description": "If negotiation fails, the dispute will be mediated by an independent mediator agreed upon jointly.", "color": "blue" },
+        { "step": "3", "title": "Arbitration or Court", "description": "If mediation is unsuccessful, the dispute will be resolved through BANI arbitration or the Bandung District Court.", "color": "purple" }
+      ],
+      "callout": {
+        "type": "info",
+        "title": "Language of Dispute Resolution",
+        "content": "All dispute resolution processes will be conducted in Indonesian, unless otherwise agreed in writing by the parties."
+      }
+    },
+    "governingLaw": {
+      "title": "Governing Law",
+      "icon": "Scale",
+      "paragraphs": [
+        "These Terms and Conditions are governed by and construed in accordance with the laws of the Republic of Indonesia, without regard to conflict of law principles.",
+        "The parties agree to choose the permanent legal domicile at the Clerk's Office of the Bandung District Court, for any dispute that cannot be resolved through arbitration."
+      ],
+      "regulations": [
+        "Law No. 27/2022 - Personal Data Protection",
+        "Law No. 11/2008 - Electronic Information and Transactions (as amended)",
+        "Law No. 8/1999 - Consumer Protection",
+        "Law No. 20/2016 - Trademarks and Geographical Indications",
+        "Law No. 13/2016 - Patents",
+        "Law No. 28/2014 - Copyright",
+        "Law No. 40/2007 - Limited Liability Companies",
+        "Civil Code - Contract Law"
+      ]
+    },
+    "changesToTerms": {
+      "title": "Changes to Terms",
+      "icon": "RefreshCw",
+      "intro": "We reserve the right to revise these Terms and Conditions from time to time according to business needs, regulatory changes, or other reasons. In the event of material changes, we will:",
+      "procedures": [
+        "Notify you via email or in-app notification at least 30 days before the changes take effect",
+        "Update the \"Last Updated\" date at the top of this page",
+        "Provide a summary of significant changes",
+        "Request your renewed consent if required by law"
+      ],
+      "callout": {
+        "type": "info",
+        "title": "Your Consent",
+        "content": "By continuing to use the Services after the changes take effect, you are deemed to have accepted the revised Terms. If you do not agree to the changes, you must stop using the Services."
+      },
+      "closing": "We encourage you to review these Terms periodically to stay informed about the applicable provisions."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "icon": "MessageCircle",
+      "intro": "If you have any questions, concerns, or need clarification regarding these Terms and Conditions, please contact us via:",
+      "teamTitle": "Legal & Compliance Team",
+      "contactLabels": ["Email (Response < 2x24 hours)", "Phone", "Office Address"],
+      "contactTypes": ["email", "phone", "address"],
+      "subjectLine": "Legal Request"
+    },
+    "lastUpdated": {
+      "label": "Document Last Updated",
+      "date": "June 22, 2026",
+      "version": "Version 2.0",
+      "company": "PT. Autentikasi Garda Teknologi"
+    },
+    "cta": {
+      "question": "Still have questions about the Terms & Conditions?",
+      "buttonText": "Contact Our Team",
+      "link": "/contact"
+    }
+  }
+}
