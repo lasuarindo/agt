@@ -14,11 +14,13 @@ import {
 export default function InvestorsOverviewSection() {
   const hasInvestors = InvestorsData.length > 0
   const placeholderSlots = 6
-
+  
+  const renderRestPlacholder = placeholderSlots - InvestorsData.length
+  
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-linear-to-b from-[#E8D09E]/8 to-transparent rounded-full blur-3xl pointer-events-none" />
       
       <div className="relative max-w-6xl mx-auto px-4 md:px-8">
         {/* Header */}
@@ -50,21 +52,23 @@ export default function InvestorsOverviewSection() {
         </motion.div>
 
         {/* Investors Grid - Conditional Rendering */}
-        {hasInvestors ? (
-          // REAL DATA MODE
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {InvestorsData.map((investor, idx) => (
-              <InvestorCard key={investor.id} investor={investor} idx={idx} />
-            ))}
-          </div>
-        ) : (
-          // PLACEHOLDER MODE
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {Array.from({ length: placeholderSlots }).map((_, idx) => (
-              <PlaceholderCard key={idx} idx={idx} />
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {hasInvestors && (
+            // REAL DATA MODE
+            <>
+              {InvestorsData.map((investor, idx) => (
+                <InvestorCard key={investor.id} investor={investor} idx={idx} />
+              ))}
+            </>
+            )}
+          {renderRestPlacholder > 0 && (
+            <>
+              {Array.from({ length: renderRestPlacholder }).map((_, idx) => (
+                <PlaceholderCard key={idx} idx={idx} />
+              ))}
+            </>
+          )}
+        </div>
 
         {/* CTA Footer */}
         <motion.div
@@ -125,7 +129,7 @@ function InvestorCard({ investor, idx }: { investor: Investor; idx: number }) {
       className="group relative aspect-square bg-white rounded-2xl border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg flex flex-col items-center justify-center p-4 transition-all duration-300 hover:-translate-y-1"
     >
       {/* Hover Glow */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
+      <div className={`absolute inset-0 bg-linear-to-br ${gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
 
       {/* Logo with fallback */}
       <div className="relative mb-3">
@@ -140,13 +144,13 @@ function InvestorCard({ investor, idx }: { investor: Investor; idx: number }) {
                 const parent = e.currentTarget.parentElement
                 if (parent) {
                   parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${investor.initial}</span>`
-                  parent.className = `w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center`
+                  parent.className = `w-16 h-16 bg-linear-to-br ${gradient} rounded-2xl flex items-center justify-center`
                 }
               }}
             />
           </div>
         ) : (
-          <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+          <div className={`w-16 h-16 bg-linear-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
             <span className="text-white font-extrabold text-2xl">{investor.initial}</span>
           </div>
         )}

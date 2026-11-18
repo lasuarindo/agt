@@ -38,7 +38,7 @@ export default function MediaCoverageOverviewSection() {
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
@@ -60,7 +60,7 @@ export default function MediaCoverageOverviewSection() {
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Pernah{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Diliput Media
             </span>
           </h2>
@@ -85,12 +85,12 @@ export default function MediaCoverageOverviewSection() {
                 href={mainFeatured.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20 hover:border-[#C5A059]/40 transition-all duration-500 block"
+                className="group relative bg-linear-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20 hover:border-[#C5A059]/40 transition-all duration-500 block"
               >
                 <FeaturedCardContent coverage={mainFeatured} />
               </a>
             ) : (
-              <div className="group relative bg-gradient-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20">
+              <div className="group relative bg-linear-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20">
                 <FeaturedCardContent coverage={mainFeatured} />
               </div>
             )}
@@ -118,16 +118,16 @@ export default function MediaCoverageOverviewSection() {
                 <>
                   {/* Featured Glow Effect */}
                   {isFeatured && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#C5A059]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-br from-[#C5A059]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   )}
 
                   {/* Hover Glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
+                  <div className={`absolute inset-0 bg-linear-to-br ${gradient} opacity-0 group-hover:opacity-[0.03] rounded-2xl transition-opacity duration-500 pointer-events-none`} />
 
                   <div className="relative flex items-start gap-4">
                     {/* Outlet Logo */}
                     <div className="shrink-0">
-                      <div className={`relative w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 overflow-hidden bg-white border border-gray-100`}>
+                      <div className={`relative w-14 h-14 bg-linear-to-br ${gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 overflow-hidden bg-white border border-gray-100`}>
                         {coverage.outletLogo ? (
                           <img 
                             src={coverage.outletLogo} 
@@ -138,7 +138,7 @@ export default function MediaCoverageOverviewSection() {
                               const parent = e.currentTarget.parentElement
                               if (parent) {
                                 parent.innerHTML = `<span class="text-white font-extrabold text-xl">${coverage.outlet.charAt(0)}</span>`
-                                parent.className = `w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center`
+                                parent.className = `w-14 h-14 bg-linear-to-br ${gradient} rounded-xl flex items-center justify-center`
                               }
                             }}
                           />
@@ -147,7 +147,7 @@ export default function MediaCoverageOverviewSection() {
                         )}
                         {/* Featured Star Badge */}
                         {isFeatured && (
-                          <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                          <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-linear-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
                             <Star className="w-3 h-3 text-white fill-current" />
                           </div>
                         )}
@@ -175,7 +175,7 @@ export default function MediaCoverageOverviewSection() {
                           </span>
                         )}
                         {isFeatured && (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-gradient-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-linear-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
                             <Star className="w-2.5 h-2.5 fill-current" />
                             Featured
                           </span>
@@ -225,8 +225,8 @@ export default function MediaCoverageOverviewSection() {
                     transition={{ duration: 0.5, delay: idx * 0.08 }}
                     className={`group relative rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 block ${
                       isFeatured
-                        ? 'bg-gradient-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 hover:border-[#C5A059]/60 hover:shadow-xl shadow-md'
-                        : 'bg-gradient-to-br from-[#FAF8F5] to-white border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-xl'
+                        ? 'bg-linear-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 hover:border-[#C5A059]/60 hover:shadow-xl shadow-md'
+                        : 'bg-linear-to-br from-[#FAF8F5] to-white border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-xl'
                     }`}
                   >
                     {CardContent}
@@ -243,8 +243,8 @@ export default function MediaCoverageOverviewSection() {
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
                   className={`group relative rounded-2xl p-6 border transition-all duration-300 ${
                     isFeatured
-                      ? 'bg-gradient-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 shadow-md'
-                      : 'bg-gradient-to-br from-[#FAF8F5] to-white border-gray-100'
+                      ? 'bg-linear-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 shadow-md'
+                      : 'bg-linear-to-br from-[#FAF8F5] to-white border-gray-100'
                   }`}
                 >
                   {CardContent}
@@ -265,7 +265,7 @@ export default function MediaCoverageOverviewSection() {
           className="grid grid-cols-3 gap-3 md:gap-4"
         >
           <div className="bg-[#FAF8F5] rounded-2xl p-4 md:p-5 border border-[#E8D09E]/30 text-center hover:border-[#C5A059]/40 transition-colors">
-            <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
+            <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
               {totalCoverage}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
@@ -274,7 +274,7 @@ export default function MediaCoverageOverviewSection() {
           </div>
 
           <div className="bg-[#FAF8F5] rounded-2xl p-4 md:p-5 border border-[#E8D09E]/30 text-center hover:border-[#C5A059]/40 transition-colors">
-            <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
+            <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
               {uniqueOutlets}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
@@ -283,7 +283,7 @@ export default function MediaCoverageOverviewSection() {
           </div>
 
           <div className="bg-[#FAF8F5] rounded-2xl p-4 md:p-5 border border-[#E8D09E]/30 text-center hover:border-[#C5A059]/40 transition-colors">
-            <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
+            <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
               {yearsCovered}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
@@ -302,7 +302,7 @@ export default function MediaCoverageOverviewSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-8"
         >
-          <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-2xl p-6 text-white relative overflow-hidden">
+          <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-2xl p-6 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
             
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-4">
@@ -365,7 +365,7 @@ function FeaturedCardContent({ coverage }: { coverage: MediaCoverage }) {
       <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
         {/* Outlet Logo */}
         <div className="shrink-0">
-          <div className={`relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-105 transition-transform duration-500 overflow-hidden bg-white`}>
+          <div className={`relative w-20 h-20 md:w-24 md:h-24 bg-linear-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-105 transition-transform duration-500 overflow-hidden bg-white`}>
             {coverage.outletLogo ? (
               <img 
                 src={coverage.outletLogo} 
@@ -376,7 +376,7 @@ function FeaturedCardContent({ coverage }: { coverage: MediaCoverage }) {
                   const parent = e.currentTarget.parentElement
                   if (parent) {
                     parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${coverage.outlet.charAt(0)}</span>`
-                    parent.className = `w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center`
+                    parent.className = `w-20 h-20 md:w-24 md:h-24 bg-linear-to-br ${gradient} rounded-2xl flex items-center justify-center`
                   }
                 }}
               />
@@ -384,7 +384,7 @@ function FeaturedCardContent({ coverage }: { coverage: MediaCoverage }) {
               <span className="text-white font-extrabold text-2xl">{coverage.outlet.charAt(0)}</span>
             )}
             {/* Glow Ring */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+            <div className={`absolute inset-0 bg-linear-to-br ${gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
           </div>
         </div>
 
@@ -491,20 +491,20 @@ export function MediaCoverageSimpleOverviewSection() {
                           const parent = e.currentTarget.parentElement
                           if (parent) {
                             parent.innerHTML = `<span class="text-white font-extrabold text-2xl">${coverage.outlet.charAt(0)}</span>`
-                            parent.className = `w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center`
+                            parent.className = `w-16 h-16 bg-linear-to-br ${gradient} rounded-2xl flex items-center justify-center`
                           }
                         }}
                       />
                     </div>
                   ) : (
-                    <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                    <div className={`w-16 h-16 bg-linear-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 shrink-0`}>
                       <span className="text-white font-extrabold text-2xl">{coverage.outlet.charAt(0)}</span>
                     </div>
                   )}
 
                   {/* Featured Badge */}
                   {coverage.featured && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-linear-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
                       <Star className="w-3 h-3 text-white fill-current" />
                     </div>
                   )}
@@ -539,7 +539,7 @@ export function MediaCoverageSimpleOverviewSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group relative bg-gradient-to-br from-white to-[#FAF8F5] rounded-2xl p-4 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group relative bg-linear-to-br from-white to-[#FAF8F5] rounded-2xl p-4 border border-gray-100 hover:border-[#E8D09E]/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 title={displayTitle}
               >
                 {CardContent}
@@ -551,7 +551,7 @@ export function MediaCoverageSimpleOverviewSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group relative bg-gradient-to-br from-white to-[#FAF8F5] rounded-2xl p-4 border border-gray-100 shadow-sm"
+                className="group relative bg-linear-to-br from-white to-[#FAF8F5] rounded-2xl p-4 border border-gray-100 shadow-sm"
                 title={displayTitle}
               >
                 {CardContent}
@@ -595,7 +595,7 @@ export function MediaCoverageTimelineOverviewSection() {
 
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-[#E8D09E]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 md:px-8">
         {/* Header */}
@@ -614,7 +614,7 @@ export function MediaCoverageTimelineOverviewSection() {
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Dari Tahun ke{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Tahun
             </span>
           </h2>
@@ -626,7 +626,7 @@ export function MediaCoverageTimelineOverviewSection() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#E8D09E] via-[#C5A059] to-transparent md:-translate-x-1/2" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#E8D09E] via-[#C5A059] to-transparent md:-translate-x-1/2" />
 
           {years.map((year, yearIdx) => (
             <div key={year} className="relative mb-12 last:mb-0">
@@ -638,7 +638,7 @@ export function MediaCoverageTimelineOverviewSection() {
                 transition={{ duration: 0.5, delay: yearIdx * 0.1 }}
                 className="relative flex items-center justify-start md:justify-center mb-6"
               >
-                <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-xl border-4 border-white">
+                <div className="relative z-10 w-16 h-16 bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-xl border-4 border-white">
                   {year}
                 </div>
               </motion.div>
@@ -656,7 +656,7 @@ export function MediaCoverageTimelineOverviewSection() {
                     <div className="relative flex items-start gap-4">
                       {/* Outlet Logo */}
                       <div className="shrink-0">
-                        <div className={`relative w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 overflow-hidden bg-white border border-gray-100`}>
+                        <div className={`relative w-14 h-14 bg-linear-to-br ${gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 overflow-hidden bg-white border border-gray-100`}>
                           {coverage.outletLogo ? (
                             <img 
                               src={coverage.outletLogo} 
@@ -667,7 +667,7 @@ export function MediaCoverageTimelineOverviewSection() {
                                 const parent = e.currentTarget.parentElement
                                 if (parent) {
                                   parent.innerHTML = `<span class="text-white font-extrabold text-xl">${coverage.outlet.charAt(0)}</span>`
-                                  parent.className = `w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center`
+                                  parent.className = `w-14 h-14 bg-linear-to-br ${gradient} rounded-xl flex items-center justify-center`
                                 }
                               }}
                             />
@@ -675,7 +675,7 @@ export function MediaCoverageTimelineOverviewSection() {
                             <span className="text-white font-extrabold text-xl">{coverage.outlet.charAt(0)}</span>
                           )}
                           {coverage.featured && (
-                            <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                            <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-linear-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
                               <Star className="w-3 h-3 text-white fill-current" />
                             </div>
                           )}
@@ -692,7 +692,7 @@ export function MediaCoverageTimelineOverviewSection() {
                             </span>
                           )}
                           {coverage.featured && (
-                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-gradient-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-linear-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
                               <Star className="w-2.5 h-2.5 fill-current" />
                               Featured
                             </span>
@@ -725,7 +725,7 @@ export function MediaCoverageTimelineOverviewSection() {
 
                   const cardClass = `group relative rounded-2xl p-5 border transition-all duration-300 ${
                     coverage.featured
-                      ? 'bg-gradient-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 shadow-md'
+                      ? 'bg-linear-to-br from-[#FAF8F5] to-white border-[#E8D09E]/50 shadow-md'
                       : 'bg-white border-gray-100 hover:border-[#E8D09E]/50 hover:shadow-md'
                   }`
 
@@ -791,7 +791,7 @@ export function MediaCoverageListOverviewSection() {
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Daftar{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Liputan Media
             </span>
           </h2>
@@ -811,7 +811,7 @@ export function MediaCoverageListOverviewSection() {
               <div className="flex items-start gap-4">
                 {/* Logo */}
                 <div className="shrink-0">
-                  <div className={`relative w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 overflow-hidden bg-white border border-gray-100`}>
+                  <div className={`relative w-14 h-14 bg-linear-to-br ${gradient} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 overflow-hidden bg-white border border-gray-100`}>
                     {coverage.outletLogo ? (
                       <img 
                         src={coverage.outletLogo} 
@@ -822,7 +822,7 @@ export function MediaCoverageListOverviewSection() {
                           const parent = e.currentTarget.parentElement
                           if (parent) {
                             parent.innerHTML = `<span class="text-white font-extrabold text-xl">${coverage.outlet.charAt(0)}</span>`
-                            parent.className = `w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center`
+                            parent.className = `w-14 h-14 bg-linear-to-br ${gradient} rounded-xl flex items-center justify-center`
                           }
                         }}
                       />
@@ -830,7 +830,7 @@ export function MediaCoverageListOverviewSection() {
                       <span className="text-white font-extrabold text-xl">{coverage.outlet.charAt(0)}</span>
                     )}
                     {coverage.featured && (
-                      <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                      <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-linear-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
                         <Star className="w-3 h-3 text-white fill-current" />
                       </div>
                     )}
@@ -850,7 +850,7 @@ export function MediaCoverageListOverviewSection() {
                       </span>
                     )}
                     {coverage.featured && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-gradient-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-linear-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
                         <Star className="w-2.5 h-2.5 fill-current" />
                         Featured
                       </span>

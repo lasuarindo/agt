@@ -173,7 +173,7 @@ export const SupportersData: Supporter[] = [
     gradient: 'from-blue-500 to-blue-700',
     logo: logodev('telkom.co.id'),
     category: 'technology',
-    since: '2018',
+    since: '2017',
     description: 'Telkom Indonesia sebagai BUMN telekomunikasi terbesar mendukung pengembangan infrastruktur teknologi dan konektivitas untuk solusi autentikasi produk kami.',
     contributions: [
       {
@@ -211,7 +211,7 @@ export const SupportersData: Supporter[] = [
     gradient: 'from-purple-500 to-pink-500',
     logo: logodev('indigo.id'),
     category: 'incubator',
-    since: '2018',
+    since: '2017',
     description: 'Program inkubasi dari Telkom Group yang membantu pengembangan bisnis startup kreatif Indonesia melalui mentoring, networking, dan akses pendanaan.',
     contributions: [
       {
@@ -227,7 +227,7 @@ export const SupportersData: Supporter[] = [
       {
         icon: Users,
         title: 'Networking',
-        description: 'Koneksi ke 500+ startup'
+        description: 'Koneksi ke berbagai startup kreatif'
       },
       {
         icon: Target,
@@ -249,7 +249,7 @@ export const SupportersData: Supporter[] = [
     gradient: 'from-[#1A1F71] to-[#F7B600]',
     logo: logodev('viisa.vn'),
     category: 'accelerator',
-    since: '2017',
+    since: '2018',
     description: 'Vietnam Innovative Startup Accelerator - program akselerator internasional yang membantu ekspansi regional dan akses ke pasar Asia Tenggara.',
     contributions: [
       {

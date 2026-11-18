@@ -1,3 +1,4 @@
+import { logodev } from '@/utils/image';
 import {
   ShieldCheck,
   Utensils,
@@ -7,14 +8,20 @@ import {
   Heart,
   Coffee,
   Gem,
-  type LucideIcon
+  type LucideIcon,
+  WavesVertical,
+  Tags,
+  Car,
+  GraduationCap,
+  Briefcase
 } from 'lucide-react'
 
 // ============================================================================
 // TYPES
 // ============================================================================
 export type ClientCategory =
-  | 'fb'              // F&B, Vaping, Minuman
+  | 'fnb'             // F&B
+  | 'vaporize'        // Vaping
   | 'fashion'         // Fashion, Apparel, Sportswear
   | 'beauty'          // Kosmetik, Perawatan
   | 'tech'            // Elektronik, Gadget
@@ -23,6 +30,7 @@ export type ClientCategory =
   | 'automotive'      // Otomotif
   | 'education'       // Pendidikan
   | 'custom'          // Lainnya
+  | 'merchandise'
   
 export type ClientCategoryDetail = {
   id: ClientCategory | 'all'
@@ -48,7 +56,8 @@ export type Client = {
 // ============================================================================
 export const getClientCategoryLabel = (category?: ClientCategory): string => {
   const map: Record<ClientCategory, string> = {
-    'fb': 'F&B',
+    'fnb': 'F&B',
+    'vaporize': 'Vaporize',
     'fashion': 'Fashion',
     'beauty': 'Kecantikan',
     'tech': 'Teknologi',
@@ -56,6 +65,7 @@ export const getClientCategoryLabel = (category?: ClientCategory): string => {
     'lifestyle': 'Lifestyle',
     'automotive': 'Otomotif',
     'education': 'Pendidikan',
+    'merchandise': 'Merchandise',
     'custom': 'Lainnya'
   }
   return map[category || 'custom'] || 'Lainnya'
@@ -66,17 +76,19 @@ export const getClientCategoryLabel = (category?: ClientCategory): string => {
 // ============================================================================
 export const getClientIcon = (category?: ClientCategory): LucideIcon => {
   const map: Record<ClientCategory, LucideIcon> = {
-    'fb': Utensils,
+    'fnb': Utensils,
+    'vaporize': WavesVertical,
     'fashion': Shirt,
     'beauty': Sparkles,
     'tech': Laptop,
     'health': Heart,
     'lifestyle': Coffee,
-    'automotive': ShieldCheck,
-    'education': ShieldCheck,
-    'custom': ShieldCheck
+    'automotive': Car,
+    'education': GraduationCap,
+    'merchandise': Tags,
+    'custom': Briefcase
   }
-  return map[category || 'custom'] || ShieldCheck
+  return map[category || 'custom'] || Briefcase
 }
 
 // ============================================================================
@@ -84,7 +96,8 @@ export const getClientIcon = (category?: ClientCategory): LucideIcon => {
 // ============================================================================
 export const getClientGradient = (category?: ClientCategory): string => {
   const map: Record<ClientCategory, string> = {
-    'fb': 'from-orange-500 to-red-600',
+    'fnb': 'from-orange-500 to-red-600',
+    'vaporize': 'from-violet-500 to-purple-600',
     'fashion': 'from-pink-500 to-purple-600',
     'beauty': 'from-rose-400 to-pink-500',
     'tech': 'from-blue-500 to-indigo-600',
@@ -92,6 +105,7 @@ export const getClientGradient = (category?: ClientCategory): string => {
     'lifestyle': 'from-amber-500 to-orange-600',
     'automotive': 'from-slate-600 to-gray-800',
     'education': 'from-cyan-500 to-blue-600',
+    'merchandise': 'from-yellow-500 to-amber-600',
     'custom': 'from-gray-500 to-gray-700'
   }
   return map[category || 'custom'] || 'from-gray-500 to-gray-700'
@@ -102,7 +116,8 @@ export const getClientGradient = (category?: ClientCategory): string => {
 // ============================================================================
 export const getClientBadgeStyle = (category?: ClientCategory): string => {
   const map: Record<ClientCategory, string> = {
-    'fb': 'bg-orange-100 text-orange-700 border-orange-200',
+    'fnb': 'bg-orange-100 text-orange-700 border-orange-200',
+    'vaporize': 'bg-violet-100 text-violet-700 border-violet-200',
     'fashion': 'bg-pink-100 text-pink-700 border-pink-200',
     'beauty': 'bg-rose-100 text-rose-700 border-rose-200',
     'tech': 'bg-blue-100 text-blue-700 border-blue-200',
@@ -110,10 +125,94 @@ export const getClientBadgeStyle = (category?: ClientCategory): string => {
     'lifestyle': 'bg-amber-100 text-amber-700 border-amber-200',
     'automotive': 'bg-slate-100 text-slate-700 border-slate-200',
     'education': 'bg-cyan-100 text-cyan-700 border-cyan-200',
+    'merchandise': 'bg-yellow-100 text-yellow-700 border-yellow-200',
     'custom': 'bg-gray-100 text-gray-700 border-gray-200'
   }
-  return map[category || 'custom'] || ''
+  return map[category || 'custom'] || 'bg-gray-100 text-gray-700 border-gray-200'
 }
+
+// ============================================================================
+// HELPER - Category Background
+// ============================================================================
+export const getClientBgColor = (category?: ClientCategory): string => {
+  const map: Record<ClientCategory, string> = {
+    'fnb': 'bg-orange-50',
+    'vaporize': 'bg-violet-50',
+    'fashion': 'bg-pink-50',
+    'beauty': 'bg-rose-50',
+    'tech': 'bg-blue-50',
+    'health': 'bg-emerald-50',
+    'lifestyle': 'bg-amber-50',
+    'automotive': 'bg-slate-50',
+    'education': 'bg-cyan-50',
+    'merchandise': 'bg-yellow-50',
+    'custom': 'bg-gray-50'
+  }
+  return map[category || 'custom'] || 'bg-gray-50'
+}
+
+// ============================================================================
+// HELPER - Category Text Color
+// ============================================================================
+export const getClientTextColor = (category?: ClientCategory): string => {
+  const map: Record<ClientCategory, string> = {
+    'fnb': 'text-orange-700',
+    'vaporize': 'text-violet-700',
+    'fashion': 'text-pink-700',
+    'beauty': 'text-rose-700',
+    'tech': 'text-blue-700',
+    'health': 'text-emerald-700',
+    'lifestyle': 'text-amber-700',
+    'automotive': 'text-slate-700',
+    'education': 'text-cyan-700',
+    'merchandise': 'text-yellow-700',
+    'custom': 'text-gray-700'
+  }
+  return map[category || 'custom'] || 'text-gray-700'
+}
+
+// ============================================================================
+// HELPER - Category Border Color
+// ============================================================================
+export const getClientBorderColor = (category?: ClientCategory): string => {
+  const map: Record<ClientCategory, string> = {
+    'fnb': 'border-orange-200',
+    'vaporize': 'border-violet-200',
+    'fashion': 'border-pink-200',
+    'beauty': 'border-rose-200',
+    'tech': 'border-blue-200',
+    'health': 'border-emerald-200',
+    'lifestyle': 'border-amber-200',
+    'automotive': 'border-slate-200',
+    'education': 'border-cyan-200',
+    'merchandise': 'border-yellow-200',
+    'custom': 'border-gray-200'
+  }
+  return map[category || 'custom'] || 'border-gray-200'
+}
+
+// ============================================================================
+// HELPER - Category Ring Color
+// ============================================================================
+export const getClientRingColor = (category?: ClientCategory): string => {
+  const map: Record<ClientCategory, string> = {
+    'fnb': 'ring-orange-500',
+    'vaporize': 'ring-violet-500',
+    'fashion': 'ring-pink-500',
+    'beauty': 'ring-rose-500',
+    'tech': 'ring-blue-500',
+    'health': 'ring-emerald-500',
+    'lifestyle': 'ring-amber-500',
+    'automotive': 'ring-slate-500',
+    'education': 'ring-cyan-500',
+    'merchandise': 'ring-yellow-500',
+    'custom': 'ring-gray-500'
+  }
+  return map[category || 'custom'] || 'ring-gray-500'
+}
+
+
+
 
 // ============================================================================
 // HELPER - Utility Functions
@@ -189,9 +288,14 @@ export const ClientCategoryData: ClientCategoryDetail[] = [
     description: 'Tampilkan semua klien dari berbagai industri'
   },
   {
-    id: 'fb',
+    id: 'fnb',
     label: 'F&B',
     description: 'Food & Beverage, vaping, minuman, dan kuliner'
+  },
+  {
+    id: 'vaporize',
+    label: 'Vaporize',
+    description: 'Produk vaping dan rokok elektronik'
   },
   {
     id: 'fashion',
@@ -229,6 +333,11 @@ export const ClientCategoryData: ClientCategoryDetail[] = [
     description: 'Institusi pendidikan, kursus, dan pelatihan'
   },
   {
+    id: 'merchandise',
+    label: 'Merchandise',
+    description: 'Produk merchandise dan promosi'
+  },
+  {
     id: 'custom',
     label: 'Industri Lainnya',
     description: 'Klien dari industri yang tidak termasuk dalam kategori di atas'
@@ -262,6 +371,18 @@ export const getAllCategoryIds = (): ClientCategory[] => {
     .map(cat => cat.id as ClientCategory)
 }
 
+export const getClientCategoryData = (id: ClientCategory | 'all'): ClientCategoryDetail | undefined => {
+  return ClientCategoryData.find(item => item.id === id)
+}
+
+export const getClientCategoryOptions = () => {
+  return ClientCategoryData.map(category => ({
+    value: category.id,
+    label: category.label,
+    description: category.description
+  }))
+}
+
 /**
  * Check if category exists
  */
@@ -273,84 +394,140 @@ export const isCategoryValid = (id: string): boolean => {
 // CLIENTS DATA - AuthenticGuards
 // ============================================================================
 export const ClientsData: Client[] = [
+  // ============================================================
+  // FASHION
+  // ============================================================
+  {
+    id: 'moruka',
+    name: 'Moruka',
+    industry: 'Fashion',
+    category: 'fashion',
+    since: '2019',
+    description: 'Brand fashion dan apparel',
+    location: '-',
+    gradient: getClientGradient('fashion')
+  },
+  {
+    id: 'sabichi',
+    name: 'Sabichi',
+    industry: 'Fashion',
+    category: 'fashion',
+    since: '2017',
+    description: 'Brand fashion dan lifestyle',
+    location: '-',
+    gradient: getClientGradient('fashion')
+  },
+  {
+    id: 'moneylaundry',
+    name: 'Money Laundry',
+    industry: 'Fashion',
+    category: 'fashion',
+    since: '2017',
+    description: 'Brand fashion dan apparel',
+    location: '-',
+    gradient: getClientGradient('fashion')
+  },
+
+  // ============================================================
+  // BEAUTY
+  // ============================================================
+  {
+    id: 'byhers',
+    name: 'BYHERS',
+    industry: 'Kecantikan',
+    category: 'beauty',
+    since: '2020',
+    description: 'Brand kosmetik dan perawatan diri',
+    location: '-',
+    gradient: getClientGradient('beauty')
+  },
+  {
+    id: 'adeeva',
+    name: 'Adeeva',
+    industry: 'Kecantikan',
+    category: 'beauty',
+    since: '2019',
+    description: 'Brand skincare dan perawatan kulit',
+    location: '-',
+    gradient: getClientGradient('beauty')
+  },
+
+  // ============================================================
+  // TECHNOLOGY
+  // ============================================================
+  {
+    id: 'merz',
+    name: 'Merz',
+    industry: 'Teknologi',
+    category: 'tech',
+    since: '-',
+    description: 'Perusahaan teknologi dan perangkat medis',
+    location: '-',
+    logo: logodev('merzaesthetics.com'),
+    gradient: getClientGradient('tech')
+  },
+  {
+    id: 'ultherapy',
+    name: 'Ultherapy',
+    industry: 'Teknologi & Kesehatan',
+    category: 'tech', // atau 'health'? Karena termasuk di kedua kategori
+    since: '-',
+    description: 'Teknologi perawatan kulit berbasis ultrasound',
+    location: '-',
+    logo: logodev('ultherapy.com'),
+    gradient: getClientGradient('tech')
+  },
+
+  // ============================================================
+  // HEALTH
+  // ============================================================
+  {
+    id: 'ultherapy-health',
+    name: 'Ultherapy',
+    industry: 'Kesehatan',
+    category: 'health',
+    since: '-',
+    description: 'Perawatan kesehatan dan estetika',
+    location: '-',
+    logo: logodev('ultherapy.com'),
+    gradient: getClientGradient('health')
+  },
+
+  // ============================================================
+  // MERCHANDISE
+  // ============================================================
+  {
+    id: 'xtc',
+    name: 'XTC Indonesia',
+    industry: 'Merchandise',
+    category: 'merchandise',
+    since: '2019',
+    description: 'Produk merchandise dan promosi',
+    location: '-',
+    gradient: getClientGradient('merchandise')
+  },
+  {
+    id: '234sc',
+    name: '234 SC',
+    industry: 'Merchandise',
+    category: 'merchandise',
+    since: '2019',
+    description: 'Produk merchandise dan koleksi',
+    location: '-',
+    gradient: getClientGradient('merchandise')
+  },
+
+  // ============================================================
+  // VAPORIZE / VAPING
+  // ============================================================
   {
     id: 'juicenation',
     name: 'JuiceNation',
-    industry: 'F&B & Vaping',
-    category: 'fb',
+    industry: 'Vaping',
+    category: 'vaporize',
     since: '2019',
-    description: 'Brand minuman dan vaping terkemuka yang mengimplementasikan autentikasi produk untuk melindungi konsumen dari produk palsu.',
-    location: 'Jakarta, Indonesia',
-    gradient: 'from-orange-500 to-red-600'
+    description: 'Brand liquid vape dan aksesoris',
+    location: '-',
+    gradient: getClientGradient('vaporize')
   },
-  {
-    id: 'vaporindo',
-    name: 'VaporIndo',
-    industry: 'Lifestyle & Vaping',
-    category: 'lifestyle',
-    since: '2019',
-    description: 'Platform lifestyle dan vaping yang menggunakan teknologi autentikasi untuk memastikan keaslian produk.',
-    location: 'Surabaya, Indonesia',
-    gradient: 'from-amber-500 to-orange-600'
-  },
-  {
-    id: 'fashionid',
-    name: 'FashionID',
-    industry: 'Fashion & Apparel',
-    category: 'fashion',
-    since: '2020',
-    description: 'E-commerce fashion yang mengintegrasikan sistem autentikasi untuk melindungi brand dan konsumen dari barang palsu.',
-    location: 'Bandung, Indonesia',
-    gradient: 'from-pink-500 to-purple-600'
-  },
-  {
-    id: 'beautylab',
-    name: 'BeautyLab',
-    industry: 'Kosmetik & Perawatan',
-    category: 'beauty',
-    since: '2020',
-    description: 'Brand kosmetik premium yang menggunakan teknologi autentikasi untuk menjamin keaslian produk kecantikan.',
-    location: 'Jakarta, Indonesia',
-    gradient: 'from-rose-400 to-pink-500'
-  },
-  {
-    id: 'sportmax',
-    name: 'SportMax',
-    industry: 'Sportswear & Sneakers',
-    category: 'fashion',
-    since: '2021',
-    description: 'Retailer sportswear dan sneakers yang mengimplementasikan verifikasi produk untuk melindungi konsumen.',
-    location: 'Yogyakarta, Indonesia',
-    gradient: 'from-pink-500 to-purple-600'
-  },
-  {
-    id: 'techguard',
-    name: 'TechGuard',
-    industry: 'Elektronik & Gadget',
-    category: 'tech',
-    since: '2022',
-    description: 'Distributor elektronik yang menggunakan teknologi autentikasi untuk memastikan keaslian gadget dan aksesoris.',
-    location: 'Tangerang, Indonesia',
-    gradient: 'from-blue-500 to-indigo-600'
-  },
-  {
-    id: 'pharmacare',
-    name: 'PharmaCare',
-    industry: 'Farmasi & Kesehatan',
-    category: 'health',
-    since: '2022',
-    description: 'Perusahaan farmasi yang mengimplementasikan sistem autentikasi untuk melindungi produk kesehatan dari pemalsuan.',
-    location: 'Semarang, Indonesia',
-    gradient: 'from-emerald-500 to-teal-600'
-  },
-  {
-    id: 'luxbrand',
-    name: 'LuxBrand',
-    industry: 'Luxury Goods',
-    category: 'lifestyle',
-    since: '2023',
-    description: 'Brand luxury goods yang menggunakan teknologi autentikasi premium untuk menjaga eksklusivitas dan keaslian produk.',
-    location: 'Bali, Indonesia',
-    gradient: 'from-amber-500 to-orange-600'
-  }
 ]

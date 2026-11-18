@@ -448,7 +448,7 @@ function HeroDetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 
   return (
     <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/40" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/40" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/40 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -633,7 +633,7 @@ function FeaturesSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
         >
           <p className={`text-xs font-bold ${color.text} uppercase tracking-widest`}>Fitur Unggulan</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Fitur <span className={`text-transparent bg-clip-text bg-gradient-to-r ${color.gradient}`}>Detail</span>
+            Fitur <span className={`text-transparent bg-clip-text bg-linear-to-r ${color.gradient}`}>Detail</span>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             Setiap fitur dirancang untuk memberikan proteksi maksimal dan pengalaman verifikasi yang mudah.
@@ -742,7 +742,7 @@ function ImplementationSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
   }
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -962,7 +962,7 @@ function GallerySection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group relative aspect-square bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-dashed border-[#E8D09E]/40 hover:border-[#C5A059]/60 flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-md"
+              className="group relative aspect-square bg-linear-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-dashed border-[#E8D09E]/40 hover:border-[#C5A059]/60 flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-md"
             >
               <div className="text-6xl mb-3">{item.placeholder}</div>
               <h4 className="font-bold text-[#1A1A1A] text-center mb-1">{item.title}</h4>
@@ -1038,13 +1038,13 @@ function PricingSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
             >
               {/* Popular Badge */}
               {pkg.popular && (
-                <div className="absolute top-0 right-0 bg-gradient-to-r from-[#C5A059] to-[#8C6F3D] text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-md">
+                <div className="absolute top-0 right-0 bg-linear-to-r from-[#C5A059] to-[#8C6F3D] text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-md">
                   ⭐ {pkg.highlight}
                 </div>
               )}
               
               {/* Header Card */}
-              <div className={`p-8 pb-6 ${pkg.popular ? 'bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] text-white' : 'bg-white'}`}>
+              <div className={`p-8 pb-6 ${pkg.popular ? 'bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] text-white' : 'bg-white'}`}>
                 {!pkg.popular && pkg.highlight && (
                   <span className="inline-block text-xs font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-3 py-1 rounded-full mb-3">
                     {pkg.highlight}
@@ -1265,7 +1265,7 @@ function CustomSolutionSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA })
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-3xl" />
               
               <div className="relative z-10">
@@ -1400,7 +1400,7 @@ function CTADetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
+          className="relative bg-linear-to-br from-[#1A1A1A] to-[#2a2a2a] rounded-3xl p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6F3D]/10 rounded-full blur-3xl pointer-events-none" />
@@ -1413,7 +1413,7 @@ function CTADetailSection({ data }: { data: typeof HOLOGRAM_SERVICE_DATA }) {
 
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Siap Melindungi <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8D09E] to-[#C5A059]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E8D09E] to-[#C5A059]">
                 Brand Anda?
               </span>
             </h2>
@@ -1500,7 +1500,7 @@ function RelatedServicesSection() {
           <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Related Services</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Layanan{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Lainnya
             </span>
           </h2>

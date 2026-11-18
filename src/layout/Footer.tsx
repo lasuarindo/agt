@@ -100,7 +100,7 @@ export default function FooterMain() {
 
   const trustBadges = [
     { label: 'Since 2017', icon: <Award className="w-3.5 h-3.5" /> },
-    { label: '500+ Brand', icon: <Award className="w-3.5 h-3.5" /> },
+    // { label: '500+ Brand', icon: <Award className="w-3.5 h-3.5" /> },
     { label: 'Made in Indonesia', icon: <GlobeCheck className="w-3.5 h-3.5" /> }
   ]
 

@@ -76,8 +76,8 @@ function ClientDetailModal({
         </button>
 
         {/* Header with Gradient */}
-        <div className={`relative h-56 md:h-64 bg-gradient-to-br ${gradient} overflow-hidden`}>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        <div className={`relative h-56 md:h-64 bg-linear-to-br ${gradient} overflow-hidden`}>
+          <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
 
           {/* Logo/Initial */}
           <div className="absolute bottom-6 left-6 md:left-8 flex items-end gap-4">
@@ -209,7 +209,7 @@ function HeroClients() {
 
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FAF8F5] via-[#F5EFE6] to-[#E8D09E]/20" />
       <div className="absolute top-0 right-0 -mt-32 -mr-32 w-[700px] h-[700px] bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-32 -ml-32 w-[600px] h-[600px] bg-[#8C6F3D]/5 rounded-full blur-3xl pointer-events-none" />
       <div
@@ -241,7 +241,7 @@ function HeroClients() {
         >
           Brand yang{' '}
           <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
             Percaya pada Kami
           </span>
         </motion.h1>
@@ -344,12 +344,12 @@ function ClientsGridSection() {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">
                   Semua{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
                     Brand Partner
                   </span>
                 </h2>
                 <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-                  Temukan brand-brand yang telah mempercayakan perlindungan produk mereka kepada kami.
+                  Temukan berbagai brand yang telah mempercayakan perlindungan produk mereka kepada kami.
                 </p>
               </div>
 
@@ -560,7 +560,7 @@ function ClientCard({
       className="group relative overflow-hidden rounded-2xl bg-[#FAF8F5] hover:bg-white border border-gray-100 hover:border-[#E8D09E]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
     >
       {/* Logo/Initial Container */}
-      <div className={`relative aspect-square overflow-hidden bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+      <div className={`relative aspect-square overflow-hidden bg-linear-to-br ${gradient} flex items-center justify-center`}>
         {client.logo ? (
           <img
             src={client.logo}

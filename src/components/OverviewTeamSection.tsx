@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Users, Sparkles, ArrowUpRight } from 'lucide-react'
+import { Users, Sparkles, ArrowUpRight, User } from 'lucide-react'
 import { Link } from 'react-router'
 import { 
   TeamData, 
@@ -13,7 +13,7 @@ import {
 // ============================================================================
 export function TeamOverviewSection() {
   const featuredTeam = getFeaturedTeam(TeamData)
-  const totalTeam = 50
+  const totalTeam = TeamData.length
 
   return (
     <section className="py-16 md:py-20 bg-white relative">
@@ -34,7 +34,7 @@ export function TeamOverviewSection() {
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Dipimpin oleh{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
               Para Ahli
             </span>
           </h2>
@@ -58,33 +58,33 @@ export function TeamOverviewSection() {
                 className="group relative overflow-hidden rounded-2xl bg-[#FAF8F5] hover:bg-white border border-gray-100 hover:border-[#E8D09E]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-gray-100">
+                <div className="relative aspect-square overflow-hidden bg-gray-100 flex items-center justify-center">
                   {member.photo ? (
                     <img 
                       src={member.photo} 
-                      alt={member.name}
+                      alt={`${member.name} Photo`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         const target = e.currentTarget
                         target.style.display = 'none'
                         const parent = target.parentElement
                         if (parent) {
-                          parent.classList.add('bg-gradient-to-br', ...gradient.split(' '))
+                          parent.classList.add('bg-linear-to-br', ...gradient.split(' '))
                           parent.innerHTML = `<span class="text-5xl font-extrabold text-white">${member.initial}</span>`
                         }
                       }}
                     />
                   ) : (
-                    // Dummy image dari Unsplash
-                    <img 
-                      src={`https://images.unsplash.com/photo-${idx === 0 ? '1560250097-0b93528c311a' : idx === 1 ? '1573496359142-b8d87734a5a2' : idx === 2 ? '1472099645785-5658abf4ff4e' : '1580489944761-15a19d654956'}?auto=format&fit=crop&w=400&q=80`}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    <User size={48} color="gray" className="group-hover:scale-105 transition-transform duration-500" />
+                    // <img 
+                    //   src={`https://images.unsplash.com/photo-${idx === 0 ? '1560250097-0b93528c311a' : idx === 1 ? '1573496359142-b8d87734a5a2' : idx === 2 ? '1472099645785-5658abf4ff4e' : '1580489944761-15a19d654956'}?auto=format&fit=crop&w=400&q=80`}
+                    //   alt={member.name}
+                    //   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    // />
                   )}
 
                   {/* Gradient Overlay on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-t ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                  <div className={`absolute inset-0 bg-linear-to-t ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
                 </div>
 
                 {/* Info - Compact */}
@@ -111,18 +111,18 @@ export function TeamOverviewSection() {
         >
           <Link
             to="/about/our-team"
-            className="group relative block bg-gradient-to-br from-[#FAF8F5] via-white to-[#FAF8F5] rounded-3xl p-8 md:p-10 border border-[#E8D09E]/30 hover:border-[#C5A059]/50 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden"
+            className="group relative block bg-linear-to-br from-[#FAF8F5] via-white to-[#FAF8F5] rounded-3xl p-8 md:p-10 border border-[#E8D09E]/30 hover:border-[#C5A059]/50 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden"
           >
             {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#C5A059]/10 to-transparent rounded-full blur-3xl pointer-events-none group-hover:from-[#C5A059]/20 transition-all duration-500" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#E8D09E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-[#C5A059]/10 to-transparent rounded-full blur-3xl pointer-events-none group-hover:from-[#C5A059]/20 transition-all duration-500" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-linear-to-tr from-[#E8D09E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
             
             {/* Content */}
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
               {/* Left: Icon & Stats */}
               <div className="flex items-center gap-4 shrink-0">
                 <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-linear-to-br from-[#C5A059] to-[#8C6F3D] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <Users className="w-8 h-8 text-white" />
                   </div>
                   <div className="absolute -top-1 -right-1 w-6 h-6 bg-white border-2 border-[#C5A059] rounded-full flex items-center justify-center">
@@ -131,7 +131,7 @@ export function TeamOverviewSection() {
                 </div>
                 
                 <div className="hidden md:block">
-                  <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
+                  <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059] mb-1">
                     {totalTeam}+
                   </div>
                   <div className="text-xs text-gray-500 font-medium">
