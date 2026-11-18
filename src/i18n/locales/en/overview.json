@@ -1,0 +1,60 @@
+{
+  "clients": {
+    "badge": "Brand Partner",
+    "titlePre": "Brands That",
+    "titleHighlight": "Trust",
+    "titlePost": "Us",
+    "desc": "More than 500 brands have implemented AuthenticGuards authentication technology to protect their products and build consumer trust.",
+    "since": "Since",
+    "ctaDesc": "Join the various leading brands that have entrusted their product protection to us",
+    "ctaButton": "Start Collaboration"
+  },
+  "team": {
+    "badge": "Our Team",
+    "titlePre": "Led by",
+    "titleHighlight": "Experts",
+    "subtitle": "A leadership team with years of experience in the technology and authentication industry.",
+    "statLabel": "Dedicated Professionals",
+    "ctaTitle": "Get to Know the Great People Behind AuthenticGuards",
+    "ctaDesc": "Every team member brings a unique story, expertise, and dedication to protecting your brand. Explore full profiles and discover our passion for innovation.",
+    "mobileTeam": "Team",
+    "mobileDepartments": "Departments",
+    "mobileCountries": "Countries"
+  },
+  "investors": {
+    "badge": "Investor & Backer",
+    "titleWith": "Supported by Trusted Investors",
+    "titleWithout": "Supporting the Future Vision",
+    "descWith": "We are proud to be supported by investors and backers who believe in our vision to revolutionize the anti-counterfeit industry in Asia Pacific.",
+    "descWithout": "We are in the process of building a strong investor ecosystem to support our business growth and expansion.",
+    "ctaTitleWith": "Interested in Investing?",
+    "ctaTitleWithout": "Investment Opportunity",
+    "ctaDescWith": "Join us on our journey to revolutionize the anti-counterfeit industry",
+    "ctaDescWithout": "Be part of the anti-counterfeit industry revolution in Asia Pacific",
+    "ctaButton": "Contact Our Team",
+    "comingSoon": "Coming Soon"
+  },
+  "supporters": {
+    "eyebrow": "Supported By",
+    "title": "Our Strategic Partners"
+  },
+  "awards": {
+    "badge": "Awards & Certifications",
+    "titlePre": "Recognized by",
+    "titleHighlight": "the Industry",
+    "subtitle": "Various awards and certifications we have received as a commitment to innovation and service quality.",
+    "featured": "Featured Award",
+    "by": "by",
+    "viewDetail": "View Details",
+    "statAwards": "Awards",
+    "statYears": "Years of Achievement",
+    "statExperience": "Years of Experience",
+    "ctaButton": "View All Awards & Details",
+    "ctaDesc": "Explore the complete list of our awards, certifications, and achievements"
+  },
+  "media": {
+    "eyebrow": "Covered By",
+    "title": "Our Media Partners",
+    "footer": "{{n}}+ Trusted Media"
+  }
+}

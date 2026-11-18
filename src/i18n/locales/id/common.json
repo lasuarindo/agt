@@ -55,5 +55,43 @@
       "terms": "Ketentuan",
       "faq": "FAQ"
     }
+  },
+  "aboutJoinUs": {
+    "default": {
+      "badgeText": "Bergabung Bersama Kami",
+      "titleLine1": "Siap Menjadi Bagian dari",
+      "titleLine2": "Ekosistem Kami?",
+      "description": "Baik sebagai mitra strategis, brand partner, atau investor, kami selalu terbuka untuk kolaborasi yang saling menguntungkan.",
+      "primaryCtaText": "Hubungi Tim Kami",
+      "secondaryCtaText": "Lihat Layanan",
+      "benefits": ["Konsultasi Gratis", "Custom Solution", "Dukungan 24/7"]
+    },
+    "home": {
+      "badgeText": "Mulai Kolaborasi",
+      "titleLine1": "Siap Berkolaborasi",
+      "titleLine2": "Membangun Masa Depan?",
+      "description": "Bergabunglah dengan ekosistem brand terpercaya yang telah mempercayakan perlindungan produk mereka kepada kami.",
+      "primaryCtaText": "Hubungi Tim Kami",
+      "secondaryCtaText": "Lihat Layanan",
+      "benefits": ["Konsultasi Gratis", "Response < 24 Jam", "Tanpa Komitmen"]
+    },
+    "about": {
+      "badgeText": "Bergabung Bersama Kami",
+      "titleLine1": "Menjadi Bagian dari",
+      "titleLine2": "Perjalanan Kami",
+      "description": "Kami selalu terbuka untuk kolaborasi dengan mitra strategis, brand, dan investor yang sejalan dengan visi kami.",
+      "primaryCtaText": "Hubungi Tim Kami",
+      "secondaryCtaText": "Tentang Kami",
+      "benefits": ["Visi Jangka Panjang", "Kemitraan Strategis", "Pertumbuhan Bersama"]
+    },
+    "partner": {
+      "badgeText": "Ekosistem Mitra",
+      "titleLine1": "Bergabung dengan",
+      "titleLine2": "Ekosistem Mitra Kami",
+      "description": "Dapatkan akses ke teknologi autentikasi terdepan, dukungan marketing, dan jaringan bisnis global.",
+      "primaryCtaText": "Jadi Mitra",
+      "secondaryCtaText": "Pelajari Program",
+      "benefits": ["Akses Teknologi", "Dukungan Marketing", "Jaringan Global"]
+    }
   }
 }

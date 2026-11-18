@@ -22,11 +22,13 @@ import {
   type ClientCategory,
   getClientBgColor
 } from '@/data/clients'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // CLIENTS SECTION - Stats dihilangkan
 // ============================================================================
 export default function ClientsOverviewSection() {
+  const { t } = useTranslation('overview')
   const [activeFilter, setActiveFilter] = useState<string>('all')
   
   // Get unique categories untuk filter pills
@@ -53,14 +55,14 @@ export default function ClientsOverviewSection() {
         >
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <ShieldCheck className="w-4 h-4 text-[#8C6F3D]" />
-            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">Brand Partner</span>
+            <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">{t('clients.badge')}</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Brand yang <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">Percaya</span> pada Kami
+            {t('clients.titlePre')} <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">{t('clients.titleHighlight')}</span> {t('clients.titlePost')}
           </h2>
           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Lebih dari 500 brand telah mengimplementasikan teknologi autentikasi AuthenticGuards untuk melindungi produk dan membangun kepercayaan konsumen.
+            {t('clients.desc')}
           </p>
         </motion.div>
 
@@ -123,7 +125,7 @@ export default function ClientsOverviewSection() {
                     <p className="text-xs text-gray-500 mb-2">{client.industry}</p>
                     <div className="flex items-center gap-1.5 text-[10px] text-gray-400">
                       <Calendar className="w-3 h-3" />
-                      <span className="font-semibold">Sejak {client.since}</span>
+                      <span className="font-semibold">{t('clients.since')} {client.since}</span>
                     </div>
                   </div>
                 </div>
@@ -145,13 +147,13 @@ export default function ClientsOverviewSection() {
           className="mt-12 text-center"
         >
           <p className="text-sm text-gray-500 mb-4">
-          Bergabunglah dengan berbagai brand terkemuka yang telah mempercayakan perlindungan produknya
+          {t('clients.ctaDesc')}
           </p>
           <Link 
             to="/contact" 
             className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
-            <span>Mulai Kerjasama</span>
+            <span>{t('clients.ctaButton')}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>

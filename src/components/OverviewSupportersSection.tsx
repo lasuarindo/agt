@@ -7,6 +7,7 @@ import {
   getSupporterCategoryLabel,
   type Supporter 
 } from '@/data/supporters'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // SUPPORTERS SECTION - Detail Version
@@ -185,6 +186,7 @@ export function SupportersOverviewSection() {
 // SUPPORTERS SECTION - Simple Version (Logo + Name Only)
 // ============================================================================
 export function SupportersSimpleOverviewSection() {
+  const { t } = useTranslation('overview')
   return (
     <section className="py-16 md:py-20 bg-white relative overflow-hidden">
       {/* Background Decoration */}
@@ -199,10 +201,10 @@ export function SupportersSimpleOverviewSection() {
           className="text-center mb-12"
         >
           <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest mb-2">
-            Didukung Oleh
+            {t('supporters.eyebrow')}
           </p>
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Mitra Strategis Kami
+            {t('supporters.title')}
           </h2>
         </motion.div>
 

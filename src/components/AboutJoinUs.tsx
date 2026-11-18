@@ -1,6 +1,8 @@
 import { motion } from 'motion/react'
 import { Handshake, ArrowRight, ShieldCheck, CheckCircle2, type LucideIcon } from 'lucide-react'
 import { Link } from 'react-router'
+import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 
 // ============================================================================
 // TYPES
@@ -31,77 +33,34 @@ type AboutJoinUsCTAProps = {
 }
 
 // ============================================================================
-// VARIANT CONTENT
+// VARIANT CONTENT (text from i18n, icons & links in code)
 // ============================================================================
-const variantContent: Record<CTAVariant, CTAContent> = {
-  default: {
+const primaryLinks: Record<CTAVariant, string> = {
+  default: '/contact',
+  home: '/contact',
+  about: '/contact',
+  partner: '/partner-registration'
+}
+
+const secondaryLinks: Record<CTAVariant, string> = {
+  default: '/services',
+  home: '/services',
+  about: '/about',
+  partner: '/partners'
+}
+
+const getVariantContent = (t: TFunction, variant: CTAVariant, customContent?: Partial<CTAContent>): CTAContent => {
+  const base: CTAContent = {
     badgeIcon: Handshake,
-    badgeText: 'Bergabung Bersama Kami',
-    titleLine1: 'Siap Menjadi Bagian dari',
-    titleLine2: 'Ekosistem Kami?',
-    description: 'Baik sebagai mitra strategis, brand partner, atau investor, kami selalu terbuka untuk kolaborasi yang saling menguntungkan.',
-    primaryCta: {
-      text: 'Hubungi Tim Kami',
-      to: '/contact'
-    },
-    secondaryCta: {
-      text: 'Lihat Layanan',
-      to: '/services',
-      icon: ShieldCheck
-    },
-    benefits: ['Konsultasi Gratis', 'Custom Solution', 'Dukungan 24/7']
-  },
-  home: {
-    badgeIcon: Handshake,
-    badgeText: 'Mulai Kolaborasi',
-    titleLine1: 'Siap Berkolaborasi',
-    titleLine2: 'Membangun Masa Depan?',
-    description: 'Bergabunglah dengan ekosistem brand terpercaya yang telah mempercayakan perlindungan produk mereka kepada kami.',
-    primaryCta: {
-      text: 'Hubungi Tim Kami',
-      to: '/contact'
-    },
-    secondaryCta: {
-      text: 'Lihat Layanan',
-      to: '/services',
-      icon: ShieldCheck
-    },
-    benefits: ['Konsultasi Gratis', 'Response < 24 Jam', 'Tanpa Komitmen']
-  },
-  about: {
-    badgeIcon: Handshake,
-    badgeText: 'Bergabung Bersama Kami',
-    titleLine1: 'Menjadi Bagian dari',
-    titleLine2: 'Perjalanan Kami',
-    description: 'Kami selalu terbuka untuk kolaborasi dengan mitra strategis, brand, dan investor yang sejalan dengan visi kami.',
-    primaryCta: {
-      text: 'Hubungi Tim Kami',
-      to: '/contact'
-    },
-    secondaryCta: {
-      text: 'Tentang Kami',
-      to: '/about',
-      icon: ShieldCheck
-    },
-    benefits: ['Visi Jangka Panjang', 'Kemitraan Strategis', 'Pertumbuhan Bersama']
-  },
-  partner: {
-    badgeIcon: Handshake,
-    badgeText: 'Ekosistem Mitra',
-    titleLine1: 'Bergabung dengan',
-    titleLine2: 'Ekosistem Mitra Kami',
-    description: 'Dapatkan akses ke teknologi autentikasi terdepan, dukungan marketing, dan jaringan bisnis global.',
-    primaryCta: {
-      text: 'Jadi Mitra',
-      to: '/partner-registration'
-    },
-    secondaryCta: {
-      text: 'Pelajari Program',
-      to: '/partners',
-      icon: ShieldCheck
-    },
-    benefits: ['Akses Teknologi', 'Dukungan Marketing', 'Jaringan Global']
+    badgeText: t(`aboutJoinUs.${variant}.badgeText`),
+    titleLine1: t(`aboutJoinUs.${variant}.titleLine1`),
+    titleLine2: t(`aboutJoinUs.${variant}.titleLine2`),
+    description: t(`aboutJoinUs.${variant}.description`),
+    primaryCta: { text: t(`aboutJoinUs.${variant}.primaryCtaText`), to: primaryLinks[variant] },
+    secondaryCta: { text: t(`aboutJoinUs.${variant}.secondaryCtaText`), to: secondaryLinks[variant], icon: ShieldCheck },
+    benefits: t(`aboutJoinUs.${variant}.benefits`, { returnObjects: true }) as string[]
   }
+  return { ...base, ...customContent }
 }
 
 // ============================================================================
@@ -111,11 +70,8 @@ export default function AboutJoinUsCTA({
   variant = 'default',
   customContent 
 }: AboutJoinUsCTAProps = {}) {
-  // Merge default variant content dengan custom content (jika ada)
-  const content: CTAContent = {
-    ...variantContent[variant],
-    ...customContent
-  }
+  const { t } = useTranslation('common')
+  const content: CTAContent = getVariantContent(t, variant, customContent)
 
   const BadgeIcon = content.badgeIcon
   const SecondaryIcon = content.secondaryCta.icon

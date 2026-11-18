@@ -7,11 +7,13 @@ import {
   getInvestorTypeLabel,
   type Investor 
 } from '@/data/investors'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // INVESTORS SECTION - Adaptive (Placeholder or Real Data)
 // ============================================================================
 export default function InvestorsOverviewSection() {
+  const { t } = useTranslation('overview')
   const hasInvestors = InvestorsData.length > 0
   const placeholderSlots = 6
   
@@ -33,20 +35,20 @@ export default function InvestorsOverviewSection() {
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <TrendingUp className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Investor & Backer
+              {t('investors.badge')}
             </span>
           </div>
           
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
             {hasInvestors 
-              ? 'Didukung oleh Investor Terpercaya'
-              : 'Mendukung Visi Masa Depan'
+              ? t('investors.titleWith')
+              : t('investors.titleWithout')
             }
           </h2>
           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             {hasInvestors
-              ? 'Kami bangga didukung oleh para investor dan backer yang percaya pada visi kami untuk merevolusi industri anti-counterfeit di Asia Pasifik.'
-              : 'Kami sedang dalam proses membangun ekosistem investor yang kuat untuk mendukung pertumbuhan dan ekspansi bisnis kami.'
+              ? t('investors.descWith')
+              : t('investors.descWithout')
             }
           </p>
         </motion.div>
@@ -85,12 +87,12 @@ export default function InvestorsOverviewSection() {
               </div>
               <div className="text-left">
                 <p className="text-sm font-bold text-[#1A1A1A]">
-                  {hasInvestors ? 'Tertarik Berinvestasi?' : 'Peluang Investasi'}
+                  {hasInvestors ? t('investors.ctaTitleWith') : t('investors.ctaTitleWithout')}
                 </p>
                 <p className="text-xs text-gray-500">
                   {hasInvestors
-                    ? 'Bergabunglah dalam perjalanan kami merevolusi industri anti-counterfeit'
-                    : 'Jadilah bagian dari revolusi industri anti-counterfeit di Asia Pasifik'
+                    ? t('investors.ctaDescWith')
+                    : t('investors.ctaDescWithout')
                   }
                 </p>
               </div>
@@ -99,7 +101,7 @@ export default function InvestorsOverviewSection() {
               to="/contact"
               className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#8C6F3D] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
-              <span>Hubungi Tim Kami</span>
+              <span>{t('investors.ctaButton')}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -182,6 +184,7 @@ function InvestorCard({ investor, idx }: { investor: Investor; idx: number }) {
 // PLACEHOLDER CARD - Coming Soon
 // ============================================================================
 function PlaceholderCard({ idx }: { idx: number }) {
+  const { t } = useTranslation('overview')
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -195,7 +198,7 @@ function PlaceholderCard({ idx }: { idx: number }) {
       </div>
       
       <p className="text-xs font-semibold text-gray-400 text-center group-hover:text-[#8C6F3D] transition-colors">
-        Coming Soon
+        {t('investors.comingSoon')}
       </p>
     </motion.div>
   )

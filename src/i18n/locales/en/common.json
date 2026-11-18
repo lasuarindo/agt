@@ -55,5 +55,43 @@
       "terms": "Terms",
       "faq": "FAQ"
     }
+  },
+  "aboutJoinUs": {
+    "default": {
+      "badgeText": "Join Us",
+      "titleLine1": "Ready to Be Part of",
+      "titleLine2": "Our Ecosystem?",
+      "description": "As a strategic partner, brand partner, or investor, we are always open to mutually beneficial collaboration.",
+      "primaryCtaText": "Contact Our Team",
+      "secondaryCtaText": "See Services",
+      "benefits": ["Free Consultation", "Custom Solution", "24/7 Support"]
+    },
+    "home": {
+      "badgeText": "Start Collaboration",
+      "titleLine1": "Ready to Collaborate",
+      "titleLine2": "Building the Future?",
+      "description": "Join an ecosystem of trusted brands that have entrusted their product protection to us.",
+      "primaryCtaText": "Contact Our Team",
+      "secondaryCtaText": "See Services",
+      "benefits": ["Free Consultation", "Response < 24 Hours", "No Commitment"]
+    },
+    "about": {
+      "badgeText": "Join Us",
+      "titleLine1": "Be Part of",
+      "titleLine2": "Our Journey",
+      "description": "We are always open to collaboration with strategic partners, brands, and investors aligned with our vision.",
+      "primaryCtaText": "Contact Our Team",
+      "secondaryCtaText": "About Us",
+      "benefits": ["Long-Term Vision", "Strategic Partnership", "Shared Growth"]
+    },
+    "partner": {
+      "badgeText": "Partner Ecosystem",
+      "titleLine1": "Join",
+      "titleLine2": "Our Partner Ecosystem",
+      "description": "Get access to cutting-edge authentication technology, marketing support, and a global business network.",
+      "primaryCtaText": "Become a Partner",
+      "secondaryCtaText": "Learn About the Program",
+      "benefits": ["Technology Access", "Marketing Support", "Global Network"]
+    }
   }
 }

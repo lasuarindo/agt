@@ -71,11 +71,13 @@ import { motion } from 'motion/react'
 import { Link } from 'react-router'
 import { Trophy, Star, Award as AwardIcon, Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { AwardsData, getAwardIcon, type Award } from '@/data/award'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // AWARDS & CERTIFICATIONS SECTION
 // ============================================================================
 export default function AwardsCertificationsOverviewSection({ navigateDetail = false }: { navigateDetail?: boolean }) {
+  const { t } = useTranslation('overview')
   // Pisahkan featured dan regular awards
   const featuredAwards = AwardsData.filter(a => a.featured)
   const regularAwards = AwardsData.filter(a => !a.featured)
@@ -110,18 +112,18 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Trophy className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Penghargaan & Sertifikasi
+              {t('awards.badge')}
             </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Diakui oleh{' '}
+            {t('awards.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Industri
+              {t('awards.titleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Berbagai penghargaan dan sertifikasi yang kami terima sebagai komitmen terhadap inovasi dan kualitas layanan.
+            {t('awards.subtitle')}
           </p>
         </motion.div>
 
@@ -209,7 +211,7 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
                         {isFeatured && (
                           <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-linear-to-r from-amber-100 to-amber-50 px-2 py-0.5 rounded border border-amber-200">
                             <Star className="w-2.5 h-2.5 fill-current" />
-                            Featured
+                            {t('awards.featured')}
                           </span>
                         )}
                       </div>
@@ -257,7 +259,7 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
               {AwardsData.length}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
-              Penghargaan
+              {t('awards.statAwards')}
             </div>
           </div>
 
@@ -266,7 +268,7 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
               {uniqueYears}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
-              Tahun Berprestasi
+              {t('awards.statYears')}
             </div>
           </div>
 
@@ -275,7 +277,7 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
               {yearsOfExcellence}+
             </div>
             <div className="text-xs md:text-sm text-gray-600 font-medium">
-              Tahun Pengalaman
+              {t('awards.statExperience')}
             </div>
           </div>
         </motion.div>
@@ -296,11 +298,11 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
               className="group inline-flex items-center justify-center gap-3 bg-linear-to-r from-[#1A1A1A] to-[#2a2a2a] text-white px-8 py-4 rounded-xl font-bold hover:from-[#8C6F3D] hover:to-[#C5A059] transition-all duration-300 shadow-lg hover:shadow-[#C5A059]/30 hover:-translate-y-0.5"
             >
               <Trophy className="w-5 h-5 text-[#E8D09E]" />
-              <span>Lihat Semua Penghargaan & Detail</span>
+              <span>{t('awards.ctaButton')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="mt-3 text-xs text-gray-500">
-              Jelajahi daftar lengkap penghargaan, sertifikasi, dan pencapaian kami
+              {t('awards.ctaDesc')}
             </p>
           </motion.div>
         )}
@@ -313,6 +315,7 @@ export default function AwardsCertificationsOverviewSection({ navigateDetail = f
 // HERO CARD CONTENT - Extracted untuk reusability dengan/ tanpa Link wrapper
 // ============================================================================
 function HeroCardContent({ mainFeatured }: { mainFeatured: Award }) {
+  const { t } = useTranslation('overview')
   return (
     <div className="relative bg-linear-to-br from-[#1A1A1A] via-[#2a2a2a] to-[#1A1A1A] rounded-3xl p-6 md:p-10 text-white shadow-2xl overflow-hidden border border-[#C5A059]/20 hover:border-[#C5A059]/40 transition-all duration-500">
       {/* Background Glows */}
@@ -330,7 +333,7 @@ function HeroCardContent({ mainFeatured }: { mainFeatured: Award }) {
 
       {/* Navigate Indicator - muncul di pojok kanan atas */}
       <div className="absolute top-4 right-4 z-20 hidden md:flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full text-xs font-bold text-[#E8D09E] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span>Lihat Detail</span>
+        <span>{t('awards.viewDetail')}</span>
         <ArrowUpRight className="w-3.5 h-3.5" />
       </div>
 
@@ -357,7 +360,7 @@ function HeroCardContent({ mainFeatured }: { mainFeatured: Award }) {
             </span>
             <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
               <Star className="w-3 h-3 fill-current" />
-              Featured Award
+              {t('awards.featured')}
             </span>
           </div>
 
@@ -368,7 +371,7 @@ function HeroCardContent({ mainFeatured }: { mainFeatured: Award }) {
 
           {/* Organizer */}
           <p className="text-[#E8D09E] font-semibold text-sm md:text-base mb-3">
-            oleh {mainFeatured.organizer}
+            {t('awards.by')} {mainFeatured.organizer}
           </p>
 
           {/* Description */}

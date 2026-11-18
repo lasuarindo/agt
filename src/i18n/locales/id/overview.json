@@ -1,0 +1,60 @@
+{
+  "clients": {
+    "badge": "Brand Partner",
+    "titlePre": "Brand yang",
+    "titleHighlight": "Percaya",
+    "titlePost": "pada Kami",
+    "desc": "Lebih dari 500 brand telah mengimplementasikan teknologi autentikasi AuthenticGuards untuk melindungi produk dan membangun kepercayaan konsumen.",
+    "since": "Sejak",
+    "ctaDesc": "Bergabunglah dengan berbagai brand terkemuka yang telah mempercayakan perlindungan produknya",
+    "ctaButton": "Mulai Kerjasama"
+  },
+  "team": {
+    "badge": "Tim Kami",
+    "titlePre": "Dipimpin oleh",
+    "titleHighlight": "Para Ahli",
+    "subtitle": "Tim leadership dengan pengalaman bertahun-tahun di industri teknologi dan autentikasi.",
+    "statLabel": "Profesional Berdedikasi",
+    "ctaTitle": "Kenali Lebih Dekat Orang-Orang Hebat di Balik AuthenticGuards",
+    "ctaDesc": "Setiap anggota tim membawa cerita, keahlian, dan dedikasi unik untuk melindungi brand Anda. Jelajahi profil lengkap dan temukan passion kami dalam berinovasi.",
+    "mobileTeam": "Tim",
+    "mobileDepartments": "Departemen",
+    "mobileCountries": "Negara"
+  },
+  "investors": {
+    "badge": "Investor & Backer",
+    "titleWith": "Didukung oleh Investor Terpercaya",
+    "titleWithout": "Mendukung Visi Masa Depan",
+    "descWith": "Kami bangga didukung oleh para investor dan backer yang percaya pada visi kami untuk merevolusi industri anti-counterfeit di Asia Pasifik.",
+    "descWithout": "Kami sedang dalam proses membangun ekosistem investor yang kuat untuk mendukung pertumbuhan dan ekspansi bisnis kami.",
+    "ctaTitleWith": "Tertarik Berinvestasi?",
+    "ctaTitleWithout": "Peluang Investasi",
+    "ctaDescWith": "Bergabunglah dalam perjalanan kami merevolusi industri anti-counterfeit",
+    "ctaDescWithout": "Jadilah bagian dari revolusi industri anti-counterfeit di Asia Pasifik",
+    "ctaButton": "Hubungi Tim Kami",
+    "comingSoon": "Coming Soon"
+  },
+  "supporters": {
+    "eyebrow": "Didukung Oleh",
+    "title": "Mitra Strategis Kami"
+  },
+  "awards": {
+    "badge": "Penghargaan & Sertifikasi",
+    "titlePre": "Diakui oleh",
+    "titleHighlight": "Industri",
+    "subtitle": "Berbagai penghargaan dan sertifikasi yang kami terima sebagai komitmen terhadap inovasi dan kualitas layanan.",
+    "featured": "Featured Award",
+    "by": "oleh",
+    "viewDetail": "Lihat Detail",
+    "statAwards": "Penghargaan",
+    "statYears": "Tahun Berprestasi",
+    "statExperience": "Tahun Pengalaman",
+    "ctaButton": "Lihat Semua Penghargaan & Detail",
+    "ctaDesc": "Jelajahi daftar lengkap penghargaan, sertifikasi, dan pencapaian kami"
+  },
+  "media": {
+    "eyebrow": "Diliput Oleh",
+    "title": "Media Partner Kami",
+    "footer": "{{n}}+ Media Terpercaya"
+  }
+}

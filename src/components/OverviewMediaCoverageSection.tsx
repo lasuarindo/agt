@@ -14,6 +14,7 @@ import {
   type MediaCoverage,
   type CoverageLanguage
 } from '@/data/media-coverage'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // MEDIA COVERAGE SECTION
@@ -449,6 +450,7 @@ function FeaturedCardContent({ coverage }: { coverage: MediaCoverage }) {
 // Cocok untuk: Section kecil di Home/About, tidak terlalu menonjol
 // ============================================================================
 export function MediaCoverageSimpleOverviewSection() {
+  const { t } = useTranslation('overview')
   const coverages = sortCoverageByDate(MediaCoverageData)
   const uniqueOutlets = getUniqueOutlets(MediaCoverageData).length
 
@@ -463,10 +465,10 @@ export function MediaCoverageSimpleOverviewSection() {
           className="text-center mb-10"
         >
           <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest mb-2">
-            Diliput Oleh
+            {t('media.eyebrow')}
           </p>
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Media Partner Kami
+            {t('media.title')}
           </h2>
         </motion.div>
 
@@ -570,7 +572,7 @@ export function MediaCoverageSimpleOverviewSection() {
         >
           <p className="text-xs text-gray-400 flex items-center justify-center gap-1.5">
             <Globe className="w-3.5 h-3.5 text-[#C5A059]" />
-            <span>{uniqueOutlets}+ Media Terpercaya</span>
+            <span>{t('media.footer', { n: uniqueOutlets })}</span>
           </p>
         </motion.div>
       </div>

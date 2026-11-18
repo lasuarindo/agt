@@ -7,11 +7,13 @@ import {
   getFeaturedTeam,
   type TeamMember 
 } from '@/data/team'
+import { useTranslation } from 'react-i18next'
 
 // ============================================================================
 // TEAM OVERVIEW SECTION - Visual Card Grid
 // ============================================================================
 export function TeamOverviewSection() {
+  const { t } = useTranslation('overview')
   const featuredTeam = getFeaturedTeam(TeamData)
   const totalTeam = TeamData.length
 
@@ -28,18 +30,18 @@ export function TeamOverviewSection() {
           <div className="inline-flex items-center gap-2 bg-[#FAF8F5] border border-[#E8D09E]/40 px-4 py-2 rounded-full">
             <Users className="w-4 h-4 text-[#8C6F3D]" />
             <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-              Tim Kami
+              {t('team.badge')}
             </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
-            Dipimpin oleh{' '}
+            {t('team.titlePre')}{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-              Para Ahli
+              {t('team.titleHighlight')}
             </span>
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            Tim leadership dengan pengalaman bertahun-tahun di industri teknologi dan autentikasi.
+            {t('team.subtitle')}
           </p>
         </motion.div>
 
@@ -135,7 +137,7 @@ export function TeamOverviewSection() {
                     {totalTeam}+
                   </div>
                   <div className="text-xs text-gray-500 font-medium">
-                    Profesional Berdedikasi
+                    {t('team.statLabel')}
                   </div>
                 </div>
               </div>
@@ -143,10 +145,10 @@ export function TeamOverviewSection() {
               {/* Middle: Text Content */}
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-lg md:text-xl font-bold text-[#1A1A1A] mb-2 group-hover:text-[#8C6F3D] transition-colors">
-                  Kenali Lebih Dekat Orang-Orang Hebat di Balik AuthenticGuards
+                  {t('team.ctaTitle')}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Setiap anggota tim membawa cerita, keahlian, dan dedikasi unik untuk melindungi brand Anda. Jelajahi profil lengkap dan temukan passion kami dalam berinovasi.
+                  {t('team.ctaDesc')}
                 </p>
               </div>
 
@@ -162,17 +164,17 @@ export function TeamOverviewSection() {
             <div className="md:hidden mt-6 pt-6 border-t border-[#E8D09E]/20 flex items-center justify-center gap-6">
               <div className="text-center">
                 <div className="text-2xl font-extrabold text-[#8C6F3D]">{totalTeam}+</div>
-                <div className="text-xs text-gray-500">Tim</div>
+                <div className="text-xs text-gray-500">{t('team.mobileTeam')}</div>
               </div>
               <div className="w-px h-8 bg-[#E8D09E]/30" />
               <div className="text-center">
                 <div className="text-2xl font-extrabold text-[#8C6F3D]">6</div>
-                <div className="text-xs text-gray-500">Departemen</div>
+                <div className="text-xs text-gray-500">{t('team.mobileDepartments')}</div>
               </div>
               <div className="w-px h-8 bg-[#E8D09E]/30" />
               <div className="text-center">
                 <div className="text-2xl font-extrabold text-[#8C6F3D]">5</div>
-                <div className="text-xs text-gray-500">Negara</div>
+                <div className="text-xs text-gray-500">{t('team.mobileCountries')}</div>
               </div>
             </div>
           </Link>
