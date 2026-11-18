@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { motion, AnimatePresence } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import {
   MapPin,
   Phone,
@@ -31,7 +32,7 @@ import {
   Check
 } from 'lucide-react'
 import {
-  OfficesData,
+  getOfficesData,
   getSocialIcon,
   getSocialColor,
   type OfficeProps,
@@ -41,9 +42,10 @@ import {
 // ============================================================================
 // HELPERS
 // ============================================================================
-const getCurrentDay = () => {
-  const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
-  return days[new Date().getDay()]
+const DAY_KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] as const
+
+const getCurrentDay = (t: TFunction) => {
+  return t(`days.${DAY_KEYS[new Date().getDay()]}`)
 }
 
 // ============================================================================
@@ -113,7 +115,7 @@ function HeroContact() {
           <span className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-[#C5A059]" />
             <span className="font-semibold">
-              {t('hero.statOffices', { n: OfficesData.length })}
+              {t('hero.statOffices', { n: getOfficesData(t).length })}
             </span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
@@ -132,16 +134,18 @@ function HeroContact() {
 // ============================================================================
 function OfficeSelectSection({
   activeOffice,
-  setActiveOffice
+  setActiveOffice,
+  offices
 }: {
   activeOffice: OfficeProps
   setActiveOffice: (office: OfficeProps) => void
+  offices: OfficeProps[]
 }) {
   const { t } = useTranslation('contact')
   const [isSelect, setIsSelect] = useState<boolean>(false)
 
   const selectOffice = (id: string) => {
-    const find = OfficesData.find(o => o.id === id)
+    const find = offices.find(o => o.id === id)
     if (find) {
       setActiveOffice(find)
       setIsSelect(false)
@@ -259,12 +263,12 @@ function OfficeSelectSection({
                 >
                   <div className="px-4 py-3 bg-[#FAF8F5] border-b border-[#E8D09E]/20">
                     <p className="text-xs font-bold text-[#8C6F3D] uppercase tracking-wider">
-                      {t('officeSelect.pickerTitle', { n: OfficesData.length })}
+                      {t('officeSelect.pickerTitle', { n: offices.length })}
                     </p>
                   </div>
 
                   <div className="max-h-[360px] overflow-y-auto">
-                    {OfficesData.map(office => {
+                    {offices.map(office => {
                       const isActive = office.id === activeOffice.id
                       const isHQ = office.type === 'hq'
                       const firstLineAddress = office.address.split('\n')[0]
@@ -728,7 +732,7 @@ function ContactFormSection({ activeOffice }: { activeOffice: OfficeProps }) {
 // ============================================================================
 function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficeProps }) {
   const { t } = useTranslation('contact')
-  const currentDay = getCurrentDay()
+  const currentDay = getCurrentDay(t)
 
   return (
     <section className="py-16 md:py-24 bg-white relative">
@@ -818,10 +822,7 @@ function OfficeSelectedDetailSection({ activeOffice }: { activeOffice: OfficePro
                 </div>
                 <div className="space-y-1.5 text-sm">
                   {activeOffice.operatingHours.map((item, idx) => {
-                    const isToday =
-                      item.day.toLowerCase().includes(currentDay.toLowerCase()) ||
-                      (currentDay === 'Sabtu' && item.day.toLowerCase().includes('sabtu')) ||
-                      (currentDay === 'Minggu' && item.day.toLowerCase().includes('minggu'))
+                    const isToday = item.day.toLowerCase().includes(currentDay.toLowerCase())
                     return (
                       <div
                         key={idx}
@@ -1048,7 +1049,11 @@ function FAQSection() {
 // MAIN PAGE
 // ============================================================================
 export default function ContactPage() {
-  const [activeOffice, setActiveOffice] = useState<OfficeProps>(OfficesData[0])
+  const { t } = useTranslation('contact')
+  const offices = useMemo(() => getOfficesData(t), [t])
+  const [activeOfficeId, setActiveOfficeId] = useState<string>(offices[0].id)
+  const activeOffice = offices.find(o => o.id === activeOfficeId) ?? offices[0]
+  const setActiveOffice = (office: OfficeProps) => setActiveOfficeId(office.id)
 
   return (
     <>
@@ -1056,6 +1061,7 @@ export default function ContactPage() {
       <OfficeSelectSection
         activeOffice={activeOffice}
         setActiveOffice={setActiveOffice}
+        offices={offices}
       />
       <OfficeSelectedContactSection activeOffice={activeOffice} />
       <OfficeSelectedDetailSection activeOffice={activeOffice} />

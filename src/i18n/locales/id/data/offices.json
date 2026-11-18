@@ -1,0 +1,47 @@
+{
+  "jakarta": {
+    "label": "Kantor Pusat",
+    "description": "Pusat operasi dan manajemen AuthenticGuards Indonesia",
+    "operatingHours": [
+      { "day": "Senin - Kamis", "hours": "09:00 - 17:00" },
+      { "day": "Jumat", "hours": "09:00 - 16:30" },
+      { "day": "Sabtu - Minggu", "hours": "Tutup" }
+    ],
+    "holidays": [
+      "Hari libur nasional Indonesia",
+      "Cuti bersama (pengumuman resmi pemerintah)"
+    ],
+    "notes": "Respon mungkin lebih lambat di hari libur dan akhir pekan"
+  },
+  "bandung": {
+    "label": "Kantor Cabang",
+    "description": "Kantor cabang untuk wilayah Jawa Barat",
+    "operatingHours": [
+      { "day": "Senin - Kamis", "hours": "09:00 - 17:00" },
+      { "day": "Jumat", "hours": "09:00 - 16:30" },
+      { "day": "Sabtu - Minggu", "hours": "Tutup" }
+    ],
+    "holidays": [
+      "Hari libur nasional Indonesia",
+      "Cuti bersama (pengumuman resmi pemerintah)"
+    ],
+    "notes": "Respon mungkin lebih lambat di hari libur dan akhir pekan"
+  },
+  "singapore": {
+    "label": "Kantor Regional",
+    "description": "Hub regional untuk kemitraan strategis di Asia Tenggara",
+    "operatingHours": [
+      { "day": "Senin - Jumat", "hours": "09:00 - 18:00" },
+      { "day": "Sabtu", "hours": "10:00 - 14:00" },
+      { "day": "Minggu & Hari Libur", "hours": "Tutup" }
+    ],
+    "holidays": [
+      "Hari libur Singapura",
+      "Tahun Baru Imlek",
+      "Hari Raya Puasa",
+      "Deepavali",
+      "Hari Natal"
+    ],
+    "notes": "Respon mungkin lebih lambat di akhir pekan dan hari libur"
+  }
+}

@@ -1,4 +1,13 @@
 {
+  "days": {
+    "sunday": "Minggu",
+    "monday": "Senin",
+    "tuesday": "Selasa",
+    "wednesday": "Rabu",
+    "thursday": "Kamis",
+    "friday": "Jumat",
+    "saturday": "Sabtu"
+  },
   "hero": {
     "eyebrow": "Hubungi Kami",
     "titleLine1": "Mari Berdiskusi Tentang",

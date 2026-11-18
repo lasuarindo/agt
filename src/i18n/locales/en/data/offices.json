@@ -1,0 +1,47 @@
+{
+  "jakarta": {
+    "label": "Head Office",
+    "description": "AuthenticGuards Indonesia's operations and management center",
+    "operatingHours": [
+      { "day": "Monday - Thursday", "hours": "09:00 - 17:00" },
+      { "day": "Friday", "hours": "09:00 - 16:30" },
+      { "day": "Saturday - Sunday", "hours": "Closed" }
+    ],
+    "holidays": [
+      "Indonesian national holidays",
+      "Collective leave (official government announcement)"
+    ],
+    "notes": "Response may be slower on holidays and weekends"
+  },
+  "bandung": {
+    "label": "Branch Office",
+    "description": "Branch office for the West Java region",
+    "operatingHours": [
+      { "day": "Monday - Thursday", "hours": "09:00 - 17:00" },
+      { "day": "Friday", "hours": "09:00 - 16:30" },
+      { "day": "Saturday - Sunday", "hours": "Closed" }
+    ],
+    "holidays": [
+      "Indonesian national holidays",
+      "Collective leave (official government announcement)"
+    ],
+    "notes": "Response may be slower on holidays and weekends"
+  },
+  "singapore": {
+    "label": "Regional Office",
+    "description": "Regional hub for strategic partnerships in Southeast Asia",
+    "operatingHours": [
+      { "day": "Monday - Friday", "hours": "09:00 - 18:00" },
+      { "day": "Saturday", "hours": "10:00 - 14:00" },
+      { "day": "Sunday & Public Holidays", "hours": "Closed" }
+    ],
+    "holidays": [
+      "Singapore public holidays",
+      "Chinese New Year",
+      "Hari Raya Puasa",
+      "Deepavali",
+      "Christmas Day"
+    ],
+    "notes": "Response may be slower during weekends and public holidays"
+  }
+}

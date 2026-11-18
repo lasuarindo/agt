@@ -1,5 +1,6 @@
 import { Globe } from 'lucide-react'
 import { SiWhatsapp, SiInstagram, SiFacebook, SiX, SiTiktok, SiYoutube, SiTelegram } from '@icons-pack/react-simple-icons'
+import type { TFunction } from 'i18next'
 
 
 export type SocialPlatform = 
@@ -293,3 +294,29 @@ export const getSocialColor = (platform: SocialPlatform): string => {
   }
   return colorMap[platform] || 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
 }
+
+// ============================================================================
+// I18N HELPERS - Translate display fields (keeps addresses/phones/emails)
+// ============================================================================
+
+/**
+ * Translate display fields of every office (label, description, operating
+ * hours, holidays, notes). `city`, `countryName`, `address`, `email`, `phone*`
+ * and `mapsUrl` stay as-is.
+ */
+export const getOfficesData = (t: TFunction): OfficeProps[] =>
+  OfficesData.map(o => {
+    const key = `data/offices:${o.id}`
+    return {
+      ...o,
+      label: t(`${key}.label`, { defaultValue: o.label }),
+      description: t(`${key}.description`, { defaultValue: o.description }),
+      operatingHours: o.operatingHours.map((h, i) => ({
+        ...h,
+        day: t(`${key}.operatingHours.${i}.day`, { defaultValue: h.day }),
+        hours: t(`${key}.operatingHours.${i}.hours`, { defaultValue: h.hours })
+      })),
+      holidays: t(`${key}.holidays`, { returnObjects: true, defaultValue: o.holidays }) as string[],
+      notes: o.notes ? t(`${key}.notes`, { defaultValue: o.notes }) : o.notes
+    }
+  })
