@@ -26,5 +26,10 @@ dist-ssr
 # Backup files
 *.bak
 
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Internal notes (never committed)
 /.ignore
