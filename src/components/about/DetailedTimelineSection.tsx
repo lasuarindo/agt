@@ -3,7 +3,7 @@ import {
   Lightbulb, Users, Globe, Award, Trophy, BadgeCheck, Rocket, Zap, Handshake
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { timelineData } from '@/data/timeline'
+import { getTimelineData } from '@/data/timeline'
 
 export default function DetailedTimelineSection() {
   const { t } = useTranslation('about')
@@ -18,7 +18,7 @@ export default function DetailedTimelineSection() {
   //   }
   // ]
   
-  const timeline = timelineData
+  const timeline = getTimelineData(t)
 
   return (
     <section className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">

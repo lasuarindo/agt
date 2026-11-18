@@ -5,7 +5,7 @@ import { getHighlightedMilestones } from '@/data/timeline'
 
 export default function AboutSection() {
   const { t } = useTranslation('home')
-  const timelineData = getHighlightedMilestones()
+  const timelineData = getHighlightedMilestones(t)
 
   return (
     <section id="about" className="py-16 md:py-24 bg-[#FAF8F5] relative overflow-hidden">

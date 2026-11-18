@@ -1,4 +1,5 @@
 import { Rocket, Trophy, Globe, Lightbulb, BadgeCheck, Users, Handshake, Zap, type LucideIcon, User } from 'lucide-react'
+import type { TFunction } from 'i18next'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -196,17 +197,25 @@ export const timelineData: TimelineItem[] = [
 // ============================================================================
 
 /**
- * Mendapatkan data timeline lengkap
+ * Mendapatkan data timeline lengkap (opsional translate via t).
  */
-export const getTimelineData = (): TimelineItem[] => {
-  return timelineData
+export const getTimelineData = (t?: TFunction): TimelineItem[] => {
+  if (!t) return timelineData
+  return timelineData.map((item, i) => {
+    const key = `data/timeline:${i}`
+    return {
+      ...item,
+      title: t(`${key}.title`, { defaultValue: item.title }),
+      desc: t(`${key}.desc`, { defaultValue: item.desc })
+    }
+  })
 }
 
 /**
  * Mendapatkan hanya milestone yang di-highlight
  */
-export const getHighlightedMilestones = (): TimelineItem[] => {
-  return timelineData.filter(item => item.highlight)
+export const getHighlightedMilestones = (t?: TFunction): TimelineItem[] => {
+  return getTimelineData(t).filter(item => item.highlight)
 }
 
 /**
