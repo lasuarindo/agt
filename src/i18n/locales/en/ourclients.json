@@ -1,0 +1,35 @@
+{
+  "modal": {
+    "verified": "Verified Partner",
+    "category": "Category",
+    "industry": "Industry",
+    "since": "Joined Since",
+    "location": "Location",
+    "about": "About Partner",
+    "website": "Visit Website"
+  },
+  "hero": {
+    "badge": "Our Clients",
+    "titlePre": "Brands That",
+    "titleHighlight": "Trust Us",
+    "desc": "Explore the list of brands and companies that have entrusted their product authentication solutions to AuthenticGuards.",
+    "statClients": "{{n}}+ Brand Partners",
+    "statCategories": "{{n}}+ Industries"
+  },
+  "grid": {
+    "eyebrow": "Client List",
+    "titlePre": "All",
+    "titleHighlight": "Brand Partners",
+    "subtitle": "Find the various brands that have entrusted their product protection to us.",
+    "resultsLabel": "Brands",
+    "searchPlaceholder": "Search brand or industry...",
+    "sortNewest": "Newest",
+    "sortName": "Name (A-Z)",
+    "filterLabel": "Filter:",
+    "reset": "Reset Filter",
+    "activeLabel": "Active:",
+    "emptyTitle": "No clients found",
+    "emptyDesc": "Try changing your filter or search keywords.",
+    "viewDetail": "View Details"
+  }
+}

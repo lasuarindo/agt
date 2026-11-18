@@ -28,6 +28,7 @@ import {
   type ClientCategory
 } from '@/data/clients'
 import AboutJoinUsCTA from '@/components/AboutJoinUs'
+import { useTranslation } from 'react-i18next'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -49,6 +50,7 @@ function ClientDetailModal({
   const gradient = client.gradient || getClientGradient(client.category)
   const badgeStyle = getClientBadgeStyle(client.category)
   const categoryLabel = getClientCategoryLabel(client.category)
+  const { t } = useTranslation('ourclients')
 
   return (
     <motion.div
@@ -100,7 +102,7 @@ function ClientDetailModal({
             <div className="pb-2">
               <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-1">
                 <CheckCircle2 className="w-3 h-3" />
-                Verified Partner
+                {t('modal.verified')}
               </span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white drop-shadow-md">
                 {client.name}
@@ -120,7 +122,7 @@ function ClientDetailModal({
                   <Building2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Kategori</h4>
+                  <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.category')}</h4>
                   <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${badgeStyle}`}>
                     {categoryLabel}
                   </span>
@@ -135,7 +137,7 @@ function ClientDetailModal({
                   <Briefcase className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Industri</h4>
+                  <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.industry')}</h4>
                   <p className="text-sm text-gray-600">{client.industry}</p>
                 </div>
               </div>
@@ -148,7 +150,7 @@ function ClientDetailModal({
                   <Calendar className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Bergabung Sejak</h4>
+                  <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.since')}</h4>
                   <p className="text-sm text-gray-600">{client.since}</p>
                 </div>
               </div>
@@ -162,7 +164,7 @@ function ClientDetailModal({
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">Lokasi</h4>
+                    <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{t('modal.location')}</h4>
                     <p className="text-sm text-gray-600">{client.location}</p>
                   </div>
                 </div>
@@ -175,7 +177,7 @@ function ClientDetailModal({
             <div>
               <h3 className="text-lg font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
                 <Users className="w-5 h-5 text-[#8C6F3D]" />
-                Tentang Partner
+                {t('modal.about')}
               </h3>
               <p className="text-gray-600 leading-relaxed">{client.description}</p>
             </div>
@@ -190,7 +192,7 @@ function ClientDetailModal({
               className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#2a2a2a] transition-all duration-300 group"
             >
               <Globe className="w-4 h-4" />
-              <span>Kunjungi Website</span>
+              <span>{t('modal.website')}</span>
               <ArrowLeft className="w-4 h-4 rotate-180 group-hover:translate-x-1 transition-transform" />
             </a>
           )}
@@ -204,6 +206,7 @@ function ClientDetailModal({
 // HERO SECTION - Clean Style (matching OurTeam)
 // ============================================================================
 function HeroClients() {
+  const { t } = useTranslation('ourclients')
   const totalClients = ClientsData.length
   const totalCategories = getUniqueClientCategories(ClientsData).length
 
@@ -229,7 +232,7 @@ function HeroClients() {
         >
           <Building2 className="w-4 h-4 text-[#C5A059]" />
           <span className="text-xs font-bold text-[#8C6F3D] uppercase tracking-widest">
-            Client Kami
+            {t('hero.badge')}
           </span>
         </motion.div>
 
@@ -239,10 +242,10 @@ function HeroClients() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A1A] leading-[1.1] tracking-tight mb-6"
         >
-          Brand yang{' '}
+          {t('hero.titlePre')}{' '}
           <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] via-[#C5A059] to-[#8C6F3D]">
-            Percaya pada Kami
+            {t('hero.titleHighlight')}
           </span>
         </motion.h1>
 
@@ -252,7 +255,7 @@ function HeroClients() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Jelajahi daftar brand dan perusahaan yang telah mempercayakan solusi autentikasi produk mereka kepada AuthenticGuards.
+          {t('hero.desc')}
         </motion.p>
 
         {/* Quick Stats - Minimal */}
@@ -264,12 +267,12 @@ function HeroClients() {
         >
           <span className="flex items-center gap-2">
             <Building2 className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">{totalClients}+ Brand Partner</span>
+            <span className="font-semibold">{t('hero.statClients', { n: totalClients })}</span>
           </span>
           <span className="hidden md:inline w-1 h-1 bg-gray-300 rounded-full" />
           <span className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-[#C5A059]" />
-            <span className="font-semibold">{totalCategories}+ Industri</span>
+            <span className="font-semibold">{t('hero.statCategories', { n: totalCategories })}</span>
           </span>
         </motion.div>
       </div>
@@ -281,6 +284,7 @@ function HeroClients() {
 // CLIENTS GRID SECTION - Main Focus (matching TeamGridSection)
 // ============================================================================
 function ClientsGridSection() {
+  const { t } = useTranslation('ourclients')
   const [activeFilter, setActiveFilter] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState<string>('')
   const [sortBy, setSortBy] = useState<'name' | 'year'>('year')
@@ -339,17 +343,17 @@ function ClientsGridSection() {
                 <div className="inline-flex items-center gap-2 text-[#8C6F3D] mb-3">
                   <Building2 className="w-4 h-4" />
                   <span className="text-xs font-bold uppercase tracking-widest">
-                    Daftar Client
+                    {t('grid.eyebrow')}
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">
-                  Semua{' '}
+                  {t('grid.titlePre')}{' '}
                   <span className="text-transparent bg-clip-text bg-linear-to-r from-[#8C6F3D] to-[#C5A059]">
-                    Brand Partner
+                    {t('grid.titleHighlight')}
                   </span>
                 </h2>
                 <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-                  Temukan berbagai brand yang telah mempercayakan perlindungan produk mereka kepada kami.
+                  {t('grid.subtitle')}
                 </p>
               </div>
 
@@ -360,7 +364,7 @@ function ClientsGridSection() {
                   <div className="text-2xl font-extrabold text-[#8C6F3D]">
                     {filteredClients.length}
                   </div>
-                  <div className="text-xs text-gray-500">Brand</div>
+                  <div className="text-xs text-gray-500">{t('grid.resultsLabel')}</div>
                 </div>
               </div>
             </div>
@@ -382,7 +386,7 @@ function ClientsGridSection() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Cari brand atau industri..."
+                  placeholder={t('grid.searchPlaceholder')}
                   className="w-full pl-11 pr-10 py-2.5 rounded-full border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white text-sm"
                 />
                 {searchQuery && (
@@ -401,8 +405,8 @@ function ClientsGridSection() {
                 onChange={(e) => setSortBy(e.target.value as 'name' | 'year')}
                 className="px-4 py-2.5 rounded-full border border-gray-200 focus:border-[#8C6F3D] focus:ring-2 focus:ring-[#E8D09E]/50 outline-none transition-all bg-white text-sm font-medium hover:border-[#E8D09E]/50"
               >
-                <option value="year">Terbaru</option>
-                <option value="name">Nama (A-Z)</option>
+                <option value="year">{t('grid.sortNewest')}</option>
+                <option value="name">{t('grid.sortName')}</option>
               </select>
             </div>
 
@@ -410,7 +414,7 @@ function ClientsGridSection() {
             <div className="flex flex-wrap items-center gap-2">
               <div className="flex items-center gap-2 text-sm font-semibold text-gray-700 shrink-0 mr-1">
                 <Filter className="w-4 h-4 text-[#8C6F3D]" />
-                <span className="text-xs">Filter:</span>
+                <span className="text-xs">{t('grid.filterLabel')}</span>
               </div>
               {categoryData.map((filter) => (
                 <button
@@ -435,7 +439,7 @@ function ClientsGridSection() {
                   }}
                   className="px-3.5 py-1.5 rounded-full bg-[#E8D09E]/20 text-[#8C6F3D] text-xs font-bold hover:bg-[#E8D09E]/30 transition-colors ml-auto"
                 >
-                  Reset Filter
+                  {t('grid.reset')}
                 </button>
               )}
             </div>
@@ -443,7 +447,7 @@ function ClientsGridSection() {
             {/* Active Filters Display */}
             {(activeFilter !== 'all' || searchQuery) && (
               <div className="flex items-center gap-2 flex-wrap pt-2 border-t border-gray-100">
-                <span className="text-xs text-gray-500">Aktif:</span>
+                <span className="text-xs text-gray-500">{t('grid.activeLabel')}</span>
                 {activeFilter !== 'all' && (
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-[#8C6F3D] bg-[#E8D09E]/20 px-2.5 py-1 rounded-full">
                     {getClientCategoryLabel(activeFilter as ClientCategory)}
@@ -502,10 +506,10 @@ function ClientsGridSection() {
                 <Search className="w-10 h-10 text-[#8C6F3D]" />
               </div>
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">
-                Tidak ada client ditemukan
+                {t('grid.emptyTitle')}
               </h3>
               <p className="text-sm text-gray-500 mb-6">
-                Coba ubah filter atau kata kunci pencarian Anda.
+                {t('grid.emptyDesc')}
               </p>
               <button
                 onClick={() => {
@@ -514,7 +518,7 @@ function ClientsGridSection() {
                 }}
                 className="inline-flex items-center gap-2 bg-[#C5A059] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#E8D09E] transition-all duration-300"
               >
-                <span>Reset Filter</span>
+                <span>{t('grid.reset')}</span>
               </button>
             </motion.div>
           )}
@@ -549,6 +553,7 @@ function ClientCard({
   const gradient = client.gradient || getClientGradient(client.category)
   const badgeStyle = getClientBadgeStyle(client.category)
   const categoryLabel = getClientCategoryLabel(client.category)
+  const { t } = useTranslation('ourclients')
 
   return (
     <motion.div
@@ -584,7 +589,7 @@ function ClientCard({
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-            <span className="text-xs font-bold text-[#1A1A1A]">Lihat Detail</span>
+            <span className="text-xs font-bold text-[#1A1A1A]">{t('grid.viewDetail')}</span>
           </div>
         </div>
       </div>

@@ -1,0 +1,35 @@
+{
+  "modal": {
+    "verified": "Verified Partner",
+    "category": "Kategori",
+    "industry": "Industri",
+    "since": "Bergabung Sejak",
+    "location": "Lokasi",
+    "about": "Tentang Partner",
+    "website": "Kunjungi Website"
+  },
+  "hero": {
+    "badge": "Client Kami",
+    "titlePre": "Brand yang",
+    "titleHighlight": "Percaya pada Kami",
+    "desc": "Jelajahi daftar brand dan perusahaan yang telah mempercayakan solusi autentikasi produk mereka kepada AuthenticGuards.",
+    "statClients": "{{n}}+ Brand Partner",
+    "statCategories": "{{n}}+ Industri"
+  },
+  "grid": {
+    "eyebrow": "Daftar Client",
+    "titlePre": "Semua",
+    "titleHighlight": "Brand Partner",
+    "subtitle": "Temukan berbagai brand yang telah mempercayakan perlindungan produk mereka kepada kami.",
+    "resultsLabel": "Brand",
+    "searchPlaceholder": "Cari brand atau industri...",
+    "sortNewest": "Terbaru",
+    "sortName": "Nama (A-Z)",
+    "filterLabel": "Filter:",
+    "reset": "Reset Filter",
+    "activeLabel": "Aktif:",
+    "emptyTitle": "Tidak ada client ditemukan",
+    "emptyDesc": "Coba ubah filter atau kata kunci pencarian Anda.",
+    "viewDetail": "Lihat Detail"
+  }
+}
