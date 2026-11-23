@@ -208,7 +208,7 @@
       }
     ],
     "additionalTitle": "Additional Certifications",
-    "additionalDesc": "GDPR, SOC 2 Type II, PCI DSS — coming soon for future development plans."
+    "additionalDesc": "GDPR, SOC 2 Type II, PCI DSS: coming soon for future development plans."
   },
   "performance": {
     "eyebrow": "Performance Metrics",
@@ -245,10 +245,10 @@
     "titleHighlight": "Questions",
     "subtitle": "Answers to frequently asked questions about Authentic Guards technology.",
     "items": [
-      { "q": "What is the AuthenticGuards 5-layer security system?", "a": "Our layered security system consists of: (1) Server Security — multi-layer protection to ISO/IEC 27000:2016 standards, (2) AG Algorithm Code — 3 layers (personalization keyword, alphanumeric digits, unix timestamp), (3) MD5 Hash Integrity — 32-char hex integrity verification, (4) QR Verification Sensitivity — 15-check limit per code, (5) Label Release — tamper-evident, code void when the label is opened." },
+      { "q": "What is the AuthenticGuards 5-layer security system?", "a": "Our layered security system consists of: (1) Server Security: multi-layer protection to ISO/IEC 27000:2016 standards, (2) AG Algorithm Code: 3 layers (personalization keyword, alphanumeric digits, unix timestamp), (3) MD5 Hash Integrity: 32-char hex integrity verification, (4) QR Verification Sensitivity: 15-check limit per code, (5) Label Release: tamper-evident, code void when the label is opened." },
       { "q": "What is an AG code and how does it work?", "a": "The AG (Authentic Guards) code is a 13-digit security code produced with a 3-layer algorithm: brand personalization keyword, unique alphanumeric digits, and a unix timestamp matrix in milliseconds. Each code is MD5-hashed into a 32-character hex identifier that cannot be reversed, then integrated into a QR code compliant with ISO/IEC 18004:2015." },
       { "q": "How long is the product verification response time?", "a": "The system uses 5 security layers: multi-layer server security, 3-layer AG algorithm, MD5 hash for data integrity, QR verification sensitivity (15x limit), and label release. When the label is opened/removed, the QR code automatically becomes invalid. Every duplication attempt is detected by the system." },
-      { "q": "How does the system prevent code duplication and misuse?", "a": "Each AG code has a verification limit of up to 15 times. If the limit is reached without validation, the system automatically suspends the code for investigation. In addition, the tamper-evident label makes the code void when the label is removed — preventing code transfer to counterfeit products." }
+      { "q": "How does the system prevent code duplication and misuse?", "a": "Each AG code has a verification limit of up to 15 times. If the limit is reached without validation, the system automatically suspends the code for investigation. In addition, the tamper-evident label makes the code void when the label is removed, preventing code transfer to counterfeit products." }
     ]
   }
 }

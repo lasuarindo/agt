@@ -4,7 +4,7 @@
     "titleLine1": "Marking Solutions",
     "titleHighlight": "Anti-Counterfeit",
     "titleLine2": "for Various Industries",
-    "desc": "Authentic Guards provides marking solutions for a wide range of industries with 4 main media options: Tafeta Label, NFC Sticker, Hologram with QR, and QR Printing on Packaging — fully integrated with the AG system.",
+    "desc": "Authentic Guards provides marking solutions for a wide range of industries with 4 main media options: Tafeta Label, NFC Sticker, Hologram with QR, and QR Printing on Packaging, fully integrated with the AG system.",
     "stat1": "2 Marking Options",
     "stat2": "Customizable",
     "stat3": "ISO 18004:2015"
@@ -40,7 +40,7 @@
       "Combination of physical (hologram) + digital (QR) security",
       "Easy verification by consumers via smartphone",
       "Integrated with AG's 5 security layers",
-      "Hard to counterfeit — 2 layers of protection",
+      "Hard to counterfeit: 2 layers of protection",
       "Custom design according to brand identity",
       "Suitable for premium & high-value products"
     ],
@@ -103,7 +103,7 @@
     "eyebrow": "Implementation Flow",
     "titlePre": "From Consultation to",
     "titleHighlight": "Delivery",
-    "subtitle": "We handle the entire production process — you just focus on your business. Total estimated time ±14 working days from consultation to ready-to-use labels.",
+    "subtitle": "We handle the entire production process. You just focus on your business. Total estimated time ±14 working days from consultation to ready-to-use labels.",
     "stagePrefix": "STAGE",
     "milestone": "Milestone",
     "steps": [
@@ -132,10 +132,10 @@
     "titleHighlight": "Asked",
     "subtitle": "Answers to frequently asked questions about our services.",
     "items": [
-      { "q": "What marking services does AuthenticGuards offer?", "a": "We currently provide 2 active marking services: (1) Hologram with QR — a flagship solution with dual security layers for premium products, and (2) Tafeta Label with QR — textile labels for the fashion & apparel industry. NFC Sticker and Printing QR on packaging solutions are still in the research & development stage." },
-      { "q": "How does Hologram with QR work?", "a": "Each premium hologram label comes with a unique QR code connected to a real-time database. Consumers scan the QR via smartphone to verify product authenticity in seconds. The label also has a tamper-evident feature — the code becomes invalid after the label is removed. Each AG code has a verification limit of up to 15 times." },
+      { "q": "What marking services does AuthenticGuards offer?", "a": "We currently provide 2 active marking services: (1) Hologram with QR: a flagship solution with dual security layers for premium products, and (2) Tafeta Label with QR: textile labels for the fashion & apparel industry. NFC Sticker and Printing QR on packaging solutions are still in the research & development stage." },
+      { "q": "How does Hologram with QR work?", "a": "Each premium hologram label comes with a unique QR code connected to a real-time database. Consumers scan the QR via smartphone to verify product authenticity in seconds. The label also has a tamper-evident feature: the code becomes invalid after the label is removed. Each AG code has a verification limit of up to 15 times." },
       { "q": "Is the Tafeta Label resistant to washing?", "a": "Yes, our Tafeta Labels are designed to withstand 50+ washes without quality degradation. Premium material and high-resolution printing technology ensure the QR code remains clearly readable. The label design is fully customizable to your fashion product's brand identity." },
-      { "q": "Are NFC or packaging QR printing solutions available?", "a": "NFC Stickers and direct QR printing on packaging are currently not available to the public — still in the internal planning and research stage. For current marking needs, we recommend Hologram with QR or Tafeta Label with QR. Contact our team for a consultation on the best solution." }
+      { "q": "Are NFC or packaging QR printing solutions available?", "a": "NFC Stickers and direct QR printing on packaging are currently not available to the public and are still in the internal planning and research stage. For current marking needs, we recommend Hologram with QR or Tafeta Label with QR. Contact our team for a consultation on the best solution." }
     ]
   }
 }

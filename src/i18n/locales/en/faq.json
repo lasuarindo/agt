@@ -71,7 +71,7 @@
       "category": "about",
       "popular": true,
       "question": "What is AuthenticGuards?",
-      "answer": "AuthenticGuards is an anti-counterfeit service operated by PT. Autentikasi Garda Teknologi — the pioneer of the first product authentication system in Asia Pacific since 2017. We provide marking solutions integrated with AG codes, unique QR codes, scratch PINs, and an ISO/IEC 27000:2016-compliant real-time database to protect brands and consumers.",
+      "answer": "AuthenticGuards is an anti-counterfeit service operated by PT. Autentikasi Garda Teknologi, the pioneer of the first product authentication system in Asia Pacific since 2017. We provide marking solutions integrated with AG codes, unique QR codes, scratch PINs, and an ISO/IEC 27000:2016-compliant real-time database to protect brands and consumers.",
       "lastUpdated": "2026-06-27",
       "relatedLinks": [
         { "label": "About Us", "href": "/about" },
@@ -82,7 +82,7 @@
       "id": "about-2",
       "category": "about",
       "question": "Who can use AuthenticGuards services?",
-      "answer": "Our services are designed for brands, manufacturers, distributors, and retailers across various industries — F&B, fashion & apparel, beauty, technology, healthcare, lifestyle, automotive, and education. Both emerging and enterprise brands can use our solutions according to their business scale.",
+      "answer": "Our services are designed for brands, manufacturers, distributors, and retailers across various industries: F&B, fashion & apparel, beauty, technology, healthcare, lifestyle, automotive, and education. Both emerging and enterprise brands can use our solutions according to their business scale.",
       "relatedLinks": [
         { "label": "See Our Clients", "href": "/partners/our-client" },
         { "label": "Contact Sales Team", "href": "/contact" }
@@ -123,7 +123,7 @@
       "category": "services",
       "popular": true,
       "question": "What marking services does AuthenticGuards offer?",
-      "answer": "We currently provide 2 active marking services: (1) Hologram with QR — a flagship solution with dual security layers for premium products, and (2) Tafeta Label with QR — textile labels for the fashion & apparel industry. NFC Sticker and Printing QR on packaging solutions are still in the research & development stage.",
+      "answer": "We currently provide 2 active marking services: (1) Hologram with QR: a flagship solution with dual security layers for premium products, and (2) Tafeta Label with QR: textile labels for the fashion & apparel industry. NFC Sticker and Printing QR on packaging solutions are still in the research & development stage.",
       "relatedLinks": [
         { "label": "All Services", "href": "/services" },
         { "label": "Hologram with QR", "href": "/services/hologram" },
@@ -134,7 +134,7 @@
       "id": "service-2",
       "category": "services",
       "question": "How does Hologram with QR work?",
-      "answer": "Each premium hologram label comes with a unique QR code connected to a real-time database. Consumers scan the QR via smartphone to verify product authenticity in seconds. The label also has a tamper-evident feature — the code becomes invalid after the label is removed. Each AG code has a verification limit of up to 15 times.",
+      "answer": "Each premium hologram label comes with a unique QR code connected to a real-time database. Consumers scan the QR via smartphone to verify product authenticity in seconds. The label also has a tamper-evident feature: the code becomes invalid after the label is removed. Each AG code has a verification limit of up to 15 times.",
       "lastUpdated": "2026-06-27",
       "relatedLinks": [
         { "label": "Hologram Details", "href": "/services/hologram" },
@@ -154,7 +154,7 @@
       "id": "service-4",
       "category": "services",
       "question": "Are NFC or packaging QR printing solutions available?",
-      "answer": "NFC Stickers and direct QR printing on packaging are currently not available to the public — still in the internal planning and research stage. For current marking needs, we recommend Hologram with QR or Tafeta Label with QR. Contact our team for a consultation on the best solution.",
+      "answer": "NFC Stickers and direct QR printing on packaging are currently not available to the public and are still in the internal planning and research stage. For current marking needs, we recommend Hologram with QR or Tafeta Label with QR. Contact our team for a consultation on the best solution.",
       "relatedLinks": [
         { "label": "Active Services", "href": "/services" },
         { "label": "Contact Us", "href": "/contact" }
@@ -165,7 +165,7 @@
       "category": "technology",
       "popular": true,
       "question": "What is the AuthenticGuards 5-layer security system?",
-      "answer": "Our layered security system consists of: (1) Server Security — multi-layer protection to ISO/IEC 27000:2016 standards, (2) AG Algorithm Code — 3 layers (personalization keyword, alphanumeric digits, unix timestamp), (3) MD5 Hash Integrity — 32-char hex integrity verification, (4) QR Verification Sensitivity — 15-check limit per code, (5) Label Release — tamper-evident, code void when the label is opened.",
+      "answer": "Our layered security system consists of: (1) Server Security: multi-layer protection to ISO/IEC 27000:2016 standards, (2) AG Algorithm Code: 3 layers (personalization keyword, alphanumeric digits, unix timestamp), (3) MD5 Hash Integrity: 32-char hex integrity verification, (4) QR Verification Sensitivity: 15-check limit per code, (5) Label Release: tamper-evident, code void when the label is opened.",
       "relatedLinks": [
         { "label": "Learn About Technology", "href": "/technology" }
       ]
@@ -193,7 +193,7 @@
       "id": "tech-4",
       "category": "technology",
       "question": "How does the system prevent code duplication and misuse?",
-      "answer": "Each AG code has a verification limit of up to 15 times. If the limit is reached without validation, the system automatically suspends the code for investigation. In addition, the tamper-evident label makes the code void when the label is removed — preventing code transfer to counterfeit products.",
+      "answer": "Each AG code has a verification limit of up to 15 times. If the limit is reached without validation, the system automatically suspends the code for investigation. In addition, the tamper-evident label makes the code void when the label is removed, preventing code transfer to counterfeit products.",
       "relatedLinks": [
         { "label": "5 Security Layers", "href": "/technology" }
       ]
@@ -233,7 +233,7 @@
       "category": "verification",
       "popular": true,
       "question": "How do I verify product authenticity?",
-      "answer": "AuthenticGuards product verification is very easy: (1) Open your smartphone camera and scan the QR code on the product label (hologram or tafeta), (2) Your browser will open the verification page, (3) The system checks the AG code in the real-time database, (4) The product authenticity status is displayed instantly — usually in less than 15 seconds.",
+      "answer": "AuthenticGuards product verification is very easy: (1) Open your smartphone camera and scan the QR code on the product label (hologram or tafeta), (2) Your browser will open the verification page, (3) The system checks the AG code in the real-time database, (4) The product authenticity status is displayed instantly, usually in less than 15 seconds.",
       "lastUpdated": "2026-06-27",
       "relatedLinks": [
         { "label": "How Technology Works", "href": "/technology" },
@@ -253,7 +253,7 @@
       "id": "verify-3",
       "category": "verification",
       "question": "What does it mean if a code has reached the verification limit?",
-      "answer": "Each AG code has a verification limit of up to 15 times. If the limit is reached, the system automatically suspends the code for investigation — this could indicate a duplication or counterfeiting attempt. If you are sure the product is genuine and has not been verified before, immediately contact the brand or the AuthenticGuards team.",
+      "answer": "Each AG code has a verification limit of up to 15 times. If the limit is reached, the system automatically suspends the code for investigation. This could indicate a duplication or counterfeiting attempt. If you are sure the product is genuine and has not been verified before, immediately contact the brand or the AuthenticGuards team.",
       "relatedLinks": [
         { "label": "Report Suspicious Product", "href": "/contact" }
       ]
@@ -282,7 +282,7 @@
       "id": "partners-2",
       "category": "partners",
       "question": "How do I become an AuthenticGuards brand partner?",
-      "answer": "Contact our team via the Contact page for a free consultation. The process begins with brand needs analysis, label design & prototyping, AG code production, quality control, and delivery and implementation training — a total of ±14 business days after the design is approved.",
+      "answer": "Contact our team via the Contact page for a free consultation. The process begins with brand needs analysis, label design & prototyping, AG code production, quality control, and delivery and implementation training, a total of ±14 business days after the design is approved.",
       "relatedLinks": [
         { "label": "Contact Sales Team", "href": "/contact" },
         { "label": "Implementation Flow", "href": "/services/hologram" }
@@ -303,7 +303,7 @@
       "category": "pricing",
       "popular": true,
       "question": "How much do AuthenticGuards services cost?",
-      "answer": "Pricing is flexible and tailored to your business needs. Determining factors: label volume, service type (Hologram or Tafeta), design complexity, and additional features (custom design, API integration, dedicated account manager). We offer Starter, Business, and Enterprise packages — all with custom pricing after consultation.",
+      "answer": "Pricing is flexible and tailored to your business needs. Determining factors: label volume, service type (Hologram or Tafeta), design complexity, and additional features (custom design, API integration, dedicated account manager). We offer Starter, Business, and Enterprise packages, all with custom pricing after consultation.",
       "relatedLinks": [
         { "label": "Free Consultation", "href": "/contact" },
         { "label": "Hologram Package", "href": "/services/hologram" }
@@ -322,7 +322,7 @@
       "id": "pricing-3",
       "category": "pricing",
       "question": "Is there a minimum order quantity (MOQ)?",
-      "answer": "MOQ varies depending on design complexity and label size. For detailed MOQ information and the best quote, please contact our sales team for a direct consultation — we will tailor the solution to your business scale.",
+      "answer": "MOQ varies depending on design complexity and label size. For detailed MOQ information and the best quote, please contact our sales team for a direct consultation. We will tailor the solution to your business scale.",
       "relatedLinks": [
         { "label": "Contact Sales", "href": "/contact" }
       ]

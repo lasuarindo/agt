@@ -1,6 +1,6 @@
 # AuthenticGuards Technology
 
-Marketing site for **AuthenticGuards** — an anti-counterfeit and product authentication platform for Indonesia and the Asia Pacific region.
+Marketing site for **AuthenticGuards**, an anti-counterfeit and product authentication platform for Indonesia and the Asia Pacific region.
 
 Built with React, TypeScript, Vite, Tailwind CSS v4, and React Router. The site is fully bilingual (Indonesian / English) and deploys to GitHub Pages.
 
@@ -22,10 +22,10 @@ Built with React, TypeScript, Vite, Tailwind CSS v4, and React Router. The site 
 ## Features
 
 - **Bilingual (ID / EN)** with a custom, accessible language dropdown in the header. The choice is persisted in `localStorage` and kept in sync with `<html lang>`.
-- **Lazy-loaded routes** — every page ships as its own chunk.
-- **Route-level loading fallback** — a branded `RouteLoading` screen shows while a page chunk loads, including on client-side navigations.
-- **SPA fallback for GitHub Pages** — `dist/404.html` boots the app for deep links, so `/about` and refreshes work without hash URLs.
-- **i18n data layer** — page copy lives in `src/i18n/locales/{lang}/{page}.json`; data entities (team, clients, awards, investors, supporters, offices, media coverage, timeline) live in `src/i18n/locales/{lang}/data/<entity>.json` and are read through `get<Entity>(t)` helpers.
+- **Lazy-loaded routes**: every page ships as its own chunk.
+- **Route-level loading fallback**: a branded `RouteLoading` screen shows while a page chunk loads, including on client-side navigations.
+- **SPA fallback for GitHub Pages**: `dist/404.html` boots the app for deep links, so `/about` and refreshes work without hash URLs.
+- **i18n data layer**: page copy lives in `src/i18n/locales/{lang}/{page}.json`; data entities (team, clients, awards, investors, supporters, offices, media coverage, timeline) live in `src/i18n/locales/{lang}/data/<entity>.json` and are read through `get<Entity>(t)` helpers.
 - **Responsive layout** with a shared header/footer and reusable overview sections.
 
 ## Getting started
@@ -134,8 +134,8 @@ cp .env.example .env
 
 The workflow `.github/workflows/deploy.yml` runs on pushes to `main` (and manual dispatch):
 
-1. **build** job — `environment: logodev`, Node 22, `npm ci`, `npm run build` with `VITE_API_LOGO_DEV` from the environment.
-2. **deploy** job — `environment: github-pages`, publishes `dist` with the official Pages actions.
+1. **build** job: `environment: logodev`, Node 22, `npm ci`, `npm run build` with `VITE_API_LOGO_DEV` from the environment.
+2. **deploy** job: `environment: github-pages`, publishes `dist` with the official Pages actions.
 
 Required repository settings:
 
@@ -158,4 +158,4 @@ Because the build emits `dist/404.html`, deep links such as `/about` and page re
 
 ## License
 
-Proprietary — all rights reserved. See [LICENSE](./LICENSE).
+Proprietary. All rights reserved. See [LICENSE](./LICENSE).

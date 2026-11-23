@@ -4,7 +4,7 @@
     "titleLine1": "Solusi Marking",
     "titleHighlight": "Anti-Pemalsuan",
     "titleLine2": "untuk Berbagai Industri",
-    "desc": "Authentic Guards menyediakan solusi marking (penanda) untuk berbagai macam industri dengan 4 opsi media utama: Label Tafeta, Sticker ber-NFC, Hologram dengan QR, dan Printing QR pada Kemasan — terintegrasi penuh dengan sistem AG.",
+    "desc": "Authentic Guards menyediakan solusi marking (penanda) untuk berbagai macam industri dengan 4 opsi media utama: Label Tafeta, Sticker ber-NFC, Hologram dengan QR, dan Printing QR pada Kemasan, terintegrasi penuh dengan sistem AG.",
     "stat1": "2 Opsi Marking",
     "stat2": "Customizable",
     "stat3": "ISO 18004:2015"
@@ -40,7 +40,7 @@
       "Kombinasi keamanan fisik (hologram) + digital (QR)",
       "Verifikasi mudah oleh konsumen via smartphone",
       "Terintegrasi dengan 5 lapis keamanan AG",
-      "Sulit dipalsukan — 2 lapisan proteksi",
+      "Sulit dipalsukan: 2 lapisan proteksi",
       "Custom design sesuai brand identity",
       "Cocok untuk produk premium & high-value"
     ],
@@ -103,7 +103,7 @@
     "eyebrow": "Alur Implementasi",
     "titlePre": "Dari Konsultasi hingga",
     "titleHighlight": "Pengiriman",
-    "subtitle": "Kami menangani seluruh proses produksi — Anda cukup fokus pada bisnis. Total estimasi waktu ±14 hari kerja dari konsultasi hingga label siap digunakan.",
+    "subtitle": "Kami menangani seluruh proses produksi. Anda cukup fokus pada bisnis. Total estimasi waktu ±14 hari kerja dari konsultasi hingga label siap digunakan.",
     "stagePrefix": "TAHAP",
     "milestone": "Milestone",
     "steps": [
@@ -132,10 +132,10 @@
     "titleHighlight": "Umum",
     "subtitle": "Jawaban untuk pertanyaan yang sering ditanyakan tentang layanan kami.",
     "items": [
-      { "q": "Apa saja layanan marking yang ditawarkan AuthenticGuards?", "a": "Saat ini kami menyediakan 2 layanan marking aktif: (1) Hologram dengan QR — solusi flagship dengan lapisan keamanan ganda untuk produk premium, dan (2) Label Tafeta dengan QR — label tekstil untuk industri fashion & apparel. Solusi NFC Sticker dan Printing QR pada kemasan masih dalam tahap penelitian & pengembangan." },
-      { "q": "Bagaimana cara kerja Hologram dengan QR?", "a": "Setiap label hologram premium dilengkapi QR code unik yang terhubung ke database real-time. Konsumen scan QR via smartphone untuk memverifikasi keaslian produk dalam hitungan detik. Label juga memiliki fitur tamper-evident — kode menjadi tidak sah setelah label dilepas. Setiap kode AG memiliki batas verifikasi hingga 15 kali." },
+      { "q": "Apa saja layanan marking yang ditawarkan AuthenticGuards?", "a": "Saat ini kami menyediakan 2 layanan marking aktif: (1) Hologram dengan QR: solusi flagship dengan lapisan keamanan ganda untuk produk premium, dan (2) Label Tafeta dengan QR: label tekstil untuk industri fashion & apparel. Solusi NFC Sticker dan Printing QR pada kemasan masih dalam tahap penelitian & pengembangan." },
+      { "q": "Bagaimana cara kerja Hologram dengan QR?", "a": "Setiap label hologram premium dilengkapi QR code unik yang terhubung ke database real-time. Konsumen scan QR via smartphone untuk memverifikasi keaslian produk dalam hitungan detik. Label juga memiliki fitur tamper-evident: kode menjadi tidak sah setelah label dilepas. Setiap kode AG memiliki batas verifikasi hingga 15 kali." },
       { "q": "Apakah Label Tafeta tahan terhadap pencucian?", "a": "Ya, Label Tafeta kami dirancang tahan hingga 50+ kali pencucian tanpa degradasi kualitas. Material premium dan teknologi high-resolution printing memastikan QR code tetap terbaca jelas. Desain label fully customizable sesuai brand identity produk fashion Anda." },
-      { "q": "Apakah tersedia solusi NFC atau printing QR pada kemasan?", "a": "Sticker ber-NFC dan Printing QR langsung pada kemasan saat ini belum tersedia untuk publik — masih dalam tahap perencanaan dan penelitian internal. Untuk kebutuhan marking saat ini, kami merekomendasikan Hologram dengan QR atau Label Tafeta dengan QR. Hubungi tim kami untuk konsultasi solusi terbaik." }
+      { "q": "Apakah tersedia solusi NFC atau printing QR pada kemasan?", "a": "Sticker ber-NFC dan Printing QR langsung pada kemasan saat ini belum tersedia untuk publik dan masih dalam tahap perencanaan dan penelitian internal. Untuk kebutuhan marking saat ini, kami merekomendasikan Hologram dengan QR atau Label Tafeta dengan QR. Hubungi tim kami untuk konsultasi solusi terbaik." }
     ]
   }
 }

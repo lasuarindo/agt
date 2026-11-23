@@ -71,7 +71,7 @@
       "category": "about",
       "popular": true,
       "question": "Apa itu AuthenticGuards?",
-      "answer": "AuthenticGuards adalah layanan anti-counterfeit yang dioperasikan oleh PT. Autentikasi Garda Teknologi — pelopor sistem autentikasi produk pertama di Asia Pasifik sejak 2017. Kami menyediakan solusi marking terintegrasi dengan kode AG, QR code unik, scratch PIN, dan database real-time berstandar ISO/IEC 27000:2016 untuk melindungi brand dan konsumen.",
+      "answer": "AuthenticGuards adalah layanan anti-counterfeit yang dioperasikan oleh PT. Autentikasi Garda Teknologi, pelopor sistem autentikasi produk pertama di Asia Pasifik sejak 2017. Kami menyediakan solusi marking terintegrasi dengan kode AG, QR code unik, scratch PIN, dan database real-time berstandar ISO/IEC 27000:2016 untuk melindungi brand dan konsumen.",
       "lastUpdated": "2026-06-27",
       "relatedLinks": [
         { "label": "Tentang Kami", "href": "/about" },
@@ -82,7 +82,7 @@
       "id": "about-2",
       "category": "about",
       "question": "Siapa saja yang bisa menggunakan layanan AuthenticGuards?",
-      "answer": "Layanan kami dirancang untuk brand, produsen, distributor, dan retailer dari berbagai industri — F&B, fashion & apparel, kecantikan, teknologi, kesehatan, lifestyle, otomotif, hingga pendidikan. Baik brand emerging maupun enterprise dapat menggunakan solusi kami sesuai skala bisnis mereka.",
+      "answer": "Layanan kami dirancang untuk brand, produsen, distributor, dan retailer dari berbagai industri: F&B, fashion & apparel, kecantikan, teknologi, kesehatan, lifestyle, otomotif, hingga pendidikan. Baik brand emerging maupun enterprise dapat menggunakan solusi kami sesuai skala bisnis mereka.",
       "relatedLinks": [
         { "label": "Lihat Klien Kami", "href": "/partners/our-client" },
         { "label": "Hubungi Tim Sales", "href": "/contact" }
@@ -123,7 +123,7 @@
       "category": "services",
       "popular": true,
       "question": "Apa saja layanan marking yang ditawarkan AuthenticGuards?",
-      "answer": "Saat ini kami menyediakan 2 layanan marking aktif: (1) Hologram dengan QR — solusi flagship dengan lapisan keamanan ganda untuk produk premium, dan (2) Label Tafeta dengan QR — label tekstil untuk industri fashion & apparel. Solusi NFC Sticker dan Printing QR pada kemasan masih dalam tahap penelitian & pengembangan.",
+      "answer": "Saat ini kami menyediakan 2 layanan marking aktif: (1) Hologram dengan QR: solusi flagship dengan lapisan keamanan ganda untuk produk premium, dan (2) Label Tafeta dengan QR: label tekstil untuk industri fashion & apparel. Solusi NFC Sticker dan Printing QR pada kemasan masih dalam tahap penelitian & pengembangan.",
       "relatedLinks": [
         { "label": "Semua Layanan", "href": "/services" },
         { "label": "Hologram dengan QR", "href": "/services/hologram" },
@@ -134,7 +134,7 @@
       "id": "service-2",
       "category": "services",
       "question": "Bagaimana cara kerja Hologram dengan QR?",
-      "answer": "Setiap label hologram premium dilengkapi QR code unik yang terhubung ke database real-time. Konsumen scan QR via smartphone untuk memverifikasi keaslian produk dalam hitungan detik. Label juga memiliki fitur tamper-evident — kode menjadi tidak sah setelah label dilepas. Setiap kode AG memiliki batas verifikasi hingga 15 kali.",
+      "answer": "Setiap label hologram premium dilengkapi QR code unik yang terhubung ke database real-time. Konsumen scan QR via smartphone untuk memverifikasi keaslian produk dalam hitungan detik. Label juga memiliki fitur tamper-evident: kode menjadi tidak sah setelah label dilepas. Setiap kode AG memiliki batas verifikasi hingga 15 kali.",
       "lastUpdated": "2026-06-27",
       "relatedLinks": [
         { "label": "Detail Hologram", "href": "/services/hologram" },
@@ -154,7 +154,7 @@
       "id": "service-4",
       "category": "services",
       "question": "Apakah tersedia solusi NFC atau printing QR pada kemasan?",
-      "answer": "Sticker ber-NFC dan Printing QR langsung pada kemasan saat ini belum tersedia untuk publik — masih dalam tahap perencanaan dan penelitian internal. Untuk kebutuhan marking saat ini, kami merekomendasikan Hologram dengan QR atau Label Tafeta dengan QR. Hubungi tim kami untuk konsultasi solusi terbaik.",
+      "answer": "Sticker ber-NFC dan Printing QR langsung pada kemasan saat ini belum tersedia untuk publik dan masih dalam tahap perencanaan dan penelitian internal. Untuk kebutuhan marking saat ini, kami merekomendasikan Hologram dengan QR atau Label Tafeta dengan QR. Hubungi tim kami untuk konsultasi solusi terbaik.",
       "relatedLinks": [
         { "label": "Layanan Aktif", "href": "/services" },
         { "label": "Hubungi Kami", "href": "/contact" }
@@ -165,7 +165,7 @@
       "category": "technology",
       "popular": true,
       "question": "Apa itu sistem 5 lapis keamanan AuthenticGuards?",
-      "answer": "Sistem keamanan berlapis kami terdiri dari: (1) Keamanan Server — proteksi multi-layer berstandar ISO/IEC 27000:2016, (2) Kode Algoritma AG — 3 lapis (kata kunci personalisasi, digit alfanumerik, timestamp unix), (3) MD5 Hash Integrity — verifikasi integritas 32-char hex, (4) Kepekaan Verifikasi QR — batas 15 kali pengecekan per kode, (5) Pelepasan Label — tamper-evident, kode void saat label terbuka.",
+      "answer": "Sistem keamanan berlapis kami terdiri dari: (1) Keamanan Server: proteksi multi-layer berstandar ISO/IEC 27000:2016, (2) Kode Algoritma AG: 3 lapis (kata kunci personalisasi, digit alfanumerik, timestamp unix), (3) MD5 Hash Integrity: verifikasi integritas 32-char hex, (4) Kepekaan Verifikasi QR: batas 15 kali pengecekan per kode, (5) Pelepasan Label: tamper-evident, kode void saat label terbuka.",
       "relatedLinks": [
         { "label": "Pelajari Teknologi", "href": "/technology" }
       ]
@@ -193,7 +193,7 @@
       "id": "tech-4",
       "category": "technology",
       "question": "Bagaimana sistem mencegah duplikasi dan penyalahgunaan kode?",
-      "answer": "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai tanpa validasi, sistem otomatis men-suspend kode untuk investigasi. Selain itu, label tamper-evident membuat kode void saat label dilepas — mencegah transfer kode ke produk palsu.",
+      "answer": "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai tanpa validasi, sistem otomatis men-suspend kode untuk investigasi. Selain itu, label tamper-evident membuat kode void saat label dilepas, mencegah transfer kode ke produk palsu.",
       "relatedLinks": [
         { "label": "5 Lapis Keamanan", "href": "/technology" }
       ]
@@ -233,7 +233,7 @@
       "category": "verification",
       "popular": true,
       "question": "Bagaimana cara memverifikasi keaslian produk?",
-      "answer": "Verifikasi produk AuthenticGuards sangat mudah: (1) Buka kamera smartphone dan scan QR code pada label produk (hologram atau tafeta), (2) Browser akan membuka halaman verifikasi, (3) Sistem mengecek kode AG di database real-time, (4) Status keaslian produk ditampilkan secara instan — biasanya kurang dari 15 detik.",
+      "answer": "Verifikasi produk AuthenticGuards sangat mudah: (1) Buka kamera smartphone dan scan QR code pada label produk (hologram atau tafeta), (2) Browser akan membuka halaman verifikasi, (3) Sistem mengecek kode AG di database real-time, (4) Status keaslian produk ditampilkan secara instan, biasanya kurang dari 15 detik.",
       "lastUpdated": "2026-06-27",
       "relatedLinks": [
         { "label": "Cara Kerja Teknologi", "href": "/technology" },
@@ -253,7 +253,7 @@
       "id": "verify-3",
       "category": "verification",
       "question": "Apa artinya jika kode sudah mencapai batas verifikasi?",
-      "answer": "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai, sistem otomatis men-suspend kode untuk investigasi — ini bisa mengindikasikan upaya duplikasi atau pemalsuan. Jika Anda yakin produk asli dan belum pernah diverifikasi sebelumnya, segera hubungi brand atau tim AuthenticGuards.",
+      "answer": "Setiap kode AG memiliki batas verifikasi hingga 15 kali. Jika limit tercapai, sistem otomatis men-suspend kode untuk investigasi. Ini bisa mengindikasikan upaya duplikasi atau pemalsuan. Jika Anda yakin produk asli dan belum pernah diverifikasi sebelumnya, segera hubungi brand atau tim AuthenticGuards.",
       "relatedLinks": [
         { "label": "Laporkan Produk Mencurigakan", "href": "/contact" }
       ]
@@ -282,7 +282,7 @@
       "id": "partners-2",
       "category": "partners",
       "question": "Bagaimana cara menjadi brand partner AuthenticGuards?",
-      "answer": "Hubungi tim kami melalui halaman Contact untuk konsultasi gratis. Proses dimulai dengan analisis kebutuhan brand, desain & prototyping label, produksi kode AG, quality control, hingga pengiriman dan training implementasi — total ±14 hari kerja setelah desain di-approve.",
+      "answer": "Hubungi tim kami melalui halaman Contact untuk konsultasi gratis. Proses dimulai dengan analisis kebutuhan brand, desain & prototyping label, produksi kode AG, quality control, hingga pengiriman dan training implementasi, total ±14 hari kerja setelah desain di-approve.",
       "relatedLinks": [
         { "label": "Hubungi Tim Sales", "href": "/contact" },
         { "label": "Alur Implementasi", "href": "/services/hologram" }
@@ -303,7 +303,7 @@
       "category": "pricing",
       "popular": true,
       "question": "Berapa biaya layanan AuthenticGuards?",
-      "answer": "Pricing fleksibel dan disesuaikan kebutuhan bisnis Anda. Faktor penentu: volume label, jenis layanan (Hologram atau Tafeta), kompleksitas desain, dan fitur tambahan (custom design, API integration, dedicated account manager). Kami menawarkan paket Starter, Business, dan Enterprise — semua dengan harga custom setelah konsultasi.",
+      "answer": "Pricing fleksibel dan disesuaikan kebutuhan bisnis Anda. Faktor penentu: volume label, jenis layanan (Hologram atau Tafeta), kompleksitas desain, dan fitur tambahan (custom design, API integration, dedicated account manager). Kami menawarkan paket Starter, Business, dan Enterprise, semua dengan harga custom setelah konsultasi.",
       "relatedLinks": [
         { "label": "Konsultasi Gratis", "href": "/contact" },
         { "label": "Paket Hologram", "href": "/services/hologram" }
@@ -322,7 +322,7 @@
       "id": "pricing-3",
       "category": "pricing",
       "question": "Apakah ada minimum order quantity (MOQ)?",
-      "answer": "MOQ bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail MOQ dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi langsung — kami akan menyesuaikan solusi dengan skala bisnis Anda.",
+      "answer": "MOQ bervariasi tergantung kompleksitas desain dan ukuran label. Untuk informasi detail MOQ dan penawaran terbaik, silakan hubungi tim sales kami untuk konsultasi langsung. Kami akan menyesuaikan solusi dengan skala bisnis Anda.",
       "relatedLinks": [
         { "label": "Hubungi Sales", "href": "/contact" }
       ]

@@ -43,7 +43,7 @@ export default function OurStorySection() {
                 </p>
               </div>
               <p className="text-xs text-gray-500 mt-2 ml-12">
-                — <strong>{t('story.quoteAuthor')}</strong>, {t('story.quoteRole')}
+                <strong>{t('story.quoteAuthor')}</strong>, {t('story.quoteRole')}
               </p>
             </div>
           </motion.div>
